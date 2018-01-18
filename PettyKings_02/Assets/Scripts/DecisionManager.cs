@@ -33,6 +33,10 @@ public class DecisionManager : MonoBehaviour {
 
         // locate resource manager to update values later
         FindResourceManager();
+
+
+        // Testing Merging
+        Debug.Log("It works");
     }
 	
 	// Update is called once per frame
