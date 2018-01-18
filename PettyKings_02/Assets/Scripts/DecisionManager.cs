@@ -12,6 +12,7 @@ public class DecisionManager : MonoBehaviour {
 
     public int woodDecline, menDecline, foodDecline;
     public int woodAccept, menAccept, foodAccept;
+    public int poopsicles = 7;
 
     public string headText;
     public string bodyText;
