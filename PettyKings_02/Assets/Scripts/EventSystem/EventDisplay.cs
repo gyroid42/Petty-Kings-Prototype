@@ -13,7 +13,10 @@ public class EventDisplay : MonoBehaviour {
     private EventController eventController;
 
     // List of buttons of choices
-    public List<Button> buttons_ = new List<Button>(2);
+    public List<Button> buttons_;
+
+
+    public GameObject prefabButton;
 
 
     // Event currently being displayed
@@ -89,11 +92,56 @@ public class EventDisplay : MonoBehaviour {
     }
 
 
+    public void SetEvent(Event newEvent)
+    {
+        event_ = newEvent;
+    }
 
-    // Set function for each button
-    void CreateButtonListeners()
+
+    public void Display(Event newEvent)
     {
 
+        nameText_.text = newEvent.name_;
+        descriptionText_.text = newEvent.description_;
+        artworkImage_.texture = newEvent.artwork_;
+
+        CreateButtons(newEvent.decisionText_.Length);
+
+        for (int i = 0; i < buttons_.Count; i++)
+        {
+            buttons_[i].GetComponentInChildren<Text>().text = newEvent.decisionText_[i];
+        }
+        
+    }
+
+
+    // Set function for each button
+    void CreateButtons(int num)
+    {
+
+
+        for (int i = 0; i < buttons_.Count; i++)
+        {
+            Destroy(buttons_[i]);
+        }
+
+        buttons_.Clear();
+
+        for (int i = 0; i < num; i++)
+        {
+            GameObject newButton = (GameObject)Instantiate(prefabButton);
+            newButton.transform.SetParent(GetComponent<RectTransform>(), false);
+            newButton.transform.localScale = new Vector3(1, 1, 1);
+            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((500 / num), 50);
+            newButton.GetComponent<RectTransform>().position = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x, -300, 0);
+
+            int tempInt = i;
+            newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
+
+            buttons_.Add(newButton.GetComponent<Button>());
+        }
+
+        /*
         // Loop for each button
         for (int i = 0; i < buttons_.Count; i++)
         {
@@ -102,6 +150,7 @@ public class EventDisplay : MonoBehaviour {
             int temp = i;
             buttons_[i].onClick.AddListener(delegate { eventController.DecisionSelected(temp); });
         }
+        */
     }
 
 }

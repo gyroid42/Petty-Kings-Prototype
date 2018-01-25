@@ -15,7 +15,14 @@ public class EventController : MonoBehaviour {
 
 
     // List of available events
-    public List<Event> eventList_;
+    public List<Event> availableEventsList_;
+
+
+    // List of next events
+    public List<Event> nextEventList_;
+
+    // Current event
+    public Event currentEvent_;
 
 
     // When object is created
