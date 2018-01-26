@@ -60,12 +60,14 @@ public class EventDisplay : MonoBehaviour {
     }
 
 
-    // Start method currently sets to main event description
+    // Method called when object created
     void Start ()
     {
 
+        // Create reference to eventController
         eventController = EventController.eventController;
 
+        // Event display is not active when created
         gameObject.SetActive(false);
 	}
 
@@ -73,17 +75,19 @@ public class EventDisplay : MonoBehaviour {
     public void DisplayDecision(int choice)
     {
 
-        // debug display the choice the player made
+        // Debug display the choice the player made
         Debug.Log(choice);
 
         // Update display to show choice made by player
         descriptionText_.text = event_.decisionDesc_[choice];
         artworkImage_.texture = event_.decisionArt_[choice];
 
+        // Create button for leaving event
         CreateContinueButton();
     }
 
 
+    // Set current event happening
     public void SetEvent(Event newEvent)
     {
         event_ = newEvent;
@@ -91,57 +95,57 @@ public class EventDisplay : MonoBehaviour {
 
     public void Display()
     {
+
+        // Set all display elements with data from event
         nameText_.text = event_.name_;
         descriptionText_.text = event_.description_;
         artworkImage_.texture = event_.artwork_;
 
-        CreateDecisionButtons(event_.decisionText_.Length);
-
-        for (int i = 0; i < buttons_.Count; i++)
-        {
-            buttons_[i].GetComponentInChildren<Text>().text = event_.decisionText_[i];
-        }
+        // Create the buttons for the Decisions
+        CreateDecisionButtons(event_.decisionText_);
     }
 
     public void Display(Event newEvent)
     {
 
+        // Set all display elements with data from event
         nameText_.text = newEvent.name_;
         descriptionText_.text = newEvent.description_;
         artworkImage_.texture = newEvent.artwork_;
 
-        CreateDecisionButtons(newEvent.decisionText_.Length);
 
-        for (int i = 0; i < buttons_.Count; i++)
-        {
-            buttons_[i].GetComponentInChildren<Text>().text = newEvent.decisionText_[i];
-        }
-        
+        // Create teh buttons for the Decisions
+        CreateDecisionButtons(newEvent.decisionText_);
     }
 
 
     // Set function for each button
-    void CreateDecisionButtons(int num)
+    void CreateDecisionButtons(string[] decisionText)
     {
 
-
+        // Remove all the buttons from the previous screen
         DestroyButtons();
 
-        for (int i = 0; i < num; i++)
+        // Loop for each decision option
+        for (int i = 0; i < decisionText.Length; i++)
         {
+
+            // Create a button for each option and set the buttons position from the number of buttons and size of screen
             GameObject newButton = (GameObject)Instantiate(prefabButton);
             newButton.transform.SetParent(GetComponent<RectTransform>(), false);
             newButton.transform.localScale = new Vector3(1, 1, 1);
-            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((500 / num), 50);
+            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((500 / decisionText.Length), 50);
             newButton.GetComponent<RectTransform>().position = new Vector3(0.0f, 0.0f, 0.0f);
 
             newButton.GetComponent<RectTransform>().localPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x - 250, -125, 0);
 
-            //Debug.Log(newButton.transform.localPosition);
             
+            // Add method that button calls when pressed
             int tempInt = i;
             newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
+            newButton.GetComponentInChildren<Text>().text = decisionText[i];
 
+            // Add the new button to the list of buttons
             buttons_.Add(newButton.GetComponent<Button>());
         }
     }
@@ -149,8 +153,10 @@ public class EventDisplay : MonoBehaviour {
     void CreateContinueButton()
     {
 
+        // Remove all the buttons from the previous screen
         DestroyButtons();
 
+        // Create a continue button
         GameObject newButton = (GameObject)Instantiate(prefabButton);
         newButton.transform.SetParent(GetComponent<RectTransform>(), false);
         newButton.transform.localScale = new Vector3(1, 1, 1);
@@ -159,7 +165,13 @@ public class EventDisplay : MonoBehaviour {
 
         newButton.GetComponent<RectTransform>().localPosition = new Vector3(-250, -125, 0);
 
+        newButton.GetComponentInChildren<Text>().text = "continue!";
+
+
+        // Add method that button calls when pressed
         newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+
+        // Add the button to the list of buttons
         buttons_.Add(newButton.GetComponent<Button>());
     }
 
@@ -176,6 +188,8 @@ public class EventDisplay : MonoBehaviour {
 
     void DestroyButtons()
     {
+
+        // Loop for each button in the list of buttons and destroy the button
         for (int i = 0; i < buttons_.Count; i++)
         {
             if (buttons_[i].gameObject)
@@ -184,6 +198,7 @@ public class EventDisplay : MonoBehaviour {
             }
         }
 
+        // After all the buttons are destroyed clear the list of buttons
         buttons_.Clear();
     }
 
