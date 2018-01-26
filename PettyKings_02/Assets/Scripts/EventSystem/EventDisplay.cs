@@ -13,7 +13,7 @@ public class EventDisplay : MonoBehaviour {
     private EventController eventController;
 
     // List of buttons of choices
-    public List<Button> buttons_;
+    private List<Button> buttons_ = new List<Button>();
 
 
     public GameObject prefabButton;
@@ -66,17 +66,7 @@ public class EventDisplay : MonoBehaviour {
 
         eventController = EventController.eventController;
 
-        // Set functions attached to each button
-        CreateButtonListeners();
-
-        // Set all the elements to be displayed
-        nameText_.text = event_.name_;
-        descriptionText_.text = event_.description_;
-        artworkImage_.texture = event_.artwork_;
-        for (int i = 0; i < buttons_.Count; i++)
-        {
-            buttons_[i].GetComponentInChildren<Text>().text = event_.decisionText_[i];
-        }
+        gameObject.SetActive(false);
 	}
 
 
@@ -89,6 +79,8 @@ public class EventDisplay : MonoBehaviour {
         // Update display to show choice made by player
         descriptionText_.text = event_.decisionDesc_[choice];
         artworkImage_.texture = event_.decisionArt_[choice];
+
+        CreateContinueButton();
     }
 
 
@@ -97,6 +89,19 @@ public class EventDisplay : MonoBehaviour {
         event_ = newEvent;
     }
 
+    public void Display()
+    {
+        nameText_.text = event_.name_;
+        descriptionText_.text = event_.description_;
+        artworkImage_.texture = event_.artwork_;
+
+        CreateDecisionButtons(event_.decisionText_.Length);
+
+        for (int i = 0; i < buttons_.Count; i++)
+        {
+            buttons_[i].GetComponentInChildren<Text>().text = event_.decisionText_[i];
+        }
+    }
 
     public void Display(Event newEvent)
     {
@@ -105,7 +110,7 @@ public class EventDisplay : MonoBehaviour {
         descriptionText_.text = newEvent.description_;
         artworkImage_.texture = newEvent.artwork_;
 
-        CreateButtons(newEvent.decisionText_.Length);
+        CreateDecisionButtons(newEvent.decisionText_.Length);
 
         for (int i = 0; i < buttons_.Count; i++)
         {
@@ -116,16 +121,11 @@ public class EventDisplay : MonoBehaviour {
 
 
     // Set function for each button
-    void CreateButtons(int num)
+    void CreateDecisionButtons(int num)
     {
 
 
-        for (int i = 0; i < buttons_.Count; i++)
-        {
-            Destroy(buttons_[i]);
-        }
-
-        buttons_.Clear();
+        DestroyButtons();
 
         for (int i = 0; i < num; i++)
         {
@@ -133,24 +133,58 @@ public class EventDisplay : MonoBehaviour {
             newButton.transform.SetParent(GetComponent<RectTransform>(), false);
             newButton.transform.localScale = new Vector3(1, 1, 1);
             newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((500 / num), 50);
-            newButton.GetComponent<RectTransform>().position = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x, -300, 0);
+            newButton.GetComponent<RectTransform>().position = new Vector3(0.0f, 0.0f, 0.0f);
 
+            newButton.GetComponent<RectTransform>().localPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x - 250, -125, 0);
+
+            //Debug.Log(newButton.transform.localPosition);
+            
             int tempInt = i;
             newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
 
             buttons_.Add(newButton.GetComponent<Button>());
         }
+    }
 
-        /*
-        // Loop for each button
+    void CreateContinueButton()
+    {
+
+        DestroyButtons();
+
+        GameObject newButton = (GameObject)Instantiate(prefabButton);
+        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
+        newButton.transform.localScale = new Vector3(1, 1, 1);
+        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 50);
+        newButton.GetComponent<RectTransform>().position = new Vector3(0.0f, 0.0f, 0.0f);
+
+        newButton.GetComponent<RectTransform>().localPosition = new Vector3(-250, -125, 0);
+
+        newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+        buttons_.Add(newButton.GetComponent<Button>());
+    }
+
+    GameObject CreateButton(Vector3 buttonPosition, Vector2 buttonSize, Vector3 buttonScale)
+    {
+        GameObject newButton = (GameObject)Instantiate(prefabButton);
+        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
+        newButton.transform.localScale = buttonScale;
+        newButton.GetComponent<RectTransform>().sizeDelta = buttonSize;
+        newButton.GetComponent<RectTransform>().position = buttonPosition;
+
+        return newButton;
+    }
+
+    void DestroyButtons()
+    {
         for (int i = 0; i < buttons_.Count; i++)
         {
-
-            // set method on button with a parameter saying which button
-            int temp = i;
-            buttons_[i].onClick.AddListener(delegate { eventController.DecisionSelected(temp); });
+            if (buttons_[i].gameObject)
+            {
+                Destroy(buttons_[i].gameObject);
+            }
         }
-        */
+
+        buttons_.Clear();
     }
 
 }

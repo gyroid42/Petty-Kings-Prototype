@@ -10,10 +10,6 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
 
 
-    // Reference to Event Display script
-    private EventDisplay display_;
-
-
     // List of available events
     public List<Event> availableEventsList_;
 
@@ -23,6 +19,10 @@ public class EventController : MonoBehaviour {
 
     // Current event
     public Event currentEvent_;
+
+
+    // flag if event is active
+    bool eventActive;
 
 
     // When object is created
@@ -56,10 +56,20 @@ public class EventController : MonoBehaviour {
     void Start ()
     {
 
-        // Set reference to event display
-        display_ = EventDisplay.eventDisplay;
-        
+        eventActive = false;
 	}
+
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!eventActive)
+            {
+                StartEvent();
+            }
+        }
+    }
 
 
 
@@ -68,7 +78,61 @@ public class EventController : MonoBehaviour {
     {
 
         // Update display
-        display_.DisplayDecision(choice);
+        if (EventDisplay.eventDisplay)
+        {
+            EventDisplay.eventDisplay.DisplayDecision(choice);
+        }
+    }
+
+    public void ContinueButtonClicked()
+    {
+        Debug.Log("this si happenienginei");
+        // foreach (Transform child in EventDisplay.eventDisplay.transform)
+        //{
+        //GameObject.Destroy(child.gameObject);
+        //}
+        EndEvent();
+    }
+
+
+    public void StartEvent()
+    {
+        if (!eventActive)
+        {
+
+            if (nextEventList_.Count > 0)
+            {
+
+                currentEvent_ = nextEventList_[0];
+                nextEventList_.RemoveAt(0);
+            }
+            else
+            {
+                int index = Random.Range(0, availableEventsList_.Count);
+                currentEvent_ = availableEventsList_[index];
+
+                availableEventsList_.RemoveAt(index);
+            }
+            
+
+            EventDisplay.eventDisplay.gameObject.SetActive(true);
+
+            if (EventDisplay.eventDisplay)
+            {
+                EventDisplay.eventDisplay.SetEvent(currentEvent_);
+                EventDisplay.eventDisplay.Display();
+            }
+
+            eventActive = true;
+        }
+    }
+
+    public void EndEvent()
+    {
+
+        eventActive = false;
+        //Destroy(EventDisplay.eventDisplay.gameObject);
+        EventDisplay.eventDisplay.gameObject.SetActive(false);
     }
 
 }
