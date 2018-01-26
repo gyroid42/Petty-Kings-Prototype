@@ -56,14 +56,19 @@ public class EventController : MonoBehaviour {
     void Start ()
     {
 
+        // No event is active when event controller is created
         eventActive = false;
 	}
 
 
     void Update()
     {
+
+        // debug if mouse button is pressed start a new event
         if (Input.GetMouseButtonDown(0))
         {
+
+            // If no event is active start a new event
             if (!eventActive)
             {
                 StartEvent();
@@ -86,52 +91,58 @@ public class EventController : MonoBehaviour {
 
     public void ContinueButtonClicked()
     {
-        Debug.Log("this si happenienginei");
-        // foreach (Transform child in EventDisplay.eventDisplay.transform)
-        //{
-        //GameObject.Destroy(child.gameObject);
-        //}
+
+        // When continue button is pressed end the event
+        Debug.Log("Event has ended");
         EndEvent();
     }
 
 
+    // Method for starting a new event
     public void StartEvent()
     {
+
+        // If no event is currently active
         if (!eventActive)
         {
 
+            // Check for an event on the next event list
             if (nextEventList_.Count > 0)
             {
 
+                // If list isn't empty start next event
                 currentEvent_ = nextEventList_[0];
                 nextEventList_.RemoveAt(0);
             }
             else
             {
+
+                // If no events on next event list
+                // Get event a random event from available events list
                 int index = Random.Range(0, availableEventsList_.Count);
                 currentEvent_ = availableEventsList_[index];
-
                 availableEventsList_.RemoveAt(index);
             }
             
-
-            EventDisplay.eventDisplay.gameObject.SetActive(true);
-
+            // Make event display active and display the new event
             if (EventDisplay.eventDisplay)
             {
+                EventDisplay.eventDisplay.gameObject.SetActive(true);
                 EventDisplay.eventDisplay.SetEvent(currentEvent_);
                 EventDisplay.eventDisplay.Display();
             }
 
+            // Event Active flag is now true
             eventActive = true;
         }
     }
 
+
+    // Method for ending an event
     public void EndEvent()
     {
-
+        // Set that no event is active and make event display not active
         eventActive = false;
-        //Destroy(EventDisplay.eventDisplay.gameObject);
         EventDisplay.eventDisplay.gameObject.SetActive(false);
     }
 
