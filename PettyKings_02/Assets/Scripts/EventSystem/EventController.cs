@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,11 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
 
 
-    // List of available events
-    public List<Event> availableEventsList_;
-
-
-    // List of next events
-    public List<Event> nextEventList_;
+    // List of events
+    public List<Event> summerEventList_;
+    public List<Event> autumnEventList_;
+    public List<Event> winterEventList_;
+    public List<Event> springEventList_;
 
     // Current event
     public Event currentEvent_;
@@ -58,7 +58,13 @@ public class EventController : MonoBehaviour {
 
         // No event is active when event controller is created
         eventActive = false;
-	}
+
+        summerEventList_ = new List<Event>( Resources.LoadAll("Events/Summer", typeof(Event)).Cast<Event>().ToArray());
+        autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn", typeof(Event)).Cast<Event>().ToArray());
+        winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter", typeof(Event)).Cast<Event>().ToArray());
+        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
+
+    }
 
 
     void Update()
@@ -71,7 +77,7 @@ public class EventController : MonoBehaviour {
             // If no event is active start a new event
             if (!eventActive)
             {
-                StartEvent();
+                StartEvent(Season.SUMMER);
             }
         }
     }
@@ -99,30 +105,46 @@ public class EventController : MonoBehaviour {
 
 
     // Method for starting a new event
-    public void StartEvent()
+    public void StartEvent(Season season)
     {
 
         // If no event is currently active
         if (!eventActive)
         {
 
-            // Check for an event on the next event list
-            if (nextEventList_.Count > 0)
+            List<Event> eventList = null;
+            switch (season)
             {
+                case Season.SUMMER:
+                    eventList = summerEventList_;
+                    break;
+                case Season.AUTUMN:
+                    eventList = autumnEventList_;
+                    break;
+                case Season.WINTER:
+                    eventList = winterEventList_;
+                    break;
+                case Season.SPRING:
+                    eventList = springEventList_;
+                    break;
+            }
+            // Check for an event on the next event list
+            //if (eventList.Count > 0)
+            //{
 
                 // If list isn't empty start next event
-                currentEvent_ = nextEventList_[0];
-                nextEventList_.RemoveAt(0);
-            }
-            else
-            {
+            //    currentEvent_ = eventList[0];
+            //    eventList.RemoveAt(0);
+            //}
+            //else
+            //{
 
                 // If no events on next event list
                 // Get event a random event from available events list
-                int index = Random.Range(0, availableEventsList_.Count);
-                currentEvent_ = availableEventsList_[index];
-                availableEventsList_.RemoveAt(index);
-            }
+                int index = Random.Range(0, eventList.Count);
+                currentEvent_ = eventList[index];
+                eventList.RemoveAt(index);
+            //}
             
             // Make event display active and display the new event
             if (EventDisplay.eventDisplay)
