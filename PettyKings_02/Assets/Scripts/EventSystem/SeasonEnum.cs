@@ -4,8 +4,10 @@ using UnityEngine;
 
 public enum Season
 {
+    INTRO,
+    SPRING,
     SUMMER,
     AUTUMN,
     WINTER,
-    SPRING
+    SPRING2
 }

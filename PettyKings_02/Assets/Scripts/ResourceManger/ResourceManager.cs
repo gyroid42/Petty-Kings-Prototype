@@ -34,6 +34,15 @@ public class ResourceManager : MonoBehaviour {
     }
 
 
+    // Called when script is destroyed
+    void OnDestroy()
+    {
+
+        // when destroyed remove static reference to itself
+        resourceManager = null;
+    }
+
+
     // Use this for initialization
     void Start() {
 

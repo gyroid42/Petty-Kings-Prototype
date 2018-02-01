@@ -12,18 +12,26 @@ public class EventController : MonoBehaviour {
 
 
     // List of events
+    public List<Event> introductionEvents_;
+    public List<Event> springEventList_;
     public List<Event> summerEventList_;
     public List<Event> autumnEventList_;
     public List<Event> winterEventList_;
-    public List<Event> springEventList_;
+    public List<Event> springEventList2_;
 
     // Current event
     public Event currentEvent_;
 
+    // Current Season
+    public int currentSeason_;
+    public Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };
 
     // flag if event is active
-    bool eventActive;
+    bool eventActive_;
 
+
+    private Timer nextEventTimer_ = new Timer();
+    public float timeTillNextEvent_;
 
     // When object is created
     void Awake()
@@ -57,28 +65,52 @@ public class EventController : MonoBehaviour {
     {
 
         // No event is active when event controller is created
-        eventActive = false;
+        eventActive_ = false;
 
-        summerEventList_ = new List<Event>( Resources.LoadAll("Events/Summer", typeof(Event)).Cast<Event>().ToArray());
+        // Load all the events into the event lists
+        introductionEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
+        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
+        summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer", typeof(Event)).Cast<Event>().ToArray());
         autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn", typeof(Event)).Cast<Event>().ToArray());
         winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter", typeof(Event)).Cast<Event>().ToArray());
-        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
+        springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2", typeof(Event)).Cast<Event>().ToArray());
 
+
+        // Setup Event Timer
+        nextEventTimer_.SetTimer(timeTillNextEvent_, false);
+
+        // Set starting season to the intro
+        currentSeason_ = 0;
     }
 
 
     void Update()
     {
 
-        // debug if mouse button is pressed start a new event
-        if (Input.GetMouseButtonDown(0))
+        // If stage 2 is running
+        if (true)
         {
 
-            // If no event is active start a new event
-            if (!eventActive)
+            // Check if timer for next event has been triggered
+            if (nextEventTimer_.UpdateTimer() && !eventActive_) 
             {
-                StartEvent(Season.SUMMER);
+
+                // Goto the next season
+                currentSeason_++;
+                currentSeason_ %= seasonList_.Length;
+
+                // Start an event from that season
+                StartEvent(seasonList_[currentSeason_]);
             }
+
+            // If there are still introduction events and no event is active
+            if (introductionEvents_.Count > 0 && !eventActive_) 
+            {
+
+                // Start the next event from the intro
+                StartEvent(seasonList_[0]);
+            }
+
         }
     }
 
@@ -110,42 +142,41 @@ public class EventController : MonoBehaviour {
     {
 
         // If no event is currently active
-        if (!eventActive)
+        if (!eventActive_)
         {
 
-            List<Event> eventList = null;
+            // Bool to check if an event is even found
+            bool eventFound = false;
+
+            // Check the season and get event from appropriate list
             switch (season)
             {
+                case Season.SPRING:
+                    eventFound = GetRandomEvent(springEventList_);
+                    break;
                 case Season.SUMMER:
-                    eventList = summerEventList_;
+                    eventFound = GetRandomEvent(summerEventList_);
                     break;
                 case Season.AUTUMN:
-                    eventList = autumnEventList_;
+                    eventFound = GetRandomEvent(autumnEventList_);
                     break;
                 case Season.WINTER:
-                    eventList = winterEventList_;
+                    eventFound = GetRandomEvent(winterEventList_);
                     break;
-                case Season.SPRING:
-                    eventList = springEventList_;
+                case Season.SPRING2:
+                    eventFound = GetRandomEvent(springEventList2_);
                     break;
+                case Season.INTRO:
+                    eventFound = GetNextEvent(introductionEvents_);
+                    break;
+                
             }
-            // Check for an event on the next event list
-            //if (eventList.Count > 0)
-            //{
-
-                // If list isn't empty start next event
-            //    currentEvent_ = eventList[0];
-            //    eventList.RemoveAt(0);
-            //}
-            //else
-            //{
-
-                // If no events on next event list
-                // Get event a random event from available events list
-                int index = Random.Range(0, eventList.Count);
-                currentEvent_ = eventList[index];
-                eventList.RemoveAt(index);
-            //}
+            
+            // If no event was found leave the method
+            if (!eventFound)
+            {
+                return;
+            }
             
             // Make event display active and display the new event
             if (EventDisplay.eventDisplay)
@@ -156,8 +187,49 @@ public class EventController : MonoBehaviour {
             }
 
             // Event Active flag is now true
-            eventActive = true;
+            eventActive_ = true;
         }
+    }
+
+    bool GetRandomEvent(List<Event> eventList)
+    {
+
+        // If there are events in the list
+        if (eventList.Count > 0)
+        {
+
+            // Get a random event in the list
+            int index = Random.Range(0, eventList.Count);
+
+            // Set that to the current event
+            currentEvent_ = eventList[index];
+
+            // Remove the event from the list
+            eventList.RemoveAt(index);
+            return true;
+        }
+
+        // If no event is found return false
+        return false;
+    }
+
+    bool GetNextEvent(List<Event> eventList)
+    {
+
+        // If there are events in the list
+        if (eventList.Count > 0)
+        {
+
+            // Get next event in the list
+            currentEvent_ = eventList[0];
+
+            // Remove the event from the list
+            eventList.RemoveAt(0);
+            return true;
+        }
+
+        // If not event is found return false
+        return false;
     }
 
 
@@ -165,8 +237,17 @@ public class EventController : MonoBehaviour {
     public void EndEvent()
     {
         // Set that no event is active and make event display not active
-        eventActive = false;
+        eventActive_ = false;
         EventDisplay.eventDisplay.gameObject.SetActive(false);
+
+        // If the event was the last intro event
+        if (introductionEvents_.Count <= 0) 
+        {
+
+            // Start the timer between events
+            nextEventTimer_.Reset();
+            nextEventTimer_.SetActive(true);
+        }
     }
 
 }
