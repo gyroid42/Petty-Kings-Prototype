@@ -92,6 +92,7 @@ public class EventController : MonoBehaviour {
         if (EventDisplay.eventDisplay)
         {
             EventDisplay.eventDisplay.DisplayDecision(choice);
+            ResourceManager.resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
         }
     }
 

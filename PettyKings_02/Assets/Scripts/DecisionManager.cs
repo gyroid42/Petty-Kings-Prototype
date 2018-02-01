@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class DecisionManager : MonoBehaviour {
 
     public Text headTextBox;
@@ -73,3 +74,4 @@ public class DecisionManager : MonoBehaviour {
         DestroyObject(gameObject);
     }
 }
+*/
