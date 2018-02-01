@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class ResourceManager : MonoBehaviour {
 
     public int wood, food, men;
@@ -79,3 +80,4 @@ public class ResourceManager : MonoBehaviour {
         Debug.Log(dbgOut);
     }
 }
+*/
