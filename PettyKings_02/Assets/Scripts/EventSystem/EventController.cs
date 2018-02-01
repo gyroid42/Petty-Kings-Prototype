@@ -12,14 +12,19 @@ public class EventController : MonoBehaviour {
 
 
     // List of events
+    public List<Event> introductionEvents_;
+    public List<Event> springEventList_;
     public List<Event> summerEventList_;
     public List<Event> autumnEventList_;
     public List<Event> winterEventList_;
-    public List<Event> springEventList_;
+    public List<Event> springEventList2_;
 
     // Current event
     public Event currentEvent_;
 
+    // Current Season
+    public Season currentSeason_;
+    public Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };
 
     // flag if event is active
     bool eventActive;
@@ -59,10 +64,12 @@ public class EventController : MonoBehaviour {
         // No event is active when event controller is created
         eventActive = false;
 
+        introductionEvents_ = new List<Event>(Resources.LoadAll("Event/Introduction", typeof(Event)).Cast<Event>().ToArray());
+        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
         summerEventList_ = new List<Event>( Resources.LoadAll("Events/Summer", typeof(Event)).Cast<Event>().ToArray());
         autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn", typeof(Event)).Cast<Event>().ToArray());
         winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter", typeof(Event)).Cast<Event>().ToArray());
-        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
+        springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2", typeof(Event)).Cast<Event>().ToArray());
 
     }
 
@@ -112,40 +119,34 @@ public class EventController : MonoBehaviour {
         // If no event is currently active
         if (!eventActive)
         {
-
-            List<Event> eventList = null;
+            bool eventFound = false;
             switch (season)
             {
+                case Season.SPRING:
+                    eventFound = GetRandomEvent(springEventList_);
+                    break;
                 case Season.SUMMER:
-                    eventList = summerEventList_;
+                    eventFound = GetRandomEvent(summerEventList_);
                     break;
                 case Season.AUTUMN:
-                    eventList = autumnEventList_;
+                    eventFound = GetRandomEvent(autumnEventList_);
                     break;
                 case Season.WINTER:
-                    eventList = winterEventList_;
+                    eventFound = GetRandomEvent(winterEventList_);
                     break;
-                case Season.SPRING:
-                    eventList = springEventList_;
+                case Season.SPRING2:
+                    eventFound = GetRandomEvent(springEventList2_);
                     break;
+                case Season.INTRO:
+                    eventFound = GetNextEvent(introductionEvents_);
+                    break;
+                
             }
-            // Check for an event on the next event list
-            //if (eventList.Count > 0)
-            //{
-
-                // If list isn't empty start next event
-            //    currentEvent_ = eventList[0];
-            //    eventList.RemoveAt(0);
-            //}
-            //else
-            //{
-
-                // If no events on next event list
-                // Get event a random event from available events list
-                int index = Random.Range(0, eventList.Count);
-                currentEvent_ = eventList[index];
-                eventList.RemoveAt(index);
-            //}
+            
+            if (!eventFound)
+            {
+                return;
+            }
             
             // Make event display active and display the new event
             if (EventDisplay.eventDisplay)
@@ -158,6 +159,31 @@ public class EventController : MonoBehaviour {
             // Event Active flag is now true
             eventActive = true;
         }
+    }
+
+    bool GetRandomEvent(List<Event> eventList)
+    {
+        if (eventList.Count > 0)
+        {
+            int index = Random.Range(0, eventList.Count);
+            currentEvent_ = eventList[index];
+            eventList.RemoveAt(index);
+            return true;
+        }
+
+        return false;
+    }
+
+    bool GetNextEvent(List<Event> eventList)
+    {
+        if (eventList.Count > 0)
+        {
+            currentEvent_ = eventList[0];
+            eventList.RemoveAt(0);
+            return true;
+        }
+
+        return false;
     }
 
 
