@@ -146,9 +146,7 @@ public class EventDisplay : MonoBehaviour {
             newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
             newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
 
-            Debug.Log(i * newButton.GetComponent<RectTransform>().sizeDelta.x);
             newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x + btnPosX, btnPosY, 0);
-            Debug.Log(newButton.GetComponent<RectTransform>().anchoredPosition);
             
             // Add method that button calls when pressed
             int tempInt = i;
