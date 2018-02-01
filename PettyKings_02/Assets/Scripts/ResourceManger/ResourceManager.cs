@@ -45,9 +45,15 @@ public class ResourceManager : MonoBehaviour {
     {
 
         // Set each resource to default
-        wood_ = defaultWood;
-        food_ = defaultFood;
-        men_ = defaultMen;
+        SetResources(defaultFood, defaultWood, defaultMen);
+    }
+
+    void SetResources(int newFood, int newWood, int newMen)
+    {
+        food_ = newFood;
+        wood_ = newWood;
+        men_ = newMen;
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
 

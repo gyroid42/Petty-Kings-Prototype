@@ -44,8 +44,8 @@ public class ResourceDisplay : MonoBehaviour {
     {
 
         // Update each resource value
-        foodText.text = ResourceManager.resourceManager.GetFood().ToString();
-        woodText.text = ResourceManager.resourceManager.GetWood().ToString();
-        menText.text = ResourceManager.resourceManager.GetMen().ToString();
+        foodText.text = "Food: " + ResourceManager.resourceManager.GetFood().ToString();
+        woodText.text = "Wood: " + ResourceManager.resourceManager.GetWood().ToString();
+        menText.text = "Men: " + ResourceManager.resourceManager.GetMen().ToString();
     }
 }
