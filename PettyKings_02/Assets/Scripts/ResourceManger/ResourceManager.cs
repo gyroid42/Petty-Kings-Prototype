@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour {
 
-
+    // Public static reference to itself
     public static ResourceManager resourceManager;
 
+    // Resource variables
     private int wood_, food_, men_;
 
+    // Default values for resources when resources are reset
     public int defaultWood, defaultFood, defaultMen;
 
 
@@ -35,17 +37,21 @@ public class ResourceManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
-
+        Reset();
     }
 
+    // Uset to reset resources to default
     void Reset()
     {
+
+        // Set each resource to default
         wood_ = defaultWood;
         food_ = defaultFood;
         men_ = defaultMen;
     }
 
 
+    // Getter methods for resources
     public int GetFood()
     {
         return food_;
@@ -61,30 +67,41 @@ public class ResourceManager : MonoBehaviour {
         return men_;
     }
 
+
+    // Update methods for resources
     public void UpdateFood(int newFood)
     {
+        // Update food value and display
         food_ += newFood;
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateWood(int newWood)
     {
+        // Update wood value and display
         wood_ += newWood;
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateMen(int newMen)
     {
+        // Update men value and display
         men_ += newMen;
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResources(int newFood = 0, int newWood = 0, int newMen = 0)
     {
+        // Update resource values and display
         food_ += newFood;
         wood_ += newWood;
         men_ += newMen;
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResources(int[] newResources)
     {
+        // Update resource values and display
         food_ += newResources[0];
         if (newResources.Length > 1)
         {
@@ -95,10 +112,13 @@ public class ResourceManager : MonoBehaviour {
                 men_ += newResources[2];
             }
         }
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResource(Resource resource, int value)
     {
+        // Check which resource is being updated
+        // Update that resource and display
         switch (resource)
         {
             case Resource.FOOD:
@@ -113,7 +133,6 @@ public class ResourceManager : MonoBehaviour {
             default:
                 break;
         }
+        ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
-
-
 }
