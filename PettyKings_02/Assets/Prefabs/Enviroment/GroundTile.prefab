@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4876649697522736}
-  - component: {fileID: 33174053493628804}
   - component: {fileID: 23179437582008514}
   - component: {fileID: 114811393638384520}
   - component: {fileID: 65400053197827330}
+  - component: {fileID: 33284036001844712}
   m_Layer: 0
   m_Name: GroundTile
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1801637338089082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33174053493628804
+--- !u!33 &33284036001844712
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,8 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbc1264100ba594b9acaac12e6fc960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileWidth: 1
-  tileLength: 1
   isWalkable: 0
   materialGreen: {fileID: 2100000, guid: da7d188c9dc1c594993653896e401fe1, type: 2}
   materialRed: {fileID: 2100000, guid: f8ff44278f99fd24c989e0a24279d7c8, type: 2}

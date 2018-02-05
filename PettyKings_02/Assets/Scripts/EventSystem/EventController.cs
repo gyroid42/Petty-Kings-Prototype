@@ -22,6 +22,7 @@ public class EventController : MonoBehaviour {
     // Current event
     public Event currentEvent_;
 
+  
     // Current Season
     public int currentSeason_;
     public Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };

@@ -36,7 +36,6 @@ public class EventDisplay : MonoBehaviour {
     public float btnPosY  = -300;
     public float btnPosX  = 0;
 
-
     // When object is created
     void Awake()
     {
@@ -141,6 +140,7 @@ public class EventDisplay : MonoBehaviour {
             GameObject newButton = (GameObject)Instantiate(prefabButton);
             newButton.transform.SetParent(GetComponent<RectTransform>(), false);
             newButton.transform.localScale = new Vector3(1, 1, 1);
+          
             newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((btnSizeX / decisionText.Length), btnSizeY);
             newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
             newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
