@@ -34,4 +34,14 @@ public class Event : ScriptableObject {
         Debug.Log(name + ": " + description_);
     }
 
+    // Returns Resources from a choice
+    public int[] GetDecisionResources(int choice)
+    {
+        int[] resources = new int[3];
+        resources[0] = decisionFood_[choice];
+        resources[1] = decisionWood_[choice];
+        resources[2] = decisionMen_[choice];
+        return resources;
+    }
+
 }
