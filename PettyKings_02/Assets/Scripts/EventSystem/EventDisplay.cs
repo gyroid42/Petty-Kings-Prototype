@@ -30,6 +30,12 @@ public class EventDisplay : MonoBehaviour {
     public RawImage artworkImage_;
 
 
+    // Button variable
+    public float btnSizeX = 500;
+    public float btnSizeY = 50;
+    public float btnPosY  = -300;
+    public float btnPosX  = 0;
+
     // When object is created
     void Awake()
     {
@@ -134,11 +140,13 @@ public class EventDisplay : MonoBehaviour {
             GameObject newButton = (GameObject)Instantiate(prefabButton);
             newButton.transform.SetParent(GetComponent<RectTransform>(), false);
             newButton.transform.localScale = new Vector3(1, 1, 1);
-            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((500 / decisionText.Length), 50);
-            newButton.GetComponent<RectTransform>().position = new Vector3(0.0f, 0.0f, 0.0f);
+          
+            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((btnSizeX / decisionText.Length), btnSizeY);
+            newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
+            newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
+            newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
 
-            newButton.GetComponent<RectTransform>().localPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x - 250, -125, 0);
-
+            newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x + btnPosX, btnPosY, 0);
             
             // Add method that button calls when pressed
             int tempInt = i;
@@ -160,10 +168,13 @@ public class EventDisplay : MonoBehaviour {
         GameObject newButton = (GameObject)Instantiate(prefabButton);
         newButton.transform.SetParent(GetComponent<RectTransform>(), false);
         newButton.transform.localScale = new Vector3(1, 1, 1);
-        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 50);
-        newButton.GetComponent<RectTransform>().position = new Vector3(0.0f, 0.0f, 0.0f);
+        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
+        newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
+        newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
+        newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
 
-        newButton.GetComponent<RectTransform>().localPosition = new Vector3(-250, -125, 0);
+
+        newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
 
         newButton.GetComponentInChildren<Text>().text = "continue!";
 
