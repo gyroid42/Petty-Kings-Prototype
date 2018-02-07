@@ -20,9 +20,9 @@ public class BuildingController : MonoBehaviour {
         artwork_.sprite = building_.artwork_;
 
         nameText_.text = building_.name_;
-        foodText_.text = building_.foodCost_.ToString();
-        woodText_.text = building_.woodCost_.ToString();
-        menText_.text = building_.menCost_.ToString();
+        foodText_.text = "Food: " + building_.foodCost_.ToString();
+        woodText_.text = "Wood: " + building_.woodCost_.ToString();
+        menText_.text = "Men: " + building_.menCost_.ToString();
         
     }
 
