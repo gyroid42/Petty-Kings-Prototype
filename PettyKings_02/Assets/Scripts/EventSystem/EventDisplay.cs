@@ -132,29 +132,56 @@ public class EventDisplay : MonoBehaviour {
         // Remove all the buttons from the previous screen
         DestroyButtons();
 
-        // Loop for each decision option
-        for (int i = 0; i < decisionText.Length; i++)
+        // If no decisions then display a continue button
+        if (decisionText.Length <= 0)
         {
-
-            // Create a button for each option and set the buttons position from the number of buttons and size of screen
+            // Create a continue button
             GameObject newButton = (GameObject)Instantiate(prefabButton);
             newButton.transform.SetParent(GetComponent<RectTransform>(), false);
             newButton.transform.localScale = new Vector3(1, 1, 1);
-          
-            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((btnSizeX / decisionText.Length), btnSizeY);
+            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
             newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
             newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
             newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
 
-            newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x + btnPosX, btnPosY, 0);
-            
-            // Add method that button calls when pressed
-            int tempInt = i;
-            newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
-            newButton.GetComponentInChildren<Text>().text = decisionText[i];
 
-            // Add the new button to the list of buttons
+            newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
+
+            newButton.GetComponentInChildren<Text>().text = "continue!";
+
+
+            // Add method that button calls when pressed
+            newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+
+            // Add the button to the list of buttons
             buttons_.Add(newButton.GetComponent<Button>());
+        }
+        else
+        {
+            // Loop for each decision option
+            for (int i = 0; i < decisionText.Length; i++)
+            {
+
+                // Create a button for each option and set the buttons position from the number of buttons and size of screen
+                GameObject newButton = (GameObject)Instantiate(prefabButton);
+                newButton.transform.SetParent(GetComponent<RectTransform>(), false);
+                newButton.transform.localScale = new Vector3(1, 1, 1);
+
+                newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((btnSizeX / decisionText.Length), btnSizeY);
+                newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
+                newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
+                newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
+
+                newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x + btnPosX, btnPosY, 0);
+
+                // Add method that button calls when pressed
+                int tempInt = i;
+                newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
+                newButton.GetComponentInChildren<Text>().text = decisionText[i];
+
+                // Add the new button to the list of buttons
+                buttons_.Add(newButton.GetComponent<Button>());
+            }
         }
     }
 

@@ -31,7 +31,7 @@ public class Event : ScriptableObject {
     {
 
         // Displays information about event to debug log
-        Debug.Log(name + ": " + description_);
+        Debug.Log(name_ + ": " + description_);
     }
 
     // Returns Resources from a choice
