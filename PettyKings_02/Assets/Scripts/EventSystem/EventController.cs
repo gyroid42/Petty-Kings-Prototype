@@ -251,4 +251,9 @@ public class EventController : MonoBehaviour {
         }
     }
 
+
+    public bool EventActive()
+    {
+        return eventActive_;
+    }
 }
