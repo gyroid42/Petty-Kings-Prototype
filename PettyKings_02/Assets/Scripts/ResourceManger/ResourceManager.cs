@@ -65,7 +65,6 @@ public class ResourceManager : MonoBehaviour {
         ResourceDisplay.resourceDisplay.UpdateDisplay();
     }
 
-
     // Getter methods for resources
     public int GetFood()
     {
@@ -82,6 +81,26 @@ public class ResourceManager : MonoBehaviour {
         return men_;
     }
 
+    public int GetResource(Resource resource)
+    {
+        switch (resource)
+        {
+            case Resource.FOOD:
+                return food_;
+            case Resource.WOOD:
+                return wood_;
+            case Resource.MEN:
+                return men_;
+            default:
+                return 0;
+        }
+    }
+
+    public int[] GetResources()
+    {
+        int[] resources = new int[3] { food_, wood_, men_ };
+        return resources;
+    }
 
     // Update methods for resources
     public void UpdateFood(int newFood)
@@ -149,5 +168,25 @@ public class ResourceManager : MonoBehaviour {
                 break;
         }
         ResourceDisplay.resourceDisplay.UpdateDisplay();
+    }
+
+
+
+    // Check if purchase can be made with cost
+    public bool CanPurchase(int[] cost)
+    {
+
+        // Check if cost array has all the resources
+        if (cost.Length >= 3)
+        {
+
+            // Check if there are enough resources for the cost and return the result
+            if (cost[0] <= food_ && cost[1] <= wood_ && cost[2] <= men_)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
