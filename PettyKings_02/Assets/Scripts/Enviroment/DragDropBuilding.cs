@@ -63,13 +63,17 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         if (hit.collider.tag == "Walkable") //if its a walkable tile allow placement
         {
-            modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y /2), hit.collider.transform.position.z); //terrain height is taken into account allowing for building ontop of mounds
+            modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y /2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
+            hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false; //change colour of tile after building is placed
+            hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
+            
         }
         else
         {
             Destroy(modelClone); //destroy the gameobject being dragged
         }
 
+        
         //reset the thickness of shading line therefor hiding the grid
         foreach (GameObject i in walkableTiles)
         {

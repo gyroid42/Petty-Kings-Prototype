@@ -12,6 +12,16 @@ public class GroundTileMesh : MonoBehaviour {
     public Material materialRed;
 	// Use this for initialization
 	void Start () {
+
+        if(isWalkable) //set tag based on bool variable, should save some time in editor
+        {
+            gameObject.tag = "Walkable";
+        }
+        else if (!isWalkable)
+        {
+            gameObject.tag = "NotWalkable";
+        }
+       
         Mesh mesh = new Mesh();
        
         Vector3[] vertices = new Vector3[4];
@@ -62,8 +72,25 @@ public class GroundTileMesh : MonoBehaviour {
         }
 
         //set thickness of highlight to 0 at run time, this allows for easier editing
-        //GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
+        //**GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
     }
+
+
+    private void Update()
+    {
+        if (isWalkable)
+        {
+            GetComponent<Renderer>().material = materialGreen;
+        }
+        else
+        {
+            GetComponent<Renderer>().material = materialRed;
+        }
+
+    }
+
+   
+
 
     //**COMMENTED OUT FOR FURTHER DESIGN DISCUSSIONS**//
 
