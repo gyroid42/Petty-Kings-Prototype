@@ -49,15 +49,17 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         //cast ray
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out hit, 100.0f);
-
-        if(hit.collider.tag == "Walkable") //if the tile is walkable snap to position else allow free dragging
+        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) && hit.collider.tag == "Walkable")
         {
-            modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z); 
+
+            modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);
         }
         else
         {
-            modelClone.transform.position = new Vector3(hit.point.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.point.z);
+            if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Terrain")))
+            {
+                modelClone.transform.position = new Vector3(hit.point.x, Terrain.activeTerrain.SampleHeight(hit.point) + (modelClone.transform.lossyScale.y / 2), hit.point.z);
+            }
         }
         
     }
@@ -66,9 +68,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         //cast ray from mouse position
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out hit, 100.0f);
-
-        if (hit.collider.tag == "Walkable" && buildingController_.Purchase()) //if its a walkable tile allow placement
+        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) && hit.collider.tag == "Walkable" && buildingController_.Purchase())
         {
 
             modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z); //terrain height is taken into account allowing for building ontop of mounds
