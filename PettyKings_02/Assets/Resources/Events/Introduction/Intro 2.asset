@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: spring
+  m_Name: Intro 2
   m_EditorClassIdentifier: 
-  name_: spring
+  name_: 
   artwork_: {fileID: 0}
-  description_: it's spring
+  description_: 
   decisionText_:
   - 
   - 

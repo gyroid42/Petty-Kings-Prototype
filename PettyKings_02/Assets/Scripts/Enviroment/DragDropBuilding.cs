@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
-    public GameObject model; //for use in editor
     private GameObject modelClone; //variable to hold clone of desired gameobject 
 
     private BuildingController buildingController_;
@@ -21,11 +20,12 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     void Start()
     {
         buildingController_ = GetComponent<BuildingController>();
+
     }
 
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
     {
-       modelClone = Instantiate(model); //instantiate a clone of desired gameobject
+       modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
 
        //add all the tiles to the gameobject arrays
         walkableTiles = GameObject.FindGameObjectsWithTag("Walkable");
