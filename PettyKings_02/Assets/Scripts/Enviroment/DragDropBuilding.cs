@@ -58,7 +58,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("Terrain")))
             {
-                modelClone.transform.position = new Vector3(hit.point.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.point.z);
+                modelClone.transform.position = new Vector3(hit.point.x, Terrain.activeTerrain.SampleHeight(hit.point) + (modelClone.transform.lossyScale.y / 2), hit.point.z);
             }
         }
         
