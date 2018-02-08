@@ -18,6 +18,9 @@ public class Building : ScriptableObject {
     public int woodCost_;
     public int menCost_;
 
+    // Building size
+    public int[] size = new int[2];
+
 
 
     // Print method for debugging
