@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Name: ChiefHut
   m_EditorClassIdentifier: 
   name_: Chief Hut
-  artwork_: {fileID: 2800000, guid: a6c8b97e65ce02740a17cb72472a5713, type: 3}
+  artwork_: {fileID: 0}
   buildingModel_: {fileID: 100298, guid: efa2a4dd245002e48a7c9defc5562a70, type: 3}
   foodCost_: 50
   woodCost_: 100
   menCost_: 2
-  size: 0000000000000000

@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d591788d7dc3333459944af81781f440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultWood: 200
-  defaultFood: 200
-  defaultMen: 200
+  defaultWood: 10
+  defaultFood: 10
+  defaultMen: 10
