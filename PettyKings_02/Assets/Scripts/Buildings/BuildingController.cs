@@ -11,13 +11,13 @@ public class BuildingController : MonoBehaviour {
 
     // UI elements
     public Text nameText_, foodText_, woodText_, menText_;
-    public RawImage artwork_;
+    public Image artwork_;
 
     // Use this for initialization
     void Start () {
 
         // Set the UI elements to the info in the building scriptable object
-        artwork_.texture = building_.artwork_;
+        artwork_.sprite = building_.artwork_;
 
         nameText_.text = building_.name_;
         foodText_.text = "Food: " + building_.foodCost_.ToString();

@@ -10,7 +10,7 @@ public class Building : ScriptableObject {
 
     // Information about building
     public string name_;
-    public Texture artwork_;
+    public Sprite artwork_;
     public GameObject buildingModel_;
 
     // Cost of the building
