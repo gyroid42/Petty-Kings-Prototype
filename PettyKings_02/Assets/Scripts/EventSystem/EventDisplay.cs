@@ -124,6 +124,16 @@ public class EventDisplay : MonoBehaviour {
         CreateDecisionButtons(newEvent.decisionText_);
     }
 
+    public void DisplaySeasonStart()
+    {
+        nameText_.text = event_.name_;
+        descriptionText_.text = event_.description_;
+        artworkImage_.texture = event_.artwork_;
+
+
+        CreateBeginSeasonButton();
+    }
+
 
     // Set function for each button
     void CreateDecisionButtons(string[] decisionText)
@@ -208,6 +218,33 @@ public class EventDisplay : MonoBehaviour {
 
         // Add method that button calls when pressed
         newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+
+        // Add the button to the list of buttons
+        buttons_.Add(newButton.GetComponent<Button>());
+    }
+
+    void CreateBeginSeasonButton()
+    {
+        // Remove all the buttons from the previous screen
+        DestroyButtons();
+
+        // Create a continue button
+        GameObject newButton = (GameObject)Instantiate(prefabButton);
+        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
+        newButton.transform.localScale = new Vector3(1, 1, 1);
+        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
+        newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
+        newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
+        newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
+
+
+        newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
+
+        newButton.GetComponentInChildren<Text>().text = "Start Season";
+
+
+        // Add method that button calls when pressed
+        newButton.GetComponent<Button>().onClick.AddListener(() => eventController.StartSeasonButtonClicked());
 
         // Add the button to the list of buttons
         buttons_.Add(newButton.GetComponent<Button>());

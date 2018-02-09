@@ -19,6 +19,8 @@ public class EventController : MonoBehaviour {
     public List<Event> winterEventList_;
     public List<Event> springEventList2_;
 
+    public List<Event> seasonStartEvents_;
+
     // Current event
     public Event currentEvent_;
 
@@ -96,12 +98,13 @@ public class EventController : MonoBehaviour {
             if (nextEventTimer_.UpdateTimer() && !eventActive_) 
             {
 
+                ChangeSeason();
                 // Goto the next season
-                currentSeason_++;
-                currentSeason_ %= seasonList_.Length;
+                //currentSeason_++;
+                //currentSeason_ %= seasonList_.Length;
 
                 // Start an event from that season
-                StartEvent(seasonList_[currentSeason_]);
+                //StartEvent();
             }
 
             // If there are still introduction events and no event is active
@@ -109,9 +112,34 @@ public class EventController : MonoBehaviour {
             {
 
                 // Start the next event from the intro
-                StartEvent(seasonList_[0]);
+                StartEvent();
             }
 
+        }
+    }
+
+
+    void ChangeSeason()
+    {
+
+        currentSeason_++;
+        currentSeason_ %= seasonList_.Length;
+
+
+        if (!eventActive_)
+        {
+            if (EventDisplay.eventDisplay != null)
+            {
+
+
+                currentEvent_ = seasonStartEvents_[currentSeason_];
+
+                EventDisplay.eventDisplay.gameObject.SetActive(true);
+                EventDisplay.eventDisplay.SetEvent(currentEvent_);
+                EventDisplay.eventDisplay.DisplaySeasonStart();
+            }
+
+            eventActive_ = true;
         }
     }
 
@@ -134,23 +162,29 @@ public class EventController : MonoBehaviour {
 
         // When continue button is pressed end the event
         Debug.Log("Event has ended");
-        EndEvent();
+        eventController.EndEvent();
+    }
+
+    public void StartSeasonButtonClicked()
+    {
+        Debug.Log("start of season clicked");
+        eventController.StartEvent();
     }
 
 
     // Method for starting a new event
-    public void StartEvent(Season season)
+    public void StartEvent()
     {
 
         // If no event is currently active
-        if (!eventActive_)
-        {
+        //if (!eventActive_)
+        //{
 
             // Bool to check if an event is even found
             bool eventFound = false;
 
             // Check the season and get event from appropriate list
-            switch (season)
+            switch (seasonList_[currentSeason_])
             {
                 case Season.SPRING:
                     eventFound = GetRandomEvent(springEventList_);
@@ -180,7 +214,7 @@ public class EventController : MonoBehaviour {
             }
             
             // Make event display active and display the new event
-            if (EventDisplay.eventDisplay)
+            if (EventDisplay.eventDisplay != null)
             {
                 EventDisplay.eventDisplay.gameObject.SetActive(true);
                 EventDisplay.eventDisplay.SetEvent(currentEvent_);
@@ -189,7 +223,7 @@ public class EventController : MonoBehaviour {
 
             // Event Active flag is now true
             eventActive_ = true;
-        }
+        //}
     }
 
     bool GetRandomEvent(List<Event> eventList)

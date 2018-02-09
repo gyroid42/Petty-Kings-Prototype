@@ -9,20 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: spring
+  m_Name: Autumn
   m_EditorClassIdentifier: 
-  name_: spring
+  name_: Autumn
   artwork_: {fileID: 0}
-  description_: it's spring
-  decisionText_:
-  - 
-  - 
-  decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
-  decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  description_: Summer is now gone, you must prepare in time before winter arrives!
+  decisionText_: []
+  decisionArt_: []
+  decisionDesc_: []
+  decisionFood_: 
+  decisionWood_: 
+  decisionMen_: 
