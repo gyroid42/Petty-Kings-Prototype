@@ -11,18 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: Summer
   m_EditorClassIdentifier: 
-  name_: 
+  name_: Summer
   artwork_: {fileID: 0}
-  description_: 
-  decisionText_:
-  - 
-  - 
-  decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
-  decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  description_: Summer has begun, the most sweatastic time of year
+  decisionText_: []
+  decisionArt_: []
+  decisionDesc_: []
+  decisionFood_: 
+  decisionWood_: 
+  decisionMen_: 

@@ -17,10 +17,17 @@ MonoBehaviour:
   decisionText_:
   - do it real good
   - do not do it
+  - do not do it
   decisionArt_:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
   - you done it too good and suffered the consequences
   - you done it so bad it became good and you created a new world of which you rule
     with ultimate power
+  - you done it so bad it became good and you created a new world of which you rule
+    with ultimate power
+  decisionFood_: 000000000000000000000000
+  decisionWood_: 000000000000000000000000
+  decisionMen_: 000000000000000000000000

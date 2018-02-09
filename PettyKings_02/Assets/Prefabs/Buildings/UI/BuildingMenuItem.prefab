@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 114980712211372148}
   - component: {fileID: 114060673124144342}
   m_Layer: 5
-  m_Name: ChiefHut
+  m_Name: BuildingMenuItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 100298, guid: efa2a4dd245002e48a7c9defc5562a70, type: 3}
 --- !u!222 &222185016874534064
 CanvasRenderer:
   m_ObjectHideFlags: 1

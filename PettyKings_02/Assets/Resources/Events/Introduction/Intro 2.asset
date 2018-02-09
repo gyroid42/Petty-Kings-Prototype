@@ -11,18 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: Intro 2
   m_EditorClassIdentifier: 
-  name_: 
-  artwork_: {fileID: 0}
-  description_: 
-  decisionText_:
-  - 
-  - 
-  decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
-  decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  name_: Introduction
+  artwork_: {fileID: 2800000, guid: dca2cdb88cbb2d2419fe9fa89f2137c3, type: 3}
+  description_: You need to build up your village over the next year
+  decisionText_: []
+  decisionArt_: []
+  decisionDesc_: []
+  decisionFood_: 
+  decisionWood_: 
+  decisionMen_: 
