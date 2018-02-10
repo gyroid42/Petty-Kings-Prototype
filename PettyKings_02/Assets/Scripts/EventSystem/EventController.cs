@@ -12,22 +12,28 @@ public class EventController : MonoBehaviour {
 
 
     // List of events
-    public List<Event> introductionEvents_;
-    public List<Event> springEventList_;
-    public List<Event> summerEventList_;
-    public List<Event> autumnEventList_;
-    public List<Event> winterEventList_;
-    public List<Event> springEventList2_;
+    private List<Event> introductionEvents_;
+    private List<Event> springEventList_;
+    private List<Event> summerEventList_;
+    private List<Event> autumnEventList_;
+    private List<Event> winterEventList_;
+    private List<Event> springEventList2_;
 
-    public List<Event> seasonStartEvents_;
+
+    private List<Event> springIntroEvents_;
+    private List<Event> summerIntroEvents_;
+    private List<Event> autumnIntroEvents_;
+    private List<Event> winterIntroEvents_;
+    private List<Event> spring2IntroEvents_;
+
 
     // Current event
-    public Event currentEvent_;
+    private Event currentEvent_;
 
   
     // Current Season
-    public int currentSeason_;
-    public Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };
+    private int currentSeason_;
+    private Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };
 
     // flag if event is active
     bool eventActive_;
@@ -72,12 +78,18 @@ public class EventController : MonoBehaviour {
 
         // Load all the events into the event lists
         introductionEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
-        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring", typeof(Event)).Cast<Event>().ToArray());
-        summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer", typeof(Event)).Cast<Event>().ToArray());
-        autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn", typeof(Event)).Cast<Event>().ToArray());
-        winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter", typeof(Event)).Cast<Event>().ToArray());
-        springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2", typeof(Event)).Cast<Event>().ToArray());
+        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring/Random", typeof(Event)).Cast<Event>().ToArray());
+        summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer/Random", typeof(Event)).Cast<Event>().ToArray());
+        autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn/Random", typeof(Event)).Cast<Event>().ToArray());
+        winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter/Random", typeof(Event)).Cast<Event>().ToArray());
+        springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2/Random", typeof(Event)).Cast<Event>().ToArray());
 
+
+        springIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring/Intro", typeof(Event)).Cast<Event>().ToArray());
+        summerIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Summer/Intro", typeof(Event)).Cast<Event>().ToArray());
+        autumnIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Autumn/Intro", typeof(Event)).Cast<Event>().ToArray());
+        winterIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Winter/Intro", typeof(Event)).Cast<Event>().ToArray());
+        spring2IntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring2/Intro", typeof(Event)).Cast<Event>().ToArray());
 
         // Setup Event Timer
         nextEventTimer_.SetTimer(timeTillNextEvent_, false);
@@ -131,12 +143,12 @@ public class EventController : MonoBehaviour {
             if (EventDisplay.eventDisplay != null)
             {
 
-
-                currentEvent_ = seasonStartEvents_[currentSeason_];
-
-                EventDisplay.eventDisplay.gameObject.SetActive(true);
-                EventDisplay.eventDisplay.SetEvent(currentEvent_);
-                EventDisplay.eventDisplay.DisplaySeasonStart();
+                if (!GotoNextIntroEvent())
+                {
+                    StartEvent();
+                }
+                
+                
             }
 
             eventActive_ = true;
@@ -168,7 +180,14 @@ public class EventController : MonoBehaviour {
     public void StartSeasonButtonClicked()
     {
         Debug.Log("start of season clicked");
-        eventController.StartEvent();
+        if (GotoNextIntroEvent())
+        {
+            eventController.GotoNextIntroEvent();
+        }
+        else
+        {
+            eventController.StartEvent();
+        }
     }
 
 
@@ -224,6 +243,48 @@ public class EventController : MonoBehaviour {
             // Event Active flag is now true
             eventActive_ = true;
         //}
+    }
+
+    private bool GotoNextIntroEvent()
+    {
+
+        bool eventFound = false;
+
+        switch (seasonList_[currentSeason_])
+        {
+            case Season.SPRING:
+                eventFound = GetNextEvent(springIntroEvents_);
+                break;
+            case Season.SUMMER:
+                eventFound = GetNextEvent(summerIntroEvents_);
+                break;
+            case Season.AUTUMN:
+                eventFound = GetNextEvent(autumnIntroEvents_);
+                break;
+            case Season.WINTER:
+                eventFound = GetNextEvent(winterIntroEvents_);
+                break;
+            case Season.SPRING2:
+                eventFound = GetNextEvent(spring2IntroEvents_);
+                break;
+            case Season.INTRO:
+                eventFound = GetNextEvent(introductionEvents_);
+                break;
+
+        }
+
+        if (!eventFound)
+        {
+            return false;
+        }
+
+        if (EventDisplay.eventDisplay != null)
+        {
+            EventDisplay.eventDisplay.gameObject.SetActive(true);
+            EventDisplay.eventDisplay.SetEvent(currentEvent_);
+            EventDisplay.eventDisplay.DisplaySeasonStart();
+        }
+        return true;
     }
 
     bool GetRandomEvent(List<Event> eventList)
