@@ -11,18 +11,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: autumn
   m_EditorClassIdentifier: 
-  name_: it's autumn
+  name_: Autumn
   artwork_: {fileID: 0}
-  description_: autumn bois
+  description_: Its time to begin hunting dear my lord. Should we stay close to the
+    encamptment or should we venture into the forrests?
   decisionText_:
-  - 
-  - 
+  - Go to Forrests
+  - Stay Close
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  - "Cernunnos was not pleased we ventured into his sacred forrest and we have lost
+    people but gained wood from his tree's. Many\r of your men have proved themselves
+    to be strong warriors and able horsemen.\r We will need these men as the Roman\u2019s
+    approach ever closer to our lands!"
+  - "Cernunnos has been kind to us and the warriors have had a successful hunt! Many\r
+    of your men have proved themselves to be strong warriors and able horsemen.\r
+    We will need these men as the Roman\u2019s approach ever closer to our lands.\r\n"
+  decisionFood_: 0a0000000a000000
+  decisionWood_: 0a00000000000000
+  decisionMen_: f6ffffff00000000

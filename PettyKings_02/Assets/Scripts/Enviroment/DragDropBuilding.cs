@@ -34,12 +34,12 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         //set thickness of shading line to 4, showing the grid to player
         foreach (GameObject i in walkableTiles)
         {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 4.0f);
+            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 3.0f);
         }
 
         foreach (GameObject i in notwalkableTiles)
         {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 4.0f);
+            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 5.0f);
         }
 
 

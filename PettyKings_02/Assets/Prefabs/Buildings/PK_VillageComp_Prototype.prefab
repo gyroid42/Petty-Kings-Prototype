@@ -1552,9 +1552,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4645766548821502}
   - component: {fileID: 95523413665264366}
+  - component: {fileID: 208869354046260504}
   m_Layer: 0
   m_Name: PK_VillageComp_Prototype
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6372,3 +6373,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &208869354046260504
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490791746912540}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4, y: 1.5, z: 3.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.7, y: 1.5, z: -1.5}
+  m_TimeToStationary: 0.5
