@@ -11,18 +11,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: winter
   m_EditorClassIdentifier: 
-  name_: winter
+  name_: Winter
   artwork_: {fileID: 0}
-  description_: it's winfdkjskljdfkls
+  description_: Winter is upon us my lord! Should we continue hunting or start to
+    store food for the long winter to come?
   decisionText_:
-  - 
-  - 
+  - Preserve Food
+  - Keep Hunting
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
+  - "The queen of winter Cailleach, has brought us a harsh winter this year. Resources
+    \rwill have to be preserved and men sheltered, we have lost some people to the
+    cold, but fear not my lord all is not bad.\r The harsh winter and rocky landscapes
+    will definitely aid us in battle!\r"
+  - "The queen of winter Cailleach, has brought us a harsh winter this year. We have
+    lost good warriors to the cold but we have managed to gain more food! Fear not
+    my lord all is not bad.\r The harsh winter and rocky landscapes will definitely
+    aid us in battle!\r"
+  decisionFood_: 000000000a000000
   decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  decisionMen_: fdfffffff6ffffff

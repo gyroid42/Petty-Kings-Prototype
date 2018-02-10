@@ -11,9 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: Intro 1
   m_EditorClassIdentifier: 
-  name_: intro 1
+  name_: Welcome, King
   artwork_: {fileID: 0}
-  description_: here's an intro my man
+  description_: "Ahh welcome back young king! It has been a while since you were sent
+    away to become a warrior. The druids tell me you are a fearsome opponent,\r much
+    like your father. The bards will tell great tales of your father\u2019s reign!
+    But\r now it is you who must lead your warriors. With the Roman and Christian
+    invasion threatening our very existent you are the last hope to defend our kingdom!\r"
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []
