@@ -68,12 +68,19 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         //cast ray from mouse position
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) && hit.collider.tag == "Walkable" && buildingController_.Purchase())
+        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) )
         {
-            modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y /2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
-            hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false; //change colour of tile after building is placed
-            hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
+            if (hit.collider.tag == "Walkable" && buildingController_.Purchase())
+            {
+                modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
+                hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false; //change colour of tile after building is placed
+                hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
+            }
             
+            else
+            {
+                Destroy(modelClone);
+            }
         }
         else
         {
@@ -84,6 +91,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         //reset the thickness of shading line therefor hiding the grid
         foreach (GameObject i in walkableTiles)
         {
+            Debug.Log(i.name);
             i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
         }
 
