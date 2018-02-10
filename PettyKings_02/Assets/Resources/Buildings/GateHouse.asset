@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7207e89b80c6ba64c8943393fc8622cc, type: 3}
   m_Name: GateHouse
   m_EditorClassIdentifier: 
-  name_: 
+  name_: Gate House
   artwork_: {fileID: 0}
-  buildingModel_: {fileID: 0}
+  buildingModel_: {fileID: 100000, guid: c6deb1b867c6304488c2d344d9b2a7de, type: 3}
   foodCost_: 0
   woodCost_: 0
   menCost_: 0
