@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 114009700520212156}
   - component: {fileID: 114861924505784750}
   - component: {fileID: 114012904557808280}
+  - component: {fileID: 114493171617649362}
+  - component: {fileID: 114628224144237232}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -282,6 +284,8 @@ GameObject:
   - component: {fileID: 114287173999997450}
   - component: {fileID: 114535151644250300}
   - component: {fileID: 114153483866545386}
+  - component: {fileID: 114800927376987220}
+  - component: {fileID: 114975013686896558}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -315,8 +319,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224585422704095770}
   - component: {fileID: 222746533594908604}
-  - component: {fileID: 114537712890905544}
-  - component: {fileID: 114916138780200874}
   m_Layer: 5
   m_Name: Palisade
   m_TagString: Untagged
@@ -350,8 +352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224069592085883648}
   - component: {fileID: 222534722900109246}
-  - component: {fileID: 114953260732572800}
-  - component: {fileID: 114337038021476778}
   m_Layer: 5
   m_Name: ChiefHall
   m_TagString: Untagged
@@ -423,8 +423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224203595923526520}
   - component: {fileID: 222012038162047092}
-  - component: {fileID: 114204972587937614}
-  - component: {fileID: 114458882075930862}
   m_Layer: 5
   m_Name: HunterHut
   m_TagString: Untagged
@@ -596,8 +594,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224913406556128616}
   - component: {fileID: 222571796104106920}
-  - component: {fileID: 114945787032175652}
-  - component: {fileID: 114478975409769434}
   m_Layer: 5
   m_Name: GateHouse
   m_TagString: Untagged
@@ -668,6 +664,8 @@ GameObject:
   - component: {fileID: 114341826293912956}
   - component: {fileID: 114408313490410910}
   - component: {fileID: 114199670836957388}
+  - component: {fileID: 114910043053538752}
+  - component: {fileID: 114575399710459302}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -703,6 +701,8 @@ GameObject:
   - component: {fileID: 114601392200885428}
   - component: {fileID: 114445356441351376}
   - component: {fileID: 114077499665700586}
+  - component: {fileID: 114929361062189330}
+  - component: {fileID: 114258139043236726}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -769,8 +769,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224666119901437808}
   - component: {fileID: 222958980038015396}
-  - component: {fileID: 114235137398619490}
-  - component: {fileID: 114903742741251128}
   m_Layer: 5
   m_Name: ChiefHall
   m_TagString: Untagged
@@ -875,6 +873,8 @@ GameObject:
   - component: {fileID: 114450024920716752}
   - component: {fileID: 114123871950597008}
   - component: {fileID: 114922468423734876}
+  - component: {fileID: 114729583187824380}
+  - component: {fileID: 114191558966797066}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -1308,6 +1308,23 @@ MonoBehaviour:
   foodText: {fileID: 114038163515736014}
   woodText: {fileID: 114855967962432080}
   menText: {fileID: 114434014516341778}
+--- !u!114 &114191558966797066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992196340635992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building_: {fileID: 11400000, guid: dbea117d8f3c3d74dbe80b97b85d60cf, type: 2}
+  nameText_: {fileID: 114066037647337226}
+  foodText_: {fileID: 114194269752282624}
+  woodText_: {fileID: 114046712689354938}
+  menText_: {fileID: 114956917667334226}
+  artwork_: {fileID: 114450024920716752}
 --- !u!114 &114191743957104200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1481,28 +1498,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114204972587937614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481352760278666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114235137398619490
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1868717010234760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114243227376932970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1550,6 +1545,23 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114258139043236726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746219019024880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building_: {fileID: 11400000, guid: 090529b6ae7be594386eabce36aa595f, type: 2}
+  nameText_: {fileID: 114269958539893094}
+  foodText_: {fileID: 114483975555774396}
+  woodText_: {fileID: 114445824524372004}
+  menText_: {fileID: 114852672491537050}
+  artwork_: {fileID: 114601392200885428}
 --- !u!114 &114258664059667052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1702,23 +1714,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114337038021476778
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1337695910276838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  building_: {fileID: 11400000, guid: 090529b6ae7be594386eabce36aa595f, type: 2}
-  nameText_: {fileID: 114093181879598044}
-  foodText_: {fileID: 114884155017418204}
-  woodText_: {fileID: 114439530884869086}
-  menText_: {fileID: 114572029658688042}
-  artwork_: {fileID: 114009700520212156}
 --- !u!114 &114341826293912956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2064,23 +2059,6 @@ MonoBehaviour:
   buildingsPanel_: {fileID: 1502166398238754}
   unitsPanel_: {fileID: 1246176908271898}
   quitMenuButton_: {fileID: 1545732562265200}
---- !u!114 &114458882075930862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481352760278666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  building_: {fileID: 11400000, guid: 4289d49a064a6c34fb129e4793a0821d, type: 2}
-  nameText_: {fileID: 114705165257551532}
-  foodText_: {fileID: 114350430240755690}
-  woodText_: {fileID: 114199012491740102}
-  menText_: {fileID: 114496522073631930}
-  artwork_: {fileID: 114341826293912956}
 --- !u!114 &114478565162468448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2097,23 +2075,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114478975409769434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629386692926854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  building_: {fileID: 11400000, guid: 5b353be1ec431b745bd456ad31064570, type: 2}
-  nameText_: {fileID: 114899765104304968}
-  foodText_: {fileID: 114280359911183796}
-  woodText_: {fileID: 114681066513813486}
-  menText_: {fileID: 114356686897779480}
-  artwork_: {fileID: 114287173999997450}
 --- !u!114 &114483975555774396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2215,6 +2176,17 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114493171617649362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043439743760346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114494641396701022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2287,17 +2259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIScaleModifier: 1.2
   BaseScale: 1
---- !u!114 &114537712890905544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310974776460784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114572029658688042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2331,6 +2292,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Men: '
+--- !u!114 &114575399710459302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1696837791225734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building_: {fileID: 11400000, guid: 4289d49a064a6c34fb129e4793a0821d, type: 2}
+  nameText_: {fileID: 114705165257551532}
+  foodText_: {fileID: 114350430240755690}
+  woodText_: {fileID: 114199012491740102}
+  menText_: {fileID: 114496522073631930}
+  artwork_: {fileID: 114341826293912956}
 --- !u!114 &114601392200885428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2396,6 +2374,23 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114628224144237232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043439743760346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building_: {fileID: 11400000, guid: 090529b6ae7be594386eabce36aa595f, type: 2}
+  nameText_: {fileID: 114093181879598044}
+  foodText_: {fileID: 114884155017418204}
+  woodText_: {fileID: 114439530884869086}
+  menText_: {fileID: 114572029658688042}
+  artwork_: {fileID: 114009700520212156}
 --- !u!114 &114681066513813486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2569,6 +2564,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: X
+--- !u!114 &114729583187824380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992196340635992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114783744681914372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2609,6 +2615,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114800927376987220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297794449905134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114823461503097154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2816,40 +2833,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Name
---- !u!114 &114903742741251128
+--- !u!114 &114910043053538752
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1868717010234760}
+  m_GameObject: {fileID: 1696837791225734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building_: {fileID: 11400000, guid: 090529b6ae7be594386eabce36aa595f, type: 2}
-  nameText_: {fileID: 114269958539893094}
-  foodText_: {fileID: 114483975555774396}
-  woodText_: {fileID: 114445824524372004}
-  menText_: {fileID: 114852672491537050}
-  artwork_: {fileID: 114601392200885428}
---- !u!114 &114916138780200874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310974776460784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  building_: {fileID: 11400000, guid: dbea117d8f3c3d74dbe80b97b85d60cf, type: 2}
-  nameText_: {fileID: 114066037647337226}
-  foodText_: {fileID: 114194269752282624}
-  woodText_: {fileID: 114046712689354938}
-  menText_: {fileID: 114956917667334226}
-  artwork_: {fileID: 114450024920716752}
 --- !u!114 &114922468423734876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2897,6 +2891,17 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114929361062189330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746219019024880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114931115746175360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2910,28 +2915,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIScaleModifier: 1.2
   BaseScale: 1
---- !u!114 &114945787032175652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1629386692926854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114953260732572800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1337695910276838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114956917667334226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2965,6 +2948,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Men: '
+--- !u!114 &114975013686896558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1297794449905134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building_: {fileID: 11400000, guid: 5b353be1ec431b745bd456ad31064570, type: 2}
+  nameText_: {fileID: 114899765104304968}
+  foodText_: {fileID: 114280359911183796}
+  woodText_: {fileID: 114681066513813486}
+  menText_: {fileID: 114356686897779480}
+  artwork_: {fileID: 114287173999997450}
 --- !u!222 &222012038162047092
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3378,8 +3378,8 @@ RectTransform:
   - {fileID: 224075955273184856}
   - {fileID: 224935261657312150}
   - {fileID: 224900876963850352}
-  - {fileID: 224532832183069440}
   - {fileID: 224617565100418692}
+  - {fileID: 224532832183069440}
   m_Father: {fileID: 224599012819981346}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3768,7 +3768,7 @@ RectTransform:
   m_Children:
   - {fileID: 224017109468820162}
   m_Father: {fileID: 224094774230263932}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3903,7 +3903,7 @@ RectTransform:
   m_Children:
   - {fileID: 224551407442691512}
   m_Father: {fileID: 224094774230263932}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
