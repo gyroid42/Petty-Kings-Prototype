@@ -28,6 +28,7 @@ public class CameraController : MonoBehaviour {
         isMoving_ = false;
         finishedMovement_ = true;
         lastLocation_ = new CameraLocation(transform.position, transform.rotation.eulerAngles, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
+        gotoPositions_ = new Queue<CameraLocation>();
     }
 
     // Update is called once per frame
