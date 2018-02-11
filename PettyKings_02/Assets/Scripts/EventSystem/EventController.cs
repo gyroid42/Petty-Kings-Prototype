@@ -16,6 +16,7 @@ public class EventController : MonoBehaviour {
     private List<Event> springEventList_;
     private List<Event> summerEventList_;
     private List<Event> autumnEventList_;
+    private List<Event> harvestEventList_;
     private List<Event> winterEventList_;
     private List<Event> springEventList2_;
 
@@ -23,6 +24,7 @@ public class EventController : MonoBehaviour {
     private List<Event> springIntroEvents_;
     private List<Event> summerIntroEvents_;
     private List<Event> autumnIntroEvents_;
+    private List<Event> harvestIntroEvents_;
     private List<Event> winterIntroEvents_;
     private List<Event> spring2IntroEvents_;
 
@@ -33,7 +35,7 @@ public class EventController : MonoBehaviour {
   
     // Current Season
     private int currentSeason_;
-    private Season[] seasonList_ = new Season[6] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.WINTER, Season.SPRING2 };
+    private Season[] seasonList_ = new Season[7] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.HARVEST, Season.WINTER, Season.SPRING2 };
 
     // flag if event is active
     bool eventActive_;
@@ -81,6 +83,7 @@ public class EventController : MonoBehaviour {
         springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring/Random", typeof(Event)).Cast<Event>().ToArray());
         summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer/Random", typeof(Event)).Cast<Event>().ToArray());
         autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn/Random", typeof(Event)).Cast<Event>().ToArray());
+        harvestEventList_ = new List<Event>(Resources.LoadAll("Events/Harvest/Random", typeof(Event)).Cast<Event>().ToArray());
         winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter/Random", typeof(Event)).Cast<Event>().ToArray());
         springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2/Random", typeof(Event)).Cast<Event>().ToArray());
 
@@ -88,6 +91,7 @@ public class EventController : MonoBehaviour {
         springIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring/Intro", typeof(Event)).Cast<Event>().ToArray());
         summerIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Summer/Intro", typeof(Event)).Cast<Event>().ToArray());
         autumnIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Autumn/Intro", typeof(Event)).Cast<Event>().ToArray());
+        harvestIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Harvest/Intro", typeof(Event)).Cast<Event>().ToArray());
         winterIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Winter/Intro", typeof(Event)).Cast<Event>().ToArray());
         spring2IntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring2/Intro", typeof(Event)).Cast<Event>().ToArray());
 
@@ -214,6 +218,9 @@ public class EventController : MonoBehaviour {
                 case Season.AUTUMN:
                     eventFound = GetRandomEvent(autumnEventList_);
                     break;
+                case Season.HARVEST:
+                    eventFound = GetRandomEvent(harvestEventList_);
+                    break;
                 case Season.WINTER:
                     eventFound = GetRandomEvent(winterEventList_);
                     break;
@@ -260,6 +267,9 @@ public class EventController : MonoBehaviour {
                 break;
             case Season.AUTUMN:
                 eventFound = GetNextEvent(autumnIntroEvents_);
+                break;
+            case Season.HARVEST:
+                eventFound = GetNextEvent(harvestIntroEvents_);
                 break;
             case Season.WINTER:
                 eventFound = GetNextEvent(winterIntroEvents_);
