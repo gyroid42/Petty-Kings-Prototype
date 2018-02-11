@@ -51,20 +51,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8d36bd54bb7f643bd5e208311b8c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introductionEvents_: []
-  springEventList_: []
-  summerEventList_: []
-  autumnEventList_: []
-  winterEventList_: []
-  springEventList2_: []
-  seasonStartEvents_:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: ac4453e55a481c84bb1e74b370d77d38, type: 2}
-  - {fileID: 11400000, guid: 52dc224e5898b0b4e81c1fefd1520c4e, type: 2}
-  - {fileID: 11400000, guid: 9350cad998615174ea735c459de36c4b, type: 2}
-  - {fileID: 11400000, guid: a321be57488614944b41023f35d02849, type: 2}
-  - {fileID: 11400000, guid: 3d5824472b671274a8c68492bbe4f2f2, type: 2}
-  currentEvent_: {fileID: 0}
-  currentSeason_: 0
-  seasonList_: 000000000100000002000000030000000400000005000000
   timeTillNextEvent_: 3
