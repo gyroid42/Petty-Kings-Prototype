@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: ToughCrops
   m_EditorClassIdentifier: 
-  name_: 
+  name_: RandomHarvestEvent
   artwork_: {fileID: 0}
-  description_: 
+  description_: hey you have some tough ass crops
   decisionText_:
   - 
   - 
