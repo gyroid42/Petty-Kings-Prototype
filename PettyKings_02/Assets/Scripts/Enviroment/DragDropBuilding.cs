@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     private GameObject modelClone; //variable to hold clone of desired gameobject 
-
+    public ParticleSystem smoke;
     private BuildingController buildingController_;
 
     //array of gameobjects to enable the shader when dragging
@@ -39,7 +39,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         foreach (GameObject i in notwalkableTiles)
         {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 5.0f);
+            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 6.0f);
         }
 
 
@@ -72,9 +72,14 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             if (hit.collider.tag == "Walkable" && buildingController_.Purchase())
             {
+         
                 modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
-                hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false; //change colour of tile after building is placed
+                         
+                hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false;
+                hit.collider.gameObject.GetComponent<GroundTileMesh>().UpdateMat(); //change colour of tile after building is placed
                 hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
+                Instantiate(smoke, modelClone.transform);   
+               
             }
             
             else
@@ -100,7 +105,6 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
         }
     }
-
 
 
 }

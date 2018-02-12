@@ -76,7 +76,7 @@ public class GroundTileMesh : MonoBehaviour {
     }
 
 
-    private void Update()
+    public void UpdateMat() //function to update colour of tile
     {
         if (isWalkable)
         {
@@ -86,7 +86,6 @@ public class GroundTileMesh : MonoBehaviour {
         {
             GetComponent<Renderer>().material = materialRed;
         }
-
     }
 
    
