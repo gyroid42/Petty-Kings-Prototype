@@ -361,4 +361,9 @@ public class EventController : MonoBehaviour {
     {
         return eventActive_;
     }
+
+    public Season CurrentSeason()
+    {
+        return seasonList_[currentSeason_];
+    }
 }
