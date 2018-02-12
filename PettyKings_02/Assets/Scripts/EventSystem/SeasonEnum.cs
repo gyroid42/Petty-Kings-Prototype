@@ -8,6 +8,7 @@ public enum Season
     SPRING,
     SUMMER,
     AUTUMN,
+    HARVEST,
     WINTER,
     SPRING2
 }

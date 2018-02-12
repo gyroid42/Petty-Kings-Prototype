@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7207e89b80c6ba64c8943393fc8622cc, type: 3}
+  m_Name: ChiefHall
+  m_EditorClassIdentifier: 
+  name_: Chief Hall
+  artwork_: {fileID: 0}
+  description_: Your adventure starts in spring! Over the next months you must decide
+    the future of our clan and lead us to victory in the battles to come!
+  decisionText_: []
+  decisionArt_: []
+  decisionDesc_: []
+  decisionFood_: 
+  decisionWood_: 
+  decisionMen_: 

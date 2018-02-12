@@ -55,6 +55,10 @@ GameObject:
   - component: {fileID: 224267253018139970}
   - component: {fileID: 222930499391741512}
   - component: {fileID: 114021258601631854}
+  - component: {fileID: 114361806093657392}
+  - component: {fileID: 114847025206115640}
+  - component: {fileID: 114461225810032674}
+  - component: {fileID: 114947732984521586}
   m_Layer: 5
   m_Name: Artwork
   m_TagString: Untagged
@@ -105,8 +109,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224329163052357212}
   - component: {fileID: 222683021993528624}
-  - component: {fileID: 114980712211372148}
-  - component: {fileID: 114060673124144342}
   m_Layer: 5
   m_Name: BuildingMenuItem
   m_TagString: Untagged
@@ -173,12 +175,12 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114060673124144342
+--- !u!114 &114361806093657392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1888893605069620}
+  m_GameObject: {fileID: 1116560715837852}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a276a8a8bf0ee7438995928115222d7, type: 3}
@@ -190,6 +192,19 @@ MonoBehaviour:
   woodText_: {fileID: 114015371151205286}
   menText_: {fileID: 114484127585236176}
   artwork_: {fileID: 114021258601631854}
+--- !u!114 &114461225810032674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116560715837852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c7d6ac244f8bc4e90c09d51ce3ceb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIScaleModifier: 1.2
+  BaseScale: 1
 --- !u!114 &114484127585236176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +271,64 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Name
+--- !u!114 &114847025206115640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116560715837852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114947732984521586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116560715837852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114461225810032674}
+          m_MethodName: Enlarge
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114461225810032674}
+          m_MethodName: Reduce
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114971858426831448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,17 +362,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Food: '
---- !u!114 &114980712211372148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1888893605069620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f2a74ddc3dc734dae41c357ce81fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222185016874534064
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -415,7 +477,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888893605069620}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -516.3831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224267253018139970}
@@ -428,7 +490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -335.82, y: -189}
+  m_AnchoredPosition: {x: 191.46095, y: 154.05083}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!224 &224710871876768208
