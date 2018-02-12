@@ -14,7 +14,7 @@ MonoBehaviour:
   name_: Spring
   artwork_: {fileID: 0}
   description_: Spring has returned, looks like some rival villages have taken notice
-    of your success. They may have not survived the winter as well, watch out!
+    of your success. They may have survived the winter as well, watch out!
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

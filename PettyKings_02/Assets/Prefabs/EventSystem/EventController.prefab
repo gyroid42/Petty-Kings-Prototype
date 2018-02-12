@@ -67,4 +67,4 @@ MonoBehaviour:
   currentEvent_: {fileID: 0}
   currentSeason_: 0
   seasonList_: 000000000100000002000000030000000400000005000000
-  timeTillNextEvent_: 3
+  timeTillNextEvent_: 10

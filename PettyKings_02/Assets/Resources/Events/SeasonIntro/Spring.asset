@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Spring
   artwork_: {fileID: 0}
-  description_: Your adventure starts in spring!
+  description_: Your adventure starts in spring! Over the next months you must decide
+    the future of our clan and lead us to victory in the battles to come!
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

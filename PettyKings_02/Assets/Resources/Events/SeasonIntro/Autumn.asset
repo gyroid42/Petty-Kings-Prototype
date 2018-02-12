@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Autumn
   artwork_: {fileID: 0}
-  description_: Summer is now gone, you must prepare in time before winter arrives!
+  description_: Summer is now gone, Autumn marks a perfect time for us to prepare
+    for the harsh winter months. Make sure to gather plenty of food and wood!
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

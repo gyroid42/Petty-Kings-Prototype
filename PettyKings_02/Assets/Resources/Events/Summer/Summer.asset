@@ -9,20 +9,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: shitsu
+  m_Name: Summer
   m_EditorClassIdentifier: 
-  name_: shitsu
+  name_: Summer
   artwork_: {fileID: 0}
-  description_: shitsu shitsu shitsu
+  description_: Summer is the perfect time for both building and hunting my lord!
+    You must choose whether to send the men out to hunt for food or to gather wood
+    for building.
   decisionText_:
-  - 
-  - 
+  - Hunt for food!
+  - Gather Wood!
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
+  - A wise choice, the food we gather can be used for the grand feast before battle!
+  - A wise choice, building more huts means we can recruit more warriors!
+  decisionFood_: 1900000000000000
+  decisionWood_: 0000000019000000
   decisionMen_: 0000000000000000
