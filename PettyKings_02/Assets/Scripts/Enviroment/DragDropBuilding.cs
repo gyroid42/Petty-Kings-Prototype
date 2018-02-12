@@ -92,8 +92,8 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             Destroy(modelClone); //destroy the gameobject being dragged
         }
 
-        
-        //reset the thickness of shading line therefor hiding the grid
+
+        //reset the thickness of shading line therefor hiding the grid 
         foreach (GameObject i in walkableTiles)
         {
             Debug.Log(i.name);
@@ -104,6 +104,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
         }
+       
     }
 
 
