@@ -157,6 +157,8 @@ public class EventController : MonoBehaviour {
 
             eventActive_ = true;
         }
+
+        GetComponent<SeasonAudioManager>().UpdateAudio(); //updates audio being played
     }
 
 
@@ -362,8 +364,8 @@ public class EventController : MonoBehaviour {
         return eventActive_;
     }
 
-    public Season CurrentSeason()
+    public int CurrentSeason()
     {
-        return seasonList_[currentSeason_];
+        return currentSeason_;
     }
 }
