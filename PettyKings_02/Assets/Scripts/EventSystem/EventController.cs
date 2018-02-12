@@ -11,6 +11,9 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
 
 
+    private EventDisplay eventDisplay;
+    private ResourceManager resourceManager;
+
     // List of events
     private List<Event> introductionEvents_;
     private List<Event> springEventList_;
@@ -74,6 +77,9 @@ public class EventController : MonoBehaviour {
 
     void Start ()
     {
+
+        eventDisplay = EventDisplay.eventDisplay;
+        resourceManager = ResourceManager.resourceManager;
 
         // No event is active when event controller is created
         eventActive_ = false;
@@ -144,7 +150,7 @@ public class EventController : MonoBehaviour {
 
         if (!eventActive_)
         {
-            if (EventDisplay.eventDisplay != null)
+            if (eventDisplay != null)
             {
 
                 if (!GotoNextIntroEvent())
@@ -168,10 +174,10 @@ public class EventController : MonoBehaviour {
     {
 
         // Update display
-        if (EventDisplay.eventDisplay)
+        if (eventDisplay)
         {
-            EventDisplay.eventDisplay.DisplayDecision(choice);
-            ResourceManager.resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
+            eventDisplay.DisplayDecision(choice);
+            resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
         }
     }
 
@@ -242,11 +248,11 @@ public class EventController : MonoBehaviour {
             }
             
             // Make event display active and display the new event
-            if (EventDisplay.eventDisplay != null)
+            if (eventDisplay != null)
             {
-                EventDisplay.eventDisplay.gameObject.SetActive(true);
-                EventDisplay.eventDisplay.SetEvent(currentEvent_);
-                EventDisplay.eventDisplay.Display();
+                eventDisplay.gameObject.SetActive(true);
+                eventDisplay.SetEvent(currentEvent_);
+                eventDisplay.Display();
             }
 
             // Event Active flag is now true
@@ -290,11 +296,11 @@ public class EventController : MonoBehaviour {
             return false;
         }
 
-        if (EventDisplay.eventDisplay != null)
+        if (eventDisplay != null)
         {
-            EventDisplay.eventDisplay.gameObject.SetActive(true);
-            EventDisplay.eventDisplay.SetEvent(currentEvent_);
-            EventDisplay.eventDisplay.DisplaySeasonStart();
+            eventDisplay.gameObject.SetActive(true);
+            eventDisplay.SetEvent(currentEvent_);
+            eventDisplay.DisplaySeasonStart();
         }
         return true;
     }
@@ -346,7 +352,7 @@ public class EventController : MonoBehaviour {
     {
         // Set that no event is active and make event display not active
         eventActive_ = false;
-        EventDisplay.eventDisplay.gameObject.SetActive(false);
+        eventDisplay.gameObject.SetActive(false);
 
         // If the event was the last intro event
         if (introductionEvents_.Count <= 0) 

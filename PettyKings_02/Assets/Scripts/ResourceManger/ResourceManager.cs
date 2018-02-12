@@ -7,6 +7,9 @@ public class ResourceManager : MonoBehaviour {
     // Public static reference to itself
     public static ResourceManager resourceManager;
 
+
+    private ResourceDisplay resourceDisplay;
+
     // Resource variables
     private int wood_, food_, men_;
 
@@ -46,6 +49,8 @@ public class ResourceManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
+        resourceDisplay = ResourceDisplay.resourceDisplay;
+
         Reset();
     }
 
@@ -62,7 +67,7 @@ public class ResourceManager : MonoBehaviour {
         food_ = newFood;
         wood_ = newWood;
         men_ = newMen;
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     // Getter methods for resources
@@ -107,21 +112,21 @@ public class ResourceManager : MonoBehaviour {
     {
         // Update food value and display
         food_ += newFood;
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateWood(int newWood)
     {
         // Update wood value and display
         wood_ += newWood;
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateMen(int newMen)
     {
         // Update men value and display
         men_ += newMen;
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResources(int newFood = 0, int newWood = 0, int newMen = 0)
@@ -130,7 +135,7 @@ public class ResourceManager : MonoBehaviour {
         food_ += newFood;
         wood_ += newWood;
         men_ += newMen;
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResources(int[] newResources)
@@ -146,7 +151,7 @@ public class ResourceManager : MonoBehaviour {
                 men_ += newResources[2];
             }
         }
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
     public void UpdateResource(Resource resource, int value)
@@ -167,7 +172,7 @@ public class ResourceManager : MonoBehaviour {
             default:
                 break;
         }
-        ResourceDisplay.resourceDisplay.UpdateDisplay();
+        resourceDisplay.UpdateDisplay();
     }
 
 
