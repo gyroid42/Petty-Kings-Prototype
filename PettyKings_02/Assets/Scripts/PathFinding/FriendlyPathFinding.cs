@@ -12,9 +12,11 @@ public class FriendlyPathFinding : MonoBehaviour {
     private int rnd;
     bool moving = false;
     float timeLeft; 
+
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
-       // objectsInScene = GameObject.FindGameObjectsWithTag("Building");
+        // objectsInScene = GameObject.FindGameObjectsWithTag("Building");
+        Random.InitState(System.DateTime.Now.Millisecond);
         rnd = Random.Range(0, objectsInScene.Length);
         timeLeft = Random.Range(1, 6);
     }
@@ -22,8 +24,6 @@ public class FriendlyPathFinding : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         objectsInScene = GameObject.FindGameObjectsWithTag("Building");
-
-
 
         if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 3.5f)
         {
@@ -50,4 +50,6 @@ public class FriendlyPathFinding : MonoBehaviour {
         }
         
     }
+
+   
 }

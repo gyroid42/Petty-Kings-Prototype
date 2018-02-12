@@ -22,14 +22,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - "The queen of winter Cailleach, has brought us a harsh winter this year. Resources
-    \rwill have to be preserved and men sheltered, we have lost some people to the
-    cold, but fear not my lord all is not bad.\r The harsh winter and rocky landscapes
-    will definitely aid us in battle!\r"
-  - "The queen of winter Cailleach, has brought us a harsh winter this year. We have
-    lost good warriors to the cold but we have managed to gain more food! Fear not
-    my lord all is not bad.\r The harsh winter and rocky landscapes will definitely
-    aid us in battle!\r"
+  - Times like these call for strong leadership. You have proven yourself more than
+    capabel of making good decisions. We lost some men tto the cold but the majority
+    of our warriors remain healthy!
+  - Times like these call for strong leadership. You have proven yourself more than
+    capabel of making good decisions. We lost men to the cold but the we have gained
+    vital food to keep the warriors healthy throughout the winter!
   decisionFood_: 000000000a000000
   decisionWood_: 0000000000000000
   decisionMen_: fdfffffff6ffffff

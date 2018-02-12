@@ -8,13 +8,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7207e89b80c6ba64c8943393fc8622cc, type: 3}
-  m_Name: ChiefHall
+  m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
+  m_Name: Summer
   m_EditorClassIdentifier: 
-  name_: Chief Hall
+  name_: Summer
   artwork_: {fileID: 0}
-  description_: Your adventure starts in spring! Over the next months you must decide
-    the future of our clan and lead us to victory in the battles to come!
+  description_: "Your father would be proud of how well you are managing your kingdom
+    young\r\nlord! The great feast of Samhain has been organised in your honour! In
+    these \r\ndark times a feast is just what the warriors need before they head out
+    to hunt!\r\n"
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

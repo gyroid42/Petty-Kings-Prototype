@@ -9,12 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: AutumnIntro
+  m_Name: Winter
   m_EditorClassIdentifier: 
-  name_: 
+  name_: Winter
   artwork_: {fileID: 0}
-  description_: Summer is now gone, Autumn marks a perfect time for us to prepare
-    for the harsh winter months. Make sure to gather plenty of food and wood!
+  description_: "The queen of winter Cailleach, has brought us a harsh winter this
+    year. Resources \rwill have to be preserved and men sheltered, we have lost some
+    people to the cold, but fear not my lord all is not bad.\r The harsh winter and
+    rocky landscapes will definitely aid us in battle!\r"
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []
