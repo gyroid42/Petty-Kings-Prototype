@@ -2,28 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+// Enums
+public enum GAMESTATE
+{
+    MENU,
+    STAGEONE,
+    STAGETWO,
+    STAGETHREE,
+    GAMEOVER
+};
+
 public class StateManager : MonoBehaviour {
 
-    // Enums
-    enum GAMESTATE {
-        MENU,
-        STAGEONE,
-        STAGETWO,
-        STAGETHREE,
-        GAMEOVER
-    };
+
+    // A static reference to itself so other scripts can access it
+    public static StateManager stateManager;
 
     // Variables
-    GAMESTATE CurrentState_;
-    public bool OverlayActive_;
+    private GAMESTATE CurrentState_;
+    private bool OverlayActive_;
 
     // Script references
-    public HUDToggle GameUI_;
-    public CameraController CameraController_;
+    private HUDToggle GameUI_;
+    private CameraController CameraController_;
+
+
+    // When object is created
+    void Awake()
+    {
+
+        // Check if a stateManager already exists
+        if (stateManager == null)
+        {
+
+            // If not set the static reference to this object
+            stateManager = this;
+        }
+        else if (stateManager != this)
+        {
+
+            // Else if a different stateManager already exists destroy this object
+            Destroy(gameObject);
+        }
+    }
+
+    // Called when script is destroyed
+    void OnDestroy()
+    {
+
+        // When destroyed remove static reference to itself
+        stateManager = null;
+    }
+
 
 	// Use this for initialization
 	void Start () {
         CurrentState_ = GAMESTATE.MENU;
+
+
+        CameraController_ = Camera.main.GetComponent<CameraController>();
+        
+        GameUI_ = GetComponent<HUDToggle>();
 
         // Set UI to be inactive at start
         OverlayActive_ = false;
@@ -34,6 +75,12 @@ public class StateManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    // Get State
+    public GAMESTATE CurrentState()
+    {
+        return CurrentState_;
+    }
 
     // Change the game's state
     void ChangeState(GAMESTATE newState)
