@@ -28,7 +28,7 @@ public class CameraPlayerMovement : MonoBehaviour {
 	void Update () {
 
         // Only allow user movement when the camera isn't moving between scenes
-        if (!cameraController_.IsMoving())
+        if (StateManager.stateManager.CurrentState() == GAMESTATE.STAGEONE && !cameraController_.IsMoving())
         {
 
             HandleZoomInput();

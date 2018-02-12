@@ -4,6 +4,37 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour {
 
+
+    private StateManager stateManager_;
+
+    void Start()
+    {
+        stateManager_ = StateManager.stateManager;
+    }
+
+
+    public void PlayButton()
+    {
+
+        stateManager_.ActivateStageOne();
+    }
+
+    public void OptionsButton()
+    {
+
+    }
+
+    public void LeaderBoardsButton()
+    {
+
+    }
+
+    public void LearnMoreButton()
+    {
+
+    }
+
+    /*
     public List<GameObject> MenuStates_;
 
 	// Use this for initialization
@@ -48,4 +79,5 @@ public class MainMenuController : MonoBehaviour {
         // Make the new UI panel visible
         MenuStates_[n].SetActive(true);
     }
+    */
 }
