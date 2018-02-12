@@ -49,6 +49,8 @@ public class ResourceManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
+        resourceDisplay = ResourceDisplay.resourceDisplay;
+
         Reset();
     }
 
