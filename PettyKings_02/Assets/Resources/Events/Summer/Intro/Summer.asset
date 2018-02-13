@@ -13,10 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Summer
   artwork_: {fileID: 0}
-  description_: "Your father would be proud of how well you are managing your kingdom
-    young\r\nlord! The great feast of Samhain has been organised in your honour! In
-    these \r\ndark times a feast is just what the warriors need before they head out
-    to hunt!\r\n"
+  description_: Summer is here m'lord, we are running out of time until winter comes...
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

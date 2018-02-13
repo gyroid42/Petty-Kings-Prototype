@@ -13,21 +13,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Winter
   artwork_: {fileID: 0}
-  description_: Winter is upon us my lord! Should we continue hunting or start to
-    store food for the long winter to come?
+  description_: The winter has been harsh lord, our food stocks will not last much
+    longer...
   decisionText_:
-  - Preserve Food
-  - Keep Hunting
+  - Keep enough food to feed the troops!
+  - The peasants must be fed as well!
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - Times like these call for strong leadership. You have proven yourself more than
-    capabel of making good decisions. We lost some men tto the cold but the majority
-    of our warriors remain healthy!
-  - Times like these call for strong leadership. You have proven yourself more than
-    capabel of making good decisions. We lost men to the cold but the we have gained
-    vital food to keep the warriors healthy throughout the winter!
-  decisionFood_: 000000000a000000
+  - 'The food rations have been lowered for the peasants and we now have enough food
+    to keep the troops healthy. '
+  - Our food supply has dropped incredibly low and some of our troops have left for
+    patures new...
+  decisionFood_: 00000000ecffffff
   decisionWood_: 0000000000000000
-  decisionMen_: fdfffffff6ffffff
+  decisionMen_: 00000000fcffffff
