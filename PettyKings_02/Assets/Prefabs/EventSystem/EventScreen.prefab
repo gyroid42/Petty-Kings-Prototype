@@ -141,10 +141,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabButton: {fileID: 1917579375256534, guid: c6e5beb5e4c298d4fb550e5d4e745258,
     type: 2}
-  event_: {fileID: 11400000, guid: 540c71b11d524a94b936fc3772195759, type: 2}
+  event_: {fileID: 0}
   nameText_: {fileID: 114993459388404340}
   descriptionText_: {fileID: 114010803135331858}
   artworkImage_: {fileID: 114732001148724822}
+  btnSizeX: 500
+  btnSizeY: 50
+  btnPosY: -300
+  btnPosX: 0
 --- !u!114 &114456689931067112
 MonoBehaviour:
   m_ObjectHideFlags: 1
