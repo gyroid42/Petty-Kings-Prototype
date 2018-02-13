@@ -14,6 +14,8 @@ MonoBehaviour:
   name_: Hunters Hut
   artwork_: {fileID: 0}
   buildingModel_: {fileID: 100010, guid: 6d4dc4175847025439ffdafdcf0d50ed, type: 3}
+  buildParticle_: {fileID: 1728092457860708, guid: 82f9141fd62b90840b369e0ba1db81ab,
+    type: 2}
   foodCost_: 0
   woodCost_: 0
   menCost_: 0

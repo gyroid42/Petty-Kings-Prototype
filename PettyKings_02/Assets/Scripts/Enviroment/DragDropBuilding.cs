@@ -29,6 +29,9 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
         modelClone.tag = "Building";
+
+        smoke = buildingController_.building_.buildParticle_.GetComponent<ParticleSystem>();
+
         //add all the tiles to the gameobject arrays
         walkableTiles = GameObject.FindGameObjectsWithTag("Walkable");
         notwalkableTiles = GameObject.FindGameObjectsWithTag("NotWalkable");
