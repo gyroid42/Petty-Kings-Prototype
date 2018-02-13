@@ -9,20 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: shitsu
+  m_Name: Spring2
   m_EditorClassIdentifier: 
-  name_: shitsu
+  name_: Spring2
   artwork_: {fileID: 0}
-  description_: shitsu shitsu shitsu
+  description_: My Lord, the people will need to be fed. What food type should we
+    focus on?
   decisionText_:
-  - 
-  - 
+  - Focus on cattle!
+  - Grow the lovely delicious vegetables!
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  - Very well, we shall construct the farms for cattle!
+  - 'We shall have vegetables patches built! '
+  decisionFood_: 140000000a000000
+  decisionWood_: d8fffffff6ffffff
+  decisionMen_: fdfffffff6ffffff
