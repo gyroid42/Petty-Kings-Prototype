@@ -13,8 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Spring
   artwork_: {fileID: 0}
-  description_: Spring has ended Lord and we are feeling the full brunt of the summer's
-    sun!
+  description_: Winter has passed and we have survived!
   decisionText_:
   - 
   - 

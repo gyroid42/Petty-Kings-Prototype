@@ -13,10 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Winter
   artwork_: {fileID: 0}
-  description_: "The queen of winter Cailleach, has brought us a harsh winter this
-    year. Resources \rwill have to be preserved and men sheltered, we have lost some
-    people to the cold, but fear not my lord all is not bad.\r The harsh winter and
-    rocky landscapes will definitely aid us in battle!\r"
+  description_: The bitter cold has come Sire! All we can do now id tighten our belts
+    and pray the harvest was enough.
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: RandomHarvestEvent
   artwork_: {fileID: 0}
-  description_: hey you have some tough ass crops
+  description_: 'My Lord, our cattle have been struck down by a strage disease. '
   decisionText_:
-  - 
-  - 
+  - Kill the rest of them and burn the carcusses.
+  - Burn the carcusses but keep the living cows, the meat will still be good.
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - 
-  - 
-  decisionFood_: 0000000000000000
+  - 'We have lost a lots of food, however the disease has not spread to anyone luckily. '
+  - The tainted meat has spread to our men lord!
+  decisionFood_: e7ffffff00000000
   decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+  decisionMen_: 00000000f6ffffff
