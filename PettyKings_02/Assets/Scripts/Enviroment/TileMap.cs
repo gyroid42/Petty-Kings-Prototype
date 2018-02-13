@@ -25,6 +25,8 @@ public class TileMap : MonoBehaviour {
             {
                 tileMap_[i, j] = (GameObject)Instantiate(tile_, new Vector3((float)i * 2.05f - 49, 0, (float)j * 2.05f - 49), Quaternion.identity);
                 tileMap_[i, j].transform.position = new Vector3((float)i * 2.05f - 50, Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position) + 0.1f, (float)j * 2.05f - 50);
+                tileMap_[i, j].transform.SetParent(transform);
+
 
                 if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
                 {
