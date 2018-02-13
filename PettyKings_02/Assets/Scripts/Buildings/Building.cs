@@ -22,6 +22,13 @@ public class Building : ScriptableObject {
     public int[] size = new int[2];
 
 
+    Building()
+    {
+      //  if (buildingModel_ != null)
+      //  {
+            buildingModel_.tag = "Building";
+      //  }
+    }
 
     // Print method for debugging
     public void Print()
