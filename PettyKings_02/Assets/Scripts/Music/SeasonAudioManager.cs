@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SeasonAudioManager : MonoBehaviour {
 
+    public static SeasonAudioManager seasonAudioManager;
+
     //audio sources for each season
     public AudioClip spring;
     public AudioClip summer;
@@ -11,13 +13,41 @@ public class SeasonAudioManager : MonoBehaviour {
     public AudioClip winter;
     public AudioClip harvest;
     public AudioSource audioSource;
-    public EventController season;
+    private EventController season;
     
-    private int currentSeason_;
-    private Season[] seasonList_ = new Season[7] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.HARVEST, Season.WINTER, Season.SPRING2 };
+    private Season currentSeason_;
+
+    // When object is created
+    void Awake()
+    {
+
+        // Check if a seasonAudioManager already exists
+        if (seasonAudioManager == null)
+        {
+
+            // If not set the static reference to this object
+            seasonAudioManager = this;
+        }
+        else if (seasonAudioManager != this)
+        {
+
+            // Else if a different seasonAudioManager already exists destroy this object
+            Destroy(gameObject);
+        }
+    }
+
+    // Called when script is destroyed
+    void OnDestroy()
+    {
+
+        // When destroyed remove static reference to itself
+        seasonAudioManager = null;
+    }
+
 
     void Start () {
         audioSource = GetComponent<AudioSource>();//reference to audio source
+        season = EventController.eventController;
         UpdateAudio();
     }
 	
@@ -25,8 +55,10 @@ public class SeasonAudioManager : MonoBehaviour {
 
 	public void UpdateAudio () {
 
+        
         currentSeason_ = season.CurrentSeason(); //get the current season
-        switch (seasonList_[currentSeason_]) //decide which music to play
+
+        switch (currentSeason_) //decide which music to play
         {
             case Season.SPRING:
                  audioSource.clip = spring; audioSource.Play();
