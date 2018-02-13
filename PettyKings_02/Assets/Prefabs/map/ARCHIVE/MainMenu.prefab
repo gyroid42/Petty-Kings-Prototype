@@ -703,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f8e464a11b2e94a85b1b9634843177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuStates_: []
 --- !u!114 &114203405359220464
 MonoBehaviour:
   m_ObjectHideFlags: 1

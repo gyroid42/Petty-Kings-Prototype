@@ -6,49 +6,19 @@ public class MainMenuController : MonoBehaviour {
 
 
     private StateManager stateManager_;
-
-    void Start()
-    {
-        stateManager_ = StateManager.stateManager;
-    }
-
-
-    public void PlayButton()
-    {
-
-        stateManager_.ActivateStageOne();
-    }
-
-    public void OptionsButton()
-    {
-
-    }
-
-    public void LeaderBoardsButton()
-    {
-
-    }
-
-    public void LearnMoreButton()
-    {
-
-    }
-
-    /*
     public List<GameObject> MenuStates_;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+        // Locate state manager in scene
+        stateManager_ = StateManager.stateManager;
+
         // Ensure that when the object is created,
         // the visible panel is the menu
         Back();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    
+
     // This clears the UI so the new state can be shown
     void Clear()
     {
@@ -58,6 +28,13 @@ public class MainMenuController : MonoBehaviour {
             // Set the panel to be inactive
             panel.SetActive(false);
         }
+    }
+
+    // Sets the game into is playing state
+    public void PlayButton()
+    {
+        // Activate scene stage one
+        stateManager_.ActivateStageOne();
     }
 
     // Calling this function sets the menu back to its main state
@@ -79,5 +56,4 @@ public class MainMenuController : MonoBehaviour {
         // Make the new UI panel visible
         MenuStates_[n].SetActive(true);
     }
-    */
 }
