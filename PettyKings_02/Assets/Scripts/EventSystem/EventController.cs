@@ -11,6 +11,11 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
 
 
+    private EventDisplay eventDisplay;
+    private ResourceManager resourceManager;
+    private SeasonAudioManager seasonAudioManager;
+    private StateManager stateManager;
+
     // List of events
     private List<Event> introductionEvents_;
     private List<Event> springEventList_;
@@ -75,6 +80,11 @@ public class EventController : MonoBehaviour {
     void Start ()
     {
 
+        eventDisplay = EventDisplay.eventDisplay;
+        resourceManager = ResourceManager.resourceManager;
+        seasonAudioManager = SeasonAudioManager.seasonAudioManager;
+        stateManager = StateManager.stateManager;
+
         // No event is active when event controller is created
         eventActive_ = false;
 
@@ -107,30 +117,32 @@ public class EventController : MonoBehaviour {
     {
 
         // If stage 2 is running
-        if (true)
+        if (stateManager.CurrentState() == GAMESTATE.STAGEONE)
         {
 
-            // Check if timer for next event has been triggered
-            if (nextEventTimer_.UpdateTimer() && !eventActive_) 
-            {
-
-                ChangeSeason();
-                // Goto the next season
-                //currentSeason_++;
-                //currentSeason_ %= seasonList_.Length;
-
-                // Start an event from that season
-                //StartEvent();
-            }
-
             // If there are still introduction events and no event is active
-            if (introductionEvents_.Count > 0 && !eventActive_) 
+            if (introductionEvents_.Count > 0 && !eventActive_)
             {
-
+                Debug.Log("event start");
                 // Start the next event from the intro
                 StartEvent();
-            }
 
+                
+            }
+            // Check if timer for next event has been triggered
+            else if (nextEventTimer_.UpdateTimer() && !eventActive_) 
+            {
+
+                Debug.Log("season change");
+                ChangeSeason();
+                
+            }
+            
+        }
+
+        if (eventActive_)
+        {
+            eventDisplay.gameObject.SetActive(true);
         }
     }
 
@@ -144,7 +156,7 @@ public class EventController : MonoBehaviour {
 
         if (!eventActive_)
         {
-            if (EventDisplay.eventDisplay != null)
+            if (eventDisplay != null)
             {
 
                 if (!GotoNextIntroEvent())
@@ -157,6 +169,8 @@ public class EventController : MonoBehaviour {
 
             eventActive_ = true;
         }
+
+        seasonAudioManager.UpdateAudio(); //updates audio being played
     }
 
 
@@ -166,10 +180,10 @@ public class EventController : MonoBehaviour {
     {
 
         // Update display
-        if (EventDisplay.eventDisplay)
+        if (eventDisplay)
         {
-            EventDisplay.eventDisplay.DisplayDecision(choice);
-            ResourceManager.resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
+            eventDisplay.DisplayDecision(choice);
+            resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
         }
     }
 
@@ -177,18 +191,12 @@ public class EventController : MonoBehaviour {
     {
 
         // When continue button is pressed end the event
-        Debug.Log("Event has ended");
         eventController.EndEvent();
     }
 
     public void StartSeasonButtonClicked()
     {
-        Debug.Log("start of season clicked");
-        if (GotoNextIntroEvent())
-        {
-            eventController.GotoNextIntroEvent();
-        }
-        else
+        if (!GotoNextIntroEvent())
         {
             eventController.StartEvent();
         }
@@ -199,57 +207,55 @@ public class EventController : MonoBehaviour {
     public void StartEvent()
     {
 
-        // If no event is currently active
-        //if (!eventActive_)
-        //{
+        // Bool to check if an event is even found
+        bool eventFound = false;
 
-            // Bool to check if an event is even found
-            bool eventFound = false;
-
-            // Check the season and get event from appropriate list
-            switch (seasonList_[currentSeason_])
-            {
-                case Season.SPRING:
-                    eventFound = GetRandomEvent(springEventList_);
-                    break;
-                case Season.SUMMER:
-                    eventFound = GetRandomEvent(summerEventList_);
-                    break;
-                case Season.AUTUMN:
-                    eventFound = GetRandomEvent(autumnEventList_);
-                    break;
-                case Season.HARVEST:
-                    eventFound = GetRandomEvent(harvestEventList_);
-                    break;
-                case Season.WINTER:
-                    eventFound = GetRandomEvent(winterEventList_);
-                    break;
-                case Season.SPRING2:
-                    eventFound = GetRandomEvent(springEventList2_);
-                    break;
-                case Season.INTRO:
-                    eventFound = GetNextEvent(introductionEvents_);
-                    break;
-                
-            }
+        // Check the season and get event from appropriate list
+        switch (seasonList_[currentSeason_])
+        {
+            case Season.SPRING:
+                eventFound = GetRandomEvent(springEventList_);
+                break;
+            case Season.SUMMER:
+                eventFound = GetRandomEvent(summerEventList_);
+                break;
+            case Season.AUTUMN:
+                eventFound = GetRandomEvent(autumnEventList_);
+                break;
+            case Season.HARVEST:
+                eventFound = GetRandomEvent(harvestEventList_);
+                break;
+            case Season.WINTER:
+                eventFound = GetRandomEvent(winterEventList_);
+                break;
+            case Season.SPRING2:
+                eventFound = GetRandomEvent(springEventList2_);
+                break;
+            case Season.INTRO:
+                eventFound = GetNextEvent(introductionEvents_);
+                break;
             
-            // If no event was found leave the method
-            if (!eventFound)
-            {
-                return;
-            }
+        }
             
-            // Make event display active and display the new event
-            if (EventDisplay.eventDisplay != null)
-            {
-                EventDisplay.eventDisplay.gameObject.SetActive(true);
-                EventDisplay.eventDisplay.SetEvent(currentEvent_);
-                EventDisplay.eventDisplay.Display();
-            }
+        // If no event was found leave the method
+        if (!eventFound)
+        {
+            Debug.Log("no event found");
+            return;
+        }
+            
+        // Make event display active and display the new event
+        if (eventDisplay != null)
+        {
 
-            // Event Active flag is now true
-            eventActive_ = true;
-        //}
+            eventDisplay.gameObject.SetActive(true);
+            eventDisplay.SetEvent(currentEvent_);
+            eventDisplay.Display();
+        }
+
+        // Event Active flag is now true
+        eventActive_ = true;
+        
     }
 
     private bool GotoNextIntroEvent()
@@ -288,11 +294,11 @@ public class EventController : MonoBehaviour {
             return false;
         }
 
-        if (EventDisplay.eventDisplay != null)
+        if (eventDisplay != null)
         {
-            EventDisplay.eventDisplay.gameObject.SetActive(true);
-            EventDisplay.eventDisplay.SetEvent(currentEvent_);
-            EventDisplay.eventDisplay.DisplaySeasonStart();
+            eventDisplay.gameObject.SetActive(true);
+            eventDisplay.SetEvent(currentEvent_);
+            eventDisplay.DisplaySeasonStart();
         }
         return true;
     }
@@ -342,9 +348,10 @@ public class EventController : MonoBehaviour {
     // Method for ending an event
     public void EndEvent()
     {
+        Debug.Log("Event has ended");
         // Set that no event is active and make event display not active
         eventActive_ = false;
-        EventDisplay.eventDisplay.gameObject.SetActive(false);
+        eventDisplay.gameObject.SetActive(false);
 
         // If the event was the last intro event
         if (introductionEvents_.Count <= 0) 

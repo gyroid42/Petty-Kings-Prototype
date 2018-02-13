@@ -101,7 +101,6 @@ public class EventDisplay : MonoBehaviour {
 
     public void Display()
     {
-
         // Set all display elements with data from event
         nameText_.text = event_.name_;
         descriptionText_.text = event_.description_;
