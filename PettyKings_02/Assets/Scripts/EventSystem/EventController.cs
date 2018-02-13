@@ -37,7 +37,7 @@ public class EventController : MonoBehaviour {
     // Current event
     private Event currentEvent_;
 
-  
+
     // Current Season
     private int currentSeason_;
     private Season[] seasonList_ = new Season[7] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.HARVEST, Season.WINTER, Season.SPRING2 };
@@ -77,7 +77,7 @@ public class EventController : MonoBehaviour {
     }
 
 
-    void Start ()
+    void Start()
     {
 
         eventDisplay = EventDisplay.eventDisplay;
@@ -127,17 +127,17 @@ public class EventController : MonoBehaviour {
                 // Start the next event from the intro
                 StartEvent();
 
-                
+
             }
             // Check if timer for next event has been triggered
-            else if (nextEventTimer_.UpdateTimer() && !eventActive_) 
+            else if (nextEventTimer_.UpdateTimer() && !eventActive_)
             {
 
                 Debug.Log("season change");
                 ChangeSeason();
-                
+
             }
-            
+
         }
 
         if (eventActive_)
@@ -163,8 +163,8 @@ public class EventController : MonoBehaviour {
                 {
                     StartEvent();
                 }
-                
-                
+
+
             }
 
             eventActive_ = true;
@@ -234,16 +234,16 @@ public class EventController : MonoBehaviour {
             case Season.INTRO:
                 eventFound = GetNextEvent(introductionEvents_);
                 break;
-            
+
         }
-            
+
         // If no event was found leave the method
         if (!eventFound)
         {
             Debug.Log("no event found");
             return;
         }
-            
+
         // Make event display active and display the new event
         if (eventDisplay != null)
         {
@@ -255,7 +255,7 @@ public class EventController : MonoBehaviour {
 
         // Event Active flag is now true
         eventActive_ = true;
-        
+
     }
 
     private bool GotoNextIntroEvent()
@@ -354,13 +354,23 @@ public class EventController : MonoBehaviour {
         eventDisplay.gameObject.SetActive(false);
 
         // If the event was the last intro event
-        if (introductionEvents_.Count <= 0) 
+        if (introductionEvents_.Count <= 0)
         {
 
             // Start the timer between events
             nextEventTimer_.Reset();
             nextEventTimer_.SetActive(true);
         }
+    }
+
+    public void PauseSeasonTimer()
+    {
+        nextEventTimer_.Pause();
+    }
+
+    public void StartSeasonTimer()
+    {
+        nextEventTimer_.Start();
     }
 
 

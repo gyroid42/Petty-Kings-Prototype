@@ -8,6 +8,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     private GameObject modelClone; //variable to hold clone of desired gameobject 
     public ParticleSystem smoke;
     private BuildingController buildingController_;
+    private EventController eventController;
 
     //array of gameobjects to enable the shader when dragging
     GameObject[] walkableTiles;
@@ -20,14 +21,15 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     void Start()
     {
         buildingController_ = GetComponent<BuildingController>();
+        eventController = EventController.eventController;
 
     }
 
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
     {
-       modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
-
-       //add all the tiles to the gameobject arrays
+        modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
+        modelClone.tag = "Building";
+        //add all the tiles to the gameobject arrays
         walkableTiles = GameObject.FindGameObjectsWithTag("Walkable");
         notwalkableTiles = GameObject.FindGameObjectsWithTag("NotWalkable");
 
@@ -42,6 +44,8 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 6.0f);
         }
 
+        Debug.Log("pausing timer");
+        eventController.PauseSeasonTimer();
 
     }
 
@@ -78,8 +82,11 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false;
                 hit.collider.gameObject.GetComponent<GroundTileMesh>().UpdateMat(); //change colour of tile after building is placed
                 hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
-                Instantiate(smoke, modelClone.transform);   
-               
+                if (smoke)
+                {
+                    Instantiate(smoke, modelClone.transform);
+                }
+
             }
             
             else
@@ -104,6 +111,9 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
         }
+
+        Debug.Log("restarting timer");
+        eventController.StartSeasonTimer();
        
     }
 
