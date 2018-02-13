@@ -13,18 +13,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Summer
   artwork_: {fileID: 0}
-  description_: Summer is the perfect time for both building and hunting my lord!
-    You must choose whether to send the men out to hunt for food or to gather wood
-    for building.
+  description_: The heat is too much for our guards m'lord and men are dieing, what
+    shall we do?
   decisionText_:
-  - Hunt for food!
-  - Gather Wood!
+  - Build them shelters to shade them from the sun!
+  - If they can't handle a bit of sun then let them die!
   decisionArt_:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - A wise choice, the food we gather can be used for the grand feast before battle!
-  - A wise choice, building more huts means we can recruit more warriors!
-  decisionFood_: 1900000000000000
-  decisionWood_: 0000000019000000
-  decisionMen_: 0000000000000000
+  - Very well, it shall be done.
+  - God bless their souls...
+  decisionFood_: 0000000000000000
+  decisionWood_: e7ffffff00000000
+  decisionMen_: 00000000fbffffff

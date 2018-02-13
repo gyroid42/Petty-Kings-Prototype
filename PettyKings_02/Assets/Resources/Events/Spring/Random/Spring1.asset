@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
-  m_Name: hey there
+  m_Name: Spring1
   m_EditorClassIdentifier: 
   name_: Spring
   artwork_: {fileID: 0}
-  description_: My lord, spring is here allowing us to once again travel to other
+  description_: My lord, Spring is here allowing us to once again travel to other
     clans. Should we recruit warriors or trade our goods for more food?
   decisionText_:
   - Recruit Warriors
@@ -22,12 +22,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   decisionDesc_:
-  - "You are doing an excellent job so far my lord! Eostre, Godess of Spring will
-    be most\r pleased with your efforts. We must continue to build and recruit warriors,
-    I fear a\r great war is upon us!\r"
-  - "You are doing an excellent job so far my lord! Eostre, Godess of Spring will
-    be most\r pleased with your efforts. The food will be useful in the months to
-    come, I fear a great war is coming!"
+  - Very good Lord, we'll have men from the nearby villages coming to our settlement.
+  - 'Very wise Lord, our food stocks must be well maintained! '
   decisionFood_: 000000000a000000
   decisionWood_: 0000000000000000
   decisionMen_: 0a00000000000000
