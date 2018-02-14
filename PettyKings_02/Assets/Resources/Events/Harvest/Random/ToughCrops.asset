@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Name: ToughCrops
   m_EditorClassIdentifier: 
   name_: Cattle Disease!
-  artwork_: {fileID: 0}
+  artwork_: {fileID: 2800000, guid: 402af982f22c9e24ab16de84933f326c, type: 3}
   description_: 'My Lord, our cattle have been struck down by a strange disease. '
   decisionText_:
   - Kill the rest of them and burn the carcasses.
   - Burn the carcasses but keep the living cows, the meat will still be good.
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 402af982f22c9e24ab16de84933f326c, type: 3}
+  - {fileID: 2800000, guid: 402af982f22c9e24ab16de84933f326c, type: 3}
   decisionDesc_:
   - 'We have lost a much food, however the disease has not spread. '
   - The tainted meat has spread to our men, lord!

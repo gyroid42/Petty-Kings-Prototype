@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: Spring1
   m_EditorClassIdentifier: 
   name_: Spring
-  artwork_: {fileID: 0}
+  artwork_: {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
   description_: My lord, Spring is here allowing us to once again travel to other
     clans. Should we recruit warriors or trade our goods for more food?
   decisionText_:
   - Recruit Warriors
   - Get Food
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
+  - {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
   decisionDesc_:
   - Very good Lord, we'll have men from the nearby villages coming to our settlement.
   - 'Very wise Lord, our food stocks must be well maintained! '
