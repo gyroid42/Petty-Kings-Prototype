@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Gate House
   artwork_: {fileID: 2800000, guid: 40b6dea64df37ab439252eee97b1a3ad, type: 3}
-  buildingModel_: {fileID: 100000, guid: c6deb1b867c6304488c2d344d9b2a7de, type: 3}
+  buildingModel_: {fileID: 100000, guid: e88755baaa5757647bdf46633e541934, type: 3}
   buildParticle_: {fileID: 1728092457860708, guid: 82f9141fd62b90840b369e0ba1db81ab,
     type: 2}
   foodCost_: 0

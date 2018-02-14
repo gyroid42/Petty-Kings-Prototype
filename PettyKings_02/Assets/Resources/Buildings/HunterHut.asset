@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Hunters Hut
   artwork_: {fileID: 2800000, guid: 374f6f09c39a3db4ba4dc9c2c2da4d4e, type: 3}
-  buildingModel_: {fileID: 100010, guid: 6d4dc4175847025439ffdafdcf0d50ed, type: 3}
+  buildingModel_: {fileID: 100010, guid: 3ff7dde86f6618c4ba7bd8763fe5ed81, type: 3}
   buildParticle_: {fileID: 1728092457860708, guid: 82f9141fd62b90840b369e0ba1db81ab,
     type: 2}
   foodCost_: 0
