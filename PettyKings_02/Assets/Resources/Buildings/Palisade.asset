@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Palisade
   m_EditorClassIdentifier: 
   name_: Palisade
-  artwork_: {fileID: 2800000, guid: 7284a3177b330cf46872c79e5f000f94, type: 3}
+  artwork_: {fileID: 2800000, guid: 9fe270325dd3c434e815167f4717547a, type: 3}
   buildingModel_: {fileID: 100000, guid: ca702e61b6ad0904aaae48c6ab14fd4c, type: 3}
   buildParticle_: {fileID: 0}
   foodCost_: 0

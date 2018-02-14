@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: GateHouse
   m_EditorClassIdentifier: 
   name_: Gate House
-  artwork_: {fileID: 0}
+  artwork_: {fileID: 2800000, guid: 38709e71f7ba18947bbeaf99e92ac3da, type: 3}
   buildingModel_: {fileID: 100000, guid: c6deb1b867c6304488c2d344d9b2a7de, type: 3}
+  buildParticle_: {fileID: 0}
   foodCost_: 0
-  woodCost_: 0
+  woodCost_: 25
   menCost_: 0
   size: 0000000000000000
