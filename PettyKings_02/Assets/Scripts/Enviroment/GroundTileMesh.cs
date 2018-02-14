@@ -10,8 +10,19 @@ public class GroundTileMesh : MonoBehaviour {
     public bool isWalkable; //can the player walk on this ground tile 
     public Material materialGreen;
     public Material materialRed;
-	// Use this for initialization
-	void Start () {
+    private int[] mapPosition_;
+    public int height_;
+
+    private Renderer tileRenderer_;
+
+    void Awake()
+    {
+        tileRenderer_ = GetComponent<Renderer>();
+    }
+
+
+    // Use this for initialization
+    void Start () {
 
         if(isWalkable) //set tag based on bool variable, should save some time in editor
         {
@@ -71,6 +82,7 @@ public class GroundTileMesh : MonoBehaviour {
             GetComponent<Renderer>().material = materialGreen;
         }
 
+
         //set thickness of highlight to 0 at run time, this allows for easier editing
        // GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
     }
@@ -88,7 +100,51 @@ public class GroundTileMesh : MonoBehaviour {
         }
     }
 
-   
+    public void Hide()
+    {
+        //reset the thickness of shading line therefor hiding the grid 
+        if (tileRenderer_)
+        {
+            tileRenderer_.material.SetFloat("_Thickness", 0.0f);
+        }
+    }
+
+    public void Show()
+    {
+        //set thickness of shading line to 4, showing the grid to player
+
+        if (tileRenderer_)
+        {
+            if (gameObject.tag == "Walkable")
+            {
+                tileRenderer_.material.SetFloat("_Thickness", 3.0f);
+            }
+            else
+            {
+                tileRenderer_.material.SetFloat("_Thickness", 6.0f);
+            }
+        }
+    }
+
+    public void SetMapPosition(int x, int y)
+    {
+        mapPosition_ = new int[2] { x, y };
+    }
+
+    public int[] GetMapPosition()
+    {
+        return mapPosition_;
+    }
+    
+    public void SetHeight(int newHeight)
+    {
+        height_ = newHeight;
+    }
+
+    public int GetHeight()
+    {
+        return height_;
+    }
 
 
     //**COMMENTED OUT FOR FURTHER DESIGN DISCUSSIONS**//
