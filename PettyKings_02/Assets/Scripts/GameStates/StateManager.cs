@@ -124,12 +124,12 @@ public class StateManager : MonoBehaviour {
 
         // Point 2
         pos = new Vector3(-9.536f, 1.474f, -35.708f);
-        rot = new Vector3(0.0f, 0.0f, 0.0f);
+        rot = new Vector3(0.0f, 0.0f, 350.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Point 3
         pos = new Vector3(-7.99f, 1.29f, -33.46f);
-        rot = new Vector3(0.0f, 0.0f, 0.0f);
+        rot = new Vector3(0.0f, 0.0f, 10.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Final Point
