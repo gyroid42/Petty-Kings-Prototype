@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Name: autumn
   m_EditorClassIdentifier: 
   name_: Autumn
-  artwork_: {fileID: 0}
+  artwork_: {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
   description_: The forests nearby are full of beasts! Which shall we hunt?
   decisionText_:
   - There is a bear rumored to be deep in the forest...
   - Deer roam the woods in many numbers!
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
+  - {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
   decisionDesc_:
   - You hunt for the monsterous bear for many hours, once he was found many men were
     slain by the beast but finally you brought it down with a mighty strike of your

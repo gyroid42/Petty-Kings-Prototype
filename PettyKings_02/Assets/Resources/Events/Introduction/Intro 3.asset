@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Intro 3
   m_EditorClassIdentifier: 
   name_: Welcome, King
-  artwork_: {fileID: 2800000, guid: 82d9181be3fcd2846b4279fe9817aad3, type: 3}
+  artwork_: {fileID: 2800000, guid: 18bca0103ab66a34f978294e44343057, type: 3}
   description_: Good luck my Lord, we'll all need it for the coming year...
   decisionText_: []
   decisionArt_: []

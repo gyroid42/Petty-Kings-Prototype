@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Intro 1
   m_EditorClassIdentifier: 
   name_: Welcome, King
-  artwork_: {fileID: 2800000, guid: 82d9181be3fcd2846b4279fe9817aad3, type: 3}
+  artwork_: {fileID: 2800000, guid: 18bca0103ab66a34f978294e44343057, type: 3}
   description_: Welcome my Liege! Our scouts have found a clearing just beyond the
     woods that will make for a fine place to settle!
   decisionText_: []
