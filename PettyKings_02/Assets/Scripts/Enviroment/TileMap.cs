@@ -57,14 +57,17 @@ public class TileMap : MonoBehaviour {
 
                 tileMap_[i, j].SetMapPosition(i, j);
 
+                int height = Mathf.RoundToInt(tileMap_[i, j].transform.position.y);
+                
+                tileMap_[i, j].SetHeight(height);
 
-                if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
-                {
-                    tileMap_[i, j].isWalkable = false;
-                }
-                else if (unchecked( tileMap_[i, j].transform.position.y + 0.1f < (int)(tileMap_[i, j].transform.position.y)) || unchecked(tileMap_[i, j].transform.position.y - 0.2f > (int)(tileMap_[i, j].transform.position.y - 0.1f)))
+                if (unchecked(tileMap_[i, j].transform.position.y < height) || unchecked(tileMap_[i, j].transform.position.y - 0.11f > height) || height % 2 != 0)
                 {
                     tileMap_[i, j].gameObject.SetActive(false);
+                }
+                else if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
+                {
+                    tileMap_[i, j].isWalkable = false;
                 }
                 else
                 {

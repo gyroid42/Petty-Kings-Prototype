@@ -10,7 +10,8 @@ public class GroundTileMesh : MonoBehaviour {
     public bool isWalkable; //can the player walk on this ground tile 
     public Material materialGreen;
     public Material materialRed;
-    public int[] mapPosition_;
+    private int[] mapPosition_;
+    public int height_;
 
     private Renderer tileRenderer_;
 
@@ -134,7 +135,16 @@ public class GroundTileMesh : MonoBehaviour {
     {
         return mapPosition_;
     }
-   
+    
+    public void SetHeight(int newHeight)
+    {
+        height_ = newHeight;
+    }
+
+    public int GetHeight()
+    {
+        return height_;
+    }
 
 
     //**COMMENTED OUT FOR FURTHER DESIGN DISCUSSIONS**//
