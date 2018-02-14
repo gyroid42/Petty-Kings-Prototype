@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Welcome, King
   artwork_: {fileID: 2800000, guid: 82d9181be3fcd2846b4279fe9817aad3, type: 3}
-  description_: We must act quickly, we have saxons to the south and the northmen
+  description_: We must act quickly, we have Saxons to the south and the northmen
     have been spotted north of Lindisfarne!
   decisionText_: []
   decisionArt_: []

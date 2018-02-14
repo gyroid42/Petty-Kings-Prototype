@@ -13,8 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Spring2
   artwork_: {fileID: 0}
-  description_: My Lord, the people will need to be fed. What food type should we
-    focus on?
+  description_: My Lord, the people will need to be fed. What should we focus on?
   decisionText_:
   - Focus on cattle!
   - Grow the lovely delicious vegetables!
@@ -23,7 +22,7 @@ MonoBehaviour:
   - {fileID: 0}
   decisionDesc_:
   - Very well, we shall construct the farms for cattle!
-  - 'We shall have vegetables patches built! '
+  - 'We shall have vegetable patches built! '
   decisionFood_: 140000000a000000
   decisionWood_: d8fffffff6ffffff
   decisionMen_: fdfffffff6ffffff

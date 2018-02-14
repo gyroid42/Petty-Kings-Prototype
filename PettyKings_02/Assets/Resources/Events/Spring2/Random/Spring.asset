@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: 
   artwork_: {fileID: 0}
-  description_: Sire! strangers are requesting shelter, they appear to be lordless
+  description_: Sire! Strangers are requesting shelter, they appear to be lordless
     men and wish to join us. What are your orders?
   decisionText_:
-  - Allow them shelter and feed!
+  - Allow them shelter and hot food!
   - We cannot spare them shelter or food, send them on their way!
   decisionArt_:
   - {fileID: 0}

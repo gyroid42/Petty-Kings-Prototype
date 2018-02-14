@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Autumn
   artwork_: {fileID: 0}
-  description_: The forests near by are full of beasts, which shall we hunt?
+  description_: The forests nearby are full of beasts! Which shall we hunt?
   decisionText_:
   - There is a bear rumored to be deep in the forest...
   - Deer roam the woods in many numbers!
@@ -22,11 +22,11 @@ MonoBehaviour:
   - {fileID: 0}
   decisionDesc_:
   - You hunt for the monsterous bear for many hours, once he was found many men were
-    slain by the beast but finally you brought it down with a mighty stroak of your're
+    slain by the beast but finally you brought it down with a mighty strike of your
     spear. You return victorious and the tale of your victory brings fame to your
     name!
   - 'You and your hunters roam the fields where the deer were but could only find
-    a few straglers and eventually return to the village dissapointed. '
+    a few straglers and eventually return to the village disappointed. '
   decisionFood_: 1e0000000a000000
   decisionWood_: 0000000000000000
   decisionMen_: f6ffffff00000000
