@@ -85,7 +85,7 @@ public class GroundTileMesh : MonoBehaviour {
 
 
         //set thickness of highlight to 0 at run time, this allows for easier editing
-        GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
+        //GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
     }
 
 

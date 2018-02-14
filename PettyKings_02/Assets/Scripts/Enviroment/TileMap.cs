@@ -61,15 +61,9 @@ public class TileMap : MonoBehaviour {
                 
                 tileMap_[i, j].SetHeight(height);
 
-                if (unchecked(tileMap_[i, j].transform.position.y < height) || unchecked(tileMap_[i, j].transform.position.y - 0.11f > height) || height % 2 != 0)
+                if (!CheckTileValid(i, j))
                 {
-                    tileMap_[i, j].isWalkable = false;
-                    tileMap_[i, j].gameObject.SetActive(false);
-                }
-                else if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
-                {
-                    tileMap_[i, j].isWalkable = false;
-                    tileMap_[i, j].gameObject.SetActive(false);
+                    DisableTile(i, j);
                 }
                 else
                 {
@@ -86,9 +80,7 @@ public class TileMap : MonoBehaviour {
             {
                 if (!CheckTileValidWithNeighbours(i, j))
                 {
-                    tileMap_[i, j].isWalkable = false;
-                    tileMap_[i, j].gameObject.SetActive(false);
-                    tileMap_[i, j].UpdateMat();
+                    DisableTile(i, j);
                 }
 
             }
@@ -100,9 +92,7 @@ public class TileMap : MonoBehaviour {
             {
                 if (!CheckTileValidWithNeighbours(i, j))
                 {
-                    tileMap_[i, j].isWalkable = false;
-                    tileMap_[i, j].gameObject.SetActive(false);
-                    tileMap_[i, j].UpdateMat();
+                    DisableTile(i, j);
                 }
 
             }
@@ -175,7 +165,9 @@ public class TileMap : MonoBehaviour {
 
     public void DisableTile(int x, int y)
     {
-
+        tileMap_[x, y].isWalkable = false;
+        tileMap_[x, y].gameObject.SetActive(false);
+        tileMap_[x, y].UpdateMat();
     }
 	
 	// Update is called once per frame
