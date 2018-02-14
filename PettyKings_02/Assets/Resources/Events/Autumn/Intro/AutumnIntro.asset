@@ -14,7 +14,7 @@ MonoBehaviour:
   name_: 
   artwork_: {fileID: 0}
   description_: Summer is now gone, Autumn marks a perfect time for us to prepare
-    for the harsh winter months. Make sure to gather plenty of food and wood!
+    for the harsh Winter months. Make sure to gather plenty of food and wood!
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Winter
   artwork_: {fileID: 0}
-  description_: The bitter cold has come Sire! All we can do now id tighten our belts
+  description_: The bitter cold has come Sire! All we can do now is tighten our belts
     and pray the harvest was enough.
   decisionText_: []
   decisionArt_: []
