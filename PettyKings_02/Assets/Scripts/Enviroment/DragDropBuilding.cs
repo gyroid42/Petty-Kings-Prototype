@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System;
 
 public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     private GameObject modelClone; //variable to hold clone of desired gameobject 
-    public ParticleSystem smoke;
+    private ParticleSystem smoke;
     private BuildingController buildingController_;
     private EventController eventController;
+    private TileMap tileMapManager;
 
     //array of gameobjects to enable the shader when dragging
     GameObject[] walkableTiles;
@@ -22,7 +24,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         buildingController_ = GetComponent<BuildingController>();
         eventController = EventController.eventController;
-
+        tileMapManager = TileMap.tileMapManager;
     }
 
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
@@ -34,23 +36,12 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         {
             smoke = buildingController_.building_.buildParticle_.GetComponent<ParticleSystem>();
         }
+       
 
-        //add all the tiles to the gameobject arrays
-        walkableTiles = GameObject.FindGameObjectsWithTag("Walkable");
-        notwalkableTiles = GameObject.FindGameObjectsWithTag("NotWalkable");
 
-        //set thickness of shading line to 4, showing the grid to player
-        foreach (GameObject i in walkableTiles)
-        {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 3.0f);
-        }
+        tileMapManager.ShowTileMap();
 
-        foreach (GameObject i in notwalkableTiles)
-        {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 6.0f);
-        }
 
-        Debug.Log("pausing timer");
         eventController.PauseSeasonTimer();
 
     }
@@ -72,6 +63,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             }
         }
         
+
     }
 
     public void OnEndDrag(PointerEventData eventData) //called when player stops dragging
@@ -80,24 +72,24 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) )
         {
-            if (hit.collider.tag == "Walkable" && buildingController_.Purchase())
+            if (hit.collider.gameObject.GetComponent<GroundTileMesh>().gameObject.tag == "Walkable" && buildingController_.Purchase() && tileMapManager.CanPlacebuilding(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size))
             {
          
                 modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
-                         
-                hit.collider.gameObject.GetComponent<GroundTileMesh>().isWalkable = false;
-                hit.collider.gameObject.GetComponent<GroundTileMesh>().UpdateMat(); //change colour of tile after building is placed
-                hit.collider.gameObject.tag = "NotWalkable"; //change tag of tile
+
+                tileMapManager.SetTilesWalkable(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size, false);
                 if (smoke)
                 {
                     Instantiate(smoke, modelClone.transform);
                 }
+                Debug.Log("it's been build");
 
             }
             
             else
             {
                 Destroy(modelClone);
+                Debug.Log("it's not been build");
             }
         }
         else
@@ -106,21 +98,14 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         }
 
 
-        //reset the thickness of shading line therefor hiding the grid 
-        foreach (GameObject i in walkableTiles)
-        {
-            Debug.Log(i.name);
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
-        }
+        //tileMapManager.HideTileMap();
 
-        foreach (GameObject i in notwalkableTiles)
-        {
-            i.gameObject.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
-        }
 
-        Debug.Log("restarting timer");
+
+
         eventController.StartSeasonTimer();
-       
+
+
     }
 
 
