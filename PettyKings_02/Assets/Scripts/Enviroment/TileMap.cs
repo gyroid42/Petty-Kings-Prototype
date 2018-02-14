@@ -63,11 +63,12 @@ public class TileMap : MonoBehaviour {
 
                 if (unchecked(tileMap_[i, j].transform.position.y < height) || unchecked(tileMap_[i, j].transform.position.y - 0.11f > height) || height % 2 != 0)
                 {
+                    tileMap_[i, j].isWalkable = false;
                     tileMap_[i, j].gameObject.SetActive(false);
                 }
                 else if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
                 {
-                    //tileMap_[i, j].isWalkable = false;
+                    tileMap_[i, j].isWalkable = false;
                     tileMap_[i, j].gameObject.SetActive(false);
                 }
                 else
@@ -77,6 +78,103 @@ public class TileMap : MonoBehaviour {
                 tileMap_[i, j].UpdateMat();
             }
         }
+
+
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int j = 0; j < sizeY; j++)
+            {
+                if (!CheckTileValidWithNeighbours(i, j))
+                {
+                    tileMap_[i, j].isWalkable = false;
+                    tileMap_[i, j].gameObject.SetActive(false);
+                    tileMap_[i, j].UpdateMat();
+                }
+
+            }
+        }
+
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int j = 0; j < sizeY; j++)
+            {
+                if (!CheckTileValidWithNeighbours(i, j))
+                {
+                    tileMap_[i, j].isWalkable = false;
+                    tileMap_[i, j].gameObject.SetActive(false);
+                    tileMap_[i, j].UpdateMat();
+                }
+
+            }
+        }
+
+
+    }
+
+
+    private bool CheckTileValid(int x, int y)
+    {
+        int height = tileMap_[x, y].GetHeight();
+
+        
+
+
+
+        if (unchecked(tileMap_[x, y].transform.position.y < height) || unchecked(tileMap_[x, y].transform.position.y - 0.11f > height))
+        {
+            return false;
+        }
+        else if (height % 2 != 0)
+        {
+            return false;
+        }
+        else if (tileMap_[x, y].transform.position.y >= maxBuildHeight_)
+        {
+            return false;
+        }
+        
+        return true;
+    }
+
+    private bool CheckTileValidWithNeighbours(int x, int y)
+    {
+        if (x - 1 >= 0 && x + 1 < tileMap_.GetLength(0) && y - 1 >= 0 && y + 1 < tileMap_.GetLength(1))
+        {
+
+            int height = tileMap_[x, y].GetHeight();
+
+            List<GroundTileMesh> neighbourTiles = new List<GroundTileMesh>();
+
+
+            neighbourTiles.Add(tileMap_[x - 1, y + 1]);
+            neighbourTiles.Add(tileMap_[x, y + 1]);
+            neighbourTiles.Add(tileMap_[x + 1, y + 1]);
+            neighbourTiles.Add(tileMap_[x - 1, y]);
+            neighbourTiles.Add(tileMap_[x + 1, y]);
+            neighbourTiles.Add(tileMap_[x - 1, y - 1]);
+            neighbourTiles.Add(tileMap_[x, y - 1]);
+            neighbourTiles.Add(tileMap_[x + 1, y - 1]);
+
+            int validNeighbourCount = 0;
+
+            for (int i = 0; i < neighbourTiles.Count; i++)
+            {
+                if (neighbourTiles[i].gameObject.activeSelf && neighbourTiles[i].GetHeight() == height)
+                {
+                    validNeighbourCount++;
+
+                    if (validNeighbourCount >= 3)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public void DisableTile(int x, int y)
+    {
 
     }
 	
@@ -111,11 +209,32 @@ public class TileMap : MonoBehaviour {
     public bool CanPlacebuilding(int[] position, int[] size)
     {
 
+
+        if (size[0] % 2 != 0)
+        {
+            position[0] -= (size[0] - 1) / 2;
+        }
+        else
+        {
+            position[0] -= size[0] / 2;
+        }
+
+        if (size[1] % 2 != 0)
+        {
+            position[1] -= (size[1] - 1) / 2;
+        }
+        else
+        {
+            position[1] -= size[1] / 2;
+        }
+
         if (position[0] + size[0] - 1 > tileMap_.GetLength(0) || position[1] + size[1] - 1 > tileMap_.GetLength(1))
         {
             Debug.Log("cannot place number 1");
             return false;
         }
+
+        int height = tileMap_[position[0], position[1]].GetHeight();
 
         for (int i = 0; i < size[0]; i++)
         {
@@ -124,6 +243,11 @@ public class TileMap : MonoBehaviour {
                 if (!tileMap_[position[0] + i, position[1] + j].isWalkable)
                 {
                     Debug.Log("cannot place number 2 position = " + position[0] + position[1] + " | i = " + i + " | j = " + j);
+                    return false;
+                }
+
+                if (tileMap_[position[0] + i, position[1] + j].GetHeight() != height)
+                {
                     return false;
                 }
             }
