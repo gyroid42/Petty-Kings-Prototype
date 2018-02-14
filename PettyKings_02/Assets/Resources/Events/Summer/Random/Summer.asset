@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name_: Summer
   artwork_: {fileID: 0}
-  description_: The heat is too much for our guards m'lord and men are dieing, what
+  description_: The heat is too much for our guards m'lord and men are dying, what
     shall we do?
   decisionText_:
   - Build them shelters to shade them from the sun!
