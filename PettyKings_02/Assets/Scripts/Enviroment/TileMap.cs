@@ -67,7 +67,8 @@ public class TileMap : MonoBehaviour {
                 }
                 else if (tileMap_[i, j].transform.position.y >= maxBuildHeight_)
                 {
-                    tileMap_[i, j].isWalkable = false;
+                    //tileMap_[i, j].isWalkable = false;
+                    tileMap_[i, j].gameObject.SetActive(false);
                 }
                 else
                 {
