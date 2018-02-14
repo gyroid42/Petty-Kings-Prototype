@@ -115,8 +115,11 @@ public class StateManager : MonoBehaviour {
     void CameraStageOne()
     {
         // Position/Rotation for Stage One
-        Vector3 pos = new Vector3(-6.36f, 15.1f, -10.0f);
-        Vector3 rot = new Vector3(55.59f, 36.736f, 0.0f);
+        Vector3 pos, rot;
+
+        // Final Point
+        pos = new Vector3(-6.36f, 15.1f, -10.0f);
+        rot = new Vector3(55.59f, 36.736f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
     }
  }

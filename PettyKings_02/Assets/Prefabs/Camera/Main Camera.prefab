@@ -98,15 +98,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241143195606892}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.944, y: 0.826, z: -27.331}
+  m_LocalRotation: {x: 0.104477905, y: -0, z: -0, w: 0.9945272}
+  m_LocalPosition: {x: -12.944, y: 0.798, z: -37.248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4041559667865192}
   - {fileID: 4290969060387246}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 55.590004, y: 36.736, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.994, y: 0, z: 0}
 --- !u!20 &20267733672138784
 Camera:
   m_ObjectHideFlags: 1
@@ -334,7 +334,6 @@ MonoBehaviour:
   winter: {fileID: 8300000, guid: aa7e2b7c927288e429ab4a7b5dbe4055, type: 3}
   harvest: {fileID: 8300000, guid: aa7e2b7c927288e429ab4a7b5dbe4055, type: 3}
   audioSource: {fileID: 82785005452553336}
-  season: {fileID: 0}
 --- !u!114 &114339034019054882
 MonoBehaviour:
   m_ObjectHideFlags: 1
