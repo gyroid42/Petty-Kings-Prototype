@@ -15,7 +15,7 @@ MonoBehaviour:
   artwork_: {fileID: 0}
   description_: The forests nearby are full of beasts! Which shall we hunt?
   decisionText_:
-  - There is a bear rumored to be deep in the forest...
+  - There is a bear rumoured to be deep in the forest...
   - Deer roam the woods in many numbers!
   decisionArt_:
   - {fileID: 0}
