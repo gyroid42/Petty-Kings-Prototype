@@ -98,7 +98,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         }
 
 
-        //tileMapManager.HideTileMap();
+        tileMapManager.HideTileMap();
 
 
 
