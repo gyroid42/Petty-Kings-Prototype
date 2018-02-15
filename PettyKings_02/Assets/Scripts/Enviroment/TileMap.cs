@@ -51,8 +51,8 @@ public class TileMap : MonoBehaviour {
             for (int j = 0; j < sizeY; j++)
             {
 
-                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * 2.05f - 49, 0, (float)j * 2.05f - 49), Quaternion.identity)).GetComponent<GroundTileMesh>();
-                tileMap_[i, j].transform.position = new Vector3((float)i * 2.05f - 50, Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position) + 0.1f, (float)j * 2.05f - 50);
+                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * GroundTileMesh.size_[0] - 49, 0, (float)j * GroundTileMesh.size_[1] - 49), Quaternion.identity)).GetComponent<GroundTileMesh>();
+                tileMap_[i, j].transform.position = new Vector3((float)i * GroundTileMesh.size_[0] - 49, Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position) + 0.1f, (float)j * GroundTileMesh.size_[1] - 49);
                 tileMap_[i, j].transform.SetParent(transform);
 
                 tileMap_[i, j].SetMapPosition(i, j);
@@ -98,6 +98,14 @@ public class TileMap : MonoBehaviour {
             }
         }
 
+        for (int i = 0; i < sizeX; i++)
+        {
+            for (int j = 0; j < sizeY; j++)
+            {
+                tileMap_[i, j].UpdateHeightTransform();
+
+            }
+        }
 
     }
 
@@ -105,12 +113,19 @@ public class TileMap : MonoBehaviour {
     private bool CheckTileValid(int x, int y)
     {
         int height = tileMap_[x, y].GetHeight();
+        Vector3 position = tileMap_[x, y].transform.position;
+        Vector2 size = GroundTileMesh.size_;
 
-        
+        float[] cornerHeights = new float[4]
+        {
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x - size.x/2, position.y, position.z - size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x - size.x/2, position.y, position.z + size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x + size.x/2, position.y, position.z - size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x + size.x/2, position.y, position.z + size.y/2))
+        };
 
 
-
-        if (unchecked(tileMap_[x, y].transform.position.y < height) || unchecked(tileMap_[x, y].transform.position.y - 0.11f > height))
+        if (unchecked(position.y + 0.1f < height) || unchecked(position.y - 0.2f > height))
         {
             return false;
         }
@@ -118,9 +133,20 @@ public class TileMap : MonoBehaviour {
         {
             return false;
         }
-        else if (tileMap_[x, y].transform.position.y >= maxBuildHeight_)
+        else if (position.y >= maxBuildHeight_)
         {
             return false;
+        }
+
+
+        foreach ( float corner in cornerHeights)
+        {
+            if (unchecked(corner + 0.7f < height) || unchecked(corner - 0.7f > height))
+            {
+                Debug.Log("corner too high corner height = " + corner);
+                Debug.Log("tile height = " + height);
+                return false;
+            }
         }
         
         return true;
@@ -133,17 +159,17 @@ public class TileMap : MonoBehaviour {
 
             int height = tileMap_[x, y].GetHeight();
 
-            List<GroundTileMesh> neighbourTiles = new List<GroundTileMesh>();
-
-
-            neighbourTiles.Add(tileMap_[x - 1, y + 1]);
-            neighbourTiles.Add(tileMap_[x, y + 1]);
-            neighbourTiles.Add(tileMap_[x + 1, y + 1]);
-            neighbourTiles.Add(tileMap_[x - 1, y]);
-            neighbourTiles.Add(tileMap_[x + 1, y]);
-            neighbourTiles.Add(tileMap_[x - 1, y - 1]);
-            neighbourTiles.Add(tileMap_[x, y - 1]);
-            neighbourTiles.Add(tileMap_[x + 1, y - 1]);
+            List<GroundTileMesh> neighbourTiles = new List<GroundTileMesh>
+            {
+                tileMap_[x - 1, y + 1],
+                tileMap_[x, y + 1],
+                tileMap_[x + 1, y + 1],
+                tileMap_[x - 1, y],
+                tileMap_[x + 1, y],
+                tileMap_[x - 1, y - 1],
+                tileMap_[x, y - 1],
+                tileMap_[x + 1, y - 1]
+            };
 
             int validNeighbourCount = 0;
 
