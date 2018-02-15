@@ -12,7 +12,6 @@ public class GroundTileMesh : MonoBehaviour {
     public Material materialRed;
     private int[] mapPosition_;
     public static Vector2 size_ = new Vector2( 2.05f, 2.05f );
-    public Vector3[] cornerPos_;
     private int height_;
 
     private Renderer tileRenderer_;

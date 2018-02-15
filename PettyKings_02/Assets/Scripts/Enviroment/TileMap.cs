@@ -10,6 +10,15 @@ public class TileMap : MonoBehaviour {
 
     public int sizeX, sizeY;
     public float maxBuildHeight_;
+    public float tileUpperHeightTolerance_;
+    public float tileLowerHeightTolerance_;
+    public float cornerUpperHeightTolerance_;
+    public float cornerLowerHeightTolerance_;
+    public int heightLevelSpacing_;
+    public int numberOfRequiredNeighbours_;
+    public int numberOfNeighbourChecks_;
+    public bool setTilesToTileHeight_;
+
 
     private bool[][] walkAbleMap_;
     private GroundTileMesh[,] tileMap_;
@@ -51,8 +60,8 @@ public class TileMap : MonoBehaviour {
             for (int j = 0; j < sizeY; j++)
             {
 
-                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * GroundTileMesh.size_[0] - 49, 0, (float)j * GroundTileMesh.size_[1] - 49), Quaternion.identity)).GetComponent<GroundTileMesh>();
-                tileMap_[i, j].transform.position = new Vector3((float)i * GroundTileMesh.size_[0] - 49, Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position) + 0.1f, (float)j * GroundTileMesh.size_[1] - 49);
+                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * GroundTileMesh.size_[0] - (sizeX + 1), 0, (float)j * GroundTileMesh.size_[1] - (sizeY + 1)), Quaternion.identity)).GetComponent<GroundTileMesh>();
+                tileMap_[i, j].transform.position = new Vector3((float)i * GroundTileMesh.size_[0] - (sizeX + 1), Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position), (float)j * GroundTileMesh.size_[1] - (sizeY + 1));
                 tileMap_[i, j].transform.SetParent(transform);
 
                 tileMap_[i, j].SetMapPosition(i, j);
@@ -74,36 +83,30 @@ public class TileMap : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < sizeX; i++)
+        for (int checkNum = 0; checkNum < numberOfNeighbourChecks_; checkNum++)
         {
-            for (int j = 0; j < sizeY; j++)
+            for (int i = 0; i < sizeX; i++)
             {
-                if (!CheckTileValidWithNeighbours(i, j))
+                for (int j = 0; j < sizeY; j++)
                 {
-                    DisableTile(i, j);
-                }
+                    if (!CheckTileValidWithNeighbours(i, j))
+                    {
+                        DisableTile(i, j);
+                    }
 
+                }
             }
         }
 
-        for (int i = 0; i < sizeX; i++)
+        if (setTilesToTileHeight_)
         {
-            for (int j = 0; j < sizeY; j++)
+            for (int i = 0; i < sizeX; i++)
             {
-                if (!CheckTileValidWithNeighbours(i, j))
+                for (int j = 0; j < sizeY; j++)
                 {
-                    DisableTile(i, j);
+                    tileMap_[i, j].UpdateHeightTransform();
+
                 }
-
-            }
-        }
-
-        for (int i = 0; i < sizeX; i++)
-        {
-            for (int j = 0; j < sizeY; j++)
-            {
-                tileMap_[i, j].UpdateHeightTransform();
-
             }
         }
 
@@ -125,11 +128,11 @@ public class TileMap : MonoBehaviour {
         };
 
 
-        if (unchecked(position.y + 0.1f < height) || unchecked(position.y - 0.2f > height))
+        if (unchecked(position.y < height - tileLowerHeightTolerance_) || unchecked(position.y > height + tileUpperHeightTolerance_))
         {
             return false;
         }
-        else if (height % 2 != 0)
+        else if (height % heightLevelSpacing_ != 0)
         {
             return false;
         }
@@ -141,10 +144,10 @@ public class TileMap : MonoBehaviour {
 
         foreach ( float corner in cornerHeights)
         {
-            if (unchecked(corner + 0.7f < height) || unchecked(corner - 0.7f > height))
+            if (unchecked(corner < height - cornerLowerHeightTolerance_) || unchecked(corner > height + cornerUpperHeightTolerance_))
             {
-                Debug.Log("corner too high corner height = " + corner);
-                Debug.Log("tile height = " + height);
+                //Debug.Log("corner too high corner height = " + corner);
+                //Debug.Log("tile height = " + height);
                 return false;
             }
         }
@@ -179,7 +182,7 @@ public class TileMap : MonoBehaviour {
                 {
                     validNeighbourCount++;
 
-                    if (validNeighbourCount >= 3)
+                    if (validNeighbourCount >= numberOfRequiredNeighbours_)
                     {
                         return true;
                     }
