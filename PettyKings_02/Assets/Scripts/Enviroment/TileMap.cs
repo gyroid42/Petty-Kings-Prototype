@@ -10,6 +10,15 @@ public class TileMap : MonoBehaviour {
 
     public int sizeX, sizeY;
     public float maxBuildHeight_;
+    public float tileUpperHeightTolerance_;
+    public float tileLowerHeightTolerance_;
+    public float cornerUpperHeightTolerance_;
+    public float cornerLowerHeightTolerance_;
+    public int heightLevelSpacing_;
+    public int numberOfRequiredNeighbours_;
+    public int numberOfNeighbourChecks_;
+    public bool setTilesToTileHeight_;
+
 
     private bool[][] walkAbleMap_;
     private GroundTileMesh[,] tileMap_;
@@ -51,8 +60,8 @@ public class TileMap : MonoBehaviour {
             for (int j = 0; j < sizeY; j++)
             {
 
-                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * 2.05f - 49, 0, (float)j * 2.05f - 49), Quaternion.identity)).GetComponent<GroundTileMesh>();
-                tileMap_[i, j].transform.position = new Vector3((float)i * 2.05f - 50, Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position) + 0.1f, (float)j * 2.05f - 50);
+                tileMap_[i, j] = ((GameObject)Instantiate(tile_, new Vector3((float)i * GroundTileMesh.size_[0] - (sizeX + 1), 0, (float)j * GroundTileMesh.size_[1] - (sizeY + 1)), Quaternion.identity)).GetComponent<GroundTileMesh>();
+                tileMap_[i, j].transform.position = new Vector3((float)i * GroundTileMesh.size_[0] - (sizeX + 1), Terrain.activeTerrain.SampleHeight(tileMap_[i, j].transform.position), (float)j * GroundTileMesh.size_[1] - (sizeY + 1));
                 tileMap_[i, j].transform.SetParent(transform);
 
                 tileMap_[i, j].SetMapPosition(i, j);
@@ -74,30 +83,32 @@ public class TileMap : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < sizeX; i++)
+        for (int checkNum = 0; checkNum < numberOfNeighbourChecks_; checkNum++)
         {
-            for (int j = 0; j < sizeY; j++)
+            for (int i = 0; i < sizeX; i++)
             {
-                if (!CheckTileValidWithNeighbours(i, j))
+                for (int j = 0; j < sizeY; j++)
                 {
-                    DisableTile(i, j);
-                }
+                    if (!CheckTileValidWithNeighbours(i, j))
+                    {
+                        DisableTile(i, j);
+                    }
 
+                }
             }
         }
 
-        for (int i = 0; i < sizeX; i++)
+        if (setTilesToTileHeight_)
         {
-            for (int j = 0; j < sizeY; j++)
+            for (int i = 0; i < sizeX; i++)
             {
-                if (!CheckTileValidWithNeighbours(i, j))
+                for (int j = 0; j < sizeY; j++)
                 {
-                    DisableTile(i, j);
-                }
+                    tileMap_[i, j].UpdateHeightTransform();
 
+                }
             }
         }
-
 
     }
 
@@ -105,22 +116,40 @@ public class TileMap : MonoBehaviour {
     private bool CheckTileValid(int x, int y)
     {
         int height = tileMap_[x, y].GetHeight();
+        Vector3 position = tileMap_[x, y].transform.position;
+        Vector2 size = GroundTileMesh.size_;
 
-        
+        float[] cornerHeights = new float[4]
+        {
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x - size.x/2, position.y, position.z - size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x - size.x/2, position.y, position.z + size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x + size.x/2, position.y, position.z - size.y/2)),
+            Terrain.activeTerrain.SampleHeight(new Vector3(position.x + size.x/2, position.y, position.z + size.y/2))
+        };
 
 
-
-        if (unchecked(tileMap_[x, y].transform.position.y < height) || unchecked(tileMap_[x, y].transform.position.y - 0.11f > height))
+        if (unchecked(position.y < height - tileLowerHeightTolerance_) || unchecked(position.y > height + tileUpperHeightTolerance_))
         {
             return false;
         }
-        else if (height % 2 != 0)
+        else if (height % heightLevelSpacing_ != 0)
         {
             return false;
         }
-        else if (tileMap_[x, y].transform.position.y >= maxBuildHeight_)
+        else if (position.y >= maxBuildHeight_)
         {
             return false;
+        }
+
+
+        foreach ( float corner in cornerHeights)
+        {
+            if (unchecked(corner < height - cornerLowerHeightTolerance_) || unchecked(corner > height + cornerUpperHeightTolerance_))
+            {
+                //Debug.Log("corner too high corner height = " + corner);
+                //Debug.Log("tile height = " + height);
+                return false;
+            }
         }
         
         return true;
@@ -133,17 +162,17 @@ public class TileMap : MonoBehaviour {
 
             int height = tileMap_[x, y].GetHeight();
 
-            List<GroundTileMesh> neighbourTiles = new List<GroundTileMesh>();
-
-
-            neighbourTiles.Add(tileMap_[x - 1, y + 1]);
-            neighbourTiles.Add(tileMap_[x, y + 1]);
-            neighbourTiles.Add(tileMap_[x + 1, y + 1]);
-            neighbourTiles.Add(tileMap_[x - 1, y]);
-            neighbourTiles.Add(tileMap_[x + 1, y]);
-            neighbourTiles.Add(tileMap_[x - 1, y - 1]);
-            neighbourTiles.Add(tileMap_[x, y - 1]);
-            neighbourTiles.Add(tileMap_[x + 1, y - 1]);
+            List<GroundTileMesh> neighbourTiles = new List<GroundTileMesh>
+            {
+                tileMap_[x - 1, y + 1],
+                tileMap_[x, y + 1],
+                tileMap_[x + 1, y + 1],
+                tileMap_[x - 1, y],
+                tileMap_[x + 1, y],
+                tileMap_[x - 1, y - 1],
+                tileMap_[x, y - 1],
+                tileMap_[x + 1, y - 1]
+            };
 
             int validNeighbourCount = 0;
 
@@ -153,7 +182,7 @@ public class TileMap : MonoBehaviour {
                 {
                     validNeighbourCount++;
 
-                    if (validNeighbourCount >= 3)
+                    if (validNeighbourCount >= numberOfRequiredNeighbours_)
                     {
                         return true;
                     }
