@@ -20,7 +20,7 @@ public class EventDisplay : MonoBehaviour {
 
 
     // Event currently being displayed
-    public Event event_;
+    public DecisionAction event_;
 
 
     // References to parts of event screen for displaying data
@@ -94,7 +94,7 @@ public class EventDisplay : MonoBehaviour {
 
 
     // Set current event happening
-    public void SetEvent(Event newEvent)
+    public void SetEvent(DecisionAction newEvent)
     {
         event_ = newEvent;
     }
@@ -110,7 +110,7 @@ public class EventDisplay : MonoBehaviour {
         CreateDecisionButtons(event_.decisionText_);
     }
 
-    public void Display(Event newEvent)
+    public void Display(DecisionAction newEvent)
     {
 
         // Set all display elements with data from event
