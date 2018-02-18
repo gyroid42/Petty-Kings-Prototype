@@ -39,6 +39,15 @@ public class EventAction : ScriptableObject
         return type_;
     }
 
+
+    // Print method
+    public void Print()
+    {
+
+        // Displays information about event to debug log
+        Debug.Log(type_);
+    }
+
 }
 
 [CreateAssetMenu(fileName = "New Decision Action", menuName = "EventActions/DecisionAction")]
@@ -64,13 +73,7 @@ public class DecisionAction : EventAction {
 
 
 
-    // Print method
-    public void Print()
-    {
-
-        // Displays information about event to debug log
-        Debug.Log(name_ + ": " + description_);
-    }
+    
 
     // Returns Resources from a choice
     public int[] GetDecisionResources(int choice)

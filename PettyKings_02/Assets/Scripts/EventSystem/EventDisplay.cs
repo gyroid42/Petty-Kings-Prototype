@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+public delegate void ButtonDel(int choice);
+
+
 public class EventDisplay : MonoBehaviour {
 
 
@@ -64,6 +68,8 @@ public class EventDisplay : MonoBehaviour {
         // when destroyed remove static reference to itself
         eventDisplay = null;
     }
+
+
 
 
     // Method called when object created
@@ -135,7 +141,7 @@ public class EventDisplay : MonoBehaviour {
 
 
     // Set function for each button
-    void CreateDecisionButtons(string[] decisionText)
+    void CreateDecisionButtons(string[] decisionText, ButtonDel btnMethod)
     {
 
         // Remove all the buttons from the previous screen
@@ -160,7 +166,7 @@ public class EventDisplay : MonoBehaviour {
 
 
             // Add method that button calls when pressed
-            newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+            newButton.GetComponent<Button>().onClick.AddListener(() => btnMethod(-1));
 
             // Add the button to the list of buttons
             buttons_.Add(newButton.GetComponent<Button>());
@@ -185,7 +191,7 @@ public class EventDisplay : MonoBehaviour {
 
                 // Add method that button calls when pressed
                 int tempInt = i;
-                newButton.GetComponent<Button>().onClick.AddListener(() => eventController.DecisionSelected(tempInt));
+                newButton.GetComponent<Button>().onClick.AddListener(() => btnMethod(tempInt));
                 newButton.GetComponentInChildren<Text>().text = decisionText[i];
 
                 // Add the new button to the list of buttons
@@ -216,7 +222,7 @@ public class EventDisplay : MonoBehaviour {
 
 
         // Add method that button calls when pressed
-        newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
+        //newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
 
         // Add the button to the list of buttons
         buttons_.Add(newButton.GetComponent<Button>());
@@ -243,7 +249,7 @@ public class EventDisplay : MonoBehaviour {
 
 
         // Add method that button calls when pressed
-        newButton.GetComponent<Button>().onClick.AddListener(() => eventController.StartSeasonButtonClicked());
+        //newButton.GetComponent<Button>().onClick.AddListener(() => eventController.StartSeasonButtonClicked());
 
         // Add the button to the list of buttons
         buttons_.Add(newButton.GetComponent<Button>());
