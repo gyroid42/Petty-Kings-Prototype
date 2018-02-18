@@ -13,40 +13,21 @@ public class EventController : MonoBehaviour {
     private EventDisplay eventDisplay;
     private ResourceManager resourceManager;
     private SeasonAudioManager seasonAudioManager;
-    private StateManager stateManager;
 
-    // List of events
-    private List<DecisionAction> introductionEvents_;
-    private List<DecisionAction> springEventList_;
-    private List<DecisionAction> summerEventList_;
-    private List<DecisionAction> autumnEventList_;
-    private List<DecisionAction> harvestEventList_;
-    private List<DecisionAction> winterEventList_;
-    private List<DecisionAction> springEventList2_;
-
-
-    private List<DecisionAction> springIntroEvents_;
-    private List<DecisionAction> summerIntroEvents_;
-    private List<DecisionAction> autumnIntroEvents_;
-    private List<DecisionAction> harvestIntroEvents_;
-    private List<DecisionAction> winterIntroEvents_;
-    private List<DecisionAction> spring2IntroEvents_;
-
+    
 
     // Current event
-    private DecisionAction currentEvent_;
+    private Event currentEvent_;
+
+    // Next event queue
+    private Queue<Event> eventQueue_;
 
 
-    // Current Season
-    private int currentSeason_;
-    private Season[] seasonList_ = new Season[7] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.HARVEST, Season.WINTER, Season.SPRING2 };
-
+    
     // flag if event is active
     bool eventActive_;
 
 
-    private Timer nextEventTimer_ = new Timer();
-    public float timeTillNextEvent_;
 
     // When object is created
     void Awake()
@@ -75,7 +56,67 @@ public class EventController : MonoBehaviour {
         eventController = null;
     }
 
+    void Start()
+    {
+        eventQueue_ = new Queue<Event>();
+        eventActive_ = false;
+    }
 
+
+    void Update()
+    {
+
+        if (eventActive_)
+        {
+            if (!currentEvent_.Update())
+            {
+                EndEvent();
+            }
+        }
+    }
+
+
+    public void StartEvent(Event newEvent)
+    {
+        if (eventActive_ == false)
+        {
+            eventActive_ = true;
+            currentEvent_ = newEvent;
+            currentEvent_.Begin();
+        }
+        else
+        {
+            eventQueue_.Enqueue(newEvent);
+        }
+    }
+
+    void EndEvent()
+    {
+
+        if (currentEvent_ != null)
+        {
+            currentEvent_ = null;
+        }
+
+        GotoNextEvent();
+    }
+
+
+    bool GotoNextEvent()
+    {
+        
+        if (eventQueue_.Count <= 0)
+        {
+            eventActive_ = false;
+            return false;
+        }
+
+        eventActive_ = true;
+        currentEvent_ = eventQueue_.Dequeue();
+        currentEvent_.Begin();
+
+        return true;
+    }
 
 
 }

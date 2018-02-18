@@ -30,7 +30,7 @@ public class Event : ScriptableObject {
 
     public void EndEvent()
     {
-
+        eventRunning_ = false;
     }
 
 
@@ -40,6 +40,7 @@ public class Event : ScriptableObject {
         if (currentAction_ != null)
         {
             currentAction_.End();
+            currentAction_ = null;
         }
 
         if (actionList_.Count > 0)
@@ -51,7 +52,7 @@ public class Event : ScriptableObject {
         }
         else
         {
-            eventRunning_ = false;
+            EndEvent();
         }
 
     }
