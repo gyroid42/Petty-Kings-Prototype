@@ -2,57 +2,88 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "New Event", menuName = "Event")]
 public class Event : ScriptableObject {
 
-
+    // List of actions in event
     public List<EventAction> actionList_;
-    EventAction currentAction_;
-    bool eventRunning_;
 
+    // Current action happening
+    EventAction currentAction_ = null;
+
+    // Index of currentAction
+    int actionIndex_;
+
+    // Bool for ending an event
+    bool eventRunning_ = true;
+
+
+    // Called when event starts
 	public void Begin()
     {
+        // Set default values
+        actionIndex_ = -1;
+        currentAction_ = null;
         eventRunning_ = true;
+
+        // Start next action
         GotoNextAction();
     }
 
+    // Called every frame event is happening
     public bool Update()
     {
 
+        // Update currentAction
         if (!currentAction_.Update())
         {
+
+            // If action is finished start next action
             GotoNextAction();
         }
-
 
         return eventRunning_;
     }
 
-    public void EndEvent()
+    // Called when event ends
+    public void End()
     {
-        eventRunning_ = false;
+        Debug.Log("event is ending");
     }
 
 
+    // Method to start next action
     void GotoNextAction()
-    {
-
+    {        
+        // If current action exists
         if (currentAction_ != null)
         {
+
+            // End current action
             currentAction_.End();
             currentAction_ = null;
         }
 
-        if (actionList_.Count > 0)
-        {
-            currentAction_ = actionList_[0];
-            actionList_.RemoveAt(0);
+        // Increment action index to next action
+        actionIndex_++;
 
+        // If there's still more actions to do
+        if (actionIndex_ < actionList_.Count)
+        {
+            actionIndex_ %= actionList_.Count;
+
+            // Set current action to next action
+            currentAction_ = actionList_[actionIndex_];
+            
+            // Start next action
             currentAction_.Begin(this);
         }
         else
         {
-            EndEvent();
+
+            // Else no more actions left, end the event
+            eventRunning_ = false;
         }
 
     }

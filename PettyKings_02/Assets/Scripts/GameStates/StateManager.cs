@@ -109,6 +109,8 @@ public class StateManager : MonoBehaviour {
     {
         ChangeState(GAMESTATE.STAGEONE);
         CameraStageOne();
+        SeasonController.seasonController.StartTimer();
+        SeasonController.seasonController.StartGame();
     }
     
     // CAMERA MOVEMENTS

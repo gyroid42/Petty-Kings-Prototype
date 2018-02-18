@@ -23,13 +23,13 @@ public class SeasonController : MonoBehaviour {
     private List<Event> spring2EventList_;
 
 
+
     private List<Event> springIntroEvents_;
     private List<Event> summerIntroEvents_;
     private List<Event> autumnIntroEvents_;
     private List<Event> harvestIntroEvents_;
     private List<Event> winterIntroEvents_;
     private List<Event> spring2IntroEvents_;
-
 
 
     // Current Season
@@ -71,7 +71,7 @@ public class SeasonController : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-
+        // Create reference to stateManager/eventController and SeasonAudioManager
         stateManager = StateManager.stateManager;
         eventController = EventController.eventController;
         seasonAudioManager = SeasonAudioManager.seasonAudioManager;
@@ -99,15 +99,26 @@ public class SeasonController : MonoBehaviour {
         // Set starting season to the intro
         currentSeason_ = 0;
     }
+
+    // Called when GameStarts
+    public void StartGame()
+    {
+        // Start introduction events
+        currentSeason_ = 0;
+        StartSeasonEvents();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
+        // If game is in the first stage
         if (stateManager.CurrentState() == GAMESTATE.STAGEONE)
         {
 
+            // Update timer till next season
             if (seasonTimer_.UpdateTimer())
             {
+                // If timer finished Goto next season
                 Debug.Log("Season Change");
                 ChangeSeason();
             }
@@ -120,22 +131,40 @@ public class SeasonController : MonoBehaviour {
 
     private void ChangeSeason()
     {
-
+        // Increment currentSeason Index
         currentSeason_++;
         currentSeason_ %= seasonList_.Length;
 
+        // Start next Seasons events
+        StartSeasonEvents();
+
+        // Update season audio
         seasonAudioManager.UpdateAudio();
+
+        // Reset the timer
+        seasonTimer_.Reset();
         
     }
 
 
+    // Starts events for a season
     private void StartSeasonEvents()
     {
+        Debug.Log("starting season event");
+
+        // Createa lists for intro and random events
         List<Event> introEvents = null;
         List<Event> randomEventList = null;
 
+
+        // Get event lists for current season
         switch (seasonList_[currentSeason_])
         {
+            case Season.INTRO:
+                Debug.Log("intro is selcted");
+                introEvents = introductionEvents_;
+                randomEventList = null;
+                break;
             case Season.SPRING:
                 introEvents = springIntroEvents_;
                 randomEventList = springEventList_;
@@ -162,37 +191,56 @@ public class SeasonController : MonoBehaviour {
                 break;
         }
 
+        // if there is an intro event list
         if (introEvents != null)
         {
+            Debug.Log("starting each intro event");
+
+            // Start an event for each item in intro Events in order
             for (int i = 0; i < introEvents.Count; i++)
             {
-                eventController.StartEvent(introEvents[i]);
-
+                // If introEvents[i] exists
+                if (introEvents[i] != null)
+                {
+                    eventController.StartEvent(introEvents[i]);
+                }
             }
         }
 
-        Event randomEvent = GetRandomEvent(randomEventList, true);
-
-        if (randomEvent != null)
+        // If there is a random event list
+        if (randomEventList != null)
         {
-            eventController.StartEvent(randomEvent);
+            // Get a random event
+            Event randomEvent = GetRandomEvent(randomEventList, true);
+
+            // If random event exists
+            if (randomEvent != null)
+            {
+                // Start RandomEvent
+                eventController.StartEvent(randomEvent);
+            }
         }
     }
 
 
+    // Gets a random event from a list of events
     private Event GetRandomEvent(List<Event> eventList, bool remove = false)
     {
         Event newEvent = null;
 
+        // If list is empty exit method
         if (eventList.Count <= 0)
         {
             return newEvent;
         }
 
+        // Get random int within range of eventLists size
         int index = Random.Range(0, eventList.Count);
 
+        // newEvent = event at random index
         newEvent = eventList[index];
 
+        // If remove is true remove the event from the list
         if (remove)
         {
             eventList.RemoveAt(index);
@@ -202,18 +250,19 @@ public class SeasonController : MonoBehaviour {
     }
 
 
-
+    // Pauses timer for next season
     public void PauseTimer()
     {
         seasonTimer_.Pause();
     }
 
+    // Starts timer for next season
     public void StartTimer()
     {
         seasonTimer_.Start();
     }
 
-
+    // Getter for current season
     public Season CurrentSeason()
     {
         return seasonList_[currentSeason_];

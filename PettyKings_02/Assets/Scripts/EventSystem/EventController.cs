@@ -10,9 +10,7 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
 
 
-    private EventDisplay eventDisplay;
-    private ResourceManager resourceManager;
-    private SeasonAudioManager seasonAudioManager;
+    private SeasonController seasonController;
 
     
 
@@ -56,65 +54,104 @@ public class EventController : MonoBehaviour {
         eventController = null;
     }
 
+    // Called when eventController created
     void Start()
     {
+        // Create empty event queue
         eventQueue_ = new Queue<Event>();
+
+        // EventActive is false since no event has started
         eventActive_ = false;
+
+        // Create reference to seasonController
+        seasonController = SeasonController.seasonController;
     }
 
 
+    // Called every frame
     void Update()
     {
 
+        // If an event is active
         if (eventActive_)
         {
+
+            // Update current event
             if (!currentEvent_.Update())
             {
+                // If event has ended call EndEvent()
                 EndEvent();
             }
         }
     }
 
 
+    // Method to start a new event
     public void StartEvent(Event newEvent)
     {
+        // If no event is currently happening
         if (eventActive_ == false)
         {
+
+            // Start new event
+            Debug.Log("event is starting");
             eventActive_ = true;
             currentEvent_ = newEvent;
             currentEvent_.Begin();
+
+            // Pause timer till next season
+            seasonController.PauseTimer();
         }
         else
         {
+
+            // Else add new Event to event queue
             eventQueue_.Enqueue(newEvent);
         }
     }
 
+
+    // Called when event Ends
     void EndEvent()
     {
 
+        // If currentEvent exists
         if (currentEvent_ != null)
         {
+            // End CurrentEvent
+            currentEvent_.End();
+
+            // set currentEvent to null;
             currentEvent_ = null;
         }
 
+        // Start next event
         GotoNextEvent();
     }
 
-
+    // Starts next event in queue
     bool GotoNextEvent()
     {
         
+        // If queue is empty
         if (eventQueue_.Count <= 0)
         {
+
+            // No more events to run
+            //
+            // Start season timer again
+            seasonController.StartTimer();
+
+            // No event is active anymore
             eventActive_ = false;
             return false;
         }
 
+        // Else start next event in queue
         eventActive_ = true;
         currentEvent_ = eventQueue_.Dequeue();
         currentEvent_.Begin();
-
+        seasonController.PauseTimer();
         return true;
     }
 

@@ -23,9 +23,6 @@ public class EventDisplay : MonoBehaviour {
     public GameObject prefabButton;
 
 
-    // Event currently being displayed
-    public DecisionAction event_;
-
 
     // References to parts of event screen for displaying data
     public Text nameText_;
@@ -84,186 +81,60 @@ public class EventDisplay : MonoBehaviour {
 	}
 
 
-    public void DisplayDecision(int choice)
-    {
-
-        // Debug display the choice the player made
-        Debug.Log(choice);
-
-        // Update display to show choice made by player
-        descriptionText_.text = event_.decisionDesc_[choice];
-        artworkImage_.texture = event_.decisionArt_[choice];
-
-        // Create button for leaving event
-        CreateContinueButton();
-    }
-
-
-    // Set current event happening
-    public void SetEvent(DecisionAction newEvent)
-    {
-        event_ = newEvent;
-    }
-
-    public void Display()
+    public void Display(EventDisplayData displayData)
     {
         // Set all display elements with data from event
-        nameText_.text = event_.name_;
-        descriptionText_.text = event_.description_;
-        artworkImage_.texture = event_.artwork_;
+        nameText_.text = displayData.name_;
+        descriptionText_.text = displayData.description_;
+        artworkImage_.texture = displayData.artwork_;
 
-        // Create the buttons for the Decisions
-        CreateDecisionButtons(event_.decisionText_);
-    }
-
-    public void Display(DecisionAction newEvent)
-    {
-
-        // Set all display elements with data from event
-        nameText_.text = newEvent.name_;
-        descriptionText_.text = newEvent.description_;
-        artworkImage_.texture = newEvent.artwork_;
-
-
-        // Create teh buttons for the Decisions
-        CreateDecisionButtons(newEvent.decisionText_);
-    }
-
-    public void DisplaySeasonStart()
-    {
-        nameText_.text = event_.name_;
-        descriptionText_.text = event_.description_;
-        artworkImage_.texture = event_.artwork_;
-
-
-        CreateBeginSeasonButton();
+        // Create the buttons
+        CreateButtons(displayData);
     }
 
 
-    // Set function for each button
-    void CreateDecisionButtons(string[] decisionText, ButtonDel btnMethod)
+    // Creates buttons for event display
+    private void CreateButtons(EventDisplayData displayData)
     {
 
-        // Remove all the buttons from the previous screen
+        // Destroy previous buttons
         DestroyButtons();
 
-        // If no decisions then display a continue button
-        if (decisionText.Length <= 0)
+        // If there are buttons to create
+        if (displayData.btnFunctions_.Length > 0)
         {
-            // Create a continue button
-            GameObject newButton = (GameObject)Instantiate(prefabButton);
-            newButton.transform.SetParent(GetComponent<RectTransform>(), false);
-            newButton.transform.localScale = new Vector3(1, 1, 1);
-            newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
-            newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
-            newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
-            newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
 
-
-            newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
-
-            newButton.GetComponentInChildren<Text>().text = "continue!";
-
-
-            // Add method that button calls when pressed
-            newButton.GetComponent<Button>().onClick.AddListener(() => btnMethod(-1));
-
-            // Add the button to the list of buttons
-            buttons_.Add(newButton.GetComponent<Button>());
-        }
-        else
-        {
-            // Loop for each decision option
-            for (int i = 0; i < decisionText.Length; i++)
+            // Loop for each button to create
+            for (int i = 0; i < displayData.btnFunctions_.Length; i++)
             {
 
-                // Create a button for each option and set the buttons position from the number of buttons and size of screen
+                // Create new button
                 GameObject newButton = (GameObject)Instantiate(prefabButton);
-                newButton.transform.SetParent(GetComponent<RectTransform>(), false);
-                newButton.transform.localScale = new Vector3(1, 1, 1);
 
-                newButton.GetComponent<RectTransform>().sizeDelta = new Vector2((btnSizeX / decisionText.Length), btnSizeY);
-                newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
-                newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
-                newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
+                // Get button's transform componenet
+                RectTransform btnTransform = newButton.GetComponent<RectTransform>();
 
-                newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * newButton.GetComponent<RectTransform>().sizeDelta.x + btnPosX, btnPosY, 0);
+                // Setup button's transform position/size/anchor/etc...
+                btnTransform.SetParent(GetComponent<RectTransform>(), false);
+                btnTransform.localScale = new Vector3(1, 1, 1);
+                btnTransform.sizeDelta = new Vector2(btnSizeX / displayData.btnFunctions_.Length, btnSizeY);
+                btnTransform.anchorMax = new Vector2(0, 1);
+                btnTransform.anchorMin = new Vector2(0, 1);
+                btnTransform.pivot = new Vector2(0, 1);
+                btnTransform.anchoredPosition = new Vector3(btnPosX + i * btnTransform.sizeDelta.x, btnPosY, 0);
 
-                // Add method that button calls when pressed
+                // Set button text
+                newButton.GetComponentInChildren<Text>().text = displayData.btnText_[i];
+
+                // Create method for button OnClick from function pointer in display data
                 int tempInt = i;
-                newButton.GetComponent<Button>().onClick.AddListener(() => btnMethod(tempInt));
-                newButton.GetComponentInChildren<Text>().text = decisionText[i];
+                ButtonDel tempButtonDel = displayData.btnFunctions_[i];
+                newButton.GetComponent<Button>().onClick.AddListener(() => tempButtonDel(tempInt));
 
-                // Add the new button to the list of buttons
+                // Add new button to button list
                 buttons_.Add(newButton.GetComponent<Button>());
             }
         }
-    }
-
-    void CreateContinueButton()
-    {
-
-        // Remove all the buttons from the previous screen
-        DestroyButtons();
-
-        // Create a continue button
-        GameObject newButton = (GameObject)Instantiate(prefabButton);
-        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
-        newButton.transform.localScale = new Vector3(1, 1, 1);
-        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
-        newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
-        newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
-        newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
-
-
-        newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
-
-        newButton.GetComponentInChildren<Text>().text = "continue!";
-
-
-        // Add method that button calls when pressed
-        //newButton.GetComponent<Button>().onClick.AddListener(() => eventController.ContinueButtonClicked());
-
-        // Add the button to the list of buttons
-        buttons_.Add(newButton.GetComponent<Button>());
-    }
-
-    void CreateBeginSeasonButton()
-    {
-        // Remove all the buttons from the previous screen
-        DestroyButtons();
-
-        // Create a continue button
-        GameObject newButton = (GameObject)Instantiate(prefabButton);
-        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
-        newButton.transform.localScale = new Vector3(1, 1, 1);
-        newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(btnSizeX, btnSizeY);
-        newButton.GetComponent<RectTransform>().anchorMax = new Vector2(0, 1);
-        newButton.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
-        newButton.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
-
-
-        newButton.GetComponent<RectTransform>().anchoredPosition = new Vector3(btnPosX, btnPosY, 0);
-
-        newButton.GetComponentInChildren<Text>().text = "Start Season";
-
-
-        // Add method that button calls when pressed
-        //newButton.GetComponent<Button>().onClick.AddListener(() => eventController.StartSeasonButtonClicked());
-
-        // Add the button to the list of buttons
-        buttons_.Add(newButton.GetComponent<Button>());
-    }
-
-    GameObject CreateButton(Vector3 buttonPosition, Vector2 buttonSize, Vector3 buttonScale)
-    {
-        GameObject newButton = (GameObject)Instantiate(prefabButton);
-        newButton.transform.SetParent(GetComponent<RectTransform>(), false);
-        newButton.transform.localScale = buttonScale;
-        newButton.GetComponent<RectTransform>().sizeDelta = buttonSize;
-        newButton.GetComponent<RectTransform>().position = buttonPosition;
-
-        return newButton;
     }
 
     void DestroyButtons()
