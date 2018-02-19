@@ -25,6 +25,9 @@ public class EventAction : ScriptableObject
     // Bool for ending action
     protected bool actionRunning_ = true;
 
+    // IsBlocking flag
+    public bool isBlocking_ = true;
+
     // Begin method called when action starts
     public virtual void Begin(Event newEvent)
     {

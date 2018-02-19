@@ -10,7 +10,8 @@ public class Event : ScriptableObject {
     public List<EventAction> actionList_;
 
     // Current action happening
-    EventAction currentAction_ = null;
+    private EventAction currentAction_ = null;
+    private List<EventAction> activeActions_;
 
     // Index of currentAction
     int actionIndex_;
@@ -27,6 +28,9 @@ public class Event : ScriptableObject {
         currentAction_ = null;
         eventRunning_ = true;
 
+        // Initialse active actions list
+        activeActions_ = new List<EventAction>();
+
         // Start next action
         GotoNextAction();
     }
@@ -36,12 +40,7 @@ public class Event : ScriptableObject {
     {
 
         // Update currentAction
-        if (!currentAction_.Update())
-        {
-
-            // If action is finished start next action
-            GotoNextAction();
-        }
+        UpdateActions();
 
         return eventRunning_;
     }
@@ -55,36 +54,71 @@ public class Event : ScriptableObject {
 
     // Method to start next action
     void GotoNextAction()
-    {        
-        // If current action exists
-        if (currentAction_ != null)
-        {
+    {
 
-            // End current action
-            currentAction_.End();
-            currentAction_ = null;
+        while (actionList_[actionList_.Count - 1])
+        {
+            // Increment action index to next action
+            actionIndex_++;
+
+            // If there's still more actions to do
+            if (actionIndex_ < actionList_.Count)
+            {
+
+                // Set current action to next action
+                EventAction nextAction = actionList_[actionIndex_];
+
+                nextAction.Begin(this);
+                activeActions_.Add(nextAction);
+
+                if (nextAction.isBlocking_)
+                {
+                    break;
+                }
+                
+            }
+            else if (activeActions_.Count <= 0)
+            {
+
+                // Else no more actions left, end the event
+                eventRunning_ = false;
+                break;
+            }
+            else
+            {
+                break;
+            }
         }
 
-        // Increment action index to next action
-        actionIndex_++;
+    }
 
-        // If there's still more actions to do
-        if (actionIndex_ < actionList_.Count)
+    void UpdateActions()
+    {
+
+        for (int i = 0; i < activeActions_.Count; )
         {
-            actionIndex_ %= actionList_.Count;
+            if (!activeActions_[i].Update())
+            {
+                if (activeActions_[i] != null)
+                {
+                    activeActions_[i].End();
+                    activeActions_[i] = null;
+                }
+                
+                activeActions_.RemoveAt(i);
 
-            // Set current action to next action
-            currentAction_ = actionList_[actionIndex_];
-            
-            // Start next action
-            currentAction_.Begin(this);
+                if (activeActions_.Count <= 0)
+                {
+                    GotoNextAction();
+                    break;
+                }
+            }
+            else
+            {
+                i++;
+            }
         }
-        else
-        {
-
-            // Else no more actions left, end the event
-            eventRunning_ = false;
-        }
+        
 
     }
 
