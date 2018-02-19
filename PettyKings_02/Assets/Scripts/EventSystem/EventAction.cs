@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 // Enum for for describing type of action
 public enum ACTIONTYPE
 {
     BASE,
-    DECISION
+    DECISION,
+    CAMERAMOVE,
+    PAUSE,
+    AUDIO
 }
 
 // Base Action
@@ -204,3 +208,138 @@ public class DecisionAction : EventAction {
     }
 
 }
+
+
+[CreateAssetMenu(fileName = "New Camera Move", menuName = "EventActions/CameraMove")]
+public class CameraMoveAction : EventAction
+{
+
+    // properties
+
+    public Vector3 position_;
+    public Vector3 rotation_;
+    public float speed_;
+    
+    private CameraController cameraController;
+
+    // Begin method called when action starts
+    public override void Begin(Event newEvent)
+    {
+        base.Begin(newEvent);
+
+        type_ = ACTIONTYPE.CAMERAMOVE;
+
+        cameraController = Camera.main.GetComponent<CameraController>();
+
+        cameraController.AddGotoPosition(position_, rotation_, true);
+    }
+
+
+    // End method called when action finishes
+    public override void End()
+    {
+
+    }
+
+
+    // Called every frame the action is happening
+    public override bool Update()
+    {
+
+
+        if (cameraController.FinishedMove())
+        {
+            actionRunning_ = false;
+        }
+
+        return actionRunning_;
+    }
+}
+
+
+[CreateAssetMenu(fileName = "New Pause Action", menuName = "EventActions/Pause")]
+public class PauseAction : EventAction
+{
+    // properties
+    public float pauseLength_;
+
+    private Timer timer_;
+
+    // Begin method called when action starts
+    public override void Begin(Event newEvent)
+    {
+        base.Begin(newEvent);
+
+        type_ = ACTIONTYPE.PAUSE;
+
+        timer_ = new Timer();
+        timer_.SetTimer(pauseLength_);
+    }
+
+
+    // End method called when action finishes
+    public override void End()
+    {
+
+    }
+
+
+    // Called every frame the action is happening
+    public override bool Update()
+    {
+
+
+        if (timer_.UpdateTimer())
+        {
+            actionRunning_ = false;
+        }
+
+        return actionRunning_;
+    }
+}
+
+[CreateAssetMenu(fileName = "New Audio Action", menuName = "EventActions/Audio")]
+public class AudioAction : EventAction
+{
+
+    // properties
+    public AudioClip audioClip_;
+    [Range(0.0f, 1.0f)]
+    public float volumeScale_;
+
+    private AudioSource audioSource_;
+
+    // Begin method called when action starts
+    public override void Begin(Event newEvent)
+    {
+        base.Begin(newEvent);
+
+        type_ = ACTIONTYPE.AUDIO;
+
+        audioSource_ = EventController.eventController.gameObject.GetComponent<AudioSource>();
+
+        audioSource_.PlayOneShot(audioClip_, volumeScale_);
+    }
+
+
+    // End method called when action finishes
+    public override void End()
+    {
+
+    }
+
+
+    // Called every frame the action is happening
+    public override bool Update()
+    {
+
+
+        if (!audioSource_.isPlaying)
+        {
+            actionRunning_ = false;
+        }
+
+        return actionRunning_;
+    }
+}
+
