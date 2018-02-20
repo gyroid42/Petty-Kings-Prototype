@@ -51,4 +51,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8d36bd54bb7f643bd5e208311b8c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillNextEvent_: 3
