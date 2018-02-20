@@ -7,11 +7,11 @@ using UnityEngine;
 public class Event : ScriptableObject {
 
     // List of actions in event
-    public List<EventAction> actionList_;
+    public List<BaseAction> actionList_;
 
     // Current action happening
-    private EventAction currentAction_ = null;
-    private List<EventAction> activeActions_;
+    private BaseAction currentAction_ = null;
+    private List<BaseAction> activeActions_;
 
     // Index of currentAction
     int actionIndex_;
@@ -29,7 +29,7 @@ public class Event : ScriptableObject {
         eventRunning_ = true;
 
         // Initialse active actions list
-        activeActions_ = new List<EventAction>();
+        activeActions_ = new List<BaseAction>();
 
         // Start next action
         GotoNextAction();
@@ -66,7 +66,7 @@ public class Event : ScriptableObject {
             {
 
                 // Set current action to next action
-                EventAction nextAction = actionList_[actionIndex_];
+                BaseAction nextAction = actionList_[actionIndex_];
 
                 nextAction.Begin(this);
                 activeActions_.Add(nextAction);
