@@ -215,10 +215,7 @@ public class CameraMoveAction : EventAction
 {
 
     // properties
-
-    public Vector3 position_;
-    public Vector3 rotation_;
-    public float speed_;
+    public CameraGoto[] cameraGoto_;
     
     private CameraController cameraController;
 
@@ -231,7 +228,10 @@ public class CameraMoveAction : EventAction
 
         cameraController = Camera.main.GetComponent<CameraController>();
 
-        cameraController.AddGotoPosition(position_, rotation_, true);
+        for (int i = 0; i < cameraGoto_.Length; i++)
+        {
+            cameraController.AddGotoPosition(cameraGoto_[i]);
+        }
     }
 
 
