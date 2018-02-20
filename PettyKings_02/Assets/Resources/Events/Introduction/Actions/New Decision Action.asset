@@ -9,15 +9,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Intro Decision
+  m_Name: New Decision Action
   m_EditorClassIdentifier: Assembly-CSharp::DecisionAction
   isBlocking_: 1
   mainDisplay_:
-    name_: 
-    description_: 
+    name_: intro decision
+    description_: fdsfds
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionDisplay_: []
+    btnText_:
+    - option 1
+    - option 2
+  decisionDisplay_:
+  - name_: 1
+    description_: hello there
+    artwork_: {fileID: 0}
+    btnText_:
+    - continue 1
+  - name_: 2
+    description_: general grevious
+    artwork_: {fileID: 0}
+    btnText_:
+    - continue 2
   decisionFood_: 0000000000000000
   decisionWood_: 0000000000000000
   decisionMen_: 0000000000000000
