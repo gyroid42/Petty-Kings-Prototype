@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour {
 
 
     // Speed the camera moves at
-    public float speed_;
+    public float defaultSpeed_;
 
 
     // Use this for initialization
@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour {
         // Set the last location added to the queue to the cameras current position
         isMoving_ = false;
         finishedMovement_ = true;
-        lastLocation_ = new CameraLocation(transform.position, transform.rotation.eulerAngles, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
+        lastLocation_ = new CameraLocation(transform.position, transform.rotation.eulerAngles, defaultSpeed_, new Vector3(0, 0, 0), new Vector3(0, 0, 0), 0);
         gotoPositions_ = new Queue<CameraLocation>();
     }
 
@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour {
             else
             {
                 // Calculate the distance the camera moves this frame and apply it to the position
-                Vector3 moveDistance = currentGotoPosition_.moveDirection_ * speed_ * Time.deltaTime;
+                Vector3 moveDistance = currentGotoPosition_.moveDirection_ * currentGotoPosition_.moveSpeed_ * Time.deltaTime;
                 transform.position += moveDistance;
 
                 // Calculate the distance the camera rotates this frame and apply it to the rotation
@@ -115,7 +115,7 @@ public class CameraController : MonoBehaviour {
             rotationDirection.Normalize();
 
             // Calculate the speed of the rotation based on the amount of time taken to move to the next location
-            float time = ((gotoPositions_.Peek().position_ - transform.position) / speed_).magnitude;
+            float time = ((gotoPositions_.Peek().position_ - transform.position) / gotoPositions_.Peek().moveSpeed_).magnitude;
             float rotationSpeed = (gotoPositions_.Peek().rotation_ - transform.rotation.eulerAngles).magnitude / time;
 
             // Set the current goto position to the next one in the queue
@@ -146,11 +146,11 @@ public class CameraController : MonoBehaviour {
         rotationDirection.Normalize();
 
         // Calculate the speed of the rotation based on the amount of time taken to move to the next location
-        float time = ((newPos - lastLocation_.position_) / speed_).magnitude;
+        float time = ((newPos - lastLocation_.position_) / defaultSpeed_).magnitude;
         float rotationSpeed = (newRot - lastLocation_.rotation_).magnitude / time;
 
         // Create the struct for the new location
-        CameraLocation newLocation = new CameraLocation(newPos, newRot, moveDirection, rotationDirection, rotationSpeed);
+        CameraLocation newLocation = new CameraLocation(newPos, newRot, defaultSpeed_, moveDirection, rotationDirection, rotationSpeed);
 
         
         // If the camera has no movements to do
@@ -169,6 +169,58 @@ public class CameraController : MonoBehaviour {
 
         // Set isMoving bool
         isMoving_ = startMoving;
+
+        // New movement added so camera cannot have finished movement
+        finishedMovement_ = false;
+
+        lastLocation_ = newLocation;
+    }
+
+
+    // Adds a new Goto position to the goto position queue
+    public void AddGotoPosition(CameraGoto newCameraPos)
+    {
+
+        // Calculate the new move direction, rotation direction and rotation speed from the new position/rotation
+        // And the last location added to the queue
+
+        // Calculate move direction
+        Vector3 moveDirection = newCameraPos.position_ - lastLocation_.position_;
+        moveDirection.Normalize();
+
+        // Calculate rotation direction
+        Vector3 rotationDirection = newCameraPos.rotation_ - lastLocation_.rotation_;
+        rotationDirection.Normalize();
+
+        // Calculate the speed of the rotation based on the amount of time taken to move to the next location
+        float speed = defaultSpeed_;
+        if (newCameraPos.speed_ > 0)
+        {
+            speed = newCameraPos.speed_;
+        }
+        float time = ((newCameraPos.position_ - lastLocation_.position_) / speed).magnitude;
+        float rotationSpeed = (newCameraPos.rotation_ - lastLocation_.rotation_).magnitude / time;
+
+        // Create the struct for the new location
+        CameraLocation newLocation = new CameraLocation(newCameraPos.position_, newCameraPos.rotation_, speed, moveDirection, rotationDirection, rotationSpeed);
+
+
+        // If the camera has no movements to do
+        if (finishedMovement_)
+        {
+
+            // Set current goto to the new location
+            currentGotoPosition_ = newLocation;
+        }
+        else
+        {
+
+            // Add new location to goto queue
+            gotoPositions_.Enqueue(newLocation);
+        }
+
+        // Set isMoving bool
+        isMoving_ = newCameraPos.startMoving_;
 
         // New movement added so camera cannot have finished movement
         finishedMovement_ = false;

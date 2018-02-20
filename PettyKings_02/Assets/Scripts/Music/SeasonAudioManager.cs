@@ -13,7 +13,7 @@ public class SeasonAudioManager : MonoBehaviour {
     public AudioClip winter;
     public AudioClip harvest;
     public AudioSource audioSource;
-    private EventController season;
+    private SeasonController seasonController;
     
     private Season currentSeason_;
 
@@ -47,7 +47,7 @@ public class SeasonAudioManager : MonoBehaviour {
 
     void Start () {
         audioSource = GetComponent<AudioSource>();//reference to audio source
-        season = EventController.eventController;
+        seasonController = SeasonController.seasonController;
         UpdateAudio();
     }
 	
@@ -56,7 +56,7 @@ public class SeasonAudioManager : MonoBehaviour {
 	public void UpdateAudio () {
 
         
-        currentSeason_ = season.CurrentSeason(); //get the current season
+        currentSeason_ = seasonController.CurrentSeason(); //get the current season
 
         switch (currentSeason_) //decide which music to play
         {

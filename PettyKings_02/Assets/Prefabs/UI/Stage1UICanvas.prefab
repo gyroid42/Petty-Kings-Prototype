@@ -2787,7 +2787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabButton: {fileID: 1917579375256534, guid: c6e5beb5e4c298d4fb550e5d4e745258,
     type: 2}
-  event_: {fileID: 11400000, guid: 2b9066cbb292d3a4c962974e48185aac, type: 2}
   nameText_: {fileID: 114279837105351592}
   descriptionText_: {fileID: 114191743957104200}
   artworkImage_: {fileID: 114621457277963734}
