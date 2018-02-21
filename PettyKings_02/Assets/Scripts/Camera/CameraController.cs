@@ -66,6 +66,16 @@ public class CameraController : MonoBehaviour {
     }
 
 
+    public void Reset(bool clearMovement)
+    {
+        if (clearMovement)
+        {
+            ClearMovement();
+        }
+        AddGotoPosition(defaultPosition_);
+    }
+
+
     // Method for going to next movement in the move queue
     private void GotoNextPosition()
     {
