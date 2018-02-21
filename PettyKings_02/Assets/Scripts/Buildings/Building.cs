@@ -10,6 +10,7 @@ public class Building : ScriptableObject {
 
     // Information about building
     public string name_;
+    public string tag_;
     public Texture artwork_;
     public GameObject buildingModel_;
     public GameObject buildParticle_;

@@ -30,7 +30,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
     {
         modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
-        modelClone.tag = "Building";
+        modelClone.tag = buildingController_.building_.tag_;
 
         if (buildingController_.building_.buildParticle_)
         {
