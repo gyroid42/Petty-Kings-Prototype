@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -27,6 +28,10 @@ public class StateManager : MonoBehaviour {
     // Script references
     private HUDToggle GameUI_;
     private CameraController CameraController_;
+    private EventController eventController_;
+
+    // CameraMoveEvents
+    private Event camMenuToGame_;
 
 
     // When object is created
@@ -63,12 +68,15 @@ public class StateManager : MonoBehaviour {
 
 
         CameraController_ = Camera.main.GetComponent<CameraController>();
+        eventController_ = EventController.eventController;
         
         GameUI_ = GetComponent<HUDToggle>();
 
         // Set UI to be inactive at start
         OverlayActive_ = false;
         GameUI_.UIVisible(OverlayActive_);
+
+        camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
 	}
 	
 	// Update is called once per frame
@@ -116,6 +124,10 @@ public class StateManager : MonoBehaviour {
     // CAMERA MOVEMENTS
     void CameraStageOne()
     {
+
+        eventController_.StartEvent(camMenuToGame_);
+        
+        /*
         // Position/Rotation for Stage One
         Vector3 pos, rot;
 
@@ -138,5 +150,6 @@ public class StateManager : MonoBehaviour {
         pos = new Vector3(-6.36f, 15.1f, -10.0f);
         rot = new Vector3(55.59f, 36.736f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
+        */
     }
  }

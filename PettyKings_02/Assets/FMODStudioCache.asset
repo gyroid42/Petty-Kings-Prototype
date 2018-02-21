@@ -11,14 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 114606303556613268}
-  - {fileID: 114807247144749430}
-  EditorEvents:
-  - {fileID: 114389402379530322}
-  MasterBankRef: {fileID: 114807247144749430}
-  StringsBankRef: {fileID: 114606303556613268}
-  stringsBankWriteTime: 636545667174316687
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
   cacheVersion: 2
 --- !u!114 &114239691989747268
 MonoBehaviour:

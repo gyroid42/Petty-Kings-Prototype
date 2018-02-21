@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "ResetCamera", menuName = "EventActions/CameraReset")]
 public class CameraResetAction : BaseAction
 {
 
