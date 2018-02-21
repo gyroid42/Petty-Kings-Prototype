@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4224496560129412}
   - component: {fileID: 218035657839513794}
   - component: {fileID: 154028670911795484}
-  m_Layer: 0
+  - component: {fileID: 114771812428216256}
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114771812428216256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708266217159780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c28108f55b387346b3410c6513042f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile_: {fileID: 1801637338089082, guid: 50f64a55fe9917744857277f70b19c9e, type: 2}
+  sizeX: 48
+  sizeY: 48
+  maxBuildHeight_: 6
+  tileUpperHeightTolerance_: 0.2
+  tileLowerHeightTolerance_: 0.1
+  cornerUpperHeightTolerance_: 0.7
+  cornerLowerHeightTolerance_: 0.7
+  heightLevelSpacing_: 2
+  numberOfRequiredNeighbours_: 3
+  numberOfNeighbourChecks_: 2
+  setTilesToTileHeight_: 1
 --- !u!154 &154028670911795484
 TerrainCollider:
   m_ObjectHideFlags: 1

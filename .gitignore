@@ -32,3 +32,17 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# FMOD
+Assets/FMODStudioCache.asset
+Assets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
+
+# FMOD studio (in folder FMOD)
+Petty_Kings_Fmod/Petty_Kings_fmod/**.user
+Petty_Kings_Fmod/Petty_Kings_fmod/**.unsaved
+Petty_Kings_Fmod/Petty_Kings_fmod/**.cache
+Petty_Kings_Fmod/Petty_Kings_fmod/**.restore
+
+

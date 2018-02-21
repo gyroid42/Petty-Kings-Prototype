@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: Summer
   m_EditorClassIdentifier: 
   name_: Summer
-  artwork_: {fileID: 0}
-  description_: The heat is too much for our guards m'lord and men are dieing, what
+  artwork_: {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
+  description_: The heat is too much for our guards m'lord and men are dying, what
     shall we do?
   decisionText_:
   - Build them shelters to shade them from the sun!
   - If they can't handle a bit of sun then let them die!
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
   decisionDesc_:
   - Very well, it shall be done.
   - God bless their souls...

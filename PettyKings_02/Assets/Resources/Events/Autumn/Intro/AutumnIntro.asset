@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75498e7d1238ece4dba32c9402adcb3d, type: 3}
   m_Name: AutumnIntro
   m_EditorClassIdentifier: 
-  name_: 
-  artwork_: {fileID: 0}
+  name_: Autumn
+  artwork_: {fileID: 2800000, guid: 28d4346c3fef97344af47a86d62152ec, type: 3}
   description_: Summer is now gone, Autumn marks a perfect time for us to prepare
-    for the harsh winter months. Make sure to gather plenty of food and wood!
+    for the harsh Winter months. Make sure to gather plenty of food and wood!
   decisionText_: []
   decisionArt_: []
   decisionDesc_: []

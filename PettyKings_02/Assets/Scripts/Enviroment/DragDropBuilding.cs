@@ -9,7 +9,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     private GameObject modelClone; //variable to hold clone of desired gameobject 
     private ParticleSystem smoke;
     private BuildingController buildingController_;
-    private EventController eventController;
+    private SeasonController seasonController;
     private TileMap tileMapManager;
 
     //array of gameobjects to enable the shader when dragging
@@ -23,7 +23,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     void Start()
     {
         buildingController_ = GetComponent<BuildingController>();
-        eventController = EventController.eventController;
+        seasonController = SeasonController.seasonController;
         tileMapManager = TileMap.tileMapManager;
     }
 
@@ -42,7 +42,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         tileMapManager.ShowTileMap();
 
 
-        eventController.PauseSeasonTimer();
+        seasonController.PauseTimer();
 
     }
 
@@ -103,7 +103,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
 
 
-        eventController.StartSeasonTimer();
+        seasonController.StartTimer();
 
 
     }

@@ -11,7 +11,8 @@ public class GroundTileMesh : MonoBehaviour {
     public Material materialGreen;
     public Material materialRed;
     private int[] mapPosition_;
-    public int height_;
+    public static Vector2 size_ = new Vector2( 2.05f, 2.05f );
+    private int height_;
 
     private Renderer tileRenderer_;
 
@@ -82,9 +83,8 @@ public class GroundTileMesh : MonoBehaviour {
             GetComponent<Renderer>().material = materialGreen;
         }
 
-
         //set thickness of highlight to 0 at run time, this allows for easier editing
-       // GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
+        //Hide();
     }
 
 
@@ -144,6 +144,11 @@ public class GroundTileMesh : MonoBehaviour {
     public int GetHeight()
     {
         return height_;
+    }
+
+    public void UpdateHeightTransform()
+    {
+        transform.position = new Vector3(transform.position.x, height_, transform.position.z);
     }
 
 

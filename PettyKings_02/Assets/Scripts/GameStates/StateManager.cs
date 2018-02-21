@@ -109,6 +109,8 @@ public class StateManager : MonoBehaviour {
     {
         ChangeState(GAMESTATE.STAGEONE);
         CameraStageOne();
+        SeasonController.seasonController.StartTimer();
+        SeasonController.seasonController.StartGame();
     }
     
     // CAMERA MOVEMENTS
@@ -118,17 +120,17 @@ public class StateManager : MonoBehaviour {
         Vector3 pos, rot;
 
         // Point 1
-        pos = new Vector3(-10.36f, 1.13f, -39.13f);
+        pos = new Vector3(-10.36f, 1.13f, -29.13f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Point 2
-        pos = new Vector3(-9.536f, 1.474f, -35.708f);
+        pos = new Vector3(-9.536f, 1.474f, -25.708f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Point 3
-        pos = new Vector3(-7.99f, 1.29f, -33.46f);
+        pos = new Vector3(-7.99f, 1.29f, -23.46f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 

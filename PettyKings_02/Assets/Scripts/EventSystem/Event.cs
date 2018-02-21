@@ -6,42 +6,120 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Event", menuName = "Event")]
 public class Event : ScriptableObject {
 
-    // All data required for an event
+    // List of actions in event
+    public List<BaseAction> actionList_;
 
-    // Data for displaying initial event i.e. name, description...
-    public string name_;
-    public Texture artwork_;
-    [TextArea(3, 5)]
-    public string description_;
+    // Current action happening
+    private BaseAction currentAction_ = null;
+    private List<BaseAction> activeActions_;
 
-    // Data for each decision for each event
-    public string[] decisionText_ = new string[2];
-    public Texture[] decisionArt_ = new Texture[2];
-    [TextArea(3, 5)]
-    public string[] decisionDesc_ = new string[2];
-    public int[] decisionFood_ = new int[2];
-    public int[] decisionWood_ = new int[2];
-    public int[] decisionMen_ = new int[2];
+    // Index of currentAction
+    int actionIndex_;
+
+    // Bool for ending an event
+    bool eventRunning_ = true;
 
 
-
-
-    // Print method
-    public void Print()
+    // Called when event starts
+	public void Begin()
     {
+        // Set default values
+        actionIndex_ = -1;
+        currentAction_ = null;
+        eventRunning_ = true;
 
-        // Displays information about event to debug log
-        Debug.Log(name_ + ": " + description_);
+        // Initialse active actions list
+        activeActions_ = new List<BaseAction>();
+
+        // Start next action
+        GotoNextAction();
     }
 
-    // Returns Resources from a choice
-    public int[] GetDecisionResources(int choice)
+    // Called every frame event is happening
+    public bool Update()
     {
-        int[] resources = new int[3];
-        resources[0] = decisionFood_[choice];
-        resources[1] = decisionWood_[choice];
-        resources[2] = decisionMen_[choice];
-        return resources;
+
+        // Update currentAction
+        UpdateActions();
+
+        return eventRunning_;
+    }
+
+    // Called when event ends
+    public void End()
+    {
+        Debug.Log("event is ending");
+    }
+
+
+    // Method to start next action
+    void GotoNextAction()
+    {
+
+        while (actionList_[actionList_.Count - 1])
+        {
+            // Increment action index to next action
+            actionIndex_++;
+
+            // If there's still more actions to do
+            if (actionIndex_ < actionList_.Count)
+            {
+
+                // Set current action to next action
+                BaseAction nextAction = actionList_[actionIndex_];
+
+                nextAction.Begin(this);
+                activeActions_.Add(nextAction);
+
+                if (nextAction.isBlocking_)
+                {
+                    break;
+                }
+                
+            }
+            else if (activeActions_.Count <= 0)
+            {
+
+                // Else no more actions left, end the event
+                eventRunning_ = false;
+                break;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+    }
+
+    void UpdateActions()
+    {
+
+        for (int i = 0; i < activeActions_.Count; )
+        {
+            if (!activeActions_[i].Update())
+            {
+                if (activeActions_[i] != null)
+                {
+                    activeActions_[i].End();
+                    activeActions_[i] = null;
+                }
+                
+                activeActions_.RemoveAt(i);
+
+                if (activeActions_.Count <= 0)
+                {
+                    GotoNextAction();
+                    break;
+                }
+            }
+            else
+            {
+                i++;
+            }
+        }
+        
+
     }
 
 }
