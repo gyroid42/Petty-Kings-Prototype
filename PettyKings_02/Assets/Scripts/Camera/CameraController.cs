@@ -19,6 +19,9 @@ public class CameraController : MonoBehaviour {
     // Speed the camera moves at
     public float defaultSpeed_;
 
+    // Default position of camera in game
+    public CameraGoto defaultPosition_;
+
 
     // Use this for initialization
     void Start()

@@ -374,6 +374,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed_: 9
+  defaultPosition_:
+    position_: {x: -6.36, y: 15.1, z: -10}
+    rotation_: {x: 55.59, y: 36.736, z: 0}
+    speed_: 0
+    startMoving_: 1
 --- !u!124 &124095039867111144
 Behaviour:
   m_ObjectHideFlags: 1
