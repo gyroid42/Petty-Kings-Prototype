@@ -8,14 +8,13 @@ public class EventController : MonoBehaviour {
 
     // A static reference to itself so other scripts can access it
     public static EventController eventController;
-
-
     private SeasonController seasonController;
 
     
 
     // Current event
     private Event currentEvent_;
+    private List<Event> activeEvents_;
 
     // Next event queue
     private Queue<Event> eventQueue_;
@@ -62,6 +61,9 @@ public class EventController : MonoBehaviour {
 
         // EventActive is false since no event has started
         eventActive_ = false;
+
+        // Initialse active Events list
+        activeEvents_ = new List<Event>();
 
         // Create reference to seasonController
         seasonController = SeasonController.seasonController;

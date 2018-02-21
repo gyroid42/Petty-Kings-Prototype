@@ -9,8 +9,7 @@ public class Event : ScriptableObject {
     // List of actions in event
     public List<BaseAction> actionList_;
 
-    // Current action happening
-    private BaseAction currentAction_ = null;
+    // Current actions happening
     private List<BaseAction> activeActions_;
 
     // Index of currentAction
@@ -25,7 +24,6 @@ public class Event : ScriptableObject {
     {
         // Set default values
         actionIndex_ = -1;
-        currentAction_ = null;
         eventRunning_ = true;
 
         // Initialse active actions list
