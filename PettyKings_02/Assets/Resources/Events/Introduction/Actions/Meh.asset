@@ -8,16 +8,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Intro Decision
-  m_EditorClassIdentifier: Assembly-CSharp::DecisionAction
+  m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
+  m_Name: Meh
+  m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     description_: 
     artwork_: {fileID: 0}
     btnText_: []
-  decisionDisplay_: []
+  decisionDisplay_:
+  - name_: 
+    description_: 
+    artwork_: {fileID: 0}
+    btnText_: []
+  - name_: 
+    description_: 
+    artwork_: {fileID: 0}
+    btnText_: []
   decisionFood_: 0000000000000000
   decisionWood_: 0000000000000000
   decisionMen_: 0000000000000000
