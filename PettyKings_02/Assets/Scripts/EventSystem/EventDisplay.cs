@@ -124,8 +124,14 @@ public class EventDisplay : MonoBehaviour {
                 btnTransform.anchoredPosition = new Vector3(btnPosX + i * btnTransform.sizeDelta.x, btnPosY, 0);
 
                 // Set button text
-                newButton.GetComponentInChildren<Text>().text = displayData.btnText_[i];
-
+                if (i < displayData.btnText_.Length)
+                {
+                    newButton.GetComponentInChildren<Text>().text = displayData.btnText_[i];
+                }
+                else
+                {
+                    newButton.GetComponentInChildren<Text>().text = "option " + (i + 1);
+                }
                 // Create method for button OnClick from function pointer in display data
                 int tempInt = i;
                 ButtonDel tempButtonDel = displayData.btnFunctions_[i];

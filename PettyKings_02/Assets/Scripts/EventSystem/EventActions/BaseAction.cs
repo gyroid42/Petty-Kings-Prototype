@@ -16,7 +16,7 @@ public enum ACTIONTYPE
 
 // Base Action
 //[CreateAssetMenu(fileName = "New Action", menuName = "EventActions/BaseAction"), System.Serializable]
-public abstract class BaseAction : ScriptableObject
+public class BaseAction : ScriptableObject
 {
 
     // properties
