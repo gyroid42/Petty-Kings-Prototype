@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Petty_Kings_fmod\Petty_Kings_fmod.fspro
-  SourceProjectPathUnformatted: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Petty_Kings_fmod\Petty_Kings_fmod.fspro
-  SourceBankPathUnformatted: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Petty_Kings_fmod\Build
+  sourceProjectPath: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Petty_Kings_fmod.fspro
+  SourceProjectPathUnformatted: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Petty_Kings_fmod.fspro
+  SourceBankPathUnformatted: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Build\Desktop
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
