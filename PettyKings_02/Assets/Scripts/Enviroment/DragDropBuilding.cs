@@ -27,10 +27,106 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         tileMapManager = TileMap.tileMapManager;
     }
 
+    int GetMouseDirection(Vector3 pos1, Vector3 pos2) //function to get direction player moves mouse
+    {
+
+        return 0;
+    }
+
+    float GetMouseDistance(Vector3 pos1, Vector3 pos2)
+    {
+        float distance = Vector3.Distance(pos1, pos2);
+
+        return distance;
+    }
+    void BuildingDrag()
+    {
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")))
+        {
+            if (hit.collider.gameObject.GetComponent<GroundTileMesh>().gameObject.tag == "Walkable" && buildingController_.Purchase() && tileMapManager.CanPlacebuilding(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size))
+            {
+
+                modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
+
+                tileMapManager.SetTilesWalkable(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size, false);
+                if (smoke)
+                {
+                    Instantiate(smoke, modelClone.transform);
+                }
+                Debug.Log("it's been build");
+
+            }
+
+            else
+            {
+                Destroy(modelClone);
+                Debug.Log("it's not been build");
+            }
+        }
+        else
+        {
+            Destroy(modelClone); //destroy the gameobject being dragged
+        }
+    }
+
+    void WallDrag()
+    {
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100.0f))
+        {
+            if (hit.collider.gameObject.GetComponent<GroundTileMesh>().gameObject.tag == "Walkable" && buildingController_.Purchase() && tileMapManager.CanPlacebuilding(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size))
+            {
+
+                modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
+                                                                                                                                                                                                       //
+
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+                    Vector3 pos = hit.collider.transform.position;
+                    if (hit.collider.gameObject.GetComponent<GroundTileMesh>().gameObject.tag == "Walkable");
+                    {
+                        Instantiate(modelClone, hit.transform.position + (modelClone.transform.right * 0.2f), modelClone.transform.rotation);
+                        pos = modelClone.transform.position;
+                        
+                        Physics.Raycast(ray, out hit, 100.0f);
+                        if(hit.collider.tag == "Walkable")
+                        {
+                            Instantiate(modelClone, hit.transform.position + (modelClone.transform.right * 0.2f), modelClone.transform.rotation);
+                        }
+                        GetMouseDistance(pos, hit.collider.transform.position);
+                      
+
+                    }
+                }
+              
+                tileMapManager.SetTilesWalkable(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size, false);
+                if (smoke)
+                {
+                    Instantiate(smoke, modelClone.transform);
+                }
+                Debug.Log("it's been build");
+
+
+
+            }
+
+            else
+            {
+                Destroy(modelClone);
+                Debug.Log("it's not been build");
+            }
+        }
+        else
+        {
+            Destroy(modelClone); //destroy the gameobject being dragged
+        }
+    }
+
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
     {
         modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
-        modelClone.tag = buildingController_.building_.tag_;
+        modelClone.gameObject.tag = buildingController_.building_.tag_;
 
         if (buildingController_.building_.buildParticle_)
         {
@@ -69,42 +165,18 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     public void OnEndDrag(PointerEventData eventData) //called when player stops dragging
     {
         //cast ray from mouse position
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100.0f, LayerMask.GetMask("BuildTiles")) )
+        if(modelClone.tag != "Wall")
         {
-            if (hit.collider.gameObject.GetComponent<GroundTileMesh>().gameObject.tag == "Walkable" && buildingController_.Purchase() && tileMapManager.CanPlacebuilding(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size))
-            {
-         
-                modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
-
-                tileMapManager.SetTilesWalkable(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size, false);
-                if (smoke)
-                {
-                    Instantiate(smoke, modelClone.transform);
-                }
-                Debug.Log("it's been build");
-
-            }
-            
-            else
-            {
-                Destroy(modelClone);
-                Debug.Log("it's not been build");
-            }
+            BuildingDrag();
         }
         else
         {
-            Destroy(modelClone); //destroy the gameobject being dragged
+            WallDrag();
         }
-
-
+           
+        
         tileMapManager.HideTileMap();
-
-
-
-
         seasonController.StartTimer();
-
 
     }
 

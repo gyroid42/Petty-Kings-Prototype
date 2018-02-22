@@ -14,6 +14,7 @@ public class Building : ScriptableObject {
     public Texture artwork_;
     public GameObject buildingModel_;
     public GameObject buildParticle_;
+    
 
     // Cost of the building
     public int foodCost_;
@@ -23,12 +24,14 @@ public class Building : ScriptableObject {
     // Building size
     public int[] size = new int[2];
 
+    
 
     // Print method for debugging
     public void Print()
     {
         Debug.Log(name_);
     }
+
 
 
     // Returns the cost of the object
