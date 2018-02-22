@@ -12,7 +12,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x13dafca08 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x1398ec008 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -28,25 +28,87 @@
 [LOG] SystemI::createSound                     : filename = PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 0x137eead68 : node = 0x137eeaf20
-[LOG] SystemI::createSound                     : add node to async list : head = 0x137eeb198.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x137eead68
+[LOG] SystemI::createSound                     : setdata soundi = 0x10e639018 : node = 0x10e6391d0
+[LOG] SystemI::createSound                     : add node to async list : head = 0x10e639448.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x10e639018
 [LOG] SystemI::createSoundInternal             :     Create name='PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 403648
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13728
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5105568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 98688
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x137eeb038
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x10e6392e8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PETTY KINGS_WAR MUSIC', format=2, channels=2, frequency=48000, lengthbytes=402464, lengthpcm=1588965, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.624512.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x137eead68
-[LOG] SoundI::getSubSound                      : sound 0x137eead68.  Subsound index 0 / 1
-[LOG] SoundI::release                          : PETTY KINGS_WAR MUSIC (0x137eead68)
-[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x10e6e88a8)
-[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x10e6e8a38)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x10e639018
+[LOG] SoundI::getSubSound                      : sound 0x10e639018.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0x13d63c228 : node = 0x13d63c3e0
+[LOG] SystemI::createSound                     : add node to async list : head = 0x10e639448.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x13d63c228
+[LOG] SystemI::createSoundInternal             :     Create name='PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5105568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 98688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x13d63c4f8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PETTY KINGS_ENTERTAINMENT MUSIC 2', format=2, channels=2, frequency=48000, lengthbytes=1128480, lengthpcm=4189091, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174927.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x13d63c228
+[LOG] SoundI::getSubSound                      : sound 0x13d63c228.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0x14683d188 : node = 0x14683d340
+[LOG] SystemI::createSound                     : add node to async list : head = 0x10e639448.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x14683d188
+[LOG] SystemI::createSoundInternal             :     Create name='PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5105568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 98688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x14683d458
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PETTY KINGS_WAR MUSIC', format=2, channels=2, frequency=48000, lengthbytes=402464, lengthpcm=1588965, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.624512.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x14683d188
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x10e639fe8
+[LOG] SoundI::getSubSound                      :     sound 0x14683d188.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x10e639fe8
+[LOG] SoundI::release                          : PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x13d63c228)
+[LOG] SoundI::release                          :     PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x138592f58)
+[LOG] SoundI::release                          :     PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x1385930e8)
+[LOG] SystemI::createSound                     : filename = PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0x1451f22e8 : node = 0x10e4738f0
+[LOG] SystemI::createSound                     : add node to async list : head = 0x10e639448.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x1451f22e8
+[LOG] SystemI::createSoundInternal             :     Create name='PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5105568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 98688
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x10e473a08
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PETTY KINGS_ENTERTAINMENT MUSIC 2', format=2, channels=2, frequency=48000, lengthbytes=1128480, lengthpcm=4189091, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.174927.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x1451f22e8
+[LOG] SoundI::getSubSound                      : sound 0x1451f22e8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : PETTY KINGS_WAR MUSIC (0x10e639018)
+[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x10e639e58)
+[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x10e639fe8)
+[LOG] SoundI::release                          : PETTY KINGS_WAR MUSIC (0x14683d188)
+[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x1382c9bb8)
+[LOG] SoundI::release                          :     PETTY KINGS_WAR MUSIC (0x1382ca518)
+[LOG] SoundI::release                          : PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x1451f22e8)
+[LOG] SoundI::release                          :     PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x13858e518)
+[LOG] SoundI::release                          :     PETTY KINGS_ENTERTAINMENT MUSIC 2 (0x10e5d7648)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
