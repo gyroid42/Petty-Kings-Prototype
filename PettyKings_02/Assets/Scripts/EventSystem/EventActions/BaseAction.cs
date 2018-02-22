@@ -9,6 +9,7 @@ public enum ACTIONTYPE
     BASE,
     DECISION,
     CAMERAMOVE,
+    CAMERARESET,
     PAUSE,
     AUDIO
 }
