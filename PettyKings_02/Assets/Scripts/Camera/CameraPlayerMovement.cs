@@ -143,15 +143,26 @@ public class CameraPlayerMovement : MonoBehaviour {
                 transform.position += moveDirection * scrollSpeed_ * Time.deltaTime;
             }
         }
-
+        //bound camera movement to world
         if (transform.position.x > maxScrollDistanceX_)
         {
-            transform.position.x = maxScrollDistanceX_;
+            transform.position = new Vector3(maxScrollDistanceX_, transform.position.y, transform.position.z);
         }
+        else if (transform.position.x < -maxScrollDistanceX_)
+        {
+            transform.position = new Vector3(-maxScrollDistanceX_, transform.position.y, transform.position.z);
+        }
+
         if(transform.position.z > maxScrollDisanceZ_)
         {
-            transform.position.z = maxScrollDisanceZ_;
+            transform.position = new Vector3(transform.position.x, transform.position.y, maxScrollDisanceZ_);
         }
+        else if (transform.position.z < -maxScrollDisanceZ_)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -maxScrollDisanceZ_);
+        }
+
+        
     }
 
     
