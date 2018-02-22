@@ -7,7 +7,7 @@ using System;
 public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     private GameObject modelClone; //variable to hold clone of desired gameobject 
-    private ParticleSystem smoke;
+    private ParticleSystem buildParticles;
     private BuildingController buildingController_;
     private SeasonController seasonController;
     private TileMap tileMapManager;
@@ -27,6 +27,7 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         tileMapManager = TileMap.tileMapManager;
     }
 
+
     public void OnBeginDrag(PointerEventData eventData) //called when player begins to drag
     {
         modelClone = Instantiate(buildingController_.building_.buildingModel_); //instantiate a clone of desired gameobject
@@ -34,11 +35,9 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
         if (buildingController_.building_.buildParticle_)
         {
-            smoke = buildingController_.building_.buildParticle_.GetComponent<ParticleSystem>();
+            buildParticles = buildingController_.building_.buildParticle_.GetComponent<ParticleSystem>();
         }
        
-
-
         tileMapManager.ShowTileMap();
 
 
@@ -78,18 +77,18 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 modelClone.transform.position = new Vector3(hit.collider.transform.position.x, Terrain.activeTerrain.SampleHeight(hit.collider.transform.position) + (modelClone.transform.lossyScale.y / 2), hit.collider.transform.position.z);//terrain height is taken into account allowing for building ontop of mounds
 
                 tileMapManager.SetTilesWalkable(hit.collider.gameObject.GetComponent<GroundTileMesh>().GetMapPosition(), buildingController_.building_.size, false);
-                if (smoke)
+                if (buildParticles)
                 {
-                    Instantiate(smoke, modelClone.transform);
+                    Instantiate(buildParticles, modelClone.transform);
                 }
-                Debug.Log("it's been build");
+               // Debug.Log("it's been build");
 
             }
             
             else
             {
                 Destroy(modelClone);
-                Debug.Log("it's not been build");
+               // Debug.Log("it's not been build");
             }
         }
         else
@@ -99,9 +98,6 @@ public class DragDropBuilding : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
 
         tileMapManager.HideTileMap();
-
-
-
 
         seasonController.StartTimer();
 
