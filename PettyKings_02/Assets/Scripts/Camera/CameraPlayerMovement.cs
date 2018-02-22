@@ -10,6 +10,8 @@ public class CameraPlayerMovement : MonoBehaviour {
     public float scrollEdgeWidth_;
     public float zoomStepDistance_;
     public float maxZoomDistanceY_;
+    public float maxScrollDistanceX_;
+    public float maxScrollDisanceZ_;
     
     private bool isMouseScrolling_;
     private RaycastHit scrollHitPoint_;
@@ -141,5 +143,16 @@ public class CameraPlayerMovement : MonoBehaviour {
                 transform.position += moveDirection * scrollSpeed_ * Time.deltaTime;
             }
         }
+
+        if (transform.position.x > maxScrollDistanceX_)
+        {
+            transform.position.x = maxScrollDistanceX_;
+        }
+        if(transform.position.z > maxScrollDisanceZ_)
+        {
+            transform.position.z = maxScrollDisanceZ_;
+        }
     }
+
+    
 }
