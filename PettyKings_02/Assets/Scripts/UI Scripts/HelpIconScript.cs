@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class HelpIconScript : MonoBehaviour {
 
+    // Find icon game object
+    public GameObject Icon;
+
 	// Use this for initialization
 	void Start () {
-		
+        // Ensure icon is visible on startup
+        Icon.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -16,6 +20,6 @@ public class HelpIconScript : MonoBehaviour {
 
     // Close down icon
     public void Close(){
-        gameObject.SetActive(false);
+        Icon.SetActive(false);
     }
 }
