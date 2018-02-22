@@ -11,14 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 114757075681954752}
-  - {fileID: 114842297181357616}
-  EditorEvents:
-  - {fileID: 114427575037574242}
-  MasterBankRef: {fileID: 114842297181357616}
-  StringsBankRef: {fileID: 114757075681954752}
-  stringsBankWriteTime: 636548962270000000
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
   cacheVersion: 2
 --- !u!114 &114053221943284872
 MonoBehaviour:
@@ -81,6 +78,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 20000
+--- !u!114 &114359204788087972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/War music
+  guid: 3d61e7ebba5a6741b498815c944e104a
+  Banks:
+  - {fileID: 114846563580859062}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33103
 --- !u!114 &114389402379530322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,4 +256,41 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 417376
+  Exists: 1
+--- !u!114 &114846563580859062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Jock\Documents\uni work\year 3\PettyKings\Petty-Kings-Prototype\PettyKings_02\PettyKing_Audio_Fmod\Petty_Kings_Fmod\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636548966959116178
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 417344
+  Exists: 1
+--- !u!114 &114981039505801494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: PettyKing_Audio_Fmod/Petty_Kings_Fmod\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636548966959162314
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 720
   Exists: 1

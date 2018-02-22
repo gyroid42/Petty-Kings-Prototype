@@ -15,7 +15,7 @@ MonoBehaviour:
   HasPlatforms: 0
   sourceProjectPath: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Petty_Kings_fmod.fspro
   SourceProjectPathUnformatted: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Petty_Kings_fmod.fspro
-  SourceBankPathUnformatted: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop
+  SourceBankPathUnformatted: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Build\Desktop
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -55,5 +55,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: Master Bank
+  MasterBank: 
   Banks: []
