@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 114427575037574242}
   MasterBankRef: {fileID: 114842297181357616}
   StringsBankRef: {fileID: 114757075681954752}
-  stringsBankWriteTime: 636548965730000000
+  stringsBankWriteTime: 636548962270000000
   cacheVersion: 2
 --- !u!114 &114053221943284872
 MonoBehaviour:
@@ -194,9 +194,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636548965730000000
+  lastModified: 636548962270000000
   LoadResult: 0
-  FileSizes: []
+  FileSizes:
+  - Name: 
+    Value: 720
   Exists: 1
 --- !u!114 &114807247144749430
 MonoBehaviour:
@@ -230,7 +232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/aureliemoiroud/Documents/GitHub/Petty-Kings/PettyKings_02/PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master
     Bank.bank
-  lastModified: 636548965730000000
+  lastModified: 636548962270000000
   LoadResult: 0
-  FileSizes: []
+  FileSizes:
+  - Name: 
+    Value: 417376
   Exists: 1
