@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114690519331008834}
   - component: {fileID: 114339034019054882}
   - component: {fileID: 114386127324195874}
+  - component: {fileID: 114812831544868704}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -59,6 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290969060387246}
   - component: {fileID: 82477035282025606}
+  - component: {fileID: 114760343156351964}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -149,14 +151,14 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1241143195606892}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &82477035282025606
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861261898666486}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 59d417748422d544ca15c924f060503f, type: 3}
@@ -379,6 +381,40 @@ MonoBehaviour:
     rotation_: {x: 55.59, y: 36.736, z: 0}
     speed_: 0
     startMoving_: 1
+--- !u!114 &114760343156351964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861261898666486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/War music
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &114812831544868704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1241143195606892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!124 &124095039867111144
 Behaviour:
   m_ObjectHideFlags: 1

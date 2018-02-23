@@ -21,11 +21,13 @@ MonoBehaviour:
   - name_: 
     description_: 
     artwork_: {fileID: 0}
-    btnText_: []
+    btnText_:
+    - 
   - name_: 
     description_: 
     artwork_: {fileID: 0}
-    btnText_: []
+    btnText_:
+    - 
   decisionFood_: 0000000000000000
   decisionWood_: 0000000000000000
   decisionMen_: 0000000000000000

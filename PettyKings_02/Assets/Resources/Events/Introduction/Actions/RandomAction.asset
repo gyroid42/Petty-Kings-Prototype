@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbda6c399afdda4b8b159750cb442d1, type: 3}
   m_Name: RandomAction
   m_EditorClassIdentifier: 
-  isBlocking_: 1
-  numberOfRandomActions_: 0
-  actionList_: []
+  isBlocking_: 0
+  numberOfRandomActions_: 11
+  actionList_:
+  - {fileID: 11400000, guid: 8d4df09a037aeea42b4fcb742a6c44e8, type: 2}
+  - {fileID: 11400000, guid: b9c6e8d53d7fac54f956d1f7c34fb081, type: 2}
+  - {fileID: 11400000, guid: 98d267407000bb94e9bf8f1375358c70, type: 2}
+  - {fileID: 11400000, guid: 98d267407000bb94e9bf8f1375358c70, type: 2}
