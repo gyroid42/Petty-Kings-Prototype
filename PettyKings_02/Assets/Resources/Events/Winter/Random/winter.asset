@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: winter
   m_EditorClassIdentifier: 
   name_: Winter
-  artwork_: {fileID: 0}
+  artwork_: {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
   description_: The winter has been harsh lord, our food stocks will not last much
     longer...
   decisionText_:
   - Keep enough food to feed the troops!
   - The peasants must be fed as well!
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
   decisionDesc_:
   - 'The food rations have been lowered for the peasants and we now have enough food
     to keep the troops healthy. '

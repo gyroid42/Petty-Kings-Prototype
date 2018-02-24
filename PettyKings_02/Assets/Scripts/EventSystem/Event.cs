@@ -6,42 +6,143 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Event", menuName = "Event")]
 public class Event : ScriptableObject {
 
-    // All data required for an event
 
-    // Data for displaying initial event i.e. name, description...
-    public string name_;
-    public Texture artwork_;
-    [TextArea(3, 5)]
-    public string description_;
+    // Event blocking flag
+    public bool isBlocking_ = true;
 
-    // Data for each decision for each event
-    public string[] decisionText_ = new string[2];
-    public Texture[] decisionArt_ = new Texture[2];
-    [TextArea(3, 5)]
-    public string[] decisionDesc_ = new string[2];
-    public int[] decisionFood_ = new int[2];
-    public int[] decisionWood_ = new int[2];
-    public int[] decisionMen_ = new int[2];
+    // Event ignore blocking flag
+    public bool instantPriority_ = false;
+
+    // Event pauses seasonTimer
+    public bool stopSeasonTimer_ = true;
+
+    // List of actions in event
+    public List<BaseAction> actionList_;
+
+    // Current actions happening
+    private List<BaseAction> activeActions_;
+
+    // Index of currentAction
+    private int actionIndex_;
+
+    // Bool for ending an event
+    private bool eventRunning_ = true;
 
 
-
-
-    // Print method
-    public void Print()
+    // Called when event starts
+	public void Begin()
     {
+        // Set default values
+        actionIndex_ = -1;
+        eventRunning_ = true;
 
-        // Displays information about event to debug log
-        Debug.Log(name_ + ": " + description_);
+        // Initialse active actions list
+        activeActions_ = new List<BaseAction>();
+
+        // Start next action
+        GotoNextAction();
     }
 
-    // Returns Resources from a choice
-    public int[] GetDecisionResources(int choice)
+    // Called every frame event is happening
+    public bool Update()
     {
-        int[] resources = new int[3];
-        resources[0] = decisionFood_[choice];
-        resources[1] = decisionWood_[choice];
-        resources[2] = decisionMen_[choice];
-        return resources;
+
+        // Update currentAction
+        UpdateActions();
+
+        return eventRunning_;
+    }
+
+    // Called when event ends
+    public void End()
+    {
+        Debug.Log("event is ending");
+    }
+
+
+    // Method to start next action
+    void GotoNextAction()
+    {
+
+        while (true)
+        {
+            // Increment action index to next action
+            actionIndex_++;
+
+            // If there's still more actions to do
+            if (actionIndex_ < actionList_.Count)
+            {
+
+                // Set current action to next action
+                BaseAction nextAction = actionList_[actionIndex_];
+
+                nextAction.Begin(this);
+                activeActions_.Add(nextAction);
+
+                if (nextAction.isBlocking_)
+                {
+                    break;
+                }
+                
+            }
+            else if (activeActions_.Count <= 0)
+            {
+
+                // Else no more actions left, end the event
+                eventRunning_ = false;
+                break;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+    }
+
+
+    // Updates each active action
+    void UpdateActions()
+    {
+
+        // Loop for each active action and update it
+        for (int i = 0; i < activeActions_.Count; )
+        {
+
+            // If the action has ended
+            if (!activeActions_[i].Update())
+            {
+
+                // End the action
+
+                // If the action exists
+                if (activeActions_[i] != null)
+                {
+
+                    // Call end on action then delete it
+                    activeActions_[i].End();
+                    activeActions_[i] = null;
+                }
+                
+                // Remove the action from the active list
+                activeActions_.RemoveAt(i);
+
+                // If no more actions in active list
+                if (activeActions_.Count <= 0)
+                {
+
+                    // Goto next action and Break out of loop
+                    GotoNextAction();
+                    break;
+                }
+            }
+
+            // Else move index to next active action
+            else
+            {
+                i++;
+            }
+        }
     }
 
 }

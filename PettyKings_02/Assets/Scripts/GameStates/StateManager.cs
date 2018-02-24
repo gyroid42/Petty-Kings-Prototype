@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -27,6 +28,10 @@ public class StateManager : MonoBehaviour {
     // Script references
     private HUDToggle GameUI_;
     private CameraController CameraController_;
+    private EventController eventController_;
+
+    // CameraMoveEvents
+    private Event camMenuToGame_;
 
 
     // When object is created
@@ -63,12 +68,15 @@ public class StateManager : MonoBehaviour {
 
 
         CameraController_ = Camera.main.GetComponent<CameraController>();
+        eventController_ = EventController.eventController;
         
         GameUI_ = GetComponent<HUDToggle>();
 
         // Set UI to be inactive at start
         OverlayActive_ = false;
         GameUI_.UIVisible(OverlayActive_);
+
+        camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
 	}
 	
 	// Update is called once per frame
@@ -109,26 +117,32 @@ public class StateManager : MonoBehaviour {
     {
         ChangeState(GAMESTATE.STAGEONE);
         CameraStageOne();
+        SeasonController.seasonController.StartTimer();
+        SeasonController.seasonController.StartGame();
     }
     
     // CAMERA MOVEMENTS
     void CameraStageOne()
     {
+
+        eventController_.StartEvent(camMenuToGame_);
+        
+        /*
         // Position/Rotation for Stage One
         Vector3 pos, rot;
 
         // Point 1
-        pos = new Vector3(-10.36f, 1.13f, -39.13f);
+        pos = new Vector3(-10.36f, 1.13f, -29.13f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Point 2
-        pos = new Vector3(-9.536f, 1.474f, -35.708f);
+        pos = new Vector3(-9.536f, 1.474f, -25.708f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
         // Point 3
-        pos = new Vector3(-7.99f, 1.29f, -33.46f);
+        pos = new Vector3(-7.99f, 1.29f, -23.46f);
         rot = new Vector3(0.0f, 0.0f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
 
@@ -136,5 +150,6 @@ public class StateManager : MonoBehaviour {
         pos = new Vector3(-6.36f, 15.1f, -10.0f);
         rot = new Vector3(55.59f, 36.736f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
+        */
     }
  }

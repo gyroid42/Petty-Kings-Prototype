@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: Spring
   m_EditorClassIdentifier: 
   name_: 
-  artwork_: {fileID: 0}
-  description_: Sire! strangers are requesting shelter, they appear to be lordless
+  artwork_: {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
+  description_: Sire! Strangers are requesting shelter, they appear to be lordless
     men and wish to join us. What are your orders?
   decisionText_:
-  - Allow them shelter and feed!
+  - Allow them shelter and hot food!
   - We cannot spare them shelter or food, send them on their way!
   decisionArt_:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
+  - {fileID: 2800000, guid: cf73223cf510c91428af96bdd31533f7, type: 3}
   decisionDesc_:
   - 'The men have been fed and watered Lord! they have agreed to stay with us. '
   - The men stayed around looking for scraps from the peasants but were soon chased

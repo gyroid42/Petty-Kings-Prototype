@@ -6,48 +6,26 @@ using UnityEngine.UI;
 
 public class EventController : MonoBehaviour {
 
-
     // A static reference to itself so other scripts can access it
     public static EventController eventController;
+    private SeasonController seasonController;
 
-
-    private EventDisplay eventDisplay;
-    private ResourceManager resourceManager;
-    private SeasonAudioManager seasonAudioManager;
-    private StateManager stateManager;
-
-    // List of events
-    private List<Event> introductionEvents_;
-    private List<Event> springEventList_;
-    private List<Event> summerEventList_;
-    private List<Event> autumnEventList_;
-    private List<Event> harvestEventList_;
-    private List<Event> winterEventList_;
-    private List<Event> springEventList2_;
-
-
-    private List<Event> springIntroEvents_;
-    private List<Event> summerIntroEvents_;
-    private List<Event> autumnIntroEvents_;
-    private List<Event> harvestIntroEvents_;
-    private List<Event> winterIntroEvents_;
-    private List<Event> spring2IntroEvents_;
-
+    
 
     // Current event
-    private Event currentEvent_;
+    private List<Event> activeEvents_;
 
-
-    // Current Season
-    private int currentSeason_;
-    private Season[] seasonList_ = new Season[7] { Season.INTRO, Season.SPRING, Season.SUMMER, Season.AUTUMN, Season.HARVEST, Season.WINTER, Season.SPRING2 };
+    // Next event queue
+    private Queue<Event> eventQueue_;
 
     // flag if event is active
     bool eventActive_;
 
 
-    private Timer nextEventTimer_ = new Timer();
-    public float timeTillNextEvent_;
+    // Flag for if last event started was blocking
+    bool isBlocked_;
+
+
 
     // When object is created
     void Awake()
@@ -76,311 +54,195 @@ public class EventController : MonoBehaviour {
         eventController = null;
     }
 
-
+    // Called when eventController created
     void Start()
     {
+        // Create empty event queue
+        eventQueue_ = new Queue<Event>();
 
-        eventDisplay = EventDisplay.eventDisplay;
-        resourceManager = ResourceManager.resourceManager;
-        seasonAudioManager = SeasonAudioManager.seasonAudioManager;
-        stateManager = StateManager.stateManager;
-
-        // No event is active when event controller is created
+        // EventActive is false since no event has started
         eventActive_ = false;
 
-        // Load all the events into the event lists
-        introductionEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
-        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring/Random", typeof(Event)).Cast<Event>().ToArray());
-        summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer/Random", typeof(Event)).Cast<Event>().ToArray());
-        autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn/Random", typeof(Event)).Cast<Event>().ToArray());
-        harvestEventList_ = new List<Event>(Resources.LoadAll("Events/Harvest/Random", typeof(Event)).Cast<Event>().ToArray());
-        winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter/Random", typeof(Event)).Cast<Event>().ToArray());
-        springEventList2_ = new List<Event>(Resources.LoadAll("Events/Spring2/Random", typeof(Event)).Cast<Event>().ToArray());
+        isBlocked_ = false;
 
+        // Initialse active Events list
+        activeEvents_ = new List<Event>();
 
-        springIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring/Intro", typeof(Event)).Cast<Event>().ToArray());
-        summerIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Summer/Intro", typeof(Event)).Cast<Event>().ToArray());
-        autumnIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Autumn/Intro", typeof(Event)).Cast<Event>().ToArray());
-        harvestIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Harvest/Intro", typeof(Event)).Cast<Event>().ToArray());
-        winterIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Winter/Intro", typeof(Event)).Cast<Event>().ToArray());
-        spring2IntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring2/Intro", typeof(Event)).Cast<Event>().ToArray());
-
-        // Setup Event Timer
-        nextEventTimer_.SetTimer(timeTillNextEvent_, false);
-
-        // Set starting season to the intro
-        currentSeason_ = 0;
+        // Create reference to seasonController
+        seasonController = SeasonController.seasonController;
     }
 
 
+    // Called every frame
     void Update()
     {
 
-        // If stage 2 is running
-        if (stateManager.CurrentState() == GAMESTATE.STAGEONE)
-        {
-
-            // If there are still introduction events and no event is active
-            if (introductionEvents_.Count > 0 && !eventActive_)
-            {
-                Debug.Log("event start");
-                // Start the next event from the intro
-                StartEvent();
-
-
-            }
-            // Check if timer for next event has been triggered
-            else if (nextEventTimer_.UpdateTimer() && !eventActive_)
-            {
-
-                Debug.Log("season change");
-                ChangeSeason();
-
-            }
-
-        }
-
-        if (eventActive_)
-        {
-            eventDisplay.gameObject.SetActive(true);
-        }
+        // Update each event
+        UpdateEvents();
+        
     }
 
 
-    void ChangeSeason()
+    // Updates each active event
+    void UpdateEvents()
     {
 
-        currentSeason_++;
-        currentSeason_ %= seasonList_.Length;
-
-
-        if (!eventActive_)
+        // Loop for each active event and update it
+        for (int i = 0; i < activeEvents_.Count;)
         {
-            if (eventDisplay != null)
+
+            // If the event has ended
+            if (!activeEvents_[i].Update())
             {
 
-                if (!GotoNextIntroEvent())
+                // End the event
+
+                // If the event exists
+                if (activeEvents_[i] != null)
                 {
-                    StartEvent();
+
+                    // Call end on event then delete it
+                    activeEvents_[i].End();
+                    activeEvents_[i] = null;
                 }
 
+                // Remove the event from the active list
+                activeEvents_.RemoveAt(i);
 
+                if (!CheckSeasonPause())
+                {
+                    seasonController.StartTimer();
+                }
+
+                // If no more events in active list
+                if (activeEvents_.Count <= 0)
+                {
+                    // Goto next event and Break out of loop
+                    GotoNextEvent();
+                    break;
+                }
             }
 
+            // Else move index to next active event
+            else
+            {
+                i++;
+            }
+        }
+    }
+
+
+    // Method to start a new event
+    public void StartEvent(Event newEvent)
+    {
+        // If no event is currently happening or last event wasn't blocking
+        if (activeEvents_.Count <= 0 || !isBlocked_ || newEvent.instantPriority_)
+        {
+
+            // Start the event
             eventActive_ = true;
+            newEvent.Begin();
+            activeEvents_.Add(newEvent);
+
+            // Pause season timer
+            if (newEvent.stopSeasonTimer_)
+            {
+                seasonController.PauseTimer();
+            }
+
+            // If event is blocking
+            if (newEvent.isBlocking_)
+            {
+
+                // Set flag for last event blocking
+                isBlocked_ = true;
+            }
         }
-
-        seasonAudioManager.UpdateAudio(); //updates audio being played
-    }
-
-
-
-    // Method called on button being pressed
-    public void DecisionSelected(int choice)
-    {
-
-        // Update display
-        if (eventDisplay)
+        else
         {
-            eventDisplay.DisplayDecision(choice);
-            resourceManager.UpdateResources(currentEvent_.GetDecisionResources(choice));
-        }
-    }
 
-    public void ContinueButtonClicked()
-    {
-
-        // When continue button is pressed end the event
-        eventController.EndEvent();
-    }
-
-    public void StartSeasonButtonClicked()
-    {
-        if (!GotoNextIntroEvent())
-        {
-            eventController.StartEvent();
+            // Else add new Event to event queue
+            eventQueue_.Enqueue(newEvent);
         }
     }
 
+    
 
-    // Method for starting a new event
-    public void StartEvent()
+    // Starts next event in queue
+    bool GotoNextEvent()
     {
 
-        // Bool to check if an event is even found
-        bool eventFound = false;
+        // Reset is Blocking flag
+        isBlocked_ = false;
 
-        // Check the season and get event from appropriate list
-        switch (seasonList_[currentSeason_])
+        // While queue isn't empty
+        while (eventQueue_.Count > 0)
         {
-            case Season.SPRING:
-                eventFound = GetRandomEvent(springEventList_);
-                break;
-            case Season.SUMMER:
-                eventFound = GetRandomEvent(summerEventList_);
-                break;
-            case Season.AUTUMN:
-                eventFound = GetRandomEvent(autumnEventList_);
-                break;
-            case Season.HARVEST:
-                eventFound = GetRandomEvent(harvestEventList_);
-                break;
-            case Season.WINTER:
-                eventFound = GetRandomEvent(winterEventList_);
-                break;
-            case Season.SPRING2:
-                eventFound = GetRandomEvent(springEventList2_);
-                break;
-            case Season.INTRO:
-                eventFound = GetNextEvent(introductionEvents_);
-                break;
 
+            // Start next event
+            Event nextEvent = eventQueue_.Dequeue();
+
+            nextEvent.Begin();
+            activeEvents_.Add(nextEvent);
+            eventActive_ = true;
+
+            // Pause season timer
+            if (nextEvent.stopSeasonTimer_)
+            {
+                seasonController.PauseTimer();
+            }
+
+
+            // If event is blocking
+            if (nextEvent.isBlocking_)
+            {
+                // Set flag for last event blocking
+                isBlocked_ = true;
+
+                // Stop adding events to active event queue
+                break;
+            }
+            
         }
 
-        // If no event was found leave the method
-        if (!eventFound)
-        {
-            Debug.Log("no event found");
-            return;
-        }
-
-        // Make event display active and display the new event
-        if (eventDisplay != null)
+        // If there are no active events
+        if (activeEvents_.Count <= 0)
         {
 
-            eventDisplay.gameObject.SetActive(true);
-            eventDisplay.SetEvent(currentEvent_);
-            eventDisplay.Display();
-        }
+            // No more events to run
+            //
+            // Start season timer again
+            seasonController.StartTimer();
 
-        // Event Active flag is now true
-        eventActive_ = true;
-
-    }
-
-    private bool GotoNextIntroEvent()
-    {
-
-        bool eventFound = false;
-
-        switch (seasonList_[currentSeason_])
-        {
-            case Season.SPRING:
-                eventFound = GetNextEvent(springIntroEvents_);
-                break;
-            case Season.SUMMER:
-                eventFound = GetNextEvent(summerIntroEvents_);
-                break;
-            case Season.AUTUMN:
-                eventFound = GetNextEvent(autumnIntroEvents_);
-                break;
-            case Season.HARVEST:
-                eventFound = GetNextEvent(harvestIntroEvents_);
-                break;
-            case Season.WINTER:
-                eventFound = GetNextEvent(winterIntroEvents_);
-                break;
-            case Season.SPRING2:
-                eventFound = GetNextEvent(spring2IntroEvents_);
-                break;
-            case Season.INTRO:
-                eventFound = GetNextEvent(introductionEvents_);
-                break;
-
-        }
-
-        if (!eventFound)
-        {
+            // No event is active anymore
+            eventActive_ = false;
             return false;
         }
 
-        if (eventDisplay != null)
-        {
-            eventDisplay.gameObject.SetActive(true);
-            eventDisplay.SetEvent(currentEvent_);
-            eventDisplay.DisplaySeasonStart();
-        }
+        // Event is running
         return true;
     }
 
-    bool GetRandomEvent(List<Event> eventList)
+
+    // Checks if any of the active events are pausing the season timer
+    private bool CheckSeasonPause()
     {
 
-        // If there are events in the list
-        if (eventList.Count > 0)
+        // Loop for each activeEvent
+        for (int i = 0; i < activeEvents_.Count; i++)
         {
 
-            // Get a random event in the list
-            int index = Random.Range(0, eventList.Count);
-
-            // Set that to the current event
-            currentEvent_ = eventList[index];
-
-            // Remove the event from the list
-            eventList.RemoveAt(index);
-            return true;
+            // If event is pausing timer return true
+            if (activeEvents_[i].stopSeasonTimer_)
+            {
+                return true;
+            }
         }
 
-        // If no event is found return false
-        return false;
-    }
 
-    bool GetNextEvent(List<Event> eventList)
-    {
-
-        // If there are events in the list
-        if (eventList.Count > 0)
-        {
-
-            // Get next event in the list
-            currentEvent_ = eventList[0];
-
-            // Remove the event from the list
-            eventList.RemoveAt(0);
-            return true;
-        }
-
-        // If not event is found return false
+        // No event returned true therefore no event is pausing the timer
         return false;
     }
 
 
-    // Method for ending an event
-    public void EndEvent()
-    {
-        Debug.Log("Event has ended");
-        // Set that no event is active and make event display not active
-        eventActive_ = false;
-        eventDisplay.gameObject.SetActive(false);
-
-        // If the event was the last intro event
-        if (introductionEvents_.Count <= 0)
-        {
-
-            // Start the timer between events
-            nextEventTimer_.Reset();
-            nextEventTimer_.SetActive(true);
-        }
-    }
-
-    public void PauseSeasonTimer()
-    {
-        nextEventTimer_.Pause();
-    }
-
-    public void StartSeasonTimer()
-    {
-        nextEventTimer_.Start();
-    }
-
-
-    public bool EventActive()
-    {
-        return eventActive_;
-    }
-
-    public Season CurrentSeason()
-    {
-        return seasonList_[currentSeason_];
-    }
 }
