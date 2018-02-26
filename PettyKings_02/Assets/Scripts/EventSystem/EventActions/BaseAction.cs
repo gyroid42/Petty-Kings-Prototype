@@ -11,7 +11,8 @@ public enum ACTIONTYPE
     CAMERAMOVE,
     CAMERARESET,
     PAUSE,
-    AUDIO
+    AUDIO,
+    MUSIC
 }
 
 // Base Action
