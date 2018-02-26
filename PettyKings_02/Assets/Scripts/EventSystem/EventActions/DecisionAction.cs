@@ -13,12 +13,7 @@ public class DecisionAction : BaseAction
     public EventDisplayData mainDisplay_;
 
     // Decision display data
-    public EventDisplayData[] decisionDisplay_;
-
-    // Modifiers for resources
-    public int[] decisionFood_ = new int[2];
-    public int[] decisionWood_ = new int[2];
-    public int[] decisionMen_ = new int[2];
+    public DecisionEffect[] decisionEffect_;
 
     // References to event display and resource manager
     private EventController eventController;
@@ -40,24 +35,33 @@ public class DecisionAction : BaseAction
         resourceManager = ResourceManager.resourceManager;
 
         // If there are decisions
-        if (decisionDisplay_.Length > 0)
+        if (decisionEffect_.Length > 0)
         {
             // Create btnFunction list
-            mainDisplay_.btnFunctions_ = new ButtonDel[decisionDisplay_.Length];
+            mainDisplay_.btnFunctions_ = new ButtonDel[decisionEffect_.Length];
             for (int i = 0; i < mainDisplay_.btnFunctions_.Length; i++)
             {
 
+                mainDisplay_.btnFunctions_[i] += UpdateStars;
+
+                if (decisionEffect_[i].playSound_)
+                {
+                    mainDisplay_.btnFunctions_[i] += PlaySound;
+                }
+
                 // Set button functions to DecisionSelected(int choice) method
-                mainDisplay_.btnFunctions_[i] = DecisionSelected;
+                if (decisionEffect_[i].displayScreen_)
+                {
+                    mainDisplay_.btnFunctions_[i] += DecisionSelected;
+                    decisionEffect_[i].decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+                }
+                else
+                {
+                    mainDisplay_.btnFunctions_[i] += ContinuePressed;
+                }
             }
 
-            // Set decision Display button functions
-            for (int i = 0; i < decisionDisplay_.Length; i++)
-            {
-
-                // Set button functions to ContinuePresseed(int choice) method
-                decisionDisplay_[i].btnFunctions_ = new ButtonDel[1] { ContinuePressed };
-            }
+            
         }
         else
         {
@@ -101,6 +105,18 @@ public class DecisionAction : BaseAction
     }
 
 
+    public void PlaySound(int choice)
+    {
+
+        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
+    }
+
+    public void UpdateStars(int choice)
+    {
+
+        // starmanager update stars ( getDecisionStars(choice))
+    }
+
     // Method for decision events
     public void DecisionSelected(int choice)
     {
@@ -109,10 +125,10 @@ public class DecisionAction : BaseAction
         if (eventDisplay != null)
         {
             // Display choice made
-            eventDisplay.Display(decisionDisplay_[choice]);
+            eventDisplay.Display(decisionEffect_[choice].decisionDisplayData_);
 
             // Update resources from decision made
-            resourceManager.UpdateResources(GetDecisionResources(choice));
+            //resourceManager.UpdateResources(GetDecisionResources(choice));
         }
 
     }
@@ -127,13 +143,13 @@ public class DecisionAction : BaseAction
 
 
     // Returns Resources from a choice
-    public int[] GetDecisionResources(int choice)
+    public float GetDecisionStars(int choice)
     {
-        int[] resources = new int[3];
-        resources[0] = decisionFood_[choice];
-        resources[1] = decisionWood_[choice];
-        resources[2] = decisionMen_[choice];
-        return resources;
+        if (choice >= decisionEffect_.Length)
+        {
+            return 0f;
+        }
+        return decisionEffect_[choice].starChange_;
     }
 
 }

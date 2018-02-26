@@ -91,12 +91,6 @@ public class EventDisplay : MonoBehaviour {
         // Create the buttons
         CreateButtons(displayData);
 
-        // Play sound
-        if (displayData.decisionSound_ != "")
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(displayData.decisionSound_, Camera.main.transform.position);
-        }
-
     }
 
 
