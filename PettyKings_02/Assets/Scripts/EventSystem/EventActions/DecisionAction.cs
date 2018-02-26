@@ -21,6 +21,7 @@ public class DecisionAction : BaseAction
     public int[] decisionMen_ = new int[2];
 
     // References to event display and resource manager
+    private EventController eventController;
     private EventDisplay eventDisplay;
     private ResourceManager resourceManager;
 
@@ -78,7 +79,6 @@ public class DecisionAction : BaseAction
     public override void End()
     {
 
-        // Make event display not active
         eventDisplay.gameObject.SetActive(false);
     }
 

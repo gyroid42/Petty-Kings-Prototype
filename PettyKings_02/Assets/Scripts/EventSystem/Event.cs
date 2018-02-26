@@ -7,6 +7,9 @@ using UnityEngine;
 public class Event : ScriptableObject {
 
 
+    // Reference to event controller
+    EventController eventController;
+
     // Event blocking flag
     public bool isBlocking_ = true;
 
@@ -31,10 +34,16 @@ public class Event : ScriptableObject {
     // Flag for actions currently Blocking
     private bool blocked_ = false;
 
+    // Flag if event is from eventPool
+    public bool isPooled_ = false;
+
 
     // Called when event starts
 	public void Begin()
     {
+        // Set reference to event controller
+        eventController = EventController.eventController;
+
         // Set default values
         actionIndex_ = -1;
         eventRunning_ = true;
@@ -60,6 +69,12 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
+
+        if (isPooled_)
+        {
+            eventController.StartEventFromPool();
+            Debug.Log("started new event from pool");
+        }
         Debug.Log("event is ending");
     }
 

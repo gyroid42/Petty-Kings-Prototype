@@ -10,6 +10,10 @@ public class EventController : MonoBehaviour {
     public static EventController eventController;
     private SeasonController seasonController;
 
+
+    // List of introduction Events
+    private List<Event> introEvents_;
+    private List<Event> eventPool_;
     
 
     // Current event
@@ -70,6 +74,21 @@ public class EventController : MonoBehaviour {
 
         // Create reference to seasonController
         seasonController = SeasonController.seasonController;
+
+
+        introEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
+
+        eventPool_ = new List<Event>(Resources.LoadAll("Events/BasicPool", typeof(Event)).Cast<Event>().ToArray());
+
+        foreach( Event ev in eventPool_)
+        {
+            ev.isPooled_ = true;
+        }
+
+        foreach (Event ev in introEvents_)
+        {
+            StartEvent(ev);
+        }
     }
 
 
@@ -223,6 +242,26 @@ public class EventController : MonoBehaviour {
         return true;
     }
 
+
+    // Starts an event from the current event pool
+    public bool StartEventFromPool()
+    {
+
+        // if event pool is empty cannot start an event
+        if (eventPool_.Count <= 0)
+        {
+            return false;
+        }
+
+        // Start random event from event pool and remove it from the pool
+        int index = Random.Range(0, eventPool_.Count);
+        StartEvent(eventPool_[index]);
+        eventPool_.RemoveAt(index);
+
+
+        // Event did start so return true
+        return true;
+    }
 
     // Checks if any of the active events are pausing the season timer
     private bool CheckSeasonPause()

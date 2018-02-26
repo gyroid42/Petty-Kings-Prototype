@@ -17,6 +17,9 @@ public struct EventDisplayData {
     // Display artwork
     public Texture artwork_;
 
+    [FMODUnity.EventRef]
+    public string decisionSound_;
+
     // Text for button
     public string[] btnText_;
 
