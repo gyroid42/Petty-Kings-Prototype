@@ -10,11 +10,11 @@ public class GenerateWorld : MonoBehaviour {
     GameObject[] buildings;//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
-    List<GameObject> walls = new List<GameObject>();
-
+    List<GameObject> wallsLeft = new List<GameObject>();
+    List<GameObject> wallsRight = new List<GameObject>();
 
     //Variables for wall creation
-   public Transform startPos;
+    public Transform startPos;
     public Transform endPos;
     bool rightCompleted;
     bool leftCompleted;
@@ -27,11 +27,6 @@ public class GenerateWorld : MonoBehaviour {
         resources = new GameObject[5];
         buildings = new GameObject[5];
         positions = new GameObject[8];
-
-       // if (lastNum == null)
-       // {
-       //     Debug.Log("NUUULLLLL");
-       // }
         
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject;
@@ -40,94 +35,77 @@ public class GenerateWorld : MonoBehaviour {
         resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject;
         resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject;
 
+        if(wallsLeft == null)
+        {
+            Debug.Log("NULL LEFT");
+        }
+
+        if(wallsRight == null)
+        {
+            Debug.Log("NULL RIGHT");
+        }
+
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");
 
         //spawn buildings
         WorldSpawn();
 
+        //spawn Gate house
+        SpawnGateHouse();
+
     }
     // ERROR, CAN RETURN 2 NUMBERS THE SAME, NEEDS FIXED
     private int GenerateNum() //generate a random number
     {
-        int num_ = -1;//Random.Range(0, positions.Length);
+        int num_; //initialise to number that cant be in list
+        bool completed = false;
         
-        while(!lastNum.Contains(num_))
+        while(!completed) //check whether num is in list (always false on 1st run)
         {
-            num_ = Random.Range(0, positions.Length);
-            if (!lastNum.Contains(num_))
+            num_ = Random.Range(0, positions.Length); //generate number
+            Debug.Log("generated num : " + num_);
+            if (!lastNum.Contains(num_)) //if its not in the list, add it
             {
                 lastNum.Add(num_);
                 Debug.Log(num_);
+                completed = true;
             }
-            //Debug.Log(num);
+            //Debug.Log(num_);
         }
-
-        //lastNum.Add(num);
-        //Debug.Log(lastNum[lastNum.Count -1]);
-       return lastNum[lastNum.Count - 1];
+       return lastNum[lastNum.Count - 1]; //return the last number put in the list
     }
         
 	
     private void WorldSpawn()
     {
-        for (int i = 1; i < buildings.Length; i++)
+        for (int i = 2; i < buildings.Length; i++)
         {
             buildings[i] = Instantiate(resources[i], positions[GenerateNum()].transform);
             buildings[i].transform.LookAt(lookAt);
         }
     }
 
-    private void WallSpawn()
+    private void SpawnGateHouse()
     {
-       
-        
+        buildings[1] = Instantiate(resources[1], startPos);
     }
 
     private void Update()
     {
-        
-        
-        if(!rightCompleted || !leftCompleted)
-        {
             if (!rightCompleted)
             {
-                GetCenter(Vector3.right);
-                float fracComplete = (Time.time - startTime);
-                walls.Add(Instantiate(resources[0]));
-                walls[walls.Count - 1].transform.position = Vector3.Slerp(startCenter, endCenter, (fracComplete / 5.0f));
-                // walls[walls.Count - 1].transform.rotation =
-                walls[walls.Count - 1].transform.position += centerPoint;
-                if (walls.Count > 2)
-                {
-
-                     if (walls[walls.Count - 1].transform.position == walls[walls.Count - 2].transform.position)
-                    {
-                         rightCompleted = true;
-                    }
-                }
+                BuildWallRight();
             }
 
             if (!leftCompleted)
             {
-                GetCenter(Vector3.left);
-                float fracComplete = (Time.time - startTime);
-                walls.Add(Instantiate(resources[0]));
-                walls[walls.Count - 1].transform.position = Vector3.Slerp(startCenter, endCenter, (fracComplete / 5.0f));
-               // walls[walls.Count - 1].transform.rotation = Random.rotation;
-                walls[walls.Count - 1].transform.position += centerPoint;
-                if (walls.Count > 600) //FIX THIS CONDITION!!
-                {
-                    leftCompleted = true;
-                    
-                }
+                BuildWallLeft();
+           // Debug.Log("Building left");
             }
-
-        }
-
-        
             
     }
+
 
     void GetCenter(Vector3 direction)
     {
@@ -137,4 +115,35 @@ public class GenerateWorld : MonoBehaviour {
         endCenter = endPos.position - centerPoint;
     }
 
+    void BuildWallRight()
+    {
+        GetCenter(Vector3.right);
+        float fracComplete = (Time.time - startTime);
+        wallsRight.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
+        wallsRight[wallsRight.Count - 1].transform.position += centerPoint;
+        if (wallsRight.Count > 2)
+        {
+
+            if (wallsRight[wallsRight.Count - 1].transform.position == wallsRight[wallsRight.Count - 2].transform.position)
+            {
+                rightCompleted = true;
+            }
+        }
+    }
+
+    void BuildWallLeft()
+    {
+        GetCenter(Vector3.left);
+        float fracComplete = (Time.time - startTime);
+        wallsLeft.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
+        wallsLeft[wallsLeft.Count - 1].transform.position += centerPoint;
+        if (wallsLeft.Count > 2)
+        {
+
+            if (wallsLeft[wallsLeft.Count - 1].transform.position == wallsLeft[wallsLeft.Count - 2].transform.position)
+            {
+                leftCompleted = true;
+            }
+        }
+    }
 }
