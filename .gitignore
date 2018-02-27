@@ -34,7 +34,7 @@ sysinfo.txt
 *.unitypackage
 
 # FMOD
-fmod.log
+/PettyKings_02/fmod.log
 fmod_editor.log
 
 # FMOD studio (in folder FMOD)
@@ -44,3 +44,4 @@ fmod_editor.log
 /PettyKing_Audio_Fmod/Petty_Kings_Fmod/Petty_Kings_fmod/*.restore
 
 
+*.log
