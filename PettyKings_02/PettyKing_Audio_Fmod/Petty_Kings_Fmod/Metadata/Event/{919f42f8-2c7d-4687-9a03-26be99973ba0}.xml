@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{919f42f8-2c7d-4687-9a03-26be99973ba0}">
         <property name="name">
-            <value>River : Fountain - loop</value>
+            <value>River_Fountain_loop__01</value>
         </property>
         <property name="outputFormat">
             <value>2</value>

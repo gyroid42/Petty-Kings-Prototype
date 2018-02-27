@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{2b2a0f11-e667-4a49-b18a-5339e42f6c8b}">
         <property name="assetPath">
-            <value>Thunder - in a concrete courtyard - Lyon FR #3.wav</value>
+            <value>Thunder_in a concrete courtyard _Lyon FR_03.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

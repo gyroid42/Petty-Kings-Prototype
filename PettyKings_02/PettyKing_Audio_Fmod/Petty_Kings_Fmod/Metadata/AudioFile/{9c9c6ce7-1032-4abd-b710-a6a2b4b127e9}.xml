@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{9c9c6ce7-1032-4abd-b710-a6a2b4b127e9}">
         <property name="assetPath">
-            <value>River : Fountain - loop.wav</value>
+            <value>River_Fountain_loop_01.wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>
