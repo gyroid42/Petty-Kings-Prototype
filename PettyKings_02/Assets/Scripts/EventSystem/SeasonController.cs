@@ -105,7 +105,7 @@ public class SeasonController : MonoBehaviour {
     {
         // Start introduction events
         currentSeason_ = 0;
-        StartSeasonEvents();
+        //StartSeasonEvents();
     }
 	
 	// Update is called once per frame
@@ -161,7 +161,6 @@ public class SeasonController : MonoBehaviour {
         switch (seasonList_[currentSeason_])
         {
             case Season.INTRO:
-                Debug.Log("intro is selcted");
                 introEvents = introductionEvents_;
                 randomEventList = null;
                 break;
@@ -194,7 +193,6 @@ public class SeasonController : MonoBehaviour {
         // if there is an intro event list
         if (introEvents != null)
         {
-            Debug.Log("starting each intro event");
 
             // Start an event for each item in intro Events in order
             for (int i = 0; i < introEvents.Count; i++)

@@ -7,11 +7,10 @@ public class AudioAction : BaseAction
 {
 
     // properties
-    public AudioClip audioClip_;
-    [Range(0.0f, 1.0f)]
-    public float volumeScale_;
+    [FMODUnity.EventRef]
+    public string audioClip_;
 
-    private AudioSource audioSource_;
+    private FMOD.Studio.EventInstance audioEv_;
 
     // Begin method called when action starts
     public override void Begin(Event newEvent)
@@ -20,9 +19,19 @@ public class AudioAction : BaseAction
 
         type_ = ACTIONTYPE.AUDIO;
 
+        audioEv_ = FMODUnity.RuntimeManager.CreateInstance(audioClip_);
+
+
+        
+        audioEv_.start();
+
+
+        //FMODUnity.RuntimeManager.PlayOneShot(audioClip_, Camera.main.transform.position);
+        /*
         audioSource_ = EventController.eventController.gameObject.GetComponent<AudioSource>();
 
         audioSource_.PlayOneShot(audioClip_, volumeScale_);
+        */
     }
 
 
@@ -37,9 +46,13 @@ public class AudioAction : BaseAction
     public override bool Update()
     {
 
+        FMOD.Studio.PLAYBACK_STATE audioState;
+        audioEv_.getPlaybackState(out audioState);
 
-        if (!audioSource_.isPlaying)
+        if (audioState == FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
+
+            audioEv_.release();
             actionRunning_ = false;
         }
 

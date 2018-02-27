@@ -7,6 +7,9 @@ using UnityEngine;
 public class Event : ScriptableObject {
 
 
+    // Reference to event controller
+    EventController eventController;
+
     // Event blocking flag
     public bool isBlocking_ = true;
 
@@ -28,13 +31,23 @@ public class Event : ScriptableObject {
     // Bool for ending an event
     private bool eventRunning_ = true;
 
+    // Flag for actions currently Blocking
+    private bool blocked_ = false;
+
+    // Flag if event is from eventPool
+    public bool isPooled_ = false;
+
 
     // Called when event starts
 	public void Begin()
     {
+        // Set reference to event controller
+        eventController = EventController.eventController;
+
         // Set default values
         actionIndex_ = -1;
         eventRunning_ = true;
+        blocked_ = false;
 
         // Initialse active actions list
         activeActions_ = new List<BaseAction>();
@@ -56,6 +69,12 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
+
+        if (isPooled_)
+        {
+            eventController.StartEventFromPool();
+            Debug.Log("started new event from pool");
+        }
         Debug.Log("event is ending");
     }
 
@@ -81,6 +100,7 @@ public class Event : ScriptableObject {
 
                 if (nextAction.isBlocking_)
                 {
+                    blocked_ = true;
                     break;
                 }
                 
@@ -127,10 +147,17 @@ public class Event : ScriptableObject {
                 // Remove the action from the active list
                 activeActions_.RemoveAt(i);
 
+
+                // If no event is blocking stop blocking
+                if (!CheckEventsBlocking())
+                {
+                    blocked_ = false;
+                }
+
                 // If no more actions in active list
                 if (activeActions_.Count <= 0)
                 {
-
+                    blocked_ = false;
                     // Goto next action and Break out of loop
                     GotoNextAction();
                     break;
@@ -143,6 +170,40 @@ public class Event : ScriptableObject {
                 i++;
             }
         }
+    }
+
+    private bool CheckEventsBlocking()
+    {
+
+        // Loop for each activeAction
+        for (int i = 0; i < activeActions_.Count; i++)
+        {
+
+            // If action is blocking return true
+            if (activeActions_[i].isBlocking_)
+            {
+                return true;
+            }
+        }
+
+        // No action was blocking
+        return false;
+    }
+
+
+    public bool StartAction(BaseAction newAction)
+    {
+        if (blocked_)
+        {
+            return false;
+        }
+        if (newAction != null)
+        {
+            newAction.Begin(this);
+            activeActions_.Add(newAction);
+        }
+
+        return true;
     }
 
 }
