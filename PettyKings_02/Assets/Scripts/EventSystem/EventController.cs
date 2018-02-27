@@ -80,14 +80,23 @@ public class EventController : MonoBehaviour {
 
         eventPool_ = new List<Event>(Resources.LoadAll("Events/BasicPool", typeof(Event)).Cast<Event>().ToArray());
 
-        foreach( Event ev in eventPool_)
-        {
-            ev.isPooled_ = true;
-        }
 
+        
+
+        
+    }
+
+    // Called at start of game
+    public void GameStart()
+    {
         foreach (Event ev in introEvents_)
         {
             StartEvent(ev);
+        }
+
+        foreach (Event ev in eventPool_)
+        {
+            ev.isPooled_ = true;
         }
     }
 

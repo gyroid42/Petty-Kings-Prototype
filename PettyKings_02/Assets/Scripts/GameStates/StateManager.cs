@@ -126,7 +126,8 @@ public class StateManager : MonoBehaviour {
     {
 
         eventController_.StartEvent(camMenuToGame_);
-        
+
+        eventController_.GameStart();
         /*
         // Position/Rotation for Stage One
         Vector3 pos, rot;

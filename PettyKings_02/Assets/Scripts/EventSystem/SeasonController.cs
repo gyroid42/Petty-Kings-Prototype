@@ -105,7 +105,7 @@ public class SeasonController : MonoBehaviour {
     {
         // Start introduction events
         currentSeason_ = 0;
-        StartSeasonEvents();
+        //StartSeasonEvents();
     }
 	
 	// Update is called once per frame

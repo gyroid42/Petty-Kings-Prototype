@@ -13,21 +13,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
-    name_: 
-    description_: 
-    artwork_: {fileID: 0}
-    btnText_: []
-  decisionDisplay_:
-  - name_: 
-    description_: 
+    name_: fjdksljfkdls
+    description_: fdsfdfffffffffffffffffffff
     artwork_: {fileID: 0}
     btnText_:
-    - 
-  - name_: 
-    description_: 
-    artwork_: {fileID: 0}
-    btnText_:
-    - 
-  decisionFood_: 0000000000000000
-  decisionWood_: 0000000000000000
-  decisionMen_: 0000000000000000
+    - qwewq
+    - wewe
+  decisionEffect_:
+  - starChange_: 0
+    playSound_: 0
+    sound_: event:/War music
+    displayScreen_: 1
+    decisionDisplayData_:
+      name_: ewe
+      description_: wewew
+      artwork_: {fileID: 0}
+      btnText_:
+      - 1
+  - starChange_: 0
+    playSound_: 0
+    sound_: 
+    displayScreen_: 0
+    decisionDisplayData_:
+      name_: 
+      description_: 
+      artwork_: {fileID: 0}
+      btnText_: []
