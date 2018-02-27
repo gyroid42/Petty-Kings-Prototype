@@ -12,8 +12,8 @@ public class EventController : MonoBehaviour {
 
 
     // List of introduction Events
-    private List<Event> introEvents_;
-    private List<Event> eventPool_;
+    public List<Event> introEvents_;
+    public List<Event> eventPool_;
     
 
     // Current event
@@ -76,9 +76,6 @@ public class EventController : MonoBehaviour {
         seasonController = SeasonController.seasonController;
 
 
-        introEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
-
-        eventPool_ = new List<Event>(Resources.LoadAll("Events/BasicPool", typeof(Event)).Cast<Event>().ToArray());
 
 
         
@@ -89,6 +86,14 @@ public class EventController : MonoBehaviour {
     // Called at start of game
     public void GameStart()
     {
+
+
+        introEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
+
+        eventPool_ = new List<Event>(Resources.LoadAll("Events/BasicPool", typeof(Event)).Cast<Event>().ToArray());
+
+        introEvents_[introEvents_.Count - 1].isPooled_ = true;
+
         foreach (Event ev in introEvents_)
         {
             StartEvent(ev);
@@ -270,6 +275,16 @@ public class EventController : MonoBehaviour {
 
         // Event did start so return true
         return true;
+    }
+
+    // Adds an event to the event pool
+    public void AddEventToPool(Event newEvent)
+    {
+        if (newEvent != null)
+        {
+            newEvent.isPooled_ = true;
+            eventPool_.Add(newEvent);
+        }
     }
 
     // Checks if any of the active events are pausing the season timer

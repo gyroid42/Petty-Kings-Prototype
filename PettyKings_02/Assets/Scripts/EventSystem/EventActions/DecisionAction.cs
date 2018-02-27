@@ -15,10 +15,19 @@ public class DecisionAction : BaseAction
     // Decision display data
     public DecisionEffect[] decisionEffect_;
 
+    // Timer ran out effect
+    public DecisionEffect timerRanOutEffect_;
+
+    // Timer ran out function pointer
+    private ButtonDel timerFinished;
+
     // References to event display and resource manager
     private EventController eventController;
     private EventDisplay eventDisplay;
     private ResourceManager resourceManager;
+
+    // Timer for switching event
+    private Timer decisionTimer_;
 
 
     // Called at start of action
@@ -34,6 +43,10 @@ public class DecisionAction : BaseAction
         eventDisplay = EventDisplay.eventDisplay;
         resourceManager = ResourceManager.resourceManager;
 
+        // Start decision timer
+        decisionTimer_ = new Timer();
+        SetDisplayTimer(mainDisplay_.timerLength_);
+
         // If there are decisions
         if (decisionEffect_.Length > 0)
         {
@@ -43,6 +56,11 @@ public class DecisionAction : BaseAction
             {
 
                 mainDisplay_.btnFunctions_[i] += UpdateStars;
+
+                if (decisionEffect_[i].addEvent_)
+                {
+                    mainDisplay_.btnFunctions_[i] += AddEventToPool;
+                }
 
                 if (decisionEffect_[i].playSound_)
                 {
@@ -69,6 +87,31 @@ public class DecisionAction : BaseAction
             // Else no decisions, set button function to ContinuePressed()
             mainDisplay_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
         }
+
+        
+        timerFinished = UpdateStars;
+
+        if (timerRanOutEffect_.addEvent_)
+        {
+            timerFinished += AddEventToPool;
+        }
+
+        if (timerRanOutEffect_.playSound_)
+        {
+            timerFinished += PlaySound;
+        }
+
+        if (timerRanOutEffect_.displayScreen_)
+        {
+            timerFinished += DecisionSelected;
+            timerRanOutEffect_.decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+        }
+        else
+        {
+            timerFinished += ContinuePressed;
+        }
+
+
 
         // Make event display active
         eventDisplay.gameObject.SetActive(true);
@@ -101,13 +144,32 @@ public class DecisionAction : BaseAction
             eventDisplay.gameObject.SetActive(false);
         }
 
+        if (decisionTimer_.UpdateTimer())
+        {
+            Debug.Log("timer finished");
+            timerFinished(-1);
+        }
+
         return actionRunning_;
     }
 
 
+    public void AddEventToPool(int choice)
+    {
+        if (choice < 0)
+        {
+            eventController.AddEventToPool(timerRanOutEffect_.newEvent_);
+        }
+
+        eventController.AddEventToPool(decisionEffect_[choice].newEvent_);
+    }
+
     public void PlaySound(int choice)
     {
-
+        if (choice < 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_, Camera.main.transform.position);
+        }
         FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
     }
 
@@ -124,11 +186,19 @@ public class DecisionAction : BaseAction
         // If event Display exists
         if (eventDisplay != null)
         {
+
+            timerFinished = ContinuePressed;
+
+            if (choice < 0)
+            {
+                eventDisplay.Display(timerRanOutEffect_.decisionDisplayData_);
+                SetDisplayTimer(timerRanOutEffect_.decisionDisplayData_.timerLength_);
+                return;
+            }
             // Display choice made
             eventDisplay.Display(decisionEffect_[choice].decisionDisplayData_);
 
-            // Update resources from decision made
-            //resourceManager.UpdateResources(GetDecisionResources(choice));
+            SetDisplayTimer(decisionEffect_[choice].decisionDisplayData_.timerLength_);            
         }
 
     }
@@ -149,7 +219,23 @@ public class DecisionAction : BaseAction
         {
             return 0f;
         }
+
+        if (choice < 0)
+        {
+            return timerRanOutEffect_.starChange_;
+        }
         return decisionEffect_[choice].starChange_;
+    }
+
+
+    private void SetDisplayTimer(float timerLength)
+    {
+        if (timerLength <= 0)
+        {
+            timerLength = eventDisplay.defaultTimerLength_;
+        }
+
+        decisionTimer_.SetTimer(timerLength);
     }
 
 }

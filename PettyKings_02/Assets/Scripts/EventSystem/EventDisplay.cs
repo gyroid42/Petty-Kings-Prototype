@@ -37,6 +37,9 @@ public class EventDisplay : MonoBehaviour {
     public float btnPosY  = -300;
     public float btnPosX  = 0;
 
+    // Default timer setting
+    public float defaultTimerLength_;
+
     // When object is created
     void Awake()
     {
