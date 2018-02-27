@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 33284036001844712}
   m_Layer: 9
   m_Name: GroundTile
-  m_TagString: Walkable
+  m_TagString: BuildLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1801637338089082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.6, y: 2.56, z: -34.9247}
+  m_LocalPosition: {x: -9.353729, y: 0, z: 4.380493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: da7d188c9dc1c594993653896e401fe1, type: 2}
+  - {fileID: 2100000, guid: f8ff44278f99fd24c989e0a24279d7c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

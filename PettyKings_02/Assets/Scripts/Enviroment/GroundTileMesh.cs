@@ -25,14 +25,14 @@ public class GroundTileMesh : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        if(isWalkable) //set tag based on bool variable, should save some time in editor
+       /* if(isWalkable) //set tag based on bool variable, should save some time in editor
         {
             gameObject.tag = "Walkable";
         }
         else if (!isWalkable)
         {
             gameObject.tag = "NotWalkable";
-        }
+        }*/
        
         Mesh mesh = new Mesh();
        
