@@ -147,6 +147,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 81805925507607008, guid: 50a5a412423636849a5a617333cca15f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82477035282025606, guid: 50a5a412423636849a5a617333cca15f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82785005452553336, guid: 50a5a412423636849a5a617333cca15f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a5a412423636849a5a617333cca15f, type: 2}
   m_IsPrefabParent: 0
@@ -19354,6 +19369,33 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1222777047 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1861261898666486, guid: 50a5a412423636849a5a617333cca15f,
+    type: 2}
+  m_PrefabInternal: {fileID: 18751741}
+--- !u!114 &1222777051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1222777047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!43 &1226840781
 Mesh:
   m_ObjectHideFlags: 0
@@ -29799,6 +29841,23 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1953628388 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1241143195606892, guid: 50a5a412423636849a5a617333cca15f,
+    type: 2}
+  m_PrefabInternal: {fileID: 18751741}
+--- !u!114 &1953628389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1953628388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!43 &1972861600
 Mesh:
   m_ObjectHideFlags: 0
