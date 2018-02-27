@@ -55,6 +55,7 @@ public class GenerateWorld : MonoBehaviour {
         SpawnGateHouse();
 
     }
+
     // ERROR, CAN RETURN 2 NUMBERS THE SAME, NEEDS FIXED
     private int GenerateNum() //generate a random number
     {
@@ -76,7 +77,7 @@ public class GenerateWorld : MonoBehaviour {
        return lastNum[lastNum.Count - 1]; //return the last number put in the list
     }
         
-	
+
     private void WorldSpawn()
     {
         for (int i = 2; i < buildings.Length; i++)
@@ -86,10 +87,12 @@ public class GenerateWorld : MonoBehaviour {
         }
     }
 
+
     private void SpawnGateHouse()
     {
         buildings[1] = Instantiate(resources[1], startPos);
     }
+
 
     private void Update()
     {
@@ -101,7 +104,7 @@ public class GenerateWorld : MonoBehaviour {
             if (!leftCompleted)
             {
                 BuildWallLeft();
-           // Debug.Log("Building left");
+         
             }
             
     }
@@ -114,6 +117,7 @@ public class GenerateWorld : MonoBehaviour {
         startCenter = startPos.position - centerPoint;
         endCenter = endPos.position - centerPoint;
     }
+
 
     void BuildWallRight()
     {
@@ -130,6 +134,7 @@ public class GenerateWorld : MonoBehaviour {
             }
         }
     }
+
 
     void BuildWallLeft()
     {
