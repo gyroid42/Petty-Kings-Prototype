@@ -22,8 +22,10 @@ MonoBehaviour:
     - wewe
   decisionEffect_:
   - starChange_: 0
-    playSound_: 0
-    sound_: event:/War music
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/MUSIC/PETTY KINGS_WAR MUSIC
     displayScreen_: 1
     decisionDisplayData_:
       name_: ewe
@@ -33,6 +35,8 @@ MonoBehaviour:
       btnText_:
       - 1
   - starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     displayScreen_: 0
@@ -44,6 +48,8 @@ MonoBehaviour:
       btnText_: []
   timerRanOutEffect_:
     starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     displayScreen_: 1

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{2bdf33c5-42d2-4268-865b-4663cc6f930a}">
         <property name="name">
-            <value>Thunder - in a concrete courtyard - Lyon FR</value>
+            <value>Thunder01</value>
         </property>
         <property name="outputFormat">
             <value>2</value>
