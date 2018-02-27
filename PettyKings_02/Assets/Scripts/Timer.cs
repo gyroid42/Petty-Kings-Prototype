@@ -88,4 +88,11 @@ public class Timer {
 
         return false;
     }
+
+
+
+    public void displayTimeRemaining()
+    {
+        Debug.Log("time remainging = " + timer_);
+    }
 }

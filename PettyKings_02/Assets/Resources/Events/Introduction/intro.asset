@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915747e48f6f856419928a63d167c054, type: 3}
   m_Name: intro
   m_EditorClassIdentifier: 
+  isBlocking_: 1
+  instantPriority_: 0
+  stopSeasonTimer_: 1
   actionList_:
-  - {fileID: 11400000, guid: 21247c61da7b4d64c9e91c56fd4f51ab, type: 2}
+  - {fileID: 11400000, guid: 8d4df09a037aeea42b4fcb742a6c44e8, type: 2}

@@ -13,16 +13,21 @@ public class DecisionAction : BaseAction
     public EventDisplayData mainDisplay_;
 
     // Decision display data
-    public EventDisplayData[] decisionDisplay_;
+    public DecisionEffect[] decisionEffect_;
 
-    // Modifiers for resources
-    public int[] decisionFood_ = new int[2];
-    public int[] decisionWood_ = new int[2];
-    public int[] decisionMen_ = new int[2];
+    // Timer ran out effect
+    public DecisionEffect timerRanOutEffect_;
+
+    // Timer ran out function pointer
+    private ButtonDel timerFinished;
 
     // References to event display and resource manager
+    private EventController eventController;
     private EventDisplay eventDisplay;
     private ResourceManager resourceManager;
+
+    // Timer for switching event
+    private Timer decisionTimer_;
 
 
     // Called at start of action
@@ -38,25 +43,43 @@ public class DecisionAction : BaseAction
         eventDisplay = EventDisplay.eventDisplay;
         resourceManager = ResourceManager.resourceManager;
 
+        // Start decision timer
+        decisionTimer_ = new Timer();
+        SetDisplayTimer(mainDisplay_.timerLength_);
+
         // If there are decisions
-        if (decisionDisplay_.Length > 0)
+        if (decisionEffect_.Length > 0)
         {
             // Create btnFunction list
-            mainDisplay_.btnFunctions_ = new ButtonDel[decisionDisplay_.Length];
+            mainDisplay_.btnFunctions_ = new ButtonDel[decisionEffect_.Length];
             for (int i = 0; i < mainDisplay_.btnFunctions_.Length; i++)
             {
 
+                mainDisplay_.btnFunctions_[i] += UpdateStars;
+
+                if (decisionEffect_[i].addEvent_)
+                {
+                    mainDisplay_.btnFunctions_[i] += AddEventToPool;
+                }
+
+                if (decisionEffect_[i].playSound_)
+                {
+                    mainDisplay_.btnFunctions_[i] += PlaySound;
+                }
+
                 // Set button functions to DecisionSelected(int choice) method
-                mainDisplay_.btnFunctions_[i] = DecisionSelected;
+                if (decisionEffect_[i].displayScreen_)
+                {
+                    mainDisplay_.btnFunctions_[i] += DecisionSelected;
+                    decisionEffect_[i].decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+                }
+                else
+                {
+                    mainDisplay_.btnFunctions_[i] += ContinuePressed;
+                }
             }
 
-            // Set decision Display button functions
-            for (int i = 0; i < decisionDisplay_.Length; i++)
-            {
-
-                // Set button functions to ContinuePresseed(int choice) method
-                decisionDisplay_[i].btnFunctions_ = new ButtonDel[1] { ContinuePressed };
-            }
+            
         }
         else
         {
@@ -64,6 +87,31 @@ public class DecisionAction : BaseAction
             // Else no decisions, set button function to ContinuePressed()
             mainDisplay_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
         }
+
+        
+        timerFinished = UpdateStars;
+
+        if (timerRanOutEffect_.addEvent_)
+        {
+            timerFinished += AddEventToPool;
+        }
+
+        if (timerRanOutEffect_.playSound_)
+        {
+            timerFinished += PlaySound;
+        }
+
+        if (timerRanOutEffect_.displayScreen_)
+        {
+            timerFinished += DecisionSelected;
+            timerRanOutEffect_.decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+        }
+        else
+        {
+            timerFinished += ContinuePressed;
+        }
+
+
 
         // Make event display active
         eventDisplay.gameObject.SetActive(true);
@@ -78,7 +126,6 @@ public class DecisionAction : BaseAction
     public override void End()
     {
 
-        // Make event display not active
         eventDisplay.gameObject.SetActive(false);
     }
 
@@ -97,9 +144,40 @@ public class DecisionAction : BaseAction
             eventDisplay.gameObject.SetActive(false);
         }
 
+        if (decisionTimer_.UpdateTimer())
+        {
+            Debug.Log("timer finished");
+            timerFinished(-1);
+        }
+
         return actionRunning_;
     }
 
+
+    public void AddEventToPool(int choice)
+    {
+        if (choice < 0)
+        {
+            eventController.AddEventToPool(timerRanOutEffect_.newEvent_);
+        }
+
+        eventController.AddEventToPool(decisionEffect_[choice].newEvent_);
+    }
+
+    public void PlaySound(int choice)
+    {
+        if (choice < 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_, Camera.main.transform.position);
+        }
+        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
+    }
+
+    public void UpdateStars(int choice)
+    {
+
+        // starmanager update stars ( getDecisionStars(choice))
+    }
 
     // Method for decision events
     public void DecisionSelected(int choice)
@@ -108,11 +186,19 @@ public class DecisionAction : BaseAction
         // If event Display exists
         if (eventDisplay != null)
         {
-            // Display choice made
-            eventDisplay.Display(decisionDisplay_[choice]);
 
-            // Update resources from decision made
-            resourceManager.UpdateResources(GetDecisionResources(choice));
+            timerFinished = ContinuePressed;
+
+            if (choice < 0)
+            {
+                eventDisplay.Display(timerRanOutEffect_.decisionDisplayData_);
+                SetDisplayTimer(timerRanOutEffect_.decisionDisplayData_.timerLength_);
+                return;
+            }
+            // Display choice made
+            eventDisplay.Display(decisionEffect_[choice].decisionDisplayData_);
+
+            SetDisplayTimer(decisionEffect_[choice].decisionDisplayData_.timerLength_);            
         }
 
     }
@@ -127,13 +213,29 @@ public class DecisionAction : BaseAction
 
 
     // Returns Resources from a choice
-    public int[] GetDecisionResources(int choice)
+    public float GetDecisionStars(int choice)
     {
-        int[] resources = new int[3];
-        resources[0] = decisionFood_[choice];
-        resources[1] = decisionWood_[choice];
-        resources[2] = decisionMen_[choice];
-        return resources;
+        if (choice >= decisionEffect_.Length)
+        {
+            return 0f;
+        }
+
+        if (choice < 0)
+        {
+            return timerRanOutEffect_.starChange_;
+        }
+        return decisionEffect_[choice].starChange_;
+    }
+
+
+    private void SetDisplayTimer(float timerLength)
+    {
+        if (timerLength <= 0)
+        {
+            timerLength = eventDisplay.defaultTimerLength_;
+        }
+
+        decisionTimer_.SetTimer(timerLength);
     }
 
 }
