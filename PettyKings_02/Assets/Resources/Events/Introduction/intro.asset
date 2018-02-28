@@ -16,3 +16,4 @@ MonoBehaviour:
   stopSeasonTimer_: 1
   actionList_:
   - {fileID: 11400000, guid: 8d4df09a037aeea42b4fcb742a6c44e8, type: 2}
+  isPooled_: 1

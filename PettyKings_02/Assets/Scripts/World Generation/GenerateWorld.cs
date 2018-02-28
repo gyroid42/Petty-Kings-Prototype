@@ -22,6 +22,10 @@ public class GenerateWorld : MonoBehaviour {
     Vector3 startCenter;
     Vector3 endCenter;
     float startTime;
+
+    //Star rating variables
+    public int starRating;
+
     void Start() {
 
         resources = new GameObject[5];
@@ -166,4 +170,13 @@ public class GenerateWorld : MonoBehaviour {
             }
         }
     }
+
+
+    public void DestroyBuilding(int index)
+    {
+        Destroy(buildings[index]);
+        buildings.Remove(buildings[index]);
+
+    }
+
 }

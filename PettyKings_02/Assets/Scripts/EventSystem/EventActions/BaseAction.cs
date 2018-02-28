@@ -12,7 +12,10 @@ public enum ACTIONTYPE
     CAMERARESET,
     PAUSE,
     AUDIO,
-    MUSIC
+    MUSIC,
+    DESTROYBUILDING,
+    BUILDBUILDING,
+    DESTROYWALL
 }
 
 // Base Action
