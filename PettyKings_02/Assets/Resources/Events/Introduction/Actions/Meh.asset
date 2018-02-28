@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
   m_Name: Meh
   m_EditorClassIdentifier: 
-  isBlocking_: 1
+  isBlocking_: 0
   mainDisplay_:
     name_: fjdksljfkdls
     timerLength_: 0
@@ -22,9 +22,14 @@ MonoBehaviour:
     - wewe
   decisionEffect_:
   - starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: event:/War music
-    displayScreen_: 1
+    effects_:
+    - {fileID: 11400000, guid: 844647b31aa885a4fbef6cfd918aa406, type: 2}
+    - {fileID: 11400000, guid: 36f3675d252efb845a8c9aa1eb5f9544, type: 2}
+    displayScreen_: 0
     decisionDisplayData_:
       name_: ewe
       timerLength_: 0
@@ -33,8 +38,11 @@ MonoBehaviour:
       btnText_:
       - 1
   - starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
+    effects_: []
     displayScreen_: 0
     decisionDisplayData_:
       name_: 
@@ -44,8 +52,11 @@ MonoBehaviour:
       btnText_: []
   timerRanOutEffect_:
     starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
+    effects_: []
     displayScreen_: 1
     decisionDisplayData_:
       name_: hello there

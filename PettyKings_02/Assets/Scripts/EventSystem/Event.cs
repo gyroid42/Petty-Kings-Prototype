@@ -21,9 +21,10 @@ public class Event : ScriptableObject {
 
     // List of actions in event
     public List<BaseAction> actionList_;
+    public List<BaseAction> runTimeActionList_;
 
     // Current actions happening
-    private List<BaseAction> activeActions_;
+    public List<BaseAction> activeActions_;
 
     // Index of currentAction
     private int actionIndex_;
@@ -49,6 +50,9 @@ public class Event : ScriptableObject {
         eventRunning_ = true;
         blocked_ = false;
 
+        // Initialse runtime list of actions
+        runTimeActionList_ = new List<BaseAction>(actionList_);
+
         // Initialse active actions list
         activeActions_ = new List<BaseAction>();
 
@@ -69,13 +73,11 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
-
+        Debug.Log("event is ending");
         if (isPooled_)
         {
             eventController.StartEventFromPool();
-            Debug.Log("started new event from pool");
         }
-        Debug.Log("event is ending");
     }
 
 
@@ -85,15 +87,17 @@ public class Event : ScriptableObject {
 
         while (true)
         {
-            // Increment action index to next action
-            actionIndex_++;
+
 
             // If there's still more actions to do
-            if (actionIndex_ < actionList_.Count)
+            if (actionIndex_ + 1 < runTimeActionList_.Count)
             {
+                // Increment action index to next action
+                actionIndex_++;
+                Debug.Log(actionIndex_);
 
                 // Set current action to next action
-                BaseAction nextAction = actionList_[actionIndex_];
+                BaseAction nextAction = runTimeActionList_[actionIndex_];
 
                 nextAction.Begin(this);
                 activeActions_.Add(nextAction);
@@ -107,7 +111,7 @@ public class Event : ScriptableObject {
             }
             else if (activeActions_.Count <= 0)
             {
-
+                Debug.Log("it's happening = " + activeActions_.Count);
                 // Else no more actions left, end the event
                 eventRunning_ = false;
                 break;
@@ -117,6 +121,7 @@ public class Event : ScriptableObject {
                 break;
             }
         }
+
 
     }
 
@@ -152,6 +157,7 @@ public class Event : ScriptableObject {
                 if (!CheckEventsBlocking())
                 {
                     blocked_ = false;
+                    GotoNextAction();
                 }
 
                 // If no more actions in active list
@@ -193,14 +199,19 @@ public class Event : ScriptableObject {
 
     public bool StartAction(BaseAction newAction)
     {
-        if (blocked_)
-        {
-            return false;
-        }
         if (newAction != null)
         {
-            newAction.Begin(this);
-            activeActions_.Add(newAction);
+            if (CheckEventsBlocking())
+            {
+                runTimeActionList_.Insert(actionIndex_ + 1, newAction);
+                Debug.Log(runTimeActionList_);
+                return false;
+            }
+            else
+            {
+                newAction.Begin(this);
+                activeActions_.Add(newAction);
+            }
         }
 
         return true;

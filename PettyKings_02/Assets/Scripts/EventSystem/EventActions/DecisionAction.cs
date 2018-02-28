@@ -40,6 +40,7 @@ public class DecisionAction : BaseAction
 
         // Create references to eventDisplay and resourceManager
         eventDisplay = EventDisplay.eventDisplay;
+        eventController = EventController.eventController;
 
         // Start decision timer
         decisionTimer_ = new Timer();
@@ -186,7 +187,27 @@ public class DecisionAction : BaseAction
 
     public void StartActionList(int choice)
     {
-        eventController.StartCoroutine(StartingActions(choice));
+
+
+        List<BaseAction> actionList;
+        if (choice < 0)
+        {
+            actionList = timerRanOutEffect_.effects_;
+        }
+        else
+        {
+            actionList = decisionEffect_[choice].effects_;
+        }
+
+        for (int i = 0; i < actionList.Count; i++)
+        {
+            currentEvent_.StartAction(actionList[i]);
+        }
+
+        Debug.Log("finished adding actions");
+        decisionTimer_.SetActive(false);
+        //eventController.StartCoroutine(StartingActions(choice));
+        actionRunning_ = false;
     }
 
 
@@ -217,7 +238,8 @@ public class DecisionAction : BaseAction
                 }
                 else
                 {
-                    break;
+                    actionStarted++;
+                    //break;
                 }
             }
 
@@ -225,7 +247,6 @@ public class DecisionAction : BaseAction
             yield return null;
         }
 
-        actionRunning_ = false;
     }
 
     // Method for decision events
@@ -256,6 +277,8 @@ public class DecisionAction : BaseAction
     // Method for continuing to next action
     public void ContinuePressed(int choice)
     {
+
+        //Debug.Log("continue has been pressed");
         // Set actionRunning_ to false to end the action
         actionRunning_ = false;
     }

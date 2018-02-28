@@ -17,7 +17,7 @@ public class EventController : MonoBehaviour {
     
 
     // Current event
-    private List<Event> activeEvents_;
+    public List<Event> activeEvents_;
 
     // Next event queue
     private Queue<Event> eventQueue_;
