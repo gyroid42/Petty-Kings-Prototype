@@ -175,7 +175,7 @@ public class GenerateWorld : MonoBehaviour {
     public void DestroyBuilding(int index)
     {
         Destroy(buildings[index]);
-        buildings.Remove(buildings[index]);
+       // buildings.Remove(buildings[index]);
 
     }
 
