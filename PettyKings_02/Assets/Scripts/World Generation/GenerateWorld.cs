@@ -32,11 +32,11 @@ public class GenerateWorld : MonoBehaviour {
         positions = new GameObject[8];
         
         //load buildings that can be spawned
-        resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject;
-        resources[1] = Resources.Load("Model Prefabs/GateHouse") as GameObject;
-        resources[2] = Resources.Load("Model Prefabs/ChiefHall") as GameObject;
-        resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject;
-        resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject;
+        resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
+        resources[1] = Resources.Load("Model Prefabs/GateHouse") as GameObject; //1
+        resources[2] = Resources.Load("Model Prefabs/ChiefHall") as GameObject; //2
+        resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject; //3
+        resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject; //4
 
         if(wallsLeft == null)
         {
@@ -85,15 +85,30 @@ public class GenerateWorld : MonoBehaviour {
 
     private void WorldSpawn()
     {
-        for (int i = 3; i < resources.Length; i++)
-        {
-            for (int x = 0; x <= Random.Range(0,3); x++)
+            for (int x = 0; x <= Random.Range(1,3); x++)
             {
-                buildings.Add(Instantiate(resources[i], positions[GenerateNum()].transform));
-                buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-                buildings[buildings.Count - 1].transform.LookAt(lookAt);
+                SpawnHuntersHut();
             }
-        }
+
+            for (int x = 0; x <= Random.Range(1, 2); x++)
+            {
+                SpawnWoodHut(); 
+            }
+
+    }
+
+    public void SpawnHuntersHut()
+    {
+        buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+    }
+
+    public void SpawnWoodHut()
+    {
+        buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        buildings[buildings.Count - 1].transform.LookAt(lookAt);
     }
 
 
@@ -122,8 +137,7 @@ public class GenerateWorld : MonoBehaviour {
             {
                 BuildWallLeft();
          
-            }
-            
+            }   
     }
 
 
@@ -172,11 +186,38 @@ public class GenerateWorld : MonoBehaviour {
     }
 
 
-    public void DestroyBuilding(int index)
+    public void DestroyBuilding(int index_) //destroy a building defined by the index
     {
-        Destroy(buildings[index]);
+        Destroy(buildings[index_]);
        // buildings.Remove(buildings[index]);
-
     }
 
+    public void DestroyWall(bool side_, int startPos_, int numberToRemove_) //bool to decide side, startpos of destruction, number of pillars to remove
+    {
+        //if no info has been passed into function then assign info
+        if (startPos_ == -1) //if designer wishes can make destruction point random
+        {
+            startPos_ = Random.Range(0, buildings.Count - 1);
+        }
+
+        if(numberToRemove_ <= 0)//if designer wishes can make destruction amount random
+        {
+            numberToRemove_ = Random.Range(10, 30); //minimum 10 blocks removed, max 30
+        }
+
+        if (side_ == true) //true for left side
+        {
+            for (int i = startPos_; i < startPos_ + numberToRemove_; i++) //destroy number of pieces of wall requested, maybe make it a random rotation rather than remove?
+            {
+                Destroy(wallsLeft[i]);
+            }
+        }
+        else if (side_ == false)//false for right side of wall
+        {
+            for (int i = startPos_; i < startPos_ + numberToRemove_; i++)
+            {
+                Destroy(wallsRight[i]);
+            }
+        }
+    }
 }
