@@ -5,12 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Audio Action", menuName = "EventActions/Audio")]
 public class AudioAction : BaseAction
 {
+   
+
 
     // properties
     [FMODUnity.EventRef]
     public string audioClip_;
 
     private FMOD.Studio.EventInstance audioEv_;
+
+    public int buildingDestroy; //possibly change to an enum later
 
     // Begin method called when action starts
     public override void Begin(Event newEvent)

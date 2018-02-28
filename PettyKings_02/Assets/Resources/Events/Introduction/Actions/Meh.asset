@@ -22,8 +22,8 @@ MonoBehaviour:
     - wewe
   decisionEffect_:
   - starChange_: 0
-    addEvent_: 0
-    newEvent_: {fileID: 0}
+    addEvent_: 1
+    newEvent_: {fileID: 11400000, guid: 78ba339c6948dbc48bd3365bc8ea695b, type: 2}
     playSound_: 1
     sound_: event:/MUSIC/PETTY KINGS_WAR MUSIC
     displayScreen_: 1
