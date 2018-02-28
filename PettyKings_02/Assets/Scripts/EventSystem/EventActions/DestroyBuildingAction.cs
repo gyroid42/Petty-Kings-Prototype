@@ -53,6 +53,6 @@ public class DestroyBuildingAction : BaseAction
     {
         //Modify Star rating value
         buildingDestroy.starRating += starRating;
-        Debug.Log(buildingDestroy.starRating);
+        Debug.Log("STAR RATING = " + buildingDestroy.starRating);
     }
 }
