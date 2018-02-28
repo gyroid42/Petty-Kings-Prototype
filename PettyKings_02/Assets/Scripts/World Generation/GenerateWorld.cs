@@ -118,7 +118,7 @@ public class GenerateWorld : MonoBehaviour {
         buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
     }
 
-    private void SpawnChiefHut()
+    public void SpawnChiefHut()
     {
         buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
         buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
