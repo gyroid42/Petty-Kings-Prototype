@@ -24,7 +24,6 @@ public class DecisionAction : BaseAction
     // References to event display and resource manager
     private EventController eventController;
     private EventDisplay eventDisplay;
-    private ResourceManager resourceManager;
 
     // Timer for switching event
     private Timer decisionTimer_;
@@ -41,7 +40,6 @@ public class DecisionAction : BaseAction
 
         // Create references to eventDisplay and resourceManager
         eventDisplay = EventDisplay.eventDisplay;
-        resourceManager = ResourceManager.resourceManager;
 
         // Start decision timer
         decisionTimer_ = new Timer();
@@ -68,10 +66,15 @@ public class DecisionAction : BaseAction
                 }
 
                 // Set button functions to DecisionSelected(int choice) method
-                if (decisionEffect_[i].displayScreen_)
+                /*if (decisionEffect_[i].displayScreen_)
                 {
                     mainDisplay_.btnFunctions_[i] += DecisionSelected;
                     decisionEffect_[i].decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+                }
+                */
+                if (decisionEffect_[i].effects_.Count > 0)
+                {
+                    mainDisplay_.btnFunctions_[i] += StartActionList;
                 }
                 else
                 {
@@ -101,10 +104,11 @@ public class DecisionAction : BaseAction
             timerFinished += PlaySound;
         }
 
-        if (timerRanOutEffect_.displayScreen_)
+        if (timerRanOutEffect_.effects_.Count > 0)
         {
-            timerFinished += DecisionSelected;
-            timerRanOutEffect_.decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+            timerFinished += StartActionList;
+            //timerFinished += DecisionSelected;
+            //timerRanOutEffect_.decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
         }
         else
         {
@@ -177,6 +181,51 @@ public class DecisionAction : BaseAction
     {
 
         // starmanager update stars ( getDecisionStars(choice))
+    }
+
+
+    public void StartActionList(int choice)
+    {
+        eventController.StartCoroutine(StartingActions(choice));
+    }
+
+
+    IEnumerator StartingActions(int choice)
+    {
+
+        List<BaseAction> actionList;
+
+        if (choice < 0)
+        {
+            actionList = timerRanOutEffect_.effects_;
+        }
+        else
+        {
+            actionList = decisionEffect_[choice].effects_;
+        }
+
+
+        int actionStarted = 0;
+        while (actionStarted < actionList.Count)
+        {
+            for (int i = actionStarted; i < actionList.Count; i++)
+            {
+
+                if (currentEvent_.StartAction(actionList[i]))
+                {
+                    actionStarted++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+
+            yield return null;
+        }
+
+        actionRunning_ = false;
     }
 
     // Method for decision events

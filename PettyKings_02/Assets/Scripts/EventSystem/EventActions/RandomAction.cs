@@ -46,7 +46,7 @@ public class RandomAction : BaseAction
     IEnumerator StartRandomActions()
     {
         int actionsStarted = 0;
-        while (actionsStarted < numberOfRandomActions_)
+        while (actionsStarted < numberOfRandomActions_ && runTimeList_.Count > 0)
         {
             for (int i = actionsStarted; i < numberOfRandomActions_; i++)
             {
@@ -60,11 +60,16 @@ public class RandomAction : BaseAction
                         runTimeList_.RemoveAt(index);
                         numberOfRandomActions_++;
                     }
+                    else
+                    {
+                        break;
+                    }
                 }
                 else
                 {
                     break;
                 }
+                
             }
 
             yield return null;
