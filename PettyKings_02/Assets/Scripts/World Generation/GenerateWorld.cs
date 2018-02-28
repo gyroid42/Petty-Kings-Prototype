@@ -7,7 +7,7 @@ public class GenerateWorld : MonoBehaviour {
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
     GameObject[] positions; //to hold data on the tiles that define building positions
-    GameObject[] buildings;//To hold data for the spawned building
+    List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
     List<GameObject> wallsLeft = new List<GameObject>();
@@ -25,7 +25,6 @@ public class GenerateWorld : MonoBehaviour {
     void Start() {
 
         resources = new GameObject[5];
-        buildings = new GameObject[5];
         positions = new GameObject[8];
         
         //load buildings that can be spawned
@@ -48,15 +47,17 @@ public class GenerateWorld : MonoBehaviour {
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");
 
-        //spawn buildings
-        WorldSpawn();
-
         //spawn Gate house
         SpawnGateHouse();
 
+        //spawn Chiefs Hut
+        SpawnChiefHut();
+
+        //spawn buildings
+        WorldSpawn();
+
     }
 
-    // ERROR, CAN RETURN 2 NUMBERS THE SAME, NEEDS FIXED
     private int GenerateNum() //generate a random number
     {
         int num_; //initialise to number that cant be in list
@@ -80,17 +81,29 @@ public class GenerateWorld : MonoBehaviour {
 
     private void WorldSpawn()
     {
-        for (int i = 2; i < buildings.Length; i++)
+        for (int i = 3; i < resources.Length; i++)
         {
-            buildings[i] = Instantiate(resources[i], positions[GenerateNum()].transform);
-            buildings[i].transform.LookAt(lookAt);
+            for (int x = 0; x <= Random.Range(0,3); x++)
+            {
+                buildings.Add(Instantiate(resources[i], positions[GenerateNum()].transform));
+                buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+                buildings[buildings.Count - 1].transform.LookAt(lookAt);
+            }
         }
     }
 
 
     private void SpawnGateHouse()
     {
-        buildings[1] = Instantiate(resources[1], startPos);
+        buildings.Add(Instantiate(resources[1], startPos));
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+    }
+
+    private void SpawnChiefHut()
+    {
+        buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        buildings[buildings.Count - 1].transform.LookAt(lookAt);
     }
 
 
@@ -125,6 +138,7 @@ public class GenerateWorld : MonoBehaviour {
         float fracComplete = (Time.time - startTime);
         wallsRight.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
         wallsRight[wallsRight.Count - 1].transform.position += centerPoint;
+        wallsRight[wallsRight.Count - 1].transform.position = new Vector3(wallsRight[wallsRight.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(wallsRight[wallsRight.Count - 1].transform.position), wallsRight[wallsRight.Count - 1].transform.position.z);
         if (wallsRight.Count > 2)
         {
 
@@ -142,6 +156,7 @@ public class GenerateWorld : MonoBehaviour {
         float fracComplete = (Time.time - startTime);
         wallsLeft.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
         wallsLeft[wallsLeft.Count - 1].transform.position += centerPoint;
+        wallsLeft[wallsLeft.Count - 1].transform.position = new Vector3(wallsLeft[wallsLeft.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(wallsLeft[wallsLeft.Count - 1].transform.position), wallsLeft[wallsLeft.Count - 1].transform.position.z);
         if (wallsLeft.Count > 2)
         {
 
