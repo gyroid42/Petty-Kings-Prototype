@@ -199,7 +199,7 @@ public class GenerateWorld : MonoBehaviour {
         //if no info has been passed into function then assign info
         if (startPos_ == -1) //if designer wishes can make destruction point random
         {
-            startPos_ = Random.Range(0, buildings.Count - 1);
+            startPos_ = Random.Range(0, wallsLeft.Count - 1);
         }
 
         if(numberToRemove_ <= 0)//if designer wishes can make destruction amount random
