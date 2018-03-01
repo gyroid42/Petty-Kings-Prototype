@@ -12,8 +12,8 @@ public class CameraController : MonoBehaviour {
 
 
     // Bool to say whether camera is moving or not
-    private bool isMoving_;
-    private bool finishedMovement_;
+    public bool isMoving_;
+    public bool finishedMovement_;
 
 
     // Speed the camera moves at
@@ -53,6 +53,8 @@ public class CameraController : MonoBehaviour {
 
                 // Calculate the distance the camera rotates this frame and apply it to the rotation
                 transform.eulerAngles += currentGotoPosition_.rotationDirection_ * currentGotoPosition_.rotationSpeed_ * Time.deltaTime;
+
+                Debug.Log(moveDistance);
 
                 // Check if the camera is at the end of the movement
                 if ((currentGotoPosition_.position_ - transform.position).sqrMagnitude <= moveDistance.sqrMagnitude)
@@ -197,12 +199,26 @@ public class CameraController : MonoBehaviour {
         // Calculate the new move direction, rotation direction and rotation speed from the new position/rotation
         // And the last location added to the queue
 
+        Vector3 lastPosition_;
+        Vector3 lastRotation_;
+
+        if (finishedMovement_)
+        {
+            lastPosition_ = transform.position;
+            lastRotation_ = transform.eulerAngles;
+        }
+        else
+        {
+            lastPosition_ = lastLocation_.position_;
+            lastRotation_ = lastLocation_.rotation_;
+        }
+
         // Calculate move direction
-        Vector3 moveDirection = newCameraPos.position_ - lastLocation_.position_;
+        Vector3 moveDirection = newCameraPos.position_ - lastPosition_;
         moveDirection.Normalize();
 
         // Calculate rotation direction
-        Vector3 rotationDirection = newCameraPos.rotation_ - lastLocation_.rotation_;
+        Vector3 rotationDirection = newCameraPos.rotation_ - lastRotation_;
         rotationDirection.Normalize();
 
         // Calculate the speed of the rotation based on the amount of time taken to move to the next location
@@ -211,8 +227,8 @@ public class CameraController : MonoBehaviour {
         {
             speed = newCameraPos.speed_;
         }
-        float time = ((newCameraPos.position_ - lastLocation_.position_) / speed).magnitude;
-        float rotationSpeed = (newCameraPos.rotation_ - lastLocation_.rotation_).magnitude / time;
+        float time = ((newCameraPos.position_ - lastPosition_) / speed).magnitude;
+        float rotationSpeed = (newCameraPos.rotation_ - lastRotation_).magnitude / time;
 
         // Create the struct for the new location
         CameraLocation newLocation = new CameraLocation(newCameraPos.position_, newCameraPos.rotation_, speed, moveDirection, rotationDirection, rotationSpeed);

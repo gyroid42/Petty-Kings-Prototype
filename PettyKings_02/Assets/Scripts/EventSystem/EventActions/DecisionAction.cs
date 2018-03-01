@@ -24,7 +24,6 @@ public class DecisionAction : BaseAction
     // References to event display and resource manager
     private EventController eventController;
     private EventDisplay eventDisplay;
-    private ResourceManager resourceManager;
 
     // Timer for switching event
     private Timer decisionTimer_;
@@ -41,7 +40,7 @@ public class DecisionAction : BaseAction
 
         // Create references to eventDisplay and resourceManager
         eventDisplay = EventDisplay.eventDisplay;
-        resourceManager = ResourceManager.resourceManager;
+        eventController = EventController.eventController;
 
         // Start decision timer
         decisionTimer_ = new Timer();
@@ -52,31 +51,43 @@ public class DecisionAction : BaseAction
         {
             // Create btnFunction list
             mainDisplay_.btnFunctions_ = new ButtonDel[decisionEffect_.Length];
+
+            // For each button
             for (int i = 0; i < mainDisplay_.btnFunctions_.Length; i++)
             {
 
+                // Create all effects when button is pressed
+
+                // Add update star method
                 mainDisplay_.btnFunctions_[i] += UpdateStars;
 
+
+                // If there's an event to add
                 if (decisionEffect_[i].addEvent_)
                 {
+
+                    // Add the AddEventToPool method
                     mainDisplay_.btnFunctions_[i] += AddEventToPool;
                 }
 
+                // If there's sound to play
                 if (decisionEffect_[i].playSound_)
                 {
+
+                    // Add play sound method
                     mainDisplay_.btnFunctions_[i] += PlaySound;
                 }
 
-                // Set button functions to DecisionSelected(int choice) method
-                if (decisionEffect_[i].displayScreen_)
+                // if decision has a list of extra actions
+                if (decisionEffect_[i].effects_.Count > 0)
                 {
-                    mainDisplay_.btnFunctions_[i] += DecisionSelected;
-                    decisionEffect_[i].decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+                    // Add StartActionList method
+                    mainDisplay_.btnFunctions_[i] += StartActionList;
                 }
-                else
-                {
-                    mainDisplay_.btnFunctions_[i] += ContinuePressed;
-                }
+
+                // Add Exit Decision Method
+                mainDisplay_.btnFunctions_[i] += ExitDecision;
+                
             }
 
             
@@ -85,10 +96,11 @@ public class DecisionAction : BaseAction
         {
 
             // Else no decisions, set button function to ContinuePressed()
-            mainDisplay_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+            mainDisplay_.btnFunctions_ = new ButtonDel[1] { ExitDecision };
         }
 
         
+        // Set up effect when timer runs out
         timerFinished = UpdateStars;
 
         if (timerRanOutEffect_.addEvent_)
@@ -101,14 +113,13 @@ public class DecisionAction : BaseAction
             timerFinished += PlaySound;
         }
 
-        if (timerRanOutEffect_.displayScreen_)
+        if (timerRanOutEffect_.effects_.Count > 0)
         {
-            timerFinished += DecisionSelected;
-            timerRanOutEffect_.decisionDisplayData_.btnFunctions_ = new ButtonDel[1] { ContinuePressed };
+            timerFinished += StartActionList;
         }
         else
         {
-            timerFinished += ContinuePressed;
+            timerFinished += ExitDecision;
         }
 
 
@@ -125,7 +136,6 @@ public class DecisionAction : BaseAction
     // Called at end of action
     public override void End()
     {
-
         eventDisplay.gameObject.SetActive(false);
     }
 
@@ -144,8 +154,11 @@ public class DecisionAction : BaseAction
             eventDisplay.gameObject.SetActive(false);
         }
 
+        // If timer has finished
         if (decisionTimer_.UpdateTimer())
         {
+
+            // Call timer finished method
             Debug.Log("timer finished");
             timerFinished(-1);
         }
@@ -154,60 +167,81 @@ public class DecisionAction : BaseAction
     }
 
 
+    // Method to add new Event to pool
     public void AddEventToPool(int choice)
     {
+
+        // If choice was the timer running out
         if (choice < 0)
         {
+            // Add timerRanOutEffect's new event
             eventController.AddEventToPool(timerRanOutEffect_.newEvent_);
+            return;
         }
 
+        // Add decision chosen's new event to the event pool
         eventController.AddEventToPool(decisionEffect_[choice].newEvent_);
     }
 
+
+    // Method to play a sound
     public void PlaySound(int choice)
     {
+
+        // If choice was the timer running out
         if (choice < 0)
         {
+            // Play sound from timer ran out effect
             FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_, Camera.main.transform.position);
+            return;
         }
+
+        // Play sound from decision chosen
         FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
     }
 
+
+    // Updates star count
     public void UpdateStars(int choice)
     {
 
         // starmanager update stars ( getDecisionStars(choice))
     }
 
-    // Method for decision events
-    public void DecisionSelected(int choice)
+    // Method to start effects from effect list
+    public void StartActionList(int choice)
     {
+        // Create action list
+        List<BaseAction> actionList;
 
-        // If event Display exists
-        if (eventDisplay != null)
+        // Get correct action list from choice
+        if (choice < 0)
         {
-
-            timerFinished = ContinuePressed;
-
-            if (choice < 0)
-            {
-                eventDisplay.Display(timerRanOutEffect_.decisionDisplayData_);
-                SetDisplayTimer(timerRanOutEffect_.decisionDisplayData_.timerLength_);
-                return;
-            }
-            // Display choice made
-            eventDisplay.Display(decisionEffect_[choice].decisionDisplayData_);
-
-            SetDisplayTimer(decisionEffect_[choice].decisionDisplayData_.timerLength_);            
+            actionList = timerRanOutEffect_.effects_;
+        }
+        else
+        {
+            actionList = decisionEffect_[choice].effects_;
         }
 
+
+        currentEvent_.StartAction(actionList);
+        // Loop for each action in the list and start it
+        //for (int i = 0; i < actionList.Count; i++)
+        //{
+        //    currentEvent_.StartAction(actionList[i]);
+        //}
+
     }
+    
 
 
     // Method for continuing to next action
-    public void ContinuePressed(int choice)
+    public void ExitDecision(int choice)
     {
+
         // Set actionRunning_ to false to end the action
+        decisionTimer_.SetActive(false);
         actionRunning_ = false;
     }
 

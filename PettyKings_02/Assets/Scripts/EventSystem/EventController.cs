@@ -12,8 +12,8 @@ public class EventController : MonoBehaviour {
 
 
     // List of introduction Events
-    public List<Event> introEvents_;
-    public List<Event> eventPool_;
+    private List<Event> introEvents_;
+    private List<Event> eventPool_;
     
 
     // Current event
@@ -21,9 +21,6 @@ public class EventController : MonoBehaviour {
 
     // Next event queue
     private Queue<Event> eventQueue_;
-
-    // flag if event is active
-    bool eventActive_;
 
 
     // Flag for if last event started was blocking
@@ -64,9 +61,6 @@ public class EventController : MonoBehaviour {
         // Create empty event queue
         eventQueue_ = new Queue<Event>();
 
-        // EventActive is false since no event has started
-        eventActive_ = false;
-
         isBlocked_ = false;
 
         // Initialse active Events list
@@ -74,11 +68,6 @@ public class EventController : MonoBehaviour {
 
         // Create reference to seasonController
         seasonController = SeasonController.seasonController;
-
-
-
-
-        
 
         
     }
@@ -173,7 +162,6 @@ public class EventController : MonoBehaviour {
         {
 
             // Start the event
-            eventActive_ = true;
             newEvent.Begin();
             activeEvents_.Add(newEvent);
 
@@ -217,7 +205,6 @@ public class EventController : MonoBehaviour {
 
             nextEvent.Begin();
             activeEvents_.Add(nextEvent);
-            eventActive_ = true;
 
             // Pause season timer
             if (nextEvent.stopSeasonTimer_)
@@ -248,7 +235,6 @@ public class EventController : MonoBehaviour {
             seasonController.StartTimer();
 
             // No event is active anymore
-            eventActive_ = false;
             return false;
         }
 
