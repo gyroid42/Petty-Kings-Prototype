@@ -12,12 +12,12 @@ public class EventController : MonoBehaviour {
 
 
     // List of introduction Events
-    public List<Event> introEvents_;
-    public List<Event> eventPool_;
+    private List<Event> introEvents_;
+    private List<Event> eventPool_;
     
 
     // Current event
-    public List<Event> activeEvents_;
+    private List<Event> activeEvents_;
 
     // Next event queue
     private Queue<Event> eventQueue_;

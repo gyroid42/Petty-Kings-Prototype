@@ -20,8 +20,4 @@ public struct DecisionEffect {
 
     public List<BaseAction> effects_;
 
-
-    public bool displayScreen_;
-    public EventDisplayData decisionDisplayData_;
-
 }

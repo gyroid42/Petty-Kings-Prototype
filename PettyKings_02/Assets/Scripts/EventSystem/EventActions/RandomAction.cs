@@ -10,25 +10,43 @@ public class RandomAction : BaseAction
     // properties
     public int numberOfRandomActions_;
 
+    // List of actions to get random action from
     public List<BaseAction> actionList_;
-
     private List<BaseAction> runTimeList_;
-    private EventController eventController;
 
 
+    // Called at start of action
     public override void Begin(Event newEvent)
     {
         base.Begin(newEvent);
 
-        isBlocking_ = false;
 
-
+        // Copy action list to list to use during run time
         runTimeList_ = new List<BaseAction>(actionList_);
-        eventController = EventController.eventController;
-        eventController.StartCoroutine(StartRandomActions());
-        
+
+
+        // For each random action to add
+        for (int i = 0; i < numberOfRandomActions_; i++)
+        {
+
+            // If there are actions to get an action from
+            if (runTimeList_.Count <= 0)
+            {
+                break;
+            }
+
+            // Start random event from list and remove
+            int index = Random.Range(0, runTimeList_.Count);
+            currentEvent_.StartAction(runTimeList_[index]);
+            runTimeList_.RemoveAt(index);
+        }
+
+        // Action finished
+        actionRunning_ = false;
     }
 
+
+    // Called when action ends
     public override void End()
     {
 
@@ -36,47 +54,12 @@ public class RandomAction : BaseAction
     }
 
 
+    // Called every frame action is active
     public override bool Update()
     {
 
 
         return actionRunning_;
-    }
-
-    IEnumerator StartRandomActions()
-    {
-        int actionsStarted = 0;
-        while (actionsStarted < numberOfRandomActions_ && runTimeList_.Count > 0)
-        {
-            for (int i = actionsStarted; i < numberOfRandomActions_; i++)
-            {
-                
-                if (runTimeList_.Count > 0)
-                {
-                    int index = Random.Range(0, runTimeList_.Count);
-                    if (currentEvent_.StartAction(runTimeList_[index]))
-                    {
-
-                        runTimeList_.RemoveAt(index);
-                        numberOfRandomActions_++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                else
-                {
-                    break;
-                }
-                
-            }
-
-            yield return null;
-        }
-
-        
-        actionRunning_ = false;
     }
 
 }
