@@ -14,7 +14,7 @@ using UnityEngine;
 public class DestroyBuildingAction : BaseAction
 {
        public int starRating;
-    private GenerateWorld buildingDestroy;
+    private GenerateWorld worldController;
 
    public BuildingChoice building;
     
@@ -26,24 +26,24 @@ public class DestroyBuildingAction : BaseAction
 
         type_ = ACTIONTYPE.DESTROYBUILDING;
 
-        buildingDestroy = Terrain.activeTerrain.GetComponent<GenerateWorld>(); //get script
+        worldController = Terrain.activeTerrain.GetComponent<GenerateWorld>(); //get script
 
 
         if (building == BuildingChoice.HuntersHut) //destroy hunters hut
         {
-            buildingDestroy.DestroyBuilding(2);
+            worldController.DestroyBuilding(2);
         }
         else if (building == BuildingChoice.WoodHut) //destroy woodhut
         {
-            buildingDestroy.DestroyBuilding(3);
+            worldController.DestroyBuilding(3);
         }
         else if (building == BuildingChoice.ChiefsHall) //destroy chiefs hall
         {
-            buildingDestroy.DestroyBuilding(1);
+            worldController.DestroyBuilding(1);
         }
         else if(building == BuildingChoice.GateHouse) //destroy gatehouse
         {
-            buildingDestroy.DestroyBuilding(0);
+            worldController.DestroyBuilding(0);
         }
 
         actionRunning_ = false;
@@ -52,7 +52,7 @@ public class DestroyBuildingAction : BaseAction
     public override void End()
     {
         //Modify Star rating value
-        buildingDestroy.starRating += starRating;
-        Debug.Log("STAR RATING = " + buildingDestroy.starRating);
+        worldController.starRating += starRating;
+        Debug.Log("STAR RATING = " + worldController.starRating);
     }
 }

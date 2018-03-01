@@ -85,17 +85,19 @@ public class GenerateWorld : MonoBehaviour {
 
     private void WorldSpawn()
     {
-            for (int x = 0; x <= Random.Range(1,3); x++)
+            for (int x = 0; x <= Random.Range(1,3); x++) //spawn between 1 and 3 huts
             {
                 SpawnHuntersHut();
             }
 
-            for (int x = 0; x <= Random.Range(1, 2); x++)
+            for (int x = 0; x <= Random.Range(1, 2); x++) //spawn between 1 and 2 wood huts
             {
                 SpawnWoodHut(); 
             }
 
     }
+
+    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT:
 
     public void SpawnHuntersHut()
     {
@@ -128,7 +130,7 @@ public class GenerateWorld : MonoBehaviour {
 
     private void Update()
     {
-            if (!rightCompleted)
+            if (!rightCompleted) //check to see whether either side is complete then stop building them
             {
                 BuildWallRight();
             }
@@ -150,7 +152,7 @@ public class GenerateWorld : MonoBehaviour {
     }
 
 
-    void BuildWallRight()
+    void BuildWallRight() //build right side of wall and add game objects to right list
     {
         GetCenter(Vector3.right);
         float fracComplete = (Time.time - startTime);
@@ -168,7 +170,7 @@ public class GenerateWorld : MonoBehaviour {
     }
 
 
-    void BuildWallLeft()
+    void BuildWallLeft() //build left side of wall and add Game objects to left list
     {
         GetCenter(Vector3.left);
         float fracComplete = (Time.time - startTime);
