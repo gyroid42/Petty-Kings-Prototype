@@ -21,10 +21,10 @@ public class Event : ScriptableObject {
 
     // List of actions in event
     public List<BaseAction> actionList_;
-    public List<BaseAction> runTimeActionList_;
+    private List<BaseAction> runTimeActionList_;
 
     // Current actions happening
-    public List<BaseAction> activeActions_;
+    private List<BaseAction> activeActions_;
 
     // Index of currentAction
     private int actionIndex_;
@@ -111,7 +111,6 @@ public class Event : ScriptableObject {
             }
             else if (activeActions_.Count <= 0)
             {
-                Debug.Log("it's happening = " + activeActions_.Count);
                 // Else no more actions left, end the event
                 eventRunning_ = false;
                 break;
@@ -201,7 +200,7 @@ public class Event : ScriptableObject {
     {
         if (newAction != null)
         {
-            if (CheckEventsBlocking())
+            if (blocked_)
             {
                 runTimeActionList_.Insert(actionIndex_ + 1, newAction);
                 Debug.Log(runTimeActionList_);
@@ -211,6 +210,10 @@ public class Event : ScriptableObject {
             {
                 newAction.Begin(this);
                 activeActions_.Add(newAction);
+                if (newAction.isBlocking_)
+                {
+                    blocked_ = true;
+                }
             }
         }
 
