@@ -220,4 +220,39 @@ public class Event : ScriptableObject {
         return true;
     }
 
+    public bool StartAction(List<BaseAction> newActions)
+    {
+        if (newActions != null)
+        {
+            int indexPos = 0;
+
+            for (int i = 0; i < newActions.Count; i++)
+            {
+
+                if (!newActions[i])
+                {
+                    continue;
+                }
+
+                if (blocked_)
+                {
+                    indexPos++;
+                    runTimeActionList_.Insert(actionIndex_ + indexPos, newActions[i]);
+                }
+                else
+                {
+                    newActions[i].Begin(this);
+                    activeActions_.Add(newActions[i]);
+                    if (newActions[i].isBlocking_)
+                    {
+                        blocked_ = true;
+                    }
+                }
+
+            }
+        }
+
+        return true;
+    }
+
 }

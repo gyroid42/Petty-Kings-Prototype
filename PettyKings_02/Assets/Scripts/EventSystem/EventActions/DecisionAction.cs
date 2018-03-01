@@ -224,11 +224,13 @@ public class DecisionAction : BaseAction
             actionList = decisionEffect_[choice].effects_;
         }
 
+
+        currentEvent_.StartAction(actionList);
         // Loop for each action in the list and start it
-        for (int i = 0; i < actionList.Count; i++)
-        {
-            currentEvent_.StartAction(actionList[i]);
-        }
+        //for (int i = 0; i < actionList.Count; i++)
+        //{
+        //    currentEvent_.StartAction(actionList[i]);
+        //}
 
     }
     
