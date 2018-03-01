@@ -119,7 +119,6 @@ public class SeasonController : MonoBehaviour {
             if (seasonTimer_.UpdateTimer())
             {
                 // If timer finished Goto next season
-                Debug.Log("Season Change");
                 ChangeSeason();
             }
         }
@@ -150,8 +149,7 @@ public class SeasonController : MonoBehaviour {
     // Starts events for a season
     private void StartSeasonEvents()
     {
-        Debug.Log("starting season event");
-
+       
         // Createa lists for intro and random events
         List<Event> introEvents = null;
         List<Event> randomEventList = null;

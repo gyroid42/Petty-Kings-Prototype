@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct DecisionEffect {
 
+    public string name_;
     public float starChange_;
 
     public bool addEvent_;
@@ -15,7 +16,8 @@ public struct DecisionEffect {
     public string sound_;
 
 
-    public bool displayScreen_;
-    public EventDisplayData decisionDisplayData_;
+
+
+    public List<BaseAction> effects_;
 
 }

@@ -14,8 +14,6 @@ public class EventDisplay : MonoBehaviour {
     public static EventDisplay eventDisplay;
 
 
-    private EventController eventController;
-
     // List of buttons of choices
     private List<Button> buttons_ = new List<Button>();
 
@@ -75,9 +73,6 @@ public class EventDisplay : MonoBehaviour {
     // Method called when object created
     void Start ()
     {
-
-        // Create reference to eventController
-        eventController = EventController.eventController;
 
         // Event display is not active when created
         gameObject.SetActive(false);
