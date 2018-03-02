@@ -24,6 +24,7 @@ public class SplineInterpolator : MonoBehaviour
 	List<SplineNode> mNodes = new List<SplineNode>();
 	string mState = "";
 	bool mRotations;
+    bool splineActive;
 
 	OnEndCallback mOnEndCallback;
 
@@ -136,9 +137,15 @@ public class SplineInterpolator : MonoBehaviour
 	void Update()
 	{
 		if (mState == "Reset" || mState == "Stopped" || mNodes.Count < 4)
-			return;
+        {
+            splineActive = false;
+            return;
+        }
 
-		mCurrentTime += Time.deltaTime;
+        // If not stopped or reset, object is moving on spline
+        splineActive = true;
+
+        mCurrentTime += Time.deltaTime;
 
 		// We advance to next point in the path
 		if (mCurrentTime >= mNodes[mCurrentIdx + 1].Time)
@@ -245,4 +252,9 @@ public class SplineInterpolator : MonoBehaviour
 
 		return GetHermiteInternal(idx, param);
 	}
+
+    public bool isActive()
+    {
+        return splineActive;
+    }
 }
