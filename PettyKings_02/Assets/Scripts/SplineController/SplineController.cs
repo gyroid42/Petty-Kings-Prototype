@@ -135,4 +135,12 @@ public class SplineController : MonoBehaviour
 			mSplineInterp.StartInterpolation(null, true, WrapMode);
 		}
 	}
+
+    /// <summary>
+    /// Determines if the spline is moving
+    /// </summary>
+    public bool isMoving()
+    {
+        return mSplineInterp.isActive();
+    }
 }

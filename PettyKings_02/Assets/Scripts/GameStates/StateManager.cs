@@ -84,7 +84,7 @@ public class StateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     // Get State
@@ -129,10 +129,10 @@ public class StateManager : MonoBehaviour {
     {
         SplineController_.FollowSpline();
 
-        /*
-        eventController_.StartEvent(camMenuToGame_);
+        eventController_.GameStart();
 
-        eventController_.GameStart();*/
+        /*
+        eventController_.StartEvent(camMenuToGame_);*/
         /*
         // Position/Rotation for Stage One
         Vector3 pos, rot;
