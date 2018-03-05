@@ -28,6 +28,7 @@ public class StateManager : MonoBehaviour {
     // Script references
     private HUDToggle GameUI_;
     private CameraController CameraController_;
+    private SplineController SplineController_;
     private EventController eventController_;
 
     // CameraMoveEvents
@@ -66,8 +67,9 @@ public class StateManager : MonoBehaviour {
 	void Start () {
         CurrentState_ = GAMESTATE.MENU;
 
-
+        // Locate scripts
         CameraController_ = Camera.main.GetComponent<CameraController>();
+        SplineController_ = Camera.main.GetComponent<SplineController>();
         eventController_ = EventController.eventController;
         
         GameUI_ = GetComponent<HUDToggle>();
@@ -76,12 +78,13 @@ public class StateManager : MonoBehaviour {
         OverlayActive_ = false;
         GameUI_.UIVisible(OverlayActive_);
 
-        camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
+        // NO LONGER USED FOR CAMERA MOVEMENT
+        //camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     // Get State
@@ -124,10 +127,12 @@ public class StateManager : MonoBehaviour {
     // CAMERA MOVEMENTS
     void CameraStageOne()
     {
-
-        eventController_.StartEvent(camMenuToGame_);
+        SplineController_.FollowSpline();
 
         eventController_.GameStart();
+
+        /*
+        eventController_.StartEvent(camMenuToGame_);*/
         /*
         // Position/Rotation for Stage One
         Vector3 pos, rot;
