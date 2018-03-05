@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraPlayerMovement : MonoBehaviour {
 
     private CameraController cameraController_;
+    private SplineController splineController_;
 
     public float scrollSpeed_;
     public float scrollEdgeWidth_;
@@ -23,6 +24,7 @@ public class CameraPlayerMovement : MonoBehaviour {
 
         // Get reference to CameraController
         cameraController_ = GetComponent<CameraController>();
+        splineController_ = GetComponent<SplineController>();
         isMouseScrolling_ = false;
 	}
 	
@@ -30,7 +32,7 @@ public class CameraPlayerMovement : MonoBehaviour {
 	void Update () {
 
         // Only allow user movement when the camera isn't moving between scenes
-        if (StateManager.stateManager.CurrentState() == GAMESTATE.STAGEONE && !cameraController_.IsMoving())
+        if (StateManager.stateManager.CurrentState() == GAMESTATE.STAGEONE && !cameraController_.IsMoving() && !splineController_.isMoving())
         {
 
             HandleZoomInput();
