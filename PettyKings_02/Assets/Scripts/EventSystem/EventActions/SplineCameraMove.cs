@@ -13,6 +13,8 @@ public class SplineCameraMove : BaseAction {
     // reference to spline controller
     private SplineController splineController;
 
+
+    // Begin called at start of action
     public override void Begin(Event newEvent)
     {
         base.Begin(newEvent);
@@ -26,6 +28,7 @@ public class SplineCameraMove : BaseAction {
     }
 
 
+    // End called at end of action
     public override void End()
     {
 
@@ -33,6 +36,7 @@ public class SplineCameraMove : BaseAction {
     }
 
 
+    // Update called every frame action is active
     public override bool Update()
     {
 
