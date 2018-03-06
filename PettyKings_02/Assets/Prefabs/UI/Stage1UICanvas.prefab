@@ -1518,7 +1518,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a486019a54ce35b41a21c0ec1b104f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 1724101208375204}
+  icon: {fileID: 1724101208375204}
+  bodyObject: {fileID: 114091581848252120}
+  helperText:
+  - Make decisions by left-clicking Move the camera with right-click and drag or by
+    moving the mouse to the screen edge Drag buildings onto the map to develop your
+    village
+  - All work and no play makes Jack a dull boy
 --- !u!114 &114153483866545386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3063,7 +3069,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114144332708731374}
-        m_MethodName: Close
+        m_MethodName: CycleText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
