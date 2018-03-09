@@ -24,9 +24,8 @@ public class HelpIconScript : MonoBehaviour {
 		// Update text
 		UpdateText();
 
-        // Get list size
+        // Get list size, used in CycleText for iteration
 		listSize = (helperText.Count - 1);
-		Debug.Log ("List Size: " + listSize);
 	}
 	
 	// Update is called once per frame
@@ -40,6 +39,14 @@ public class HelpIconScript : MonoBehaviour {
         icon.SetActive(false);
     }
 
+    // Display tutorial again
+    public void Open()
+    {
+        icon.SetActive(true);
+    }
+
+    // Update the UI box with the string stored in the list
+    // Uses list position variable to point to index in list
     void UpdateText()
     {
         bodyObject.text = helperText[listPosition];
