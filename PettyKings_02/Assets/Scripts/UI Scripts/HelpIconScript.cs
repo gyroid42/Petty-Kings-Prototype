@@ -8,6 +8,8 @@ public class HelpIconScript : MonoBehaviour {
     // Public variables
     public GameObject icon;
     public Text bodyObject;
+    // Set larger text input in editor
+    [TextArea(1, 7)]
     public List<string> helperText;
     // Private variables
     private int listPosition = 0;
