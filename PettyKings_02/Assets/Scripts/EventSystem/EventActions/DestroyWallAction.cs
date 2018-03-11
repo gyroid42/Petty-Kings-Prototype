@@ -13,7 +13,7 @@ public class DestroyWallAction : BaseAction
 
     public int starRating;
 
-    private GenerateWorld worldController;
+    private WorldManager worldController;
 
     public override void Begin(Event newEvent)
     {
@@ -21,7 +21,7 @@ public class DestroyWallAction : BaseAction
 
         type_ = ACTIONTYPE.DESTROYWALL;
 
-        worldController = Terrain.activeTerrain.GetComponent<GenerateWorld>(); //get script
+        worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
         worldController.DestroyWall(leftWall, startPos, numberToRemove);
 

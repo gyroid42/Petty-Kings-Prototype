@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenerateWorld : MonoBehaviour {
+public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs

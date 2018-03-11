@@ -14,7 +14,7 @@ using UnityEngine;
 public class DestroyBuildingAction : BaseAction
 {
        public int starRating;
-    private GenerateWorld worldController;
+    private WorldManager worldController;
 
    public BuildingChoice building;
     
@@ -26,7 +26,7 @@ public class DestroyBuildingAction : BaseAction
 
         type_ = ACTIONTYPE.DESTROYBUILDING;
 
-        worldController = Terrain.activeTerrain.GetComponent<GenerateWorld>(); //get script
+        worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
 
         if (building == BuildingChoice.HuntersHut) //destroy hunters hut

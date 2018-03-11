@@ -14,7 +14,7 @@ public enum Buildingchoice
 public class BuildBuildingAction : BaseAction
 {
     public int starRating;
-    private GenerateWorld worldController;
+    private WorldManager worldController;
 
     public Buildingchoice building;
 
@@ -26,7 +26,7 @@ public class BuildBuildingAction : BaseAction
 
         type_ = ACTIONTYPE.BUILDBUILDING;
 
-        worldController = Terrain.activeTerrain.GetComponent<GenerateWorld>(); //get script
+        worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
         if (building == Buildingchoice.HuntersHut) //destroy hunters hut
         {
