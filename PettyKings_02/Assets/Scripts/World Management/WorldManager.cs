@@ -25,6 +25,8 @@ public class WorldManager : MonoBehaviour {
 
     //Star rating variables
     public int starRating;
+    private StarRating starManager; //used to update image of stars on screen
+    public GameObject starImageObject;
 
     void Start() {
 
@@ -47,6 +49,9 @@ public class WorldManager : MonoBehaviour {
         {
             Debug.Log("NULL RIGHT");
         }
+
+        //get star rating script
+        starManager = starImageObject.GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");
@@ -221,5 +226,11 @@ public class WorldManager : MonoBehaviour {
                 Destroy(wallsRight[i]);
             }
         }
+    }
+
+    public void UpdateStars(int starUpdate)
+    {
+        starRating += starUpdate;
+        starManager.UpdateStars(starRating);
     }
 }
