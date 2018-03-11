@@ -127,7 +127,7 @@ public class StateManager : MonoBehaviour {
     // CAMERA MOVEMENTS
     void CameraStageOne()
     {
-        SplineController_.FollowSpline();
+        //SplineController_.FollowSpline();
 
         eventController_.GameStart();
 

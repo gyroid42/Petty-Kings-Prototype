@@ -70,11 +70,11 @@ public class WorldManager : MonoBehaviour {
         while(!completed) //check whether num is in list (always false on 1st run)
         {
             num_ = Random.Range(0, positions.Length); //generate number
-            Debug.Log("generated num : " + num_);
+            //Debug.Log("generated num : " + num_);
             if (!lastNum.Contains(num_)) //if its not in the list, add it
             {
                 lastNum.Add(num_);
-                Debug.Log(num_);
+                //Debug.Log(num_);
                 completed = true;
             }
             //Debug.Log(num_);

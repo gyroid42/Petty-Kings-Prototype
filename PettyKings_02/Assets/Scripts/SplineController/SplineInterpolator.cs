@@ -43,6 +43,7 @@ public class SplineInterpolator : MonoBehaviour
 		mState = mode == eWrapMode.ONCE ? "Once" : "Loop";
 		mRotations = bRotations;
 		mOnEndCallback = endCallback;
+        splineActive = true;
 
 		SetInput();
 	}
