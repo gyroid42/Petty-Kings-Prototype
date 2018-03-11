@@ -67,7 +67,7 @@ public class ResourceManager : MonoBehaviour {
         food_ = newFood;
         wood_ = newWood;
         men_ = newMen;
-        resourceDisplay.UpdateDisplay();
+        //resourceDisplay.UpdateDisplay();
     }
 
     // Getter methods for resources

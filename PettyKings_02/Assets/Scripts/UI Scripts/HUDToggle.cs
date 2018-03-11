@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class HUDToggle : MonoBehaviour {
 
-    public GameObject MainUICanvas_;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // private gameobjects pointing to canvases
+    private GameObject MainUICanvas_;
+    private GameObject SplashScreen_;
+    private GameObject SplashCamera_;
+    
+    void Awake()
+    {
+        MainUICanvas_ = GameObject.Find("Stage1UICanvas");
+        SplashScreen_ = GameObject.Find("SplashScreenOverlay");
+        SplashCamera_ = GameObject.Find("SplashScreenCam");
+    }
+    
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +25,9 @@ public class HUDToggle : MonoBehaviour {
     // Only display UI if instructed by state machine
     public void UIVisible(bool t)
     {
+        // When main UI is visible, disable splash screen display
         MainUICanvas_.SetActive(t);
+        SplashScreen_.SetActive(!t);
+        SplashCamera_.SetActive(!t);
     }
 }

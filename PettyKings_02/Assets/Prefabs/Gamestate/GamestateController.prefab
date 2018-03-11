@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainUICanvas_: {fileID: 0}
+  SplashScreen_: {fileID: 0}
 --- !u!114 &114038396343756052
 MonoBehaviour:
   m_ObjectHideFlags: 1
