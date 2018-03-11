@@ -52,7 +52,7 @@ public class DestroyBuildingAction : BaseAction
     public override void End()
     {
         //Modify Star rating value
-        worldController.starRating += starRating;
+        worldController.UpdateStars(starRating);
         Debug.Log("STAR RATING = " + worldController.starRating);
     }
 }
