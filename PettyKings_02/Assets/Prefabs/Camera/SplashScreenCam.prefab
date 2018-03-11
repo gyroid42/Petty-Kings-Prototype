@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 0}
+  SplineRoot: {fileID: 1886850918984584, guid: 948a4addb0180b34f85a4ecd197db36b, type: 2}
   Duration: 14
   OrientationMode: 0
   WrapMode: 1
