@@ -8,6 +8,8 @@ public class DecisionAction : BaseAction
 
     // All data required for an event
 
+    private WorldManager worldController;
+
     // Data for displaying initial event i.e. name, description...
     // Main display data
     public EventDisplayData mainDisplay_;
@@ -37,6 +39,9 @@ public class DecisionAction : BaseAction
 
         // Set action type
         type_ = ACTIONTYPE.DECISION;
+
+        //get the world manager
+        worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
         // Create references to eventDisplay and resourceManager
         eventDisplay = EventDisplay.eventDisplay;
