@@ -74,12 +74,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708266217159780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cdc1c6f0c11a94caf8d48ee9619110, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab22e40a9d7e754495df5ca54c1f461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
   startPos: {fileID: 0}
   endPos: {fileID: 0}
+  starRating: 0
 --- !u!154 &154028670911795484
 TerrainCollider:
   m_ObjectHideFlags: 1
