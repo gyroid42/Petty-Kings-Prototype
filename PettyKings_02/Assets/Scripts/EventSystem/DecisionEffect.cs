@@ -6,7 +6,7 @@ using UnityEngine;
 public struct DecisionEffect {
 
     public string name_;
-    public float starChange_;
+    public int starChange_;
 
     public bool addEvent_;
     public Event newEvent_;

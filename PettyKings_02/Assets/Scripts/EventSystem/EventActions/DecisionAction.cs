@@ -209,8 +209,12 @@ public class DecisionAction : BaseAction
     // Updates star count
     public void UpdateStars(int choice)
     {
-
-        // starmanager update stars ( getDecisionStars(choice))
+        if (choice < 0)
+        {
+            worldController.UpdateStars(timerRanOutEffect_.starChange_);
+            return;
+        }
+        worldController.UpdateStars(decisionEffect_[choice].starChange_);
     }
 
     // Method to start effects from effect list
