@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114706667257772002}
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   EditorEvents:
   - {fileID: 114689744971888122}
   - {fileID: 114331977258355426}
@@ -83,9 +83,9 @@ MonoBehaviour:
   - {fileID: 114463228195491556}
   - {fileID: 114695489476832642}
   - {fileID: 114851812952545290}
-  MasterBankRef: {fileID: 114729877972750370}
+  MasterBankRef: {fileID: 114464664463626514}
   StringsBankRef: {fileID: 114706667257772002}
-  stringsBankWriteTime: 636563879365100493
+  stringsBankWriteTime: 636554321744452213
   cacheVersion: 2
 --- !u!114 &114000801790752676
 MonoBehaviour:
@@ -123,7 +123,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_05
   guid: 8114b1a929b70240892adf69224e5af2
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_GRAB_RESSOURCES_03
   guid: 26686894bba66a4fb7a0f232d5a7c583
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_SELECT_02
   guid: c5fc2583dfc99a47a6ef5975b643358d
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_CLOSE
   guid: a9bf11726b3b254b807c43d4af9aad4e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -572,7 +572,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_BUTTON_SELECT_03
   guid: 2898c8266a077d49805ceee8756bd9df
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -660,7 +660,7 @@ MonoBehaviour:
   Path: event:/WEATHER/THUNDER/Thunder01
   guid: c533df2bd2426842865b4663cc6f930a
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -682,7 +682,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_BUILDINGS_BUILD_UP
   guid: ef48efcd251f3e4fbd22439a8b0ea0d0
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -918,7 +918,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_05
   guid: c108ee231141ee4d818da1b14db23c10
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -983,7 +983,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_RESSOURCES_GRAB_02
   guid: 9ddd795f29150c42bb5674d871963bd2
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_UNSELECT
   guid: 4e89a90941d0564c834ba046fb67e38e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_02
   guid: 3283be7688862549b62f03fbd0433bf6
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1699,7 +1699,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_03
   guid: 967d3dc98d84c44fa8206244f5ba4458
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/WOOD/UI_RESSOURCES_WOODBUILDING_BUILDUP
   guid: a9c3442d7c6bcc4db62961b7d397e8fe
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_BUILDUP
   guid: 1c0962c7094d0448bdd14342bff22a8e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   Path: event:/WEATHER/THUNDER/Thunder_02
   guid: adc1d65802275442ae27f17e94792c4f
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1940,7 +1940,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_06
   guid: b086e7b98d08974d89f88d4b82d0efe4
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_RESSOURCES_WOOD_BUILDUP
   guid: 70d5ea63939fbc4a8d3ebfeb083d3b17
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2109,7 +2109,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_06
   guid: 787b7f589f2aa54783a09e2e60153b64
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2239,7 +2239,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_03
   guid: 44a376d448deac4cbc8c6539ab55606c
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2261,7 +2261,7 @@ MonoBehaviour:
   Path: event:/WEATHER/THUNDER/Thunder _03
   guid: 96cb20bec9151842aa877c84d3d97c7e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2414,7 +2414,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_FROTTER
   guid: 5a0c70cfee33024abb572836a30a79b6
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2720,7 +2720,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_RESSOURCES_GRAB
   guid: 0e201008b6c5b2498685dd2c9860dcb7
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2935,7 +2935,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_WINDOW_CLOSE_01
   guid: ebbe15d68cfa4e49bbf0b0a12684548f
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3307,7 +3307,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/SEASONS/AMBIENCE_AUTUMN_2_bip _01
   guid: 3209ad3b13ab43458939ac467df3d1b0
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3371,7 +3371,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_02
   guid: 2b395d99b54ab54a9eb0357b22be8692
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3624,7 +3624,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/VILLAGE/AMBIENCE_COUNTRY_SIDE_BIRDS_SINGING_01
   guid: 94a8993c1598514ebbff8c9a8a6294f8
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/SEASONS/AMBIENCE_SUMMER_01 _03
   guid: ebbbc27c7ccfe0459dc3883c8ef77bcd
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3821,7 +3821,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_07
   guid: f0a0edaed034114d8f98415fcd77e97c
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3843,7 +3843,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/UI_RESSOURCES_SELECT
   guid: 8edb3f6b85972849b5bf78f73b33d735
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3973,7 +3973,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_01
   guid: d43ff5b709813e47a168de5ff72efce2
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4017,7 +4017,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/WATER/River_Fountain_loop__01
   guid: f8429f917d2c87469a0326be99973ba0
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4025,6 +4025,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9750
+--- !u!114 &114464664463626514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\CIARAN\Desktop\Unity 3rd Year Projects\Petty-Kings\PettyKings_02\PettyKing_Audio_Fmod\Petty_Kings_Fmod\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636554321744372253
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 6474080
+  Exists: 1
 --- !u!114 &114465079813003246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4299,7 +4318,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN MENU_OPTION_SELECT
   guid: e32ed152182da241bcc598a6db00d0b7
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4321,7 +4340,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_SELECT_01
   guid: 60ec3c9114e9444fbc2a098493fffcdd
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4365,7 +4384,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/WATER/Fountain
   guid: 48584570df9ec444b24c101bcf263f12
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4452,7 +4471,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
   guid: 5276eaa333c4b64fb7ffa2cd43921f73
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4669,7 +4688,7 @@ MonoBehaviour:
   Path: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2
   guid: d148c67f0316684594dd6a26ebe01784
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4778,7 +4797,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_BUTTON_SELECT_04
   guid: 925c42812e665244905167f6e1d62181
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4800,7 +4819,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/POP UP/UI_PAUSE_MENU_ WINDOW_POP_UP_01
   guid: 98c47bb392f2d34e99eae07f0354626e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4822,7 +4841,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_SELECT_01
   guid: aaf5dcce9f09b848bd9ad2a72f0f211e
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4994,7 +5013,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN MENU_OPTION_SELECT_02
   guid: f6735c2de8e1794db10d0540707b46ad
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5016,7 +5035,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/WATER/River_Fountain_loop_02
   guid: 1e8f047d9f2cdb4bbd12b5e9bbdd2fdf
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5146,7 +5165,7 @@ MonoBehaviour:
   Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_04
   guid: 24d355ee5ca26b4188181869a808a799
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5276,7 +5295,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_SELECT_02
   guid: d10cb55bd535114ebebd1786067fdc40
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5490,7 +5509,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_03
   guid: a87cf18f4be92f45846f94da3ab10f0a
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5895,7 +5914,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/SEASONS/AMBIENCE_SPRING _02
   guid: 37f5e27f4a0b6a4e8c4f9ec8c2272382
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -5959,7 +5978,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU
   guid: 03b5838cb1c73f4baca2c2b02cba8857
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5981,7 +6000,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_SELECT
   guid: f8d3a38c4389f94999a3edaeb599c688
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6023,7 +6042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: PettyKing_Audio_Fmod\Petty_Kings_Fmod\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636563879365100493
+  lastModified: 636554321744452213
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -6087,7 +6106,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/UI_RESSOURCES_WOOD_RESSOURCEAPPEARS_02_bip
   guid: ef90c98d65c0b247baa70f0e3e6e7718
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6343,7 +6362,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/WATER/River_Fountain_loop_03
   guid: 9d0f5063bfbf4749916c0e8bcc33a0f8
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -6452,7 +6471,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT
   guid: 92a956b32bad7c40a892f54c1c510620
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6514,7 +6533,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_
   guid: e666a55af1702c4ca14debb72e3bf428
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6577,7 +6596,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_SELECT_02
   guid: b52fe3f98b178c48b145ad3ecfa3ae88
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6643,7 +6662,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/UI_WOOD_FROTTER_02
   guid: 67c2fc57de591d488d2b130f6247e4ed
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6686,7 +6705,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/SEASONS/AMBIENCE_WINTER
   guid: ddae93534df7424290f155def38af3e9
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -6817,7 +6836,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_QUIT MENU_02
   guid: b917b231936d304abc58c22023b43d12
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7161,7 +7180,7 @@ MonoBehaviour:
   Path: event:/MUSIC/PETTY KINGS_WAR MUSIC
   guid: e58c25746a395c4dae4dc6a8554386eb
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -7245,7 +7264,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/WOOD/UI_RESSOURCES_WOODBUILDING_SELECT
   guid: 843c7cc47d2e094fb451be82ef22d041
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7267,7 +7286,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN MENU_QUIT
   guid: fefbad547d81a24c8ddce96cb2abf1bb
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7486,7 +7505,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_WOOD_BUILDUP_01
   guid: f092b1b2a49f574db371f79b8563c2a1
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7594,7 +7613,7 @@ MonoBehaviour:
   Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_QUIT MENU_01
   guid: d05e0e7111968e43a6642b8bd2b940ee
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7638,7 +7657,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_NEWOBJECT
   guid: 3bf7a260d9a882478e6a987dff707949
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7660,7 +7679,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_04
   guid: d05e1e0a7230e741a35a533f58c4063f
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7682,7 +7701,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_FALL
   guid: 8f37e6371f8c854284352cae634bc426
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -7790,7 +7809,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_QUIT MENU_01
   guid: 3d0d14830012a04d863fa7aedb6323ad
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -8092,7 +8111,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_BACK
   guid: 855bdc2982b7a24582584d054c5e2ab3
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -8158,7 +8177,7 @@ MonoBehaviour:
   Path: event:/AMBIENCES/WATER/Fountain_02
   guid: ed45b96079ea334f8e56cf8e2c628502
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -8268,7 +8287,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_SELECT
   guid: 2cdff694b2fc3b4dbe5a4d7760051405
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -8460,7 +8479,7 @@ MonoBehaviour:
   Path: event:/UI/PAUSE MENU (Canvas)/FLYOVER BUTTON/UI_WOOD_FLYOVER
   guid: ac2866b48cb5554b8510513bb3dd7288
   Banks:
-  - {fileID: 114729877972750370}
+  - {fileID: 114464664463626514}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

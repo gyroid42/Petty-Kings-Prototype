@@ -10,8 +10,8 @@ public class WorldManager : MonoBehaviour {
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
-    List<GameObject> wallsLeft = new List<GameObject>();
-    List<GameObject> wallsRight = new List<GameObject>();
+    static List<GameObject> wallsLeft = new List<GameObject>();
+    static List<GameObject> wallsRight = new List<GameObject>();
 
     //Variables for wall creation
     public Transform startPos;
@@ -28,8 +28,9 @@ public class WorldManager : MonoBehaviour {
     private StarRating starManager; //used to update image of stars on screen
     public GameObject starImageObject;
 
-    void Start() {
+    void Awake() {
 
+       
         resources = new GameObject[5];
         positions = new GameObject[8];
         
@@ -55,7 +56,7 @@ public class WorldManager : MonoBehaviour {
 
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");
-
+        
         //spawn Gate house
         SpawnGateHouse();
 
@@ -64,8 +65,22 @@ public class WorldManager : MonoBehaviour {
 
         //spawn buildings
         WorldSpawn();
-
+        
+        
     }
+
+    public void ReGenerateWorld()
+    {
+        //spawn Gate house
+        SpawnGateHouse();
+
+        //spawn Chiefs Hut
+        SpawnChiefHut();
+
+        //spawn buildings
+        WorldSpawn();
+    }
+
 
     private int GenerateNum() //generate a random number
     {
@@ -164,6 +179,7 @@ public class WorldManager : MonoBehaviour {
         wallsRight.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
         wallsRight[wallsRight.Count - 1].transform.position += centerPoint;
         wallsRight[wallsRight.Count - 1].transform.position = new Vector3(wallsRight[wallsRight.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(wallsRight[wallsRight.Count - 1].transform.position), wallsRight[wallsRight.Count - 1].transform.position.z);
+        DontDestroyOnLoad(wallsRight[wallsRight.Count - 1]);
         if (wallsRight.Count > 2)
         {
 
@@ -182,6 +198,7 @@ public class WorldManager : MonoBehaviour {
         wallsLeft.Add(Instantiate(resources[0], Vector3.Slerp(startCenter, endCenter, (fracComplete / 4.0f)), Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f))));
         wallsLeft[wallsLeft.Count - 1].transform.position += centerPoint;
         wallsLeft[wallsLeft.Count - 1].transform.position = new Vector3(wallsLeft[wallsLeft.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(wallsLeft[wallsLeft.Count - 1].transform.position), wallsLeft[wallsLeft.Count - 1].transform.position.z);
+        DontDestroyOnLoad(wallsLeft[wallsLeft.Count - 1]);
         if (wallsLeft.Count > 2)
         {
 
