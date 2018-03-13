@@ -23,7 +23,7 @@ MonoBehaviour:
     - Cows
   decisionEffect_:
   - name_: sheep
-    starChange_: 0.5
+    starChange_: 20
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
@@ -33,7 +33,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8d4df09a037aeea42b4fcb742a6c44e8, type: 2}
     - {fileID: 11400000, guid: 36f3675d252efb845a8c9aa1eb5f9544, type: 2}
   - name_: cows
-    starChange_: -0.5
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
