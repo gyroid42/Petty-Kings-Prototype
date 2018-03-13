@@ -231,6 +231,6 @@ public class WorldManager : MonoBehaviour {
     public void UpdateStars(int starUpdate)
     {
         starRating += starUpdate;
-        starManager.UpdateStars(starRating);
+        //starManager.UpdateStars(starRating);
     }
 }

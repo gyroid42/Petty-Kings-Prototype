@@ -3217,7 +3217,7 @@ MonoBehaviour:
   btnSizeY: 50
   btnPosY: -300
   btnPosX: 0
-  defaultTimerLength_: 5
+  defaultTimerLength_: 10
 --- !u!114 &114852672491537050
 MonoBehaviour:
   m_ObjectHideFlags: 1
