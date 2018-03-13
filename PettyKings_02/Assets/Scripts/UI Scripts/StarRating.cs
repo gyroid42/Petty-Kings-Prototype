@@ -22,7 +22,7 @@ public class StarRating : MonoBehaviour {
     public Sprite fiveStarImage;
 
 
-    void Start () {
+    void Awake () {
 
         worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
