@@ -6,7 +6,7 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
-    GameObject[] positions; //to hold data on the tiles that define building positions
+    List<GameObject> positions; //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
@@ -31,8 +31,13 @@ public class WorldManager : MonoBehaviour {
 
        
         resources = new GameObject[5];
-        positions = new GameObject[8];
-        
+        positions = new List<GameObject>(GameObject.FindGameObjectsWithTag("BuildLocation"));
+
+        foreach(GameObject i in positions) //not working, needs fixed
+        {
+            i.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
+        }
+
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
         resources[1] = Resources.Load("Model Prefabs/GateHouse") as GameObject; //1
@@ -50,11 +55,13 @@ public class WorldManager : MonoBehaviour {
             Debug.Log("NULL RIGHT");
         }
 
+
+
         //get star rating script
         starManager = GameObject.Find("StarRating").GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
-        positions = GameObject.FindGameObjectsWithTag("BuildLocation");
+       // positions = GameObject.FindGameObjectsWithTag("BuildLocation");
         
         //spawn Gate house
         SpawnGateHouse();
@@ -88,7 +95,7 @@ public class WorldManager : MonoBehaviour {
         
         while(!completed) //check whether num is in list (always false on 1st run)
         {
-            num_ = Random.Range(0, positions.Length); //generate number
+            num_ = Random.Range(0, positions.Count - 1); //generate number
             //Debug.Log("generated num : " + num_);
             if (!lastNum.Contains(num_)) //if its not in the list, add it
             {

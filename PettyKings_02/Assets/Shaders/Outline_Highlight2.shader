@@ -5,7 +5,7 @@ Shader "Outlined/Outline"
      Properties 
      {
          _Color("Color", Color) = (1,0,0,1)
-         _Thickness("Thickness", float) = 4
+         _Thickness("Thickness", float) = 0
      }
      SubShader 
      {
