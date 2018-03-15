@@ -12,7 +12,8 @@ public enum GAMESTATE
     STAGEONE,
     STAGETWO,
     STAGETHREE,
-    GAMEOVER
+    GAMEOVER,
+    IDLE
 };
 
 public class StateManager : MonoBehaviour {
@@ -30,6 +31,9 @@ public class StateManager : MonoBehaviour {
     private CameraController CameraController_;
     private SplineController SplineController_;
     private EventController eventController_;
+
+    private Camera mainCam;
+    private Camera previewCam;
 
     // CameraMoveEvents
     private Event camMenuToGame_;
@@ -71,6 +75,18 @@ public class StateManager : MonoBehaviour {
         CameraController_ = Camera.main.GetComponent<CameraController>();
         SplineController_ = Camera.main.GetComponent<SplineController>();
         eventController_ = EventController.eventController;
+
+        foreach (Camera c in Camera.allCameras)
+        {
+            if(c.gameObject.name == "Main Camera")
+            {
+                mainCam = c;
+            }
+            else if (c.gameObject.name == "SplashScreenCam")
+            {
+                previewCam = c;
+            }
+        }
         
         GameUI_ = GetComponent<HUDToggle>();
 
@@ -80,11 +96,19 @@ public class StateManager : MonoBehaviour {
 
         // NO LONGER USED FOR CAMERA MOVEMENT
         //camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
+
+        // Set Active cameras
+        mainCam.enabled = false;
+        previewCam.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            mainCam.enabled = !mainCam.enabled;
+            previewCam.enabled = !previewCam.enabled;
+        }
 	}
 
     // Get State
