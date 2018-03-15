@@ -20,6 +20,7 @@ public class RandomAction : BaseAction
     {
         base.Begin(newEvent);
 
+        type_ = ACTIONTYPE.RANDOM;
 
         // Copy action list to list to use during run time
         runTimeList_ = new List<BaseAction>(actionList_);

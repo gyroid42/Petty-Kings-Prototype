@@ -19,6 +19,8 @@ public class SplineCameraMove : BaseAction {
     {
         base.Begin(newEvent);
 
+        type_ = ACTIONTYPE.SPLINECAMERA;
+
         // Setup reference to spline controller
         splineController = Camera.main.GetComponent<SplineController>();
 

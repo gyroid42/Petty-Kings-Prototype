@@ -73,10 +73,17 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
+
         Debug.Log("event is ending");
+
+        foreach (BaseAction action in activeActions_)
+        {
+            action.End();
+        }
+
         if (isPooled_)
         {
-            eventController.StartEventFromPool();
+            //eventController.StartEventFromPool();
         }
     }
 
@@ -253,6 +260,12 @@ public class Event : ScriptableObject {
         }
 
         return true;
+    }
+
+    public void EndEvent()
+    {
+
+        eventRunning_ = false;
     }
 
 }
