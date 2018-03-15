@@ -117,7 +117,7 @@ public class WorldManager : MonoBehaviour {
 
     }
 
-    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT:
+    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT: 
 
     public void SpawnHuntersHut()
     {
@@ -233,15 +233,31 @@ public class WorldManager : MonoBehaviour {
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++) //destroy number of pieces of wall requested, maybe make it a random rotation rather than remove?
             {
-                Destroy(wallsLeft[i]);
+                wallsLeft[i].transform.rotation = Random.rotation;
+                //Destroy(wallsLeft[i]);
             }
         }
         else if (side_ == false)//false for right side of wall
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++)
             {
-                Destroy(wallsRight[i]);
+                wallsRight[i].transform.rotation = Random.rotation;
+
+               // Destroy(wallsRight[i]);
             }
+        }
+    }
+
+    public void ResetWalls()
+    {
+        foreach(GameObject i in wallsLeft)
+        {
+            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
+        }
+
+        foreach (GameObject i in wallsRight)
+        {
+            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
         }
     }
 
