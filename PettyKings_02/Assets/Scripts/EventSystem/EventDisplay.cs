@@ -138,6 +138,7 @@ public class EventDisplay : MonoBehaviour {
                         buttons_[i].GetComponentInChildren<Text>().text = "option " + (i + 1);
                     }
                     // Create method for button OnClick from function pointer in display data
+                    buttons_[i].GetComponent<Button>().onClick.RemoveAllListeners();
                     int tempInt = i;
                     ButtonDel tempButtonDel = displayData.btnFunctions_[i];
                     buttons_[i].GetComponent<Button>().onClick.AddListener(() => tempButtonDel(tempInt));

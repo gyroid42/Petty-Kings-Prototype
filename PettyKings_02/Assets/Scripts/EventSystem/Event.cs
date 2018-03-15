@@ -58,6 +58,7 @@ public class Event : ScriptableObject {
 
         // Start next action
         GotoNextAction();
+
     }
 
     // Called every frame event is happening
