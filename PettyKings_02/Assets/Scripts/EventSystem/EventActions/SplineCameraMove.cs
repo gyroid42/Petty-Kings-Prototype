@@ -34,7 +34,6 @@ public class SplineCameraMove : BaseAction {
     public override void End()
     {
 
-        Debug.Log("spline move ended");
     }
 
 

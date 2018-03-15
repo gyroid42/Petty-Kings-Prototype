@@ -74,7 +74,7 @@ public class Event : ScriptableObject {
     public void End()
     {
 
-        Debug.Log("event is ending");
+        //Debug.Log("event is ending");
 
         foreach (BaseAction action in activeActions_)
         {
@@ -101,7 +101,7 @@ public class Event : ScriptableObject {
             {
                 // Increment action index to next action
                 actionIndex_++;
-                Debug.Log(actionIndex_);
+                //Debug.Log(actionIndex_);
 
                 // Set current action to next action
                 BaseAction nextAction = runTimeActionList_[actionIndex_];
