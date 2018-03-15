@@ -31,11 +31,11 @@ public class UserTimeOut : MonoBehaviour {
 
         if(timer <= 0 && canReload)
         {
-            worldController.ResetWalls();
             canReload = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
 
+        Debug.Log(timer);
 	}
 }
