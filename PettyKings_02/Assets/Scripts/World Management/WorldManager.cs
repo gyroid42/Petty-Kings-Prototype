@@ -33,7 +33,8 @@ public class WorldManager : MonoBehaviour {
         resources = new GameObject[5];
         positions = new List<GameObject>(GameObject.FindGameObjectsWithTag("BuildLocation"));
 
-        foreach(GameObject i in positions) //not working, needs fixed
+        //set ground tile thickenss to 0
+        foreach(GameObject i in positions) //not working, needs fixed!
         {
             i.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
         }
