@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224447955241240984}
-  - component: {fileID: 222218196391923310}
   - component: {fileID: 114681066513813486}
   m_Layer: 5
   m_Name: WoodCostText
@@ -36,7 +35,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224436135582585622}
-  - component: {fileID: 222250766024838414}
   - component: {fileID: 114009700520212156}
   - component: {fileID: 114861924505784750}
   - component: {fileID: 114012904557808280}
@@ -243,7 +241,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224241687062145710}
-  - component: {fileID: 222713107334211026}
   - component: {fileID: 114350430240755690}
   m_Layer: 5
   m_Name: FoodCostText
@@ -260,7 +257,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224475746569780850}
-  - component: {fileID: 222791290565696916}
   - component: {fileID: 114066037647337226}
   m_Layer: 5
   m_Name: Name
@@ -292,7 +288,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224532832183069440}
-  - component: {fileID: 222575510374021438}
   - component: {fileID: 114348294230240820}
   - component: {fileID: 114494641396701022}
   - component: {fileID: 114931115746175360}
@@ -351,8 +346,7 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224810053975834348}
-  - component: {fileID: 222768083748109506}
+  - component: {fileID: 4926522139074900}
   - component: {fileID: 114356686897779480}
   m_Layer: 5
   m_Name: MenCostText
@@ -369,7 +363,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224585422704095770}
-  - component: {fileID: 222746533594908604}
   m_Layer: 5
   m_Name: Palisade
   m_TagString: Untagged
@@ -385,7 +378,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224554621245400478}
-  - component: {fileID: 222119763474205538}
   - component: {fileID: 114705165257551532}
   m_Layer: 5
   m_Name: Name
@@ -402,7 +394,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224069592085883648}
-  - component: {fileID: 222534722900109246}
   m_Layer: 5
   m_Name: Spearman
   m_TagString: Untagged
@@ -435,7 +426,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224900876963850352}
-  - component: {fileID: 222267408514794144}
   - component: {fileID: 114823461503097154}
   - component: {fileID: 114783744681914372}
   - component: {fileID: 114491173878638510}
@@ -507,7 +497,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224203595923526520}
-  - component: {fileID: 222012038162047092}
   m_Layer: 5
   m_Name: HunterHut
   m_TagString: Untagged
@@ -523,7 +512,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224396528241607754}
-  - component: {fileID: 222106257986808342}
   - component: {fileID: 114496522073631930}
   m_Layer: 5
   m_Name: MenCostText
@@ -1104,6 +1092,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4926522139074900
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307371043742008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114004330320049890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3720,12 +3721,6 @@ MonoBehaviour:
   woodText_: {fileID: 114681066513813486}
   menText_: {fileID: 114356686897779480}
   artwork_: {fileID: 114287173999997450}
---- !u!222 &222012038162047092
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481352760278666}
 --- !u!222 &222062637694409118
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3744,18 +3739,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1889142866427510}
---- !u!222 &222106257986808342
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1490052529233710}
---- !u!222 &222119763474205538
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1312362524596270}
 --- !u!222 &222171975509744838
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3780,24 +3763,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137653223171660}
---- !u!222 &222218196391923310
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1012920978507786}
---- !u!222 &222250766024838414
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043439743760346}
---- !u!222 &222267408514794144
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1344381882341634}
 --- !u!222 &222275542194728866
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3870,12 +3835,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972316669847584}
---- !u!222 &222534722900109246
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1337695910276838}
 --- !u!222 &222538818550029168
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3894,12 +3853,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629386692926854}
---- !u!222 &222575510374021438
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267904003005992}
 --- !u!222 &222579897092642116
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3960,48 +3913,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1050279342573322}
---- !u!222 &222713107334211026
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221593941905938}
 --- !u!222 &222715790016332118
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103070252563132}
---- !u!222 &222746533594908604
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1310974776460784}
 --- !u!222 &222753687324777166
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168995963764322}
---- !u!222 &222768083748109506
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307371043742008}
 --- !u!222 &222785386624759068
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110907659452240}
---- !u!222 &222791290565696916
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222797719057400}
 --- !u!222 &222812430302268930
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -4541,7 +4470,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224913406556128616}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4991,24 +4920,6 @@ RectTransform:
   m_AnchoredPosition: {x: 19, y: -6.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
---- !u!224 &224810053975834348
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307371043742008}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224913406556128616}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134, y: -14.6}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224811825411108888
 RectTransform:
   m_ObjectHideFlags: 1
@@ -5204,7 +5115,6 @@ RectTransform:
   - {fileID: 224092039389205024}
   - {fileID: 224229705492982466}
   - {fileID: 224447955241240984}
-  - {fileID: 224810053975834348}
   - {fileID: 224401489847524262}
   m_Father: {fileID: 224935261657312150}
   m_RootOrder: 2

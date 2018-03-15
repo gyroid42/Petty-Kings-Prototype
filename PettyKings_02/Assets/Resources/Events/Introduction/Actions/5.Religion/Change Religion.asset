@@ -15,11 +15,11 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    description_: Change Religion?
-    artwork_: {fileID: 0}
+    description_: 'King Uuen has once again demanded we convert to Christianity '
+    artwork_: {fileID: 2800000, guid: 5c3c54feef0b86d4f9f7c64c814f98d8, type: 3}
     btnText_:
-    - 'Yes '
-    - No
+    - Convert
+    - Stay Pagan
   decisionEffect_:
   - name_: Change to Christianity
     starChange_: 5

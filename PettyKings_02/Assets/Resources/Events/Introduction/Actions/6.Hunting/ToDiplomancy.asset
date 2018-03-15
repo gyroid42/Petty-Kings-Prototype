@@ -17,10 +17,25 @@ MonoBehaviour:
     timerLength_: 0
     description_: Congrats your village is now large enough to attract the attention
       of King Uuen
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 0ec94487dbb16514f8e82dc35efd0d85, type: 3}
     btnText_:
-    - Continue
-  decisionEffect_: []
+    - Continue...
+    - Continue...
+  decisionEffect_:
+  - name_: Move to diplo screen
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_: []
+  - name_: 
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_: []
   timerRanOutEffect_:
     name_: 
     starChange_: 0

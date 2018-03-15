@@ -17,7 +17,7 @@ MonoBehaviour:
     timerLength_: 0
     description_: 'Should you hunt for deer, or the rumored bear that is roaming the
       fields? '
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 9e5fdbf98b5f30a49a773bf6907b9f94, type: 3}
     btnText_:
     - Bear
     - Deer

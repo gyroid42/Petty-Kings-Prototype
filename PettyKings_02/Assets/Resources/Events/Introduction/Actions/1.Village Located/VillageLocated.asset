@@ -13,13 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
-    name_: Where shall the village be located?
+    name_: 
     timerLength_: 0
-    description_: Our village needs a location!
-    artwork_: {fileID: 2800000, guid: 374f6f09c39a3db4ba4dc9c2c2da4d4e, type: 3}
+    description_: Our village needs a location! Should we settle by the river or the
+      woods?
+    artwork_: {fileID: 2800000, guid: c56f0361561364d4da86dceb7c1743f4, type: 3}
     btnText_:
-    - In the clearing by the woods!
-    - By the river!
+    - Woods!
+    - River!
   decisionEffect_:
   - name_: Woods
     starChange_: -5

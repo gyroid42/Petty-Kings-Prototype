@@ -16,7 +16,7 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     description_: After many hours you finally managed to corner the beast!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 5958bcee1a0bb9f4fb039a8ea53be00f, type: 3}
     btnText_:
     - Slay the beast yourself!
     - Leave it to the hunters!
