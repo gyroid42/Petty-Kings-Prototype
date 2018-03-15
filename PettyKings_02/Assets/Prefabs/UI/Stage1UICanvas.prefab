@@ -768,16 +768,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9940a50905e48e04ca4e14a322b50795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oneStarRequirement: 0
-  twoStarRequirement: 10
-  threeStarRequirement: 20
-  fourStarRequirement: 30
-  fiveStarRequirement: 40
-  oneStarImage: {fileID: 21300000, guid: e489cf64d2a71d949b7a669fb2be0cb8, type: 3}
-  twoStarImage: {fileID: 21300000, guid: d3b9396017bf176439e1bfe4b33431ef, type: 3}
-  threeStarImage: {fileID: 21300000, guid: 3438aeea777e2f446b9f642d026e664c, type: 3}
-  fourStarImage: {fileID: 21300000, guid: 3ea48d85ab3f2d94e998ee6166d8ca0b, type: 3}
-  fiveStarImage: {fileID: 21300000, guid: ac1a9a21736bbe84e98e2d9c384dea9d, type: 3}
+  noStarRequirement: 0
+  halfStarRequirement: 5
+  oneStarRequirement: 10
+  oneHalfStarRequirement: 15
+  twoStarRequirement: 20
+  twoHalfStarRequirement: 25
+  threeStarRequirement: 30
+  threeHalfStarRequirement: 35
+  fourStarRequirement: 40
+  fourHalfStarRequirement: 45
+  fiveStarRequirement: 50
+  noStarImage: {fileID: 21300000, guid: f7cf569c73adef041aba31eae533476f, type: 3}
+  halfStarImage: {fileID: 21300000, guid: 974da43ecb8227940853fea68a76be60, type: 3}
+  oneStarImage: {fileID: 21300000, guid: 22a59136ac12c1f44a2755399ac400b5, type: 3}
+  oneHalfStarImage: {fileID: 21300000, guid: bc4b9757585065248b76ef161f496139, type: 3}
+  twoStarImage: {fileID: 21300000, guid: db3f7e0d8f49ae448a0a5af614b9f357, type: 3}
+  twoHalfStarImage: {fileID: 21300000, guid: 90b860bcbab33de4b910ce7e04113a60, type: 3}
+  threeStarImage: {fileID: 21300000, guid: 505c59311713e194d99e0d98fb8d5d7d, type: 3}
+  threeHalfStarImage: {fileID: 21300000, guid: f17fc9f2fca4342448ec9d41e7734793, type: 3}
+  fourStarImage: {fileID: 21300000, guid: 4253aec6626f0ca4faee865ccece8a69, type: 3}
+  fourHalfStarImage: {fileID: 21300000, guid: 93d4febea9ff6e04fa65c25ea3136196, type: 3}
+  fiveStarImage: {fileID: 21300000, guid: c5b52a906d7e24c41a27930337c66d6e, type: 3}
 --- !u!114 &114805015445068430
 MonoBehaviour:
   m_ObjectHideFlags: 1
