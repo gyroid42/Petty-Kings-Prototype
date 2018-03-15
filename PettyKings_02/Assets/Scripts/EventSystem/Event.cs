@@ -73,10 +73,17 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
-        Debug.Log("event is ending");
+
+        //Debug.Log("event is ending");
+
+        foreach (BaseAction action in activeActions_)
+        {
+            action.End();
+        }
+
         if (isPooled_)
         {
-            eventController.StartEventFromPool();
+            //eventController.StartEventFromPool();
         }
     }
 
@@ -94,7 +101,7 @@ public class Event : ScriptableObject {
             {
                 // Increment action index to next action
                 actionIndex_++;
-                Debug.Log(actionIndex_);
+                //Debug.Log(actionIndex_);
 
                 // Set current action to next action
                 BaseAction nextAction = runTimeActionList_[actionIndex_];
@@ -253,6 +260,12 @@ public class Event : ScriptableObject {
         }
 
         return true;
+    }
+
+    public void EndEvent()
+    {
+
+        eventRunning_ = false;
     }
 
 }

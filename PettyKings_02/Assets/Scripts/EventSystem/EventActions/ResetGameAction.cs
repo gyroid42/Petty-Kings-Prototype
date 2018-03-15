@@ -1,26 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class StartEventAction : BaseAction {
+public class ResetGameAction : BaseAction {
 
-    // properties
-    public Event event_;
+    // Properties
 
-    private EventController eventController;
 
     // Called at start of action
     public override void Begin(Event newEvent)
     {
         base.Begin(newEvent);
 
-        type_ = ACTIONTYPE.STARTEVENT;
+        type_ = ACTIONTYPE.RESETGAME;
 
-        eventController = EventController.eventController;
-
-        eventController.StartEvent(event_);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         actionRunning_ = false;
     }
+
 
     // Called when action ends
     public override void End()
@@ -28,13 +26,9 @@ public class StartEventAction : BaseAction {
         
     }
 
-    // Called every frame the action is active
+    // Called every frame action is active
     public override bool Update()
     {
-
-
-
-
         return actionRunning_;
     }
 }
