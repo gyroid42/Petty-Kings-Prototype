@@ -54,8 +54,6 @@ public class CameraController : MonoBehaviour {
                 // Calculate the distance the camera rotates this frame and apply it to the rotation
                 transform.eulerAngles += currentGotoPosition_.rotationDirection_ * currentGotoPosition_.rotationSpeed_ * Time.deltaTime;
 
-                Debug.Log(moveDistance);
-
                 // Check if the camera is at the end of the movement
                 if ((currentGotoPosition_.position_ - transform.position).sqrMagnitude <= moveDistance.sqrMagnitude)
                 {

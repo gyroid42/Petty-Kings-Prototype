@@ -148,16 +148,6 @@ public class DecisionAction : BaseAction
     public override bool Update()
     {
 
-        // QUICK FIX FOR WEIRD BUG (SHOULD REMOVE THIS CODE WHEN BUG IS FIXED)
-        if (actionRunning_)
-        {
-            eventDisplay.gameObject.SetActive(true);
-        }
-        else
-        {
-            eventDisplay.gameObject.SetActive(false);
-        }
-
         // If timer has finished
         if (decisionTimer_.UpdateTimer())
         {
