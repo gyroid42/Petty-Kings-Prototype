@@ -74,6 +74,9 @@ public class EventDisplay : MonoBehaviour {
     void Start ()
     {
 
+        buttons_.Add(GameObject.Find("DecisionBoxLeft").GetComponent<Button>());
+        buttons_.Add(GameObject.Find("DecisionBoxRight").GetComponent<Button>());
+
         // Event display is not active when created
         gameObject.SetActive(false);
 	}
@@ -97,7 +100,7 @@ public class EventDisplay : MonoBehaviour {
     {
 
         // Destroy previous buttons
-        DestroyButtons();
+        //DestroyButtons();
 
         // If there are buttons to create
         if (displayData.btnFunctions_.Length > 0)
@@ -106,7 +109,7 @@ public class EventDisplay : MonoBehaviour {
             // Loop for each button to create
             for (int i = 0; i < displayData.btnFunctions_.Length; i++)
             {
-
+                /*
                 // Create new button
                 GameObject newButton = (GameObject)Instantiate(prefabButton);
 
@@ -121,23 +124,28 @@ public class EventDisplay : MonoBehaviour {
                 btnTransform.anchorMin = new Vector2(0, 1);
                 btnTransform.pivot = new Vector2(0, 1);
                 btnTransform.anchoredPosition = new Vector3(btnPosX + i * btnTransform.sizeDelta.x, btnPosY, 0);
-
+                */
                 // Set button text
-                if (i < displayData.btnText_.Length)
-                {
-                    newButton.GetComponentInChildren<Text>().text = displayData.btnText_[i];
-                }
-                else
-                {
-                    newButton.GetComponentInChildren<Text>().text = "option " + (i + 1);
-                }
-                // Create method for button OnClick from function pointer in display data
-                int tempInt = i;
-                ButtonDel tempButtonDel = displayData.btnFunctions_[i];
-                newButton.GetComponent<Button>().onClick.AddListener(() => tempButtonDel(tempInt));
 
-                // Add new button to button list
-                buttons_.Add(newButton.GetComponent<Button>());
+                if (i < 2)
+                {
+                    if (i < displayData.btnText_.Length)
+                    {
+                        buttons_[i].GetComponentInChildren<Text>().text = displayData.btnText_[i];
+                    }
+                    else
+                    {
+                        buttons_[i].GetComponentInChildren<Text>().text = "option " + (i + 1);
+                    }
+                    // Create method for button OnClick from function pointer in display data
+                    int tempInt = i;
+                    ButtonDel tempButtonDel = displayData.btnFunctions_[i];
+                    buttons_[i].GetComponent<Button>().onClick.AddListener(() => tempButtonDel(tempInt));
+
+                    // Add new button to button list
+                    //buttons_.Add(newButton.GetComponent<Button>());
+                }
+                
             }
         }
     }

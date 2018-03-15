@@ -26,7 +26,7 @@ public class WorldManager : MonoBehaviour {
     //Star rating variables
     public int starRating;
     private StarRating starManager; //used to update image of stars on screen
-    public GameObject starImageObject;
+    //public GameObject starImageObject;
 
     void Awake() {
 
@@ -52,7 +52,7 @@ public class WorldManager : MonoBehaviour {
         }
 
         //get star rating script
-        starManager = starImageObject.GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
+        starManager = GameObject.Find("StarRating").GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");
