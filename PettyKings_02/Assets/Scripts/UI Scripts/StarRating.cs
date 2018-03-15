@@ -7,14 +7,17 @@ public class StarRating : MonoBehaviour {
 
     private WorldManager worldController;
 
+    public int noStarRequirement;
     public int oneStarRequirement;
     public int twoStarRequirement;
     public int threeStarRequirement;
     public int fourStarRequirement;
     public int fiveStarRequirement;
+    
 
     private Image image;
 
+    public Sprite noStarImage;
     public Sprite oneStarImage;
     public Sprite twoStarImage;
     public Sprite threeStarImage;
@@ -28,15 +31,18 @@ public class StarRating : MonoBehaviour {
 
         image = this.GetComponent<Image>();
 
-        image.sprite = oneStarImage;
+        image.sprite = noStarImage;
         
     }
 
 
     public void UpdateStars(int starRating)
     {
-
-        if(starRating >= fiveStarRequirement)
+        if (starRating <= noStarRequirement)
+        {
+            image.sprite = noStarImage;  
+        }
+        else if(starRating >= fiveStarRequirement)
         {
             image.sprite = fiveStarImage;
         }
@@ -56,6 +62,8 @@ public class StarRating : MonoBehaviour {
         {
             image.sprite = oneStarImage;
         }
+
+       
         //add end condition?
 
     }

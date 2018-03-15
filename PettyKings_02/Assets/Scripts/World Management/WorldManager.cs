@@ -6,7 +6,7 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
-    GameObject[] positions; //to hold data on the tiles that define building positions
+    List<GameObject> positions; //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
@@ -31,8 +31,14 @@ public class WorldManager : MonoBehaviour {
 
        
         resources = new GameObject[5];
-        positions = new GameObject[8];
-        
+        positions = new List<GameObject>(GameObject.FindGameObjectsWithTag("BuildLocation"));
+
+        //set ground tile thickenss to 0
+        foreach(GameObject i in positions) //not working, needs fixed!
+        {
+            i.GetComponent<Renderer>().material.SetFloat("_Thickness", 0.0f);
+        }
+
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
         resources[1] = Resources.Load("Model Prefabs/GateHouse") as GameObject; //1
@@ -50,11 +56,13 @@ public class WorldManager : MonoBehaviour {
             Debug.Log("NULL RIGHT");
         }
 
+
+
         //get star rating script
         starManager = GameObject.Find("StarRating").GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
-        positions = GameObject.FindGameObjectsWithTag("BuildLocation");
+       // positions = GameObject.FindGameObjectsWithTag("BuildLocation");
         
         //spawn Gate house
         SpawnGateHouse();
@@ -88,7 +96,7 @@ public class WorldManager : MonoBehaviour {
         
         while(!completed) //check whether num is in list (always false on 1st run)
         {
-            num_ = Random.Range(0, positions.Length); //generate number
+            num_ = Random.Range(0, positions.Count - 1); //generate number
             //Debug.Log("generated num : " + num_);
             if (!lastNum.Contains(num_)) //if its not in the list, add it
             {
@@ -116,7 +124,7 @@ public class WorldManager : MonoBehaviour {
 
     }
 
-    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT:
+    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT: 
 
     public void SpawnHuntersHut()
     {
@@ -232,15 +240,31 @@ public class WorldManager : MonoBehaviour {
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++) //destroy number of pieces of wall requested, maybe make it a random rotation rather than remove?
             {
-                Destroy(wallsLeft[i]);
+                wallsLeft[i].transform.rotation = Random.rotation;
+                //Destroy(wallsLeft[i]);
             }
         }
         else if (side_ == false)//false for right side of wall
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++)
             {
-                Destroy(wallsRight[i]);
+                wallsRight[i].transform.rotation = Random.rotation;
+
+               // Destroy(wallsRight[i]);
             }
+        }
+    }
+
+    public void ResetWalls()
+    {
+        foreach(GameObject i in wallsLeft)
+        {
+            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
+        }
+
+        foreach (GameObject i in wallsRight)
+        {
+            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
         }
     }
 

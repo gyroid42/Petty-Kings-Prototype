@@ -768,11 +768,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9940a50905e48e04ca4e14a322b50795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noStarRequirement: 0
   oneStarRequirement: 0
   twoStarRequirement: 10
   threeStarRequirement: 20
   fourStarRequirement: 30
   fiveStarRequirement: 40
+  noStarImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   oneStarImage: {fileID: 21300000, guid: e489cf64d2a71d949b7a669fb2be0cb8, type: 3}
   twoStarImage: {fileID: 21300000, guid: d3b9396017bf176439e1bfe4b33431ef, type: 3}
   threeStarImage: {fileID: 21300000, guid: 3438aeea777e2f446b9f642d026e664c, type: 3}
