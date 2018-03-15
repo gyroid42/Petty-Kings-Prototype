@@ -14,6 +14,8 @@ public class OverrideEventAction : BaseAction {
     {
         base.Begin(newEvent);
 
+        type_ = ACTIONTYPE.OVERRIDEEVENT;
+
         // Get reference to event controller
         eventController = EventController.eventController;
 

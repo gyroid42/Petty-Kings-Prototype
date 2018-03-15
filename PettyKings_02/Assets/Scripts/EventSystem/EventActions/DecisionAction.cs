@@ -122,10 +122,9 @@ public class DecisionAction : BaseAction
         {
             timerFinished += StartActionList;
         }
-        else
-        {
-            timerFinished += ExitDecision;
-        }
+
+        timerFinished += ExitDecision;
+
 
 
 
@@ -166,6 +165,7 @@ public class DecisionAction : BaseAction
             // Call timer finished method
             Debug.Log("timer finished");
             timerFinished(-1);
+            decisionTimer_.Reset();
         }
 
         return actionRunning_;

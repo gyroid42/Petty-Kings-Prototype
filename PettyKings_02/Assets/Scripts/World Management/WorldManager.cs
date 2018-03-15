@@ -52,7 +52,11 @@ public class WorldManager : MonoBehaviour {
         }
 
         //get star rating script
-        starManager = starImageObject.GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
+        starManager = GameObject.Find("Stage1UICanvas").GetComponentInChildren<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
+        if (starManager == null)
+        {
+            Debug.Log("meh");
+        }
 
         //load transforms of build tiles
         positions = GameObject.FindGameObjectsWithTag("BuildLocation");

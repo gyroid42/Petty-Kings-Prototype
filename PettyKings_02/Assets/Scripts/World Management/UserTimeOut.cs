@@ -36,6 +36,5 @@ public class UserTimeOut : MonoBehaviour {
             
         }
 
-        Debug.Log(timer);
 	}
 }

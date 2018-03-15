@@ -13,6 +13,8 @@ public class ResetGameAction : BaseAction {
     {
         base.Begin(newEvent);
 
+        type_ = ACTIONTYPE.RESETGAME;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         actionRunning_ = false;
     }

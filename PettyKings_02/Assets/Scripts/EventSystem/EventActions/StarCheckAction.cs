@@ -21,6 +21,8 @@ public class StarCheckAction : BaseAction {
     {
         base.Begin(newEvent);
 
+        type_ = ACTIONTYPE.STARCHECK;
+
         // Check star rating and get action List being used
         List<BaseAction> activeActions_ = null;
         if (worldController.starRating >= testValue_)
