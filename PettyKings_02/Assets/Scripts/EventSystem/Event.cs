@@ -79,6 +79,11 @@ public class Event : ScriptableObject {
         {
             //eventController.StartEventFromPool();
         }
+
+        foreach (BaseAction action in activeActions_)
+        {
+            action.End();
+        }
     }
 
 
