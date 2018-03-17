@@ -77,7 +77,7 @@ public class Event : ScriptableObject {
         Debug.Log("event is ending");
         if (isPooled_)
         {
-            eventController.StartEventFromPool();
+            //eventController.StartEventFromPool();
         }
     }
 
@@ -194,6 +194,11 @@ public class Event : ScriptableObject {
 
         // No action was blocking
         return false;
+    }
+
+    public void EndEvent()
+    {
+        eventRunning_ = false;
     }
 
 
