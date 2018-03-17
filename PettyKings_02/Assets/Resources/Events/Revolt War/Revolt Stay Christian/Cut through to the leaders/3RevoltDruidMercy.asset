@@ -9,28 +9,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: You hunted deer
+  m_Name: 3RevoltDruidMercy
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
-    description_: You caught some deer!
-    artwork_: {fileID: 2800000, guid: 9e5fdbf98b5f30a49a773bf6907b9f94, type: 3}
+    description_: The druids, thankful for your mercy appease the local pagan population
+      before heading out into exile.
+    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
     btnText_:
-    - Continue!
-    - Continue!
+    - VICTORY
+    - VICTORY
   decisionEffect_:
-  - name_: Continue to diplo
-    starChange_: -5
+  - name_: VICTORY
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_: []
+  - name_: VICTORY
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_: []
   timerRanOutEffect_:
-    name_: Continue to diplo
-    starChange_: -5
+    name_: VICTORY
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0

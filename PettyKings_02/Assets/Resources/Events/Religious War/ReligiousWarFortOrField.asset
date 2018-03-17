@@ -9,30 +9,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: You hunted deer
+  m_Name: ReligiousWarFortOrField
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
-    description_: You caught some deer!
-    artwork_: {fileID: 2800000, guid: 9e5fdbf98b5f30a49a773bf6907b9f94, type: 3}
+    description_: Meet them in field or stay in the fort?
+    artwork_: {fileID: 0}
     btnText_:
-    - Continue!
-    - Continue!
+    - Meet them in the field!
+    - Stay in the fort!
   decisionEffect_:
-  - name_: Continue to diplo
+  - name_: Field
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 04781e70d11057740a803299e459d8bb, type: 2}
+  - name_: Fort
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 91e7c918677a5ab41a169bf5faca2fe0, type: 2}
   timerRanOutEffect_:
-    name_: Continue to diplo
+    name_: Fort
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 04781e70d11057740a803299e459d8bb, type: 2}
