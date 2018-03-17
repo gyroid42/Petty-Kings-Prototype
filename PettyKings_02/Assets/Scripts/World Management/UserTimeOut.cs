@@ -33,8 +33,8 @@ public class UserTimeOut : MonoBehaviour {
         {
             worldController.ResetWalls();
             canReload = false;
+            StateManager.stateManager.ChangeState(GAMESTATE.IDLE);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            
         }
 
 	}

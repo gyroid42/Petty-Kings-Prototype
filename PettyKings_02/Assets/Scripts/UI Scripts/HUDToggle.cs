@@ -30,4 +30,32 @@ public class HUDToggle : MonoBehaviour {
         SplashScreen_.SetActive(!t);
         SplashCamera_.SetActive(!t);
     }
+
+    // Update visible UI based on game state
+    public void UpdateUI()
+    {
+        // Get the current state
+        GAMESTATE current = StateManager.stateManager.CurrentState();
+
+        // Idle state, display preview camera
+        if (current == GAMESTATE.IDLE)
+        {
+            MainUICanvas_.SetActive(false);
+            SplashScreen_.SetActive(true);
+        }
+
+        // Menu state, disable preview camera
+        if (current == GAMESTATE.MENU)
+        {
+            MainUICanvas_.SetActive(false);
+            SplashScreen_.SetActive(false);
+        }
+
+        // Game state, display game UI
+        if (current == GAMESTATE.STAGEONE)
+        {
+            MainUICanvas_.SetActive(true);
+            SplashScreen_.SetActive(false);
+        }
+    } 
 }
