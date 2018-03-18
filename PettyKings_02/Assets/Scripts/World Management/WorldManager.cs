@@ -6,12 +6,12 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
-    GameObject[] positions; //to hold data on the tiles that define building positions
+    List<GameObject> positions = new List<GameObject>(); //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
-    static List<GameObject> wallsLeft = new List<GameObject>();
-    static List<GameObject> wallsRight = new List<GameObject>();
+    List<GameObject> wallsLeft = new List<GameObject>();
+    List<GameObject> wallsRight = new List<GameObject>();
    
 
     //Variables for wall creation
@@ -33,7 +33,6 @@ public class WorldManager : MonoBehaviour {
 
        
         resources = new GameObject[5];
-        positions = new GameObject[8];
         
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
@@ -56,7 +55,7 @@ public class WorldManager : MonoBehaviour {
         starManager = GameObject.Find("StarRating").GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
-        positions = GameObject.FindGameObjectsWithTag("BuildLocation");
+        positions.AddRange(GameObject.FindGameObjectsWithTag("BuildLocation"));
         
         //spawn Gate house
         SpawnGateHouse();
@@ -97,7 +96,7 @@ public class WorldManager : MonoBehaviour {
         
         while(!completed) //check whether num is in list (always false on 1st run)
         {
-            num_ = Random.Range(0, positions.Length); //generate number
+            num_ = Random.Range(0, positions.Count - 1); //generate number
             //Debug.Log("generated num : " + num_);
             if (!lastNum.Contains(num_)) //if its not in the list, add it
             {
