@@ -339,8 +339,8 @@ MonoBehaviour:
   scrollEdgeWidth_: 10
   zoomStepDistance_: 1
   maxZoomDistanceY_: 5
-  maxScrollDistanceX_: 40
-  maxScrollDisanceZ_: 40
+  maxScrollDistanceX_: 400
+  maxScrollDisanceZ_: 400
 --- !u!114 &114242742146227760
 MonoBehaviour:
   m_ObjectHideFlags: 1
