@@ -12,6 +12,7 @@ public class WorldManager : MonoBehaviour {
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
     static List<GameObject> wallsLeft = new List<GameObject>();
     static List<GameObject> wallsRight = new List<GameObject>();
+   
 
     //Variables for wall creation
     public Transform startPos;
@@ -65,6 +66,13 @@ public class WorldManager : MonoBehaviour {
 
         //spawn buildings
         WorldSpawn();
+
+        lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
+
+        foreach(GameObject i in positions)
+        {
+            i.transform.position = new Vector3(i.transform.position.x, Terrain.activeTerrain.SampleHeight(i.transform.position), i.transform.position.z);
+        }
         
         
     }
