@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[CreateAssetMenu(fileName = "New Reset Game Action", menuName = "EventActions/ResetGame")]
 public class ResetGameAction : BaseAction {
 
     // Properties

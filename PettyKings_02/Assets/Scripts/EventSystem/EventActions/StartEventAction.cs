@@ -14,8 +14,6 @@ public class StartEventAction : BaseAction {
     {
         base.Begin(newEvent);
 
-        type_ = ACTIONTYPE.STARTEVENT;
-
         eventController = EventController.eventController;
 
         eventController.StartEvent(event_);

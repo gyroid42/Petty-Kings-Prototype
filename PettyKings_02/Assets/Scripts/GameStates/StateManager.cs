@@ -12,7 +12,8 @@ public enum GAMESTATE
     STAGEONE,
     STAGETWO,
     STAGETHREE,
-    GAMEOVER
+    GAMEOVER,
+    IDLE
 };
 
 public class StateManager : MonoBehaviour {
@@ -31,6 +32,9 @@ public class StateManager : MonoBehaviour {
     private SplineController SplineController_;
     private EventController eventController_;
 
+    private Camera mainCam;
+    private Camera previewCam;
+
     // CameraMoveEvents
     private Event camMenuToGame_;
 
@@ -38,17 +42,14 @@ public class StateManager : MonoBehaviour {
     // When object is created
     void Awake()
     {
-
         // Check if a stateManager already exists
         if (stateManager == null)
         {
-
             // If not set the static reference to this object
             stateManager = this;
         }
         else if (stateManager != this)
         {
-
             // Else if a different stateManager already exists destroy this object
             Destroy(gameObject);
         }
@@ -57,7 +58,6 @@ public class StateManager : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
         // When destroyed remove static reference to itself
         stateManager = null;
     }
@@ -65,26 +65,46 @@ public class StateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        CurrentState_ = GAMESTATE.MENU;
+        CurrentState_ = GAMESTATE.IDLE;
 
         // Locate scripts
         CameraController_ = Camera.main.GetComponent<CameraController>();
         SplineController_ = Camera.main.GetComponent<SplineController>();
         eventController_ = EventController.eventController;
+
+        foreach (Camera c in Camera.allCameras)
+        {
+            if(c.gameObject.name == "Main Camera")
+            {
+                mainCam = c;
+            }
+            else if (c.gameObject.name == "SplashScreenCam")
+            {
+                previewCam = c;
+            }
+        }
         
         GameUI_ = GetComponent<HUDToggle>();
 
         // Set UI to be inactive at start
-        OverlayActive_ = false;
-        GameUI_.UIVisible(OverlayActive_);
+        //OverlayActive_ = false;
+        //GameUI_.UIVisible(OverlayActive_);
+        GameUI_.UpdateUI();
 
         // NO LONGER USED FOR CAMERA MOVEMENT
         //camMenuToGame_ = Resources.Load("Events/GameStateController/GotoGameStart") as Event;
+
+        // Set Active cameras
+        mainCam.enabled = false;
+        previewCam.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeState(GAMESTATE.MENU);
+        }
 	}
 
     // Get State
@@ -94,7 +114,7 @@ public class StateManager : MonoBehaviour {
     }
 
     // Change the game's state
-    void ChangeState(GAMESTATE newState)
+    public void ChangeState(GAMESTATE newState)
     {
         CurrentState_ = newState;
 
@@ -107,7 +127,21 @@ public class StateManager : MonoBehaviour {
         {
             OverlayActive_ = true;
         }
-        GameUI_.UIVisible(OverlayActive_);
+        //GameUI_.UIVisible(OverlayActive_);
+        
+        if(CurrentState_ == GAMESTATE.IDLE)
+        {
+            mainCam.enabled = false;
+            previewCam.enabled = true;
+        }
+        else
+        {
+            previewCam.enabled = false;
+            mainCam.enabled = true;
+        }
+
+        // Update game UI
+        GameUI_.UpdateUI();
     }
 
     public void ReturnToMenu()
@@ -120,8 +154,6 @@ public class StateManager : MonoBehaviour {
     {
         ChangeState(GAMESTATE.STAGEONE);
         CameraStageOne();
-        SeasonController.seasonController.StartTimer();
-        SeasonController.seasonController.StartGame();
     }
     
     // CAMERA MOVEMENTS

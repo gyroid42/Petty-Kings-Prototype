@@ -19,8 +19,6 @@ public class SplineCameraMove : BaseAction {
     {
         base.Begin(newEvent);
 
-        type_ = ACTIONTYPE.SPLINECAMERA;
-
         // Setup reference to spline controller
         splineController = Camera.main.GetComponent<SplineController>();
 
@@ -34,6 +32,7 @@ public class SplineCameraMove : BaseAction {
     public override void End()
     {
 
+        Debug.Log("spline move ended");
     }
 
 
