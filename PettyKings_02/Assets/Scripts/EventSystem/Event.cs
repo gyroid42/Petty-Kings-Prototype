@@ -100,7 +100,6 @@ public class Event : ScriptableObject {
             {
                 // Increment action index to next action
                 actionIndex_++;
-                Debug.Log(actionIndex_);
 
                 // Set current action to next action
                 BaseAction nextAction = runTimeActionList_[actionIndex_];
@@ -157,21 +156,23 @@ public class Event : ScriptableObject {
                 // Remove the action from the active list
                 activeActions_.RemoveAt(i);
 
-
-                // If no event is blocking stop blocking
-                if (!CheckEventsBlocking())
+                if (eventRunning_)
                 {
-                    blocked_ = false;
-                    GotoNextAction();
-                }
+                    // If no event is blocking stop blocking
+                    if (!CheckEventsBlocking())
+                    {
+                        blocked_ = false;
+                        GotoNextAction();
+                    }
 
-                // If no more actions in active list
-                if (activeActions_.Count <= 0)
-                {
-                    blocked_ = false;
-                    // Goto next action and Break out of loop
-                    GotoNextAction();
-                    break;
+                    // If no more actions in active list
+                    if (activeActions_.Count <= 0)
+                    {
+                        blocked_ = false;
+                        // Goto next action and Break out of loop
+                        GotoNextAction();
+                        break;
+                    }
                 }
             }
 
