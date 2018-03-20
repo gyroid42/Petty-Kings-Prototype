@@ -105,15 +105,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395984999672338}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.944, y: 0.826, z: -27.331}
+  m_LocalRotation: {x: -0, y: 0.30469036, z: -0, w: 0.95245147}
+  m_LocalPosition: {x: -10.18, y: 25.08, z: 7.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4021232837299822}
   - {fileID: 4244772780119282}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.538, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 35.479, z: 0}
 --- !u!20 &20603941146304882
 Camera:
   m_ObjectHideFlags: 1
@@ -339,8 +339,8 @@ MonoBehaviour:
   scrollEdgeWidth_: 10
   zoomStepDistance_: 1
   maxZoomDistanceY_: 5
-  maxScrollDistanceX_: 40
-  maxScrollDisanceZ_: 40
+  maxScrollDistanceX_: 400
+  maxScrollDisanceZ_: 400
 --- !u!114 &114242742146227760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 1713128130418308, guid: a29b2f554dd6f6c4293aa2213d9a4b4f, type: 2}
+  SplineRoot: {fileID: 1431759431243224, guid: e7e4b9a5a4bcdec41bb94fbcdde13159, type: 2}
   Duration: 5
   OrientationMode: 0
   WrapMode: 0
