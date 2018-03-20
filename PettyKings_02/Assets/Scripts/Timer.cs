@@ -89,6 +89,11 @@ public class Timer {
         return false;
     }
 
+    public float TimerPercentage()
+    {
+        return timer_ / totalTime_;
+    }
+
 
 
     public void displayTimeRemaining()

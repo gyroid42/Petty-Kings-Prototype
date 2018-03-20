@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // Data for displaying an event
@@ -12,6 +13,8 @@ public struct EventDisplayData {
 
     // Timer for event
     public float timerLength_;
+
+    public Sprite decisionLogo_;
 
     // Text in Description box
     [TextArea(3, 5)]
