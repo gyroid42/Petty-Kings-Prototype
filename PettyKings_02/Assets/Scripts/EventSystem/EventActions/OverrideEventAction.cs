@@ -16,6 +16,8 @@ public class OverrideEventAction : BaseAction {
     {
         base.Begin(newEvent);
 
+        Debug.Log("Override begin");
+
         type_ = ACTIONTYPE.OVERRIDEEVENT;
 
         // Get reference to event controller
@@ -30,6 +32,7 @@ public class OverrideEventAction : BaseAction {
 
         // End the action
         actionRunning_ = false;
+
     }
 
     // Called when action ends
