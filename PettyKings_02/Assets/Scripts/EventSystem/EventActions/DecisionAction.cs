@@ -150,6 +150,7 @@ public class DecisionAction : BaseAction
     {
 
         // QUICK FIX FOR WEIRD BUG (SHOULD REMOVE THIS CODE WHEN BUG IS FIXED)
+        /*
         if (actionRunning_)
         {
             eventDisplay.gameObject.SetActive(true);
@@ -158,6 +159,7 @@ public class DecisionAction : BaseAction
         {
             eventDisplay.gameObject.SetActive(false);
         }
+        */
 
         // If timer has finished
         if (decisionTimer_.UpdateTimer())
@@ -167,6 +169,8 @@ public class DecisionAction : BaseAction
             Debug.Log("timer finished");
             timerFinished(-1);
         }
+
+        eventDisplay.UpdateTimerBar(decisionTimer_.TimerPercentage());
 
         return actionRunning_;
     }
