@@ -3433,6 +3433,8 @@ MonoBehaviour:
   nameText_: {fileID: 114279837105351592}
   descriptionText_: {fileID: 114191743957104200}
   artworkImage_: {fileID: 114621457277963734}
+  decisionTypeLogo_: {fileID: 114856092261122156}
+  timerBar_: {fileID: 114373883928667334}
   btnSizeX: 500
   btnSizeY: 50
   btnPosY: -300
