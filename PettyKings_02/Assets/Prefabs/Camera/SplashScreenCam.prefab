@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 1477617113006304, guid: 948a4addb0180b34f85a4ecd197db36b, type: 2}
+  SplineRoot: {fileID: 1018364283632266, guid: e7e4b9a5a4bcdec41bb94fbcdde13159, type: 2}
   Duration: 14
   OrientationMode: 0
   WrapMode: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4727816c6854baa4982bc1ed9a3703d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: -2.159542, y: 0, z: 5.806141}
+  target: {x: 116.14, y: 4.48, z: 98.05}
 --- !u!114 &114844206207464748
 MonoBehaviour:
   m_ObjectHideFlags: 1
