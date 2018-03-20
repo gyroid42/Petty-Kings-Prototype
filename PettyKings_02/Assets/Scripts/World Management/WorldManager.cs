@@ -6,12 +6,13 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
-    GameObject[] positions; //to hold data on the tiles that define building positions
+    List<GameObject> positions = new List<GameObject>(); //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
-    static List<GameObject> wallsLeft = new List<GameObject>();
-    static List<GameObject> wallsRight = new List<GameObject>();
+    List<GameObject> wallsLeft = new List<GameObject>();
+    List<GameObject> wallsRight = new List<GameObject>();
+   
 
     //Variables for wall creation
     public Transform startPos;
@@ -26,12 +27,12 @@ public class WorldManager : MonoBehaviour {
     //Star rating variables
     public int starRating;
     private StarRating starManager; //used to update image of stars on screen
+    //public GameObject starImageObject;
 
     void Awake() {
 
        
         resources = new GameObject[5];
-        positions = new GameObject[8];
         
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
@@ -54,7 +55,7 @@ public class WorldManager : MonoBehaviour {
         starManager = GameObject.Find("StarRating").GetComponent<StarRating>(); //GameObject.FindGameObjectWithTag("StarRatingUI").GetComponent<StarRating>();
 
         //load transforms of build tiles
-        positions = GameObject.FindGameObjectsWithTag("BuildLocation");
+        positions.AddRange(GameObject.FindGameObjectsWithTag("BuildLocation"));
         
         //spawn Gate house
         SpawnGateHouse();
@@ -64,6 +65,13 @@ public class WorldManager : MonoBehaviour {
 
         //spawn buildings
         WorldSpawn();
+
+        lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
+
+        foreach(GameObject i in positions)
+        {
+            i.transform.position = new Vector3(i.transform.position.x, Terrain.activeTerrain.SampleHeight(i.transform.position), i.transform.position.z);
+        }
         
         
     }
@@ -88,7 +96,7 @@ public class WorldManager : MonoBehaviour {
         
         while(!completed) //check whether num is in list (always false on 1st run)
         {
-            num_ = Random.Range(0, positions.Length); //generate number
+            num_ = Random.Range(0, positions.Count - 1); //generate number
             //Debug.Log("generated num : " + num_);
             if (!lastNum.Contains(num_)) //if its not in the list, add it
             {
@@ -116,7 +124,7 @@ public class WorldManager : MonoBehaviour {
 
     }
 
-    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT: 
+    //SPAWN ALL BUILDINGS TAKING TERRAIN HEIGHT INTO ACCOUNT:
 
     public void SpawnHuntersHut()
     {
@@ -232,31 +240,15 @@ public class WorldManager : MonoBehaviour {
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++) //destroy number of pieces of wall requested, maybe make it a random rotation rather than remove?
             {
-                wallsLeft[i].transform.rotation = Random.rotation;
-                //Destroy(wallsLeft[i]);
+                Destroy(wallsLeft[i]);
             }
         }
         else if (side_ == false)//false for right side of wall
         {
             for (int i = startPos_; i < startPos_ + numberToRemove_; i++)
             {
-                wallsRight[i].transform.rotation = Random.rotation;
-
-               // Destroy(wallsRight[i]);
+                Destroy(wallsRight[i]);
             }
-        }
-    }
-
-    public void ResetWalls()
-    {
-        foreach(GameObject i in wallsLeft)
-        {
-            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
-        }
-
-        foreach (GameObject i in wallsRight)
-        {
-            i.transform.rotation = Quaternion.Euler(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 180.0f), Random.Range(-5.0f, 5.0f));
         }
     }
 

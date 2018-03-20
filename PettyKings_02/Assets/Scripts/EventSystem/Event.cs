@@ -58,6 +58,7 @@ public class Event : ScriptableObject {
 
         // Start next action
         GotoNextAction();
+
     }
 
     // Called every frame event is happening
@@ -73,17 +74,15 @@ public class Event : ScriptableObject {
     // Called when event ends
     public void End()
     {
-
-        //Debug.Log("event is ending");
+        Debug.Log("event is ending");
+        if (isPooled_)
+        {
+            //eventController.StartEventFromPool();
+        }
 
         foreach (BaseAction action in activeActions_)
         {
             action.End();
-        }
-
-        if (isPooled_)
-        {
-            //eventController.StartEventFromPool();
         }
     }
 
@@ -101,7 +100,7 @@ public class Event : ScriptableObject {
             {
                 // Increment action index to next action
                 actionIndex_++;
-                //Debug.Log(actionIndex_);
+                Debug.Log(actionIndex_);
 
                 // Set current action to next action
                 BaseAction nextAction = runTimeActionList_[actionIndex_];
@@ -202,6 +201,11 @@ public class Event : ScriptableObject {
         return false;
     }
 
+    public void EndEvent()
+    {
+        eventRunning_ = false;
+    }
+
 
     public bool StartAction(BaseAction newAction)
     {
@@ -260,12 +264,6 @@ public class Event : ScriptableObject {
         }
 
         return true;
-    }
-
-    public void EndEvent()
-    {
-
-        eventRunning_ = false;
     }
 
 }

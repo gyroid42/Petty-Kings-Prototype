@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New StarCheck", menuName = "EventActions/StarCheck")]
 public class StarCheckAction : BaseAction {
 
     // Properties

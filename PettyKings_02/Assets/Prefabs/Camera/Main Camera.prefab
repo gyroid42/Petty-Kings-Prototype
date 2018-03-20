@@ -339,8 +339,8 @@ MonoBehaviour:
   scrollEdgeWidth_: 10
   zoomStepDistance_: 1
   maxZoomDistanceY_: 5
-  maxScrollDistanceX_: 40
-  maxScrollDisanceZ_: 40
+  maxScrollDistanceX_: 400
+  maxScrollDisanceZ_: 400
 --- !u!114 &114242742146227760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 1395259599851452, guid: a29b2f554dd6f6c4293aa2213d9a4b4f, type: 2}
+  SplineRoot: {fileID: 1713128130418308, guid: a29b2f554dd6f6c4293aa2213d9a4b4f, type: 2}
   Duration: 5
   OrientationMode: 0
   WrapMode: 0

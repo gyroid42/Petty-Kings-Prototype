@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(fileName = "New Override Event", menuName = "EventActions/OverrideEvent")]
 public class OverrideEventAction : BaseAction {
 
     // Properties

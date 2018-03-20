@@ -122,9 +122,10 @@ public class DecisionAction : BaseAction
         {
             timerFinished += StartActionList;
         }
-
-        timerFinished += ExitDecision;
-
+        else
+        {
+            timerFinished += ExitDecision;
+        }
 
 
 
@@ -148,6 +149,18 @@ public class DecisionAction : BaseAction
     public override bool Update()
     {
 
+        // QUICK FIX FOR WEIRD BUG (SHOULD REMOVE THIS CODE WHEN BUG IS FIXED)
+        /*
+        if (actionRunning_)
+        {
+            eventDisplay.gameObject.SetActive(true);
+        }
+        else
+        {
+            eventDisplay.gameObject.SetActive(false);
+        }
+        */
+
         // If timer has finished
         if (decisionTimer_.UpdateTimer())
         {
@@ -155,8 +168,9 @@ public class DecisionAction : BaseAction
             // Call timer finished method
             Debug.Log("timer finished");
             timerFinished(-1);
-            decisionTimer_.Reset();
         }
+
+        eventDisplay.UpdateTimerBar(decisionTimer_.TimerPercentage());
 
         return actionRunning_;
     }
