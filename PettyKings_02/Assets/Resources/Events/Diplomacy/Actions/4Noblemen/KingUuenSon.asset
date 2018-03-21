@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    decisionLogo_: {fileID: 0}
     description_: King Uuen has requested that you help foster his third son Uurad
     artwork_: {fileID: 0}
     btnText_:
@@ -43,4 +44,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 2e7b916efb0d93d42b04c086d9ff8447, type: 2}
