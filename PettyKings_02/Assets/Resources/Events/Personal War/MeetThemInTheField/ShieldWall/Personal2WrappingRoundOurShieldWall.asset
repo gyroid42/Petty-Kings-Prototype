@@ -29,7 +29,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 9edf4ad5b5e93b94eb99e0272e465c77, type: 2}
+    - {fileID: 11400000, guid: b5d6c1b948326ce448bafdefee53a32b, type: 2}
   - name_: Hold out!
     starChange_: -5
     addEvent_: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 8aaba6e3fc870464d86a8addf7f655b0, type: 2}
+    - {fileID: 11400000, guid: d7ca3f6ad01a1e643bac456fb9169013, type: 2}
   timerRanOutEffect_:
     name_: Hold out!
     starChange_: -5
@@ -46,4 +46,4 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 8aaba6e3fc870464d86a8addf7f655b0, type: 2}
+    - {fileID: 11400000, guid: d7ca3f6ad01a1e643bac456fb9169013, type: 2}

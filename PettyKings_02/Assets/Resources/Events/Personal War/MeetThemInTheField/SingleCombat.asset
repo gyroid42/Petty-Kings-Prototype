@@ -16,15 +16,34 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: 
+    description_: King Uuen challenges you to a duel of single combat... Do you accept?
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - Accept the challenge!
+    - Nope!
+  decisionEffect_:
+  - name_: Accept the challenge!
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 0}
+  - name_: Nope!
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 93c50ac2cd78b79449a1f9e265bb572c, type: 2}
+  timerRanOutEffect_:
+    name_: nope!
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 93c50ac2cd78b79449a1f9e265bb572c, type: 2}

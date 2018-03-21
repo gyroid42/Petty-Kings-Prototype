@@ -9,42 +9,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: PersonalRefuseHisDemands
+  m_Name: PersonalRefuseHisDemands 11
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: After refusing his demands of surrender, King Uuen assaults the
-      fort with dozens of men
-    artwork_: {fileID: 0}
+    description_: Wave after wave of King uuen's men assult the fort but after many
+      hours the Christen King's men break and flee back to their homes...
+    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
     btnText_:
-    - Hold strong!
-    - Hold strong!
+    - VICTORY!
+    - VICTORY!
   decisionEffect_:
-  - name_: Hold strong!
+  - name_: VICTORY!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
-  - name_: Hold strong
+    effects_: []
+  - name_: VICTORY!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    effects_: []
   timerRanOutEffect_:
-    name_: Hold strong
+    name_: VICTORY!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    effects_: []

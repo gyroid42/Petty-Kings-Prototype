@@ -9,42 +9,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: PersonalRefuseHisDemands
+  m_Name: PersonalSurrenderTheFort1
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: After refusing his demands of surrender, King Uuen assaults the
-      fort with dozens of men
+    description_: You promise to surrender the fort with no figth and to convert to
+      the true religion of Christ!
     artwork_: {fileID: 0}
     btnText_:
-    - Hold strong!
-    - Hold strong!
+    - Theres nothing else to be done...
+    - Theres nothing else to be done...
   decisionEffect_:
-  - name_: Hold strong!
-    starChange_: 5
+  - name_: Theres nothing else to be done...
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
-  - name_: Hold strong
-    starChange_: 5
+    - {fileID: 11400000, guid: ba88bd643d0036744a350f1c958849e6, type: 2}
+  - name_: Theres nothing else to be done...
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    - {fileID: 11400000, guid: ba88bd643d0036744a350f1c958849e6, type: 2}
   timerRanOutEffect_:
-    name_: Hold strong
-    starChange_: 5
+    name_: Theres nothing else to be done...
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    - {fileID: 11400000, guid: ba88bd643d0036744a350f1c958849e6, type: 2}
