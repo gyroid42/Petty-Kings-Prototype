@@ -3473,6 +3473,10 @@ MonoBehaviour:
     type: 2}
   bounceDisplay: {fileID: 1656075572398422, guid: d6fd8bac4ab8de34a8bbffaa1f1a18b8,
     type: 2}
+  diplomacyLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
+  domesticLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
+  religionLogo_: {fileID: 2800000, guid: 1104086a887024d4599c1c991fd10b4e, type: 3}
+  warLogo_: {fileID: 2800000, guid: 5783d9bf056804541807af0754659e27, type: 3}
   nameText_: {fileID: 114279837105351592}
   eventWindow_: {fileID: 1913368606136530}
   descriptionText_: {fileID: 114191743957104200}
