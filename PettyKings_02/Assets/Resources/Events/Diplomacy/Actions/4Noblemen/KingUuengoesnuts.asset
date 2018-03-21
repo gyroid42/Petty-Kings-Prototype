@@ -15,7 +15,8 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    description_: king Uuen sends a messanger back with a warning about what may happen
+    decisionLogo_: {fileID: 0}
+    description_: King Uuen sends a messanger back with a warning about what may happen
       if we refuse again...
     artwork_: {fileID: 0}
     btnText_:
@@ -28,7 +29,8 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: c20b6b37cddd5584cb8e339d2d7760d0, type: 2}
   - name_: Apologies
     starChange_: -5
     addEvent_: 0
@@ -43,4 +45,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: c20b6b37cddd5584cb8e339d2d7760d0, type: 2}

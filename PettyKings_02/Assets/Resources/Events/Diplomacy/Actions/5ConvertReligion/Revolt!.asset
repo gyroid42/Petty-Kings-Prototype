@@ -15,15 +15,35 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    decisionLogo_: {fileID: 0}
     description_: Yo this is Korg and we're having a revolution
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - Oh no...
+    - Oh no...
+  decisionEffect_:
+  - name_: Oh no...
+    starChange_: -10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
+  - name_: Oh no...
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
+  timerRanOutEffect_:
+    name_: Revolt
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
