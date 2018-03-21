@@ -23,6 +23,13 @@ public class EventDisplay : MonoBehaviour {
 
     public GameObject bounceDisplay;
 
+
+    public Texture diplomacyLogo_;
+    public Texture domesticLogo_;
+    public Texture religionLogo_;
+    public Texture warLogo_;
+
+
     // References to parts of event screen for displaying data
     public Text nameText_;
 
@@ -102,7 +109,26 @@ public class EventDisplay : MonoBehaviour {
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
         artworkImage_.texture = displayData.artwork_;
-        decisionTypeLogo_.texture = displayData.decisionLogo_;
+
+        switch (displayData.type_)
+        {
+            case DECISIONTYPE.DIPLOMACY:
+                decisionTypeLogo_.texture = diplomacyLogo_;
+                break;
+            case DECISIONTYPE.DOMESTIC:
+                decisionTypeLogo_.texture = domesticLogo_;
+                break;
+            case DECISIONTYPE.RELIGION:
+                decisionTypeLogo_.texture = religionLogo_;
+                break;
+            case DECISIONTYPE.WAR:
+                decisionTypeLogo_.texture = warLogo_;
+                break;
+            default:
+                decisionTypeLogo_.texture = null;
+                break;
+        }
+        //decisionTypeLogo_.texture = displayData.decisionLogo_;
 
         // Create the buttons
         CreateButtons(displayData);
