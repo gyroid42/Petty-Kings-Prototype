@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
+  m_Name: SurrenderTheFort
+  m_EditorClassIdentifier: 
+  isBlocking_: 1
+  mainDisplay_:
+    name_: 
+    timerLength_: 0
+    description_: You promise to surrender the fort with no figth and to convert to
+      the true religion of Christ!
+    artwork_: {fileID: 0}
+    btnText_:
+    - Theres nothing else to be done...
+    - Theres nothing else to be done...
+  decisionEffect_:
+  - name_: Theres nothing else to be done...
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
+  - name_: Theres nothing else to be done...
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
+  timerRanOutEffect_:
+    name_: Theres nothing else to be done...
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
