@@ -76,7 +76,7 @@ public class EventController : MonoBehaviour {
     public void GameStart()
     {
 
-        introEvents_ = new List<Event>(Resources.LoadAll("Events/Diplomacy", typeof(Event)).Cast<Event>().ToArray());
+        introEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
 
         introEvents_[introEvents_.Count - 1].isPooled_ = true;
 
