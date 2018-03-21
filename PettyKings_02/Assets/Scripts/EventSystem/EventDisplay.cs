@@ -27,7 +27,7 @@ public class EventDisplay : MonoBehaviour {
 
     public Text descriptionText_;
     public RawImage artworkImage_;
-    public Image decisionTypeLogo_;
+    public RawImage decisionTypeLogo_;
     public Image timerBar_;
 
     // Button variable
@@ -89,7 +89,7 @@ public class EventDisplay : MonoBehaviour {
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
         artworkImage_.texture = displayData.artwork_;
-        decisionTypeLogo_.sprite = displayData.decisionLogo_;
+        decisionTypeLogo_.texture = displayData.decisionLogo_;
 
         // Create the buttons
         CreateButtons(displayData);

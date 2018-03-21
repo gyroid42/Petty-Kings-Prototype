@@ -14,7 +14,7 @@ public struct EventDisplayData {
     // Timer for event
     public float timerLength_;
 
-    public Sprite decisionLogo_;
+    public Texture decisionLogo_;
 
     // Text in Description box
     [TextArea(3, 5)]
