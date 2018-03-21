@@ -128,30 +128,43 @@ public class WorldManager : MonoBehaviour {
 
     public void SpawnHuntersHut()
     {
-        buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        }
+        
     }
 
     public void SpawnWoodHut()
     {
-        buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
-       buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        }
     }
 
 
     private void SpawnGateHouse()
     {
-        buildings.Add(Instantiate(resources[1], startPos));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[1], startPos));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        }
     }
 
     public void SpawnChiefHut()
     {
-        buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        }
     }
 
 
@@ -167,6 +180,11 @@ public class WorldManager : MonoBehaviour {
                 BuildWallLeft();
          
             }   
+
+            if(Input.GetKeyDown("e"))
+        {
+            SpawnHuntersHut();
+        }
 
     }
 
