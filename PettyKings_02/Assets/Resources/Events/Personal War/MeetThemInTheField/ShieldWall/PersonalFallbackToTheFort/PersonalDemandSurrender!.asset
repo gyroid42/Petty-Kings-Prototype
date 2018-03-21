@@ -30,7 +30,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 3ede18ded2ebe354d90954343432eb6e, type: 2}
+    - {fileID: 11400000, guid: 218419ecc8074374d80260a160c2c9bc, type: 2}
   - name_: Refuse his demands!
     starChange_: 5
     addEvent_: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: ef8e35ca9b33fa746b712853beb64c35, type: 2}
+    - {fileID: 11400000, guid: 2ce181e43526ae6458e10a419882d468, type: 2}
   timerRanOutEffect_:
     name_: Refuse his demands
     starChange_: 5
@@ -47,4 +47,4 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: ef8e35ca9b33fa746b712853beb64c35, type: 2}
+    - {fileID: 11400000, guid: 2ce181e43526ae6458e10a419882d468, type: 2}

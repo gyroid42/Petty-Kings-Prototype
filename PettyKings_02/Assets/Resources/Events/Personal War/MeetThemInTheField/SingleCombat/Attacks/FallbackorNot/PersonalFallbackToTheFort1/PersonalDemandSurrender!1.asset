@@ -9,29 +9,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: PersonalRefuseHisDemands
+  m_Name: PersonalDemandSurrender!1
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: After refusing his demands of surrender, King Uuen assaults the
-      fort with dozens of men
+    description_: With the fort surrounded and no way to escape, King Uuen demands
+      the surrender of the fort and your personal conversion to Christianity!
     artwork_: {fileID: 0}
     btnText_:
-    - Hold strong!
-    - Hold strong!
+    - Surrender the fort and promise to convert!
+    - Refuse his demands!
   decisionEffect_:
-  - name_: Hold strong!
-    starChange_: 5
+  - name_: Surrender the fort!
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
-  - name_: Hold strong
+    - {fileID: 11400000, guid: e6de247bda60f884ea2fc87687f46810, type: 2}
+  - name_: Refuse his demands!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
     effects_:
     - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
   timerRanOutEffect_:
-    name_: Hold strong
+    name_: Refuse his demands
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}

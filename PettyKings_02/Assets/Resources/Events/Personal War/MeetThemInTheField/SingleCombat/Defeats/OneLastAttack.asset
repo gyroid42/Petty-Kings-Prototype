@@ -9,42 +9,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: PersonalRefuseHisDemands
+  m_Name: OneLastAttack
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: After refusing his demands of surrender, King Uuen assaults the
-      fort with dozens of men
+    description_: You try to rise to continue fighting, before you're on your feet
+      Uuen drives his sword into your stomach!
     artwork_: {fileID: 0}
     btnText_:
-    - Hold strong!
-    - Hold strong!
+    - Arrrgh!
+    - Arrrgh!
   decisionEffect_:
-  - name_: Hold strong!
-    starChange_: 5
+  - name_: Arrrgh!
+    starChange_: -10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
-  - name_: Hold strong
-    starChange_: 5
+    effects_: []
+  - name_: Arrrgh!
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    effects_: []
   timerRanOutEffect_:
-    name_: Hold strong
-    starChange_: 5
+    name_: Arrrgh!
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    effects_: []
