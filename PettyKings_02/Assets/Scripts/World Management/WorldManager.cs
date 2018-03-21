@@ -169,9 +169,9 @@ public class WorldManager : MonoBehaviour {
             }   
 
             if(Input.GetKeyDown("e"))
-        {
+             {
             SpawnChiefHut();
-        }
+             }
 
             foreach(GameObject i in buildings)
             {
