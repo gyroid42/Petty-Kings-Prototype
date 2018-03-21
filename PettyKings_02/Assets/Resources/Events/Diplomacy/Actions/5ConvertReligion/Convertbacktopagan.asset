@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    decisionLogo_: {fileID: 0}
     description_: A group of local druids come to you begging you to convert back
       to paganism
     artwork_: {fileID: 0}
@@ -45,4 +46,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 5ca3b47c62e37db4d91b5d90549e9b15, type: 2}

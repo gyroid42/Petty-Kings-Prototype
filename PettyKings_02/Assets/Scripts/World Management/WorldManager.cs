@@ -129,15 +129,15 @@ public class WorldManager : MonoBehaviour {
     public void SpawnHuntersHut()
     {
         buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+       // buildings[buildings.Count - 1].transform.LookAt(lookAt);
     }
 
     public void SpawnWoodHut()
     {
         buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+       // buildings[buildings.Count - 1].transform.LookAt(lookAt);
     }
 
 
@@ -150,8 +150,8 @@ public class WorldManager : MonoBehaviour {
     public void SpawnChiefHut()
     {
         buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+        //buildings[buildings.Count - 1].transform.LookAt(lookAt);
     }
 
 
@@ -167,6 +167,14 @@ public class WorldManager : MonoBehaviour {
                 BuildWallLeft();
          
             }   
+
+            foreach(GameObject i in buildings)
+            {
+            if (i.transform.position.y < 5.0f)
+            {
+                i.transform.LookAt(lookAt); ///SUPER INNEFICIENT, CHANGE FOR FINAL RELEASE!! //////////
+            }
+            }
     }
 
 

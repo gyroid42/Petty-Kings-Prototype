@@ -9,42 +9,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: ReligiousWarIntroduction
+  m_Name: 2ReligiousWarFortOrField
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
-    description_: With your decision to not convert to the true Christian religion
-      King Uuen has gathered over two hundred men in order to maintain the Christian
-      kingdom!
+    decisionLogo_: {fileID: 0}
+    description_: Meet them in field or stay in the saftey of the fort?
     artwork_: {fileID: 0}
     btnText_:
-    - Worrisome...
-    - Worrisome...
+    - Meet them in the field!
+    - Stay in the fort!
   decisionEffect_:
-  - name_: Worrisome...
-    starChange_: 0
+  - name_: Field
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: fc76012426aac0b47a7d9570abd6daab, type: 2}
-  - name_: Worrisome...
-    starChange_: 0
+    - {fileID: 11400000, guid: 04781e70d11057740a803299e459d8bb, type: 2}
+  - name_: Fort
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: fc76012426aac0b47a7d9570abd6daab, type: 2}
+    - {fileID: 11400000, guid: 91e7c918677a5ab41a169bf5faca2fe0, type: 2}
   timerRanOutEffect_:
-    name_: Worrisome...
-    starChange_: 0
+    name_: Fort
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: fc76012426aac0b47a7d9570abd6daab, type: 2}
+    - {fileID: 11400000, guid: 04781e70d11057740a803299e459d8bb, type: 2}
