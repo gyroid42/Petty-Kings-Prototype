@@ -21,10 +21,12 @@ public class EventDisplay : MonoBehaviour {
     public GameObject prefabButton;
 
 
+    public GameObject bounceDisplay;
 
     // References to parts of event screen for displaying data
     public Text nameText_;
 
+    public GameObject eventWindow_;
     public Text descriptionText_;
     public RawImage artworkImage_;
     public RawImage decisionTypeLogo_;
@@ -85,6 +87,17 @@ public class EventDisplay : MonoBehaviour {
 
     public void Display(EventDisplayData displayData)
     {
+
+        GameObject oldDisplay = Instantiate(bounceDisplay);
+
+        GameObject oldWindow = Instantiate(eventWindow_);
+
+        oldWindow.transform.position = eventWindow_.transform.position;
+
+        oldWindow.transform.SetParent(oldDisplay.transform);
+
+        oldDisplay.transform.SetParent(transform);
+
         // Set all display elements with data from event
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
