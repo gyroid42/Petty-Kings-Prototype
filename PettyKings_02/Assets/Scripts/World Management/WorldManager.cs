@@ -66,7 +66,7 @@ public class WorldManager : MonoBehaviour {
         //spawn buildings
         WorldSpawn();
 
-        lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
+        //lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
 
         foreach(GameObject i in positions)
         {
@@ -181,10 +181,6 @@ public class WorldManager : MonoBehaviour {
          
             }   
 
-            if(Input.GetKeyDown("e"))
-        {
-            SpawnHuntersHut();
-        }
 
     }
 
