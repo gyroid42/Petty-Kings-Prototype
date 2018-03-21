@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    decisionLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
     description_: Our village needs a location! Should we settle by the river or the
       woods?
     artwork_: {fileID: 2800000, guid: c56f0361561364d4da86dceb7c1743f4, type: 3}

@@ -29,6 +29,8 @@ public class WorldManager : MonoBehaviour {
     private StarRating starManager; //used to update image of stars on screen
     //public GameObject starImageObject;
 
+    public float buildingFallSpeed_;
+
     void Awake() {
 
        
@@ -66,7 +68,7 @@ public class WorldManager : MonoBehaviour {
         //spawn buildings
         WorldSpawn();
 
-        lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
+        //lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
 
         foreach(GameObject i in positions)
         {
@@ -131,13 +133,15 @@ public class WorldManager : MonoBehaviour {
         buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
         buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
         buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
     }
 
     public void SpawnWoodHut()
     {
         buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
         buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
-       buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
     }
 
 
@@ -152,6 +156,7 @@ public class WorldManager : MonoBehaviour {
         buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
         buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
         buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
     }
 
 
