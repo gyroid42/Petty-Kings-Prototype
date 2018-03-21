@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -159,11 +160,14 @@ public class StateManager : MonoBehaviour {
     public void ReturnToMenu()
     {
         // Reset camera to main menu rotation and position
-        mainCam.transform.position = mainCamMenuPos;
-        mainCam.transform.rotation = mainCamMenuRot;
+        //mainCam.transform.position = mainCamMenuPos;
+        //mainCam.transform.rotation = mainCamMenuRot;
+
+        // Reset Scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         // Update state machine
-        ChangeState(GAMESTATE.MENU);
+        // ChangeState(GAMESTATE.MENU);
     }
 
     // Set game to be playing
