@@ -9,42 +9,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: PersonalRefuseHisDemands
+  m_Name: Personal1OutInTheField1
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     decisionLogo_: {fileID: 0}
-    description_: After refusing his demands of surrender, King Uuen assaults the
-      fort with dozens of men
+    description_: Our men have gathered outside the fort, ready to meet this King
+      Uuen in the field!
     artwork_: {fileID: 0}
     btnText_:
-    - Hold strong!
-    - Hold strong!
+    - SHIELD WALL!
+    - SHIELD WALL!
   decisionEffect_:
-  - name_: Hold strong!
-    starChange_: 5
+  - name_: Shield wall
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
-  - name_: Hold strong
-    starChange_: 5
+    - {fileID: 11400000, guid: 8b97c83e50d05ca4486574fb39a8b7f5, type: 2}
+  - name_: Shield wall
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    - {fileID: 11400000, guid: 8b97c83e50d05ca4486574fb39a8b7f5, type: 2}
   timerRanOutEffect_:
-    name_: Hold strong
-    starChange_: 5
+    name_: Shield wall
+    starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 4cfccc2b037862d48b196f44cb6a1715, type: 2}
+    - {fileID: 11400000, guid: 8b97c83e50d05ca4486574fb39a8b7f5, type: 2}

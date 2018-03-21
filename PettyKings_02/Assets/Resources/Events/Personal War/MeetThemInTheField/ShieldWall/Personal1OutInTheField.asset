@@ -30,7 +30,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: f556234d006aa3e49abcd9b52ae4cfc7, type: 2}
+    - {fileID: 11400000, guid: cd6533f27dfc4924b86237a08e5f8e36, type: 2}
   - name_: Shield wall
     starChange_: 0
     addEvent_: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: f556234d006aa3e49abcd9b52ae4cfc7, type: 2}
+    - {fileID: 11400000, guid: cd6533f27dfc4924b86237a08e5f8e36, type: 2}
   timerRanOutEffect_:
     name_: Shield wall
     starChange_: 0
@@ -47,4 +47,4 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: f556234d006aa3e49abcd9b52ae4cfc7, type: 2}
+    - {fileID: 11400000, guid: cd6533f27dfc4924b86237a08e5f8e36, type: 2}
