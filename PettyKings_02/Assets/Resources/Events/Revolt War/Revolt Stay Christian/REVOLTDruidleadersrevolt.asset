@@ -19,7 +19,7 @@ MonoBehaviour:
     description_: The popular druid leaders have rallied the people against you and
       have brought them outside your hall demanding that you either convert or be
       killed!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
     - Convert back to paganism!
     - We shall never go back to the old ways!

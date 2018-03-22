@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 54800299459831668}
   - component: {fileID: 65103353225413022}
   - component: {fileID: 65809003169151054}
+  - component: {fileID: 208759809839864704}
   m_Layer: 0
   m_Name: WoodcuttersHut
   m_TagString: Building
@@ -2176,3 +2177,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &208759809839864704
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267622737577660}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 2.3, y: 1, z: 2.3}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -1}
+  m_TimeToStationary: 0.5
