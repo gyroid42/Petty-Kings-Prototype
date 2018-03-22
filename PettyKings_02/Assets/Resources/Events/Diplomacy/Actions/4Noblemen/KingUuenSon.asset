@@ -37,7 +37,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: c20b6b37cddd5584cb8e339d2d7760d0, type: 2}
+    - {fileID: 0}
   timerRanOutEffect_:
     name_: Nope
     starChange_: -5
