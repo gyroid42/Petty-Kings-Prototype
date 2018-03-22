@@ -55,10 +55,7 @@ public class HelpIconScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            AddItem("This is a test\n\nDoes the help icon script work?","Testing testing 123");
-        }
+
 	}
 
     void Initialise()
@@ -86,19 +83,35 @@ public class HelpIconScript : MonoBehaviour {
     }
 
     // Display tutorial again
+    // If update is true, also update text
+    // If text isn't updated, the previous text will be displayed instead
     public void Open()
     {
         icon.SetActive(true);
     }
 
     // Added a new item to the queue
-    public void AddItem(string bodyText, string title = "")
+    public void AddItem(string bodyText, string title = "", bool priority = false)
     {
+
+        // Clear queue if priority
+        if (priority)
+        {
+            helperText.Clear();
+        }
+
         // New struct
         HelperText newItem = new HelperText(title, bodyText);
 
         // Add text to the queue to be displayed
         helperText.Enqueue(newItem);
+
+        // If helper text was empty, reopen it
+        if (helperText.Count == 1)
+        {
+            Open();
+            UpdateText();
+        }
     }
 
     // Update the UI box with the string stored in the queue
