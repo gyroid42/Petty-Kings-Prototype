@@ -45,7 +45,8 @@ public class HelpIconScript : MonoBehaviour {
     
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         // Ensure icon is visible on startup
         Open();
 
@@ -80,6 +81,16 @@ public class HelpIconScript : MonoBehaviour {
     public void Close()
     {
         icon.SetActive(false);
+
+        // When the druid helper is deactivated, the timer begins again
+        // find timer
+        Timer eventTimer = FindTimer();
+
+        // if timer has been found, start timer again
+        if(eventTimer != null)
+        {
+            eventTimer.Start();
+        }
     }
 
     // Display tutorial again
@@ -88,6 +99,16 @@ public class HelpIconScript : MonoBehaviour {
     public void Open()
     {
         icon.SetActive(true);
+
+        // When the druid helper is activated, the timer stops
+        // find timer
+        Timer eventTimer = FindTimer();
+
+        // if timer has been found, stop timer
+        if (eventTimer != null)
+        {
+            eventTimer.Pause();
+        }
     }
 
     // Added a new item to the queue
@@ -144,5 +165,18 @@ public class HelpIconScript : MonoBehaviour {
             // update text
             UpdateText();
         }
+    }
+
+    // return the timer of the current event
+    Timer FindTimer()
+    {
+        // locate event display
+        GameObject currEvent = GameObject.Find("EventScreen");
+
+        if (currEvent)
+        {
+            return currEvent.GetComponent<EventDisplay>().GetTimer();
+        }
+        return null;
     }
 }
