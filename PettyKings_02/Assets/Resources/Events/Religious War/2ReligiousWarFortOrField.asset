@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: Meet them in field or stay in the saftey of the fort?
     artwork_: {fileID: 0}
     btnText_:

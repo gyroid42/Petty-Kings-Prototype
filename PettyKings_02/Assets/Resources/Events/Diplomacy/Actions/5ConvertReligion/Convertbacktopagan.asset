@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
     description_: A group of local druids come to you begging you to convert back
       to paganism
     artwork_: {fileID: 0}

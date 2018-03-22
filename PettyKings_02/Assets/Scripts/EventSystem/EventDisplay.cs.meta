@@ -1,10 +1,22 @@
 fileFormatVersion: 2
 guid: 615f3f798b785bd4ea9d47913a62f719
-timeCreated: 1516817761
+timeCreated: 1521715377
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prefabButton: {instanceID: 0}
+  - bounceDisplay: {instanceID: 0}
+  - diplomacyLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
+  - domesticLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
+  - religionLogo_: {fileID: 2800000, guid: 1104086a887024d4599c1c991fd10b4e, type: 3}
+  - warLogo_: {fileID: 2800000, guid: 5783d9bf056804541807af0754659e27, type: 3}
+  - nameText_: {instanceID: 0}
+  - eventWindow_: {instanceID: 0}
+  - descriptionText_: {instanceID: 0}
+  - artworkImage_: {instanceID: 0}
+  - decisionTypeLogo_: {instanceID: 0}
+  - timerBar_: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

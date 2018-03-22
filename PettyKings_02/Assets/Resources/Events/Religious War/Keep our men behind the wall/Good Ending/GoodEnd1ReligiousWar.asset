@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: With both the walls and the gatehouse both protected, the enemies
       break themselves against your walls like waves against rocks!
     artwork_: {fileID: 0}

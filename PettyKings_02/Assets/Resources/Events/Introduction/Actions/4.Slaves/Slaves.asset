@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 1
     description_: 'Our slaves working the fields have been worked tirelessly, shall
       we give them a break? '
     artwork_: {fileID: 2800000, guid: 685db2a561da81f4192589653c8c44de, type: 3}

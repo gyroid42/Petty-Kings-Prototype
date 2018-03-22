@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: Once the gate house is breached the attackers stream into the fort
       burning and looting as they go! Finally your hall is burnt and you and your
       family are slain!

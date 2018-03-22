@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: "With the druid leader at your feet they beg for mercy...\t"
     artwork_: {fileID: 0}
     btnText_:
