@@ -15,17 +15,36 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 0
     description_: With your final attack you bring down your sword and cleave into
       the King's shoulder killing him!
-    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    artwork_: {fileID: 2800000, guid: 87b6eaaa8add92349884ffe385c3f8c7, type: 3}
+    btnText_:
+    - VICTORY!
+    - VICTORY!
+  decisionEffect_:
+  - name_: VICTORY!
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  - name_: VICTORY!
+    starChange_: 10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  timerRanOutEffect_:
+    name_: VICTORY!
+    starChange_: 10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
