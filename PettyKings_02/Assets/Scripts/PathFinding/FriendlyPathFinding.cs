@@ -18,14 +18,14 @@ public class FriendlyPathFinding : MonoBehaviour {
         // objectsInScene = GameObject.FindGameObjectsWithTag("Building");
         Random.InitState(System.DateTime.Now.Millisecond);
         rnd = Random.Range(0, objectsInScene.Length);
-        timeLeft = Random.Range(1, 3);
+        timeLeft = Random.Range(1, 4);
     }
 
     // Update is called once per frame
     void Update() {
         objectsInScene = GameObject.FindGameObjectsWithTag("Building");
 
-        if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 8.5f)
+        if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 10.5f)
         {
             moving = false;
            
@@ -42,7 +42,7 @@ public class FriendlyPathFinding : MonoBehaviour {
             timeLeft -= Time.deltaTime;
             if(timeLeft < 0)
             {
-                timeLeft = Random.Range(1, 1);
+                timeLeft = Random.Range(1, 4);
                 rnd = Random.Range(0, objectsInScene.Length);
                 agent.SetDestination(objectsInScene[rnd].gameObject.transform.position);
             }
