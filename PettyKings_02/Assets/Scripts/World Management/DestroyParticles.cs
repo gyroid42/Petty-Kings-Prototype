@@ -30,7 +30,9 @@ public class DestroyParticles : MonoBehaviour {
         wallFlamesClone = Instantiate(wallFlames, transform);
         wallFlamesClone.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-       coll = GetComponentInParent<MeshCollider>();
+       coll = GetComponentInParent<Collider>();
+
+        isChanged = false;
 
        
 
