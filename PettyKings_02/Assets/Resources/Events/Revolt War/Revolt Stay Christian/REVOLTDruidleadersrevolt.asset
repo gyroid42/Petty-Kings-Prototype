@@ -30,7 +30,8 @@ MonoBehaviour:
     newEvent_: {fileID: 11400000, guid: 150240cb71fd62a4d89a530748397071, type: 2}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
   - name_: Don't Convert
     starChange_: 5
     addEvent_: 0
