@@ -164,8 +164,8 @@ public class WorldManager : MonoBehaviour {
     {
         if ((buildings.Count) < (positions.Count))
         {
-            buildings.Add(Instantiate(resources[1], startPos));
-            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+            buildings.Add(Instantiate(resources[1], startPos.transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(startPos.transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), startPos.transform.position.z);
         }
     }
 
@@ -195,11 +195,11 @@ public class WorldManager : MonoBehaviour {
          
             }   
 
-            if(Input.GetKeyDown("e"))
+          /*  if(Input.GetKeyDown("e"))
         {
-            DestroyBuilding(3);
+            DestroyBuilding(0);
         }
-
+        */
 
     }
 
