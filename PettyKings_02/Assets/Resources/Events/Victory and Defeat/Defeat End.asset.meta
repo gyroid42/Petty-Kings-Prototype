@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: cb4d6ffec771f9f4e9dfad046dc59376
+labels:
+- Audio
 timeCreated: 1521740135
 licenseType: Free
 NativeFormatImporter:

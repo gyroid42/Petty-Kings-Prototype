@@ -11,11 +11,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
-  MasterBankRef: {fileID: 0}
-  StringsBankRef: {fileID: 0}
-  stringsBankWriteTime: 0
+  EditorBanks:
+  - {fileID: 114280618017317054}
+  - {fileID: 114122450194477350}
+  EditorEvents:
+  - {fileID: 114976757254771552}
+  - {fileID: 114442344315081118}
+  - {fileID: 114275582388292276}
+  - {fileID: 114648125681134912}
+  - {fileID: 114094153513980376}
+  - {fileID: 114840949680983790}
+  - {fileID: 114258796195076830}
+  - {fileID: 114236535060670682}
+  - {fileID: 114789145230275442}
+  - {fileID: 114924937787865748}
+  - {fileID: 114650139090791204}
+  - {fileID: 114304372459725182}
+  - {fileID: 114718672168205138}
+  - {fileID: 114097875384572954}
+  - {fileID: 114586798491655962}
+  - {fileID: 114824266483363358}
+  - {fileID: 114589118499480898}
+  - {fileID: 114036042482985260}
+  - {fileID: 114239616246889306}
+  - {fileID: 114039216942289534}
+  - {fileID: 114373160031686724}
+  - {fileID: 114694568591844266}
+  - {fileID: 114303062662249050}
+  - {fileID: 114160727660857574}
+  - {fileID: 114419385802943858}
+  - {fileID: 114270009380318974}
+  - {fileID: 114078936274137506}
+  - {fileID: 114768666944601538}
+  - {fileID: 114061412627333766}
+  - {fileID: 114872624787884614}
+  - {fileID: 114406105578056952}
+  - {fileID: 114114787622234100}
+  - {fileID: 114819920298982164}
+  - {fileID: 114262250326885770}
+  - {fileID: 114741974145667120}
+  - {fileID: 114058886309464898}
+  - {fileID: 114791404534667864}
+  - {fileID: 114538479062571634}
+  - {fileID: 114609789862921528}
+  - {fileID: 114556130609742274}
+  - {fileID: 114349571068230804}
+  - {fileID: 114468288836097100}
+  - {fileID: 114416397182718260}
+  - {fileID: 114531117167991586}
+  - {fileID: 114437054931521048}
+  - {fileID: 114908390204370986}
+  - {fileID: 114268307293270452}
+  - {fileID: 114188571244813466}
+  - {fileID: 114189052369428508}
+  - {fileID: 114513602446077296}
+  - {fileID: 114316602935932148}
+  - {fileID: 114636408187840966}
+  - {fileID: 114167226492204054}
+  - {fileID: 114960061193138344}
+  - {fileID: 114801540775316500}
+  - {fileID: 114929563780645966}
+  - {fileID: 114079395587992748}
+  - {fileID: 114093464196730744}
+  - {fileID: 114329038390812862}
+  - {fileID: 114198045678058064}
+  - {fileID: 114592732999019704}
+  - {fileID: 114224901825988832}
+  - {fileID: 114393554454224812}
+  - {fileID: 114699403024579468}
+  - {fileID: 114209694453676850}
+  - {fileID: 114767272426047516}
+  - {fileID: 114722415809264256}
+  - {fileID: 114121976241855516}
+  - {fileID: 114720207586439862}
+  - {fileID: 114478756772083284}
+  - {fileID: 114660529785192610}
+  - {fileID: 114106326982423212}
+  - {fileID: 114005737757366430}
+  - {fileID: 114701918079434418}
+  - {fileID: 114490397827549336}
+  - {fileID: 114138956088434858}
+  - {fileID: 114490423996171352}
+  - {fileID: 114031483726710318}
+  - {fileID: 114514481839675230}
+  - {fileID: 114876453553842848}
+  - {fileID: 114360307192800438}
+  - {fileID: 114884653318758008}
+  MasterBankRef: {fileID: 114122450194477350}
+  StringsBankRef: {fileID: 114280618017317054}
+  stringsBankWriteTime: 636573569280000000
   cacheVersion: 2
 --- !u!114 &114000801790752676
 MonoBehaviour:
@@ -61,6 +145,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 430
+--- !u!114 &114005737757366430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/STAR/UI_STAR_ADDING
+  guid: a6fc131e715ae54ca8ab92716314b206
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 388
 --- !u!114 &114006388280060982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,6 +576,49 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 570
+--- !u!114 &114031483726710318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/VILLAGE/AMBIENCE_VILLAGE _VOICES_02
+  guid: 12c63ff169ea054389d6c7048f2766b8
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8901
+--- !u!114 &114031970615081058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2
+  guid: d148c67f0316684594dd6a26ebe01784
+  Banks: []
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 87272
 --- !u!114 &114032561279204866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +681,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1072
+--- !u!114 &114036042482985260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
+  guid: 5276eaa333c4b64fb7ffa2cd43921f73
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 120
 --- !u!114 &114036975832154726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +769,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114039216942289534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_SELECT_01
+  guid: 60ec3c9114e9444fbc2a098493fffcdd
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200
 --- !u!114 &114041282077868070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +857,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &114046723836125340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/AMBIENCE_VILLAGE _VOICES_03
+  guid: c4aa0cb14ad24243987e35b20d2a97a7
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6725
 --- !u!114 &114047193997309172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,6 +1072,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 208
+--- !u!114 &114058886309464898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_RESSOURCES_GRAB_02
+  guid: 9ddd795f29150c42bb5674d871963bd2
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &114059495344072012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +1182,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 613
+--- !u!114 &114061412627333766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_BUTTON_SELECT_04
+  guid: 925c42812e665244905167f6e1d62181
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 624
 --- !u!114 &114061417691484232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1510,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 629
+--- !u!114 &114078936274137506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/UI_RESSOURCES_SELECT
+  guid: 8edb3f6b85972849b5bf78f73b33d735
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 380
+--- !u!114 &114079395587992748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/SEASONS/AMBIENCE_SUMMER_01 _03
+  guid: ebbbc27c7ccfe0459dc3883c8ef77bcd
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 51500
 --- !u!114 &114081672134813104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,6 +1598,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1266
+--- !u!114 &114082335965006938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE_VILLAGE _VOICES_02
+  guid: 12c63ff169ea054389d6c7048f2766b8
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8901
 --- !u!114 &114082347439396082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,6 +1685,72 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &114093464196730744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_WINDOW_CLOSE_01
+  guid: ebbe15d68cfa4e49bbf0b0a12684548f
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 624
+--- !u!114 &114094153513980376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_04
+  guid: 24d355ee5ca26b4188181869a808a799
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
+--- !u!114 &114097875384572954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_QUIT MENU_01
+  guid: 3d0d14830012a04d863fa7aedb6323ad
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1436
 --- !u!114 &114098405222823556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,6 +1905,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 51500
+--- !u!114 &114106326982423212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/TIMER/UI_TIMER_END
+  guid: 985efa519c91804aaa85288aa53c1f6b
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1028
 --- !u!114 &114109298522257026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,6 +1971,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114114787622234100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_03
+  guid: 967d3dc98d84c44fa8206244f5ba4458
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
 --- !u!114 &114116814244874110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,6 +2015,47 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 624
+--- !u!114 &114121976241855516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/STAR/UI_STAR_LOSING
+  guid: 13a730afe09caf4482d20610f26ca96d
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 361
+--- !u!114 &114122450194477350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/aureliemoiroud/Documents/GitHub/Petty-Kings/PettyKings_02/PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master
+    Bank.bank
+  lastModified: 636573569280000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 7670240
+  Exists: 1
 --- !u!114 &114124613611336708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,6 +2164,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &114131343784712748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_BUILDING_DESTROYED_FIRE
+  guid: bc46662930820643a4ffbc85c4d14d27
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114131697124263270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,6 +2251,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 33103
+--- !u!114 &114138956088434858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/BUILDINGS/UI_BUILDING_DESTROYED_SMOKE
+  guid: 65ee17313940594aa3f202390a5cc20b
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114139130019371538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,6 +2530,28 @@ MonoBehaviour:
   - Name: 
     Value: 6474080
   Exists: 1
+--- !u!114 &114160727660857574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_05
+  guid: 8114b1a929b70240892adf69224e5af2
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 430
 --- !u!114 &114162393329123480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2122,6 +2662,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 20000
+--- !u!114 &114167226492204054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/SEASONS/AMBIENCE_WINTER
+  guid: ddae93534df7424290f155def38af3e9
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27500
 --- !u!114 &114168246982746196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2380,6 +2942,50 @@ MonoBehaviour:
   - Name: 
     Value: 4190
   Exists: 1
+--- !u!114 &114188571244813466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_SELECT_02
+  guid: c5fc2583dfc99a47a6ef5975b643358d
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200
+--- !u!114 &114189052369428508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_QUIT MENU_01
+  guid: d05e0e7111968e43a6642b8bd2b940ee
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 200
 --- !u!114 &114189870589374018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,6 +3008,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114190905466098346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE_VILLAGE _FARM ANIMALS
+  guid: 59a8e518cadd4c4e85580f993b06c4b8
+  Banks: []
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50944
 --- !u!114 &114194274411019016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2489,6 +3116,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1602
+--- !u!114 &114198045678058064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_BUILDINGS_BUILD_UP
+  guid: ef48efcd251f3e4fbd22439a8b0ea0d0
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1298
 --- !u!114 &114199289192944802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,6 +3160,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27158
+--- !u!114 &114199317979591330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/_RIVER 2D
+  guid: 8fe78ec1c9b8f946a4c637d69c7a7321
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9750
 --- !u!114 &114201393896023100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2620,6 +3290,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2189
+--- !u!114 &114209694453676850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/River_Fountain_loop__01
+  guid: f8429f917d2c87469a0326be99973ba0
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9750
 --- !u!114 &114211698521301822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,6 +3510,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 916
+--- !u!114 &114224901825988832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_WOOD_BUILDUP_01
+  guid: f092b1b2a49f574db371f79b8563c2a1
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 550
 --- !u!114 &114225279455835000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,6 +3769,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1282
+--- !u!114 &114236535060670682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_02
+  guid: 2b395d99b54ab54a9eb0357b22be8692
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
 --- !u!114 &114237132475815956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3119,6 +3855,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 240
+--- !u!114 &114239616246889306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_FROTTER
+  guid: 5a0c70cfee33024abb572836a30a79b6
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &114239691989747268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,6 +3920,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1200
+--- !u!114 &114240630493152242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_TIMER_RUNNING
+  guid: 5668110d24098746a52b9ae9b524300a
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1125
 --- !u!114 &114241311378787734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3420,6 +4199,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8500
+--- !u!114 &114258796195076830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_BUTTON_SELECT_03
+  guid: 2898c8266a077d49805ceee8756bd9df
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
+--- !u!114 &114262250326885770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/POP UP/UI_PAUSE_MENU_ WINDOW_POP_UP_01
+  guid: 98c47bb392f2d34e99eae07f0354626e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 793
 --- !u!114 &114262714373756416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3529,6 +4352,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114268307293270452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/WEATHER/THUNDER/Thunder01
+  guid: c533df2bd2426842865b4663cc6f930a
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9750
 --- !u!114 &114268457602599448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,6 +4396,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &114270009380318974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_BACK
+  guid: 855bdc2982b7a24582584d054c5e2ab3
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 613
 --- !u!114 &114273127452285248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3614,6 +4481,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114275582388292276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_BUILDUP
+  guid: 1c0962c7094d0448bdd14342bff22a8e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 916
 --- !u!114 &114276443944158732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3680,6 +4569,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1298
+--- !u!114 &114280618017317054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: PettyKing_Audio_Fmod/Petty_Kings_Fmod/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636573569280000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 4918
+  Exists: 1
 --- !u!114 &114281105578900284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3878,6 +4785,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114288858658334416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_TIMER_END
+  guid: 985efa519c91804aaa85288aa53c1f6b
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1028
 --- !u!114 &114293148583681328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3944,6 +4872,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 873
+--- !u!114 &114294192865676058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/AMBIENCE_VILLAGE _VOICES_02
+  guid: 12c63ff169ea054389d6c7048f2766b8
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8901
 --- !u!114 &114294437879129392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4010,6 +4960,71 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 180
+--- !u!114 &114301229868986440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE_VILLAGE _VOICES
+  guid: 652a1d55d13e8a47be27ffefcc8d2233
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9941
+--- !u!114 &114303062662249050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_06
+  guid: 787b7f589f2aa54783a09e2e60153b64
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
+--- !u!114 &114304372459725182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/SEASONS/AMBIENCE_SPRING _02
+  guid: 37f5e27f4a0b6a4e8c4f9ec8c2272382
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28000
 --- !u!114 &114305261487858410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,6 +5135,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114316602935932148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_SELECT_02
+  guid: d10cb55bd535114ebebd1786067fdc40
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 742
 --- !u!114 &114317525546143620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,6 +5331,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 873
+--- !u!114 &114329038390812862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/Fountain_02
+  guid: ed45b96079ea334f8e56cf8e2c628502
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &114329505303068732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4404,6 +5463,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 33103
+--- !u!114 &114336713088016328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_DECLARE WAR
+  guid: d833430ff84cc14186948a9e577af9e2
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2437
 --- !u!114 &114336880844960004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4554,6 +5634,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1300
+--- !u!114 &114349571068230804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/FLYOVER BUTTON/UI_WOOD_FLYOVER
+  guid: ac2866b48cb5554b8510513bb3dd7288
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &114349751323999416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4751,6 +5853,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 624
+--- !u!114 &114360307192800438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/VILLAGE/AMBIENCE_VILLAGE _VOICES_03
+  guid: c4aa0cb14ad24243987e35b20d2a97a7
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6725
 --- !u!114 &114362627345979942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,6 +6002,49 @@ MonoBehaviour:
   - Name: 
     Value: 6474080
   Exists: 1
+--- !u!114 &114373146844864668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_VICTORY
+  guid: ec00ecc41dee7243bf66f2a4f7103158
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3874
+--- !u!114 &114373160031686724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/UI_WOOD_FROTTER_02
+  guid: 67c2fc57de591d488d2b130f6247e4ed
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1072
 --- !u!114 &114373505590055074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,6 +6265,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27158
+--- !u!114 &114393554454224812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_07
+  guid: f0a0edaed034114d8f98415fcd77e97c
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145
 --- !u!114 &114395936716880190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5295,6 +6484,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1815
+--- !u!114 &114406105578056952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/VILLAGE/AMBIENCE_COUNTRY_SIDE_BIRDS_SINGING_01
+  guid: 94a8993c1598514ebbff8c9a8a6294f8
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
 --- !u!114 &114406664005132782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5508,6 +6719,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 211
+--- !u!114 &114416397182718260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_06
+  guid: b086e7b98d08974d89f88d4b82d0efe4
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 208
 --- !u!114 &114416550879268344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5570,6 +6803,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 51500
+--- !u!114 &114419385802943858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/WOOD/UI_RESSOURCES_WOODBUILDING_SELECT
+  guid: 843c7cc47d2e094fb451be82ef22d041
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240
 --- !u!114 &114421613693930606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5854,6 +7109,49 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114437054931521048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_QUIT MENU_02
+  guid: b917b231936d304abc58c22023b43d12
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 180
+--- !u!114 &114437807341747246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE_VILLAGE _VOICES_03
+  guid: c4aa0cb14ad24243987e35b20d2a97a7
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6725
 --- !u!114 &114439389205062086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5898,6 +7196,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114442344315081118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_RESSOURCES_GRAB
+  guid: 0e201008b6c5b2498685dd2c9860dcb7
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1300
 --- !u!114 &114442609192846256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6178,6 +7498,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1165
+--- !u!114 &114468288836097100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/WEATHER/THUNDER/Thunder_02
+  guid: adc1d65802275442ae27f17e94792c4f
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8796
 --- !u!114 &114468614942480624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6374,6 +7716,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114478756772083284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/TIMER/UI_TIMER_RUNNING
+  guid: 5668110d24098746a52b9ae9b524300a
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1125
 --- !u!114 &114479144680688994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6505,6 +7869,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1602
+--- !u!114 &114490397827549336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/END OF GAME/UI_VICTORY
+  guid: ec00ecc41dee7243bf66f2a4f7103158
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3874
+--- !u!114 &114490423996171352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/BUILDINGS/UI_BUILDING_DESTROYED_FIRE
+  guid: bc46662930820643a4ffbc85c4d14d27
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114491277738491246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6724,6 +8132,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 624
+--- !u!114 &114505650132010762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_BUILDING_DESTROYED_FIRE
+  guid: bc46662930820643a4ffbc85c4d14d27
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114506840451595040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6811,6 +8240,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2577
+--- !u!114 &114513602446077296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_04
+  guid: d05e1e0a7230e741a35a533f58c4063f
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 155
 --- !u!114 &114513797049092212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6855,6 +8306,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 782
+--- !u!114 &114514481839675230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/VILLAGE/AMBIENCE_VILLAGE _FARM ANIMALS
+  guid: 59a8e518cadd4c4e85580f993b06c4b8
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50944
 --- !u!114 &114515527021359604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7029,6 +8502,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 916
+--- !u!114 &114521906186729956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_STAR_ADDING
+  guid: a6fc131e715ae54ca8ab92716314b206
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 388
 --- !u!114 &114523658969603640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7138,6 +8632,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1815
+--- !u!114 &114531117167991586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_SELECT_02
+  guid: b52fe3f98b178c48b145ad3ecfa3ae88
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 541
 --- !u!114 &114532140411834450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7182,6 +8698,49 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114537590175644954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_STAR_LOSING
+  guid: 13a730afe09caf4482d20610f26ca96d
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 361
+--- !u!114 &114538479062571634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_CLOSE
+  guid: a9bf11726b3b254b807c43d4af9aad4e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1524
 --- !u!114 &114539333516180684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7335,6 +8894,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1973
+--- !u!114 &114556130609742274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU_ BUTTON_SELECT_01
+  guid: aaf5dcce9f09b848bd9ad2a72f0f211e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 873
 --- !u!114 &114557107881386728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7748,6 +9329,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &114586798491655962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_03
+  guid: 44a376d448deac4cbc8c6539ab55606c
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 570
+--- !u!114 &114589118499480898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_UNSELECT
+  guid: 4e89a90941d0564c834ba046fb67e38e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968
 --- !u!114 &114590531006451180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7770,6 +9395,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114592732999019704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/UI_RESSOURCES_WOOD_RESSOURCEAPPEARS_02_bip
+  guid: ef90c98d65c0b247baa70f0e3e6e7718
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 629
 --- !u!114 &114593552817610226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8029,6 +9676,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114609789862921528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/WOOD/UI_RESSOURCES_WOODBUILDING_BUILDUP
+  guid: a9c3442d7c6bcc4db62961b7d397e8fe
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &114610139176131434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8334,6 +10003,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1602
+--- !u!114 &114636408187840966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_01
+  guid: d43ff5b709813e47a168de5ff72efce2
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
 --- !u!114 &114638133058660292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8378,6 +10069,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 145
+--- !u!114 &114641103490682066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_BUILDING_DESTROYED_SMOKE
+  guid: 65ee17313940594aa3f202390a5cc20b
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114642699562779496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8443,6 +10155,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 380
+--- !u!114 &114648125681134912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/River_Fountain_loop_02
+  guid: 1e8f047d9f2cdb4bbd12b5e9bbdd2fdf
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &114650139090791204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT_02
+  guid: 3283be7688862549b62f03fbd0433bf6
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 782
 --- !u!114 &114650235603634382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8701,6 +10457,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 541
+--- !u!114 &114660529785192610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/DECISION CARD/UI_CARD_SWIPE
+  guid: 5a61390140c38a499278a3d876caf167
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 374
 --- !u!114 &114660604762142116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8872,6 +10650,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27500
+--- !u!114 &114668445308126680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_DEFEAT
+  guid: 27f3b352c68f1e4c9e71fffa37798431
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3250
 --- !u!114 &114671087141268000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8959,6 +10758,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 968
+--- !u!114 &114679429101455390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI_CARD_SWIPE
+  guid: 5a61390140c38a499278a3d876caf167
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 374
 --- !u!114 &114679531703723894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9111,6 +10931,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &114694568591844266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/BUILD UP/BUILDINGS/UI_RESSOURCES_WOOD_BUILDUP
+  guid: 70d5ea63939fbc4a8d3ebfeb083d3b17
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
 --- !u!114 &114695489476832642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9133,6 +10975,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1108
+--- !u!114 &114699403024579468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN MENU_OPTION_SELECT_02
+  guid: f6735c2de8e1794db10d0540707b46ad
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1126
 --- !u!114 &114699674583222338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9155,6 +11019,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114701918079434418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/DECISION CARD/UI_DECLARE WAR
+  guid: d833430ff84cc14186948a9e577af9e2
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2437
 --- !u!114 &114704538053813044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9347,6 +11233,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2065
+--- !u!114 &114718672168205138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_NEWOBJECT
+  guid: 3bf7a260d9a882478e6a987dff707949
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 211
 --- !u!114 &114720084523837258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9369,6 +11277,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114720207586439862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/END OF GAME/UI_DEFEAT
+  guid: 27f3b352c68f1e4c9e71fffa37798431
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3250
 --- !u!114 &114720795860789476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9413,6 +11343,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 51500
+--- !u!114 &114722415809264256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN MENU_QUIT
+  guid: fefbad547d81a24c8ddce96cb2abf1bb
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1266
 --- !u!114 &114722858495056328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9708,6 +11660,28 @@ MonoBehaviour:
   guid: 9d0f5063bfbf4749916c0e8bcc33a0f8
   Banks:
   - {fileID: 114464664463626514}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
+--- !u!114 &114741974145667120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/River_Fountain_loop_03
+  guid: 9d0f5063bfbf4749916c0e8bcc33a0f8
+  Banks:
+  - {fileID: 114122450194477350}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -10036,6 +12010,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 570
+--- !u!114 &114767272426047516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_SELECT
+  guid: f8d3a38c4389f94999a3edaeb599c688
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1108
 --- !u!114 &114767387113060418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10058,6 +12054,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 200
+--- !u!114 &114768666944601538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_FALL
+  guid: 8f37e6371f8c854284352cae634bc426
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
 --- !u!114 &114770210603939768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10362,6 +12380,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27500
+--- !u!114 &114789145230275442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_SELECT
+  guid: 2cdff694b2fc3b4dbe5a4d7760051405
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 853
 --- !u!114 &114789270554304186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10406,6 +12446,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 208
+--- !u!114 &114791404534667864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_03
+  guid: a87cf18f4be92f45846f94da3ab10f0a
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1602
 --- !u!114 &114792330501509596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10494,6 +12556,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114801540775316500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/PETTY KINGS_WAR MUSIC
+  guid: e58c25746a395c4dae4dc6a8554386eb
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33103
 --- !u!114 &114801943257009368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10752,6 +12836,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9750
+--- !u!114 &114819920298982164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/WEATHER/THUNDER/Thunder _03
+  guid: 96cb20bec9151842aa877c84d3d97c7e
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8500
 --- !u!114 &114820754460573534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10774,6 +12880,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1300
+--- !u!114 &114824266483363358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/WATER/Fountain
+  guid: 48584570df9ec444b24c101bcf263f12
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &114825241159950654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10994,6 +13122,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114840949680983790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/RESSOURCES/SELECT BUTTON/BUILDINGS/UI_GRAB_RESSOURCES_03
+  guid: 26686894bba66a4fb7a0f232d5a7c583
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &114841238881290082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11316,6 +13466,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2065
+--- !u!114 &114854828018308426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/AMBIENCE_VILLAGE _FARM ANIMALS
+  guid: 59a8e518cadd4c4e85580f993b06c4b8
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50944
 --- !u!114 &114855653076363388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11470,6 +13642,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27500
+--- !u!114 &114872624787884614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSEMENU_WOOD_SELECT
+  guid: 92a956b32bad7c40a892f54c1c510620
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1040
 --- !u!114 &114874525038762778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11536,6 +13730,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114876453553842848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/VILLAGE/AMBIENCE_VILLAGE _VOICES
+  guid: 652a1d55d13e8a47be27ffefcc8d2233
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9941
 --- !u!114 &114879736217022842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11689,6 +13905,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 51500
+--- !u!114 &114884653318758008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC
+  guid: 7ebff6ca7c113b42ab94946adb762bba
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 87272
 --- !u!114 &114886662202250662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11864,6 +14102,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 155
+--- !u!114 &114895400337652878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/AMBIENCE_VILLAGE _VOICES
+  guid: 652a1d55d13e8a47be27ffefcc8d2233
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9941
 --- !u!114 &114897325783115356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11907,6 +14167,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 995
+--- !u!114 &114908390204370986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/FOOTSTEPS/PLAYER_FOOTSTEPS_HEEL_GRASS_05
+  guid: c108ee231141ee4d818da1b14db23c10
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
 --- !u!114 &114908612366196584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12102,6 +14384,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1436
+--- !u!114 &114924937787865748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/SEASONS/AMBIENCE_AUTUMN_2_bip _01
+  guid: 3209ad3b13ab43458939ac467df3d1b0
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27158
 --- !u!114 &114926916685415876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12146,6 +14450,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 200
+--- !u!114 &114929563780645966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_WOOD_
+  guid: e666a55af1702c4ca14debb72e3bf428
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1282
 --- !u!114 &114929923490312344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12276,6 +14602,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 624
+--- !u!114 &114938948487220308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/music entertainmnt 2D
+  guid: 7ebff6ca7c113b42ab94946adb762bba
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 87272
 --- !u!114 &114939352383753144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12538,6 +14885,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &114958753348700986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_BUILDING_DESTROYED_SMOKE
+  guid: 65ee17313940594aa3f202390a5cc20b
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &114959305398759578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12560,6 +14928,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 719
+--- !u!114 &114960061193138344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/MAIN MENU/UI_MAIN MENU_OPTION_SELECT
+  guid: e32ed152182da241bcc598a6db00d0b7
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 693
 --- !u!114 &114964077794501750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12714,6 +15104,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 240
+--- !u!114 &114976757254771552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/UI/PAUSE MENU (Canvas)/SELECT BUTTON/UI_PAUSE_MENU
+  guid: 03b5838cb1c73f4baca2c2b02cba8857
+  Banks:
+  - {fileID: 114122450194477350}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
 --- !u!114 &114978202363635206
 MonoBehaviour:
   m_ObjectHideFlags: 0
