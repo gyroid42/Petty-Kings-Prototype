@@ -17,7 +17,7 @@ MonoBehaviour:
     timerLength_: 0
     type_: 1
     description_: We have found a site for our new settlement!
-    artwork_: {fileID: 2800000, guid: c56f0361561364d4da86dceb7c1743f4, type: 3}
+    artwork_: {fileID: 2800000, guid: 6734019cb361acc4f932e2b75ac7cbf5, type: 3}
     btnText_:
     - Excellent!
     - Excellent!

@@ -15,9 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 0
     description_: The druid leaders of your settlement have gathered outside your
       hall demanding that you conver once agin to the old religion!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Yes, we should be pagan once again!
     - No the lord of Christ will guide us from now on!
