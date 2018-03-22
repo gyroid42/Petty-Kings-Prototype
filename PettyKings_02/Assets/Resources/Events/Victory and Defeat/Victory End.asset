@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Victory End
   m_EditorClassIdentifier: 
   isBlocking_: 1
-  victory_: 1
+  victory_: 0
   endTime_: 30
