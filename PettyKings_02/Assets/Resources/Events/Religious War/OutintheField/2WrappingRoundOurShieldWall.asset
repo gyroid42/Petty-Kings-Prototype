@@ -37,6 +37,8 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
+    - {fileID: 11400000, guid: 6137b9be54c1bd44b8f9ab525269c2b6, type: 2}
+    - {fileID: 11400000, guid: 5224349299a79a943bcb24ac55403758, type: 2}
     - {fileID: 11400000, guid: 8aaba6e3fc870464d86a8addf7f655b0, type: 2}
   timerRanOutEffect_:
     name_: Hold out!

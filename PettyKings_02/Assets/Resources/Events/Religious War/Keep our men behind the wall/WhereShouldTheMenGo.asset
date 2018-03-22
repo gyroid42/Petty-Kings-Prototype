@@ -29,6 +29,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
+    - {fileID: 11400000, guid: c2f26c4bd2328f04c8d9ee300126360a, type: 2}
     - {fileID: 11400000, guid: 020ef5edb60e7184d978c703d52f9d54, type: 2}
   - name_: Man the walls and gatehouse
     starChange_: 5
