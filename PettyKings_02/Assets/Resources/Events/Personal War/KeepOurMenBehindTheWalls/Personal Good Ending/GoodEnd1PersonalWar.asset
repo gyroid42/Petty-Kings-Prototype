@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: With both the walls and the gatehouse both protected, the enemies
       break themselves against your walls like waves against rocks!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
     - 'Excellent! '
     - Excellent!

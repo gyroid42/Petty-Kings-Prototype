@@ -15,23 +15,23 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 0
     description_: You let Uuen slip back towards the safety of his shield wall
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
-    - 
-    - 
+    - Coward!
+    - Coward!
   decisionEffect_:
-  - name_: 
-    starChange_: 0
+  - name_: Coward!
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
     - {fileID: 11400000, guid: de4a262e54637d94487970d580cba384, type: 2}
-  - name_: 
-    starChange_: 0
+  - name_: Coward!
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
@@ -39,8 +39,8 @@ MonoBehaviour:
     effects_:
     - {fileID: 11400000, guid: de4a262e54637d94487970d580cba384, type: 2}
   timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    name_: Coward!
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0

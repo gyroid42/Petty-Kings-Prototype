@@ -11,14 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
   m_Name: 3RevoltDruidMercy
   m_EditorClassIdentifier: 
-  isBlocking_: 1
+  isBlocking_: 0
   mainDisplay_:
     name_: 
     timerLength_: 0
     type_: 3
     description_: The druids, thankful for your mercy appease the local pagan population
       before heading out into exile.
-    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - VICTORY
     - VICTORY
@@ -29,14 +29,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   - name_: VICTORY
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   timerRanOutEffect_:
     name_: VICTORY
     starChange_: 5
@@ -44,4 +46,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}

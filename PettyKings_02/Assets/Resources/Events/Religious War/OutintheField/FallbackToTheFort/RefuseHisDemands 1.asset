@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: Wave after wave of King uuen's men assult the fort but after many
       hours the Christen King's men break and flee back to their homes...
-    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
+    artwork_: {fileID: 2800000, guid: 0fbbfb415fc35084581da32df6c996d1, type: 3}
     btnText_:
     - VICTORY!
     - VICTORY!
@@ -29,14 +29,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   - name_: VICTORY!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   timerRanOutEffect_:
     name_: VICTORY!
     starChange_: 5
@@ -44,4 +46,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}

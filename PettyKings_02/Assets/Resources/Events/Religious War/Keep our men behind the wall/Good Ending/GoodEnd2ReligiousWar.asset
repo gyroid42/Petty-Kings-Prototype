@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: With dozens of ment lying dead outside the fort, the King Uuen pulls
       his troops back towards his own lands
-    artwork_: {fileID: 2800000, guid: a5afdf4376d77cb4d97e294d8611ae16, type: 3}
+    artwork_: {fileID: 2800000, guid: d085b7d3a2b5ddc4cbc00c979f643800, type: 3}
     btnText_:
     - Victory!
     - Victory!
@@ -29,14 +29,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   - name_: Victory!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   timerRanOutEffect_:
     name_: Victory
     starChange_: 5
@@ -44,4 +46,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}

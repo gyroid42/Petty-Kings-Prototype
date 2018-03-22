@@ -15,10 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 0
     description_: Our men have gathered outside the fort, ready to meet this King
       Uuen in the field!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
     - SHIELD WALL!
     - SHIELD WALL!

@@ -15,10 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 0
     description_: With the fort surrounded and no way to escape, King Uuen demands
       the surrender of the fort and your personal conversion to Christianity!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Surrender the fort and promise to convert!
     - Refuse his demands!

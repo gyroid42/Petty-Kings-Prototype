@@ -19,7 +19,7 @@ MonoBehaviour:
     description_: Once the gate house is breached the attackers stream into the fort
       burning and looting as they go! Finally your hall is burnt and you and your
       family are slain!
-    artwork_: {fileID: 2800000, guid: 72eddc81ac8daa04fa22f923113b90eb, type: 3}
+    artwork_: {fileID: 2800000, guid: 87b6eaaa8add92349884ffe385c3f8c7, type: 3}
     btnText_:
     - Ahhhhhh!
     - Ahhhhhh!
@@ -30,14 +30,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
   - name_: Ahhhhhh!
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
   timerRanOutEffect_:
     name_: Ahhhhhh!
     starChange_: -5
@@ -45,4 +47,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
