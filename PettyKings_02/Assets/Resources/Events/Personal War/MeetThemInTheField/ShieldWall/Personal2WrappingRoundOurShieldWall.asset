@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: As they advance the enemy start to wrap around our shield wall!
     artwork_: {fileID: 0}
     btnText_:

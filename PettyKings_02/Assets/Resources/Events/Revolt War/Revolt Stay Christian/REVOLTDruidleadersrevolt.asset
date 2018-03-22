@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: The popular druid leaders have rallied the people against you and
       have brought them outside your hall demanding that you either convert or be
       killed!

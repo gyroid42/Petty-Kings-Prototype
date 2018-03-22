@@ -15,16 +15,15 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
-    description_: Our village needs a location! Should we settle by the river or the
-      woods?
+    type_: 1
+    description_: We have found a site for our new settlement!
     artwork_: {fileID: 2800000, guid: c56f0361561364d4da86dceb7c1743f4, type: 3}
     btnText_:
-    - Woods!
-    - River!
+    - Excellent!
+    - Excellent!
   decisionEffect_:
   - name_: Woods
-    starChange_: -5
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0

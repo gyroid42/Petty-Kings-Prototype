@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: After refusing his demands of surrender, King Uuen assaults the
       fort with dozens of men
     artwork_: {fileID: 0}

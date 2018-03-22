@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: While your spearmen a top the wall manage to beat back the attackers,
       they soon break through the gatehouse having been left undefended...
     artwork_: {fileID: 0}

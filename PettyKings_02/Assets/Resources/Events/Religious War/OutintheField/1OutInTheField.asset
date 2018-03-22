@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: Our men have gathered outside the fort, ready to meet this King
       Uuen in the field!
     artwork_: {fileID: 0}
