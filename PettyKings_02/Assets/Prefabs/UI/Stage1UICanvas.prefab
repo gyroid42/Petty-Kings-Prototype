@@ -774,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1671491575846762
 GameObject:
   m_ObjectHideFlags: 1
@@ -1458,14 +1458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Make decisions by left-clicking
-
-
-    Move the camera with right-click and drag or by moving the mouse to the screen
-    edge
-
-
-    Drag buildings onto the map to develop your village'
+  m_Text: Example helper text
 --- !u!114 &114093181879598044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1624,12 +1617,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1724101208375204}
   bodyObject: {fileID: 114091581848252120}
-  helperText:
+  headObject: {fileID: 114380595575323814}
+  tutorialText:
   - 'Make decisions by left-clicking
 
 
-    Move the camera with right-click and drag or by moving the mouse to the screen
-    edge'
+    Two options are presented for each event'
   - 'Your decisions are important!
 
 
@@ -1637,7 +1630,7 @@ MonoBehaviour:
   - 'Your performance as king is given as a star rating
 
 
-    Aim for five stars and be the best king the Picts have seen'
+    Aim for five stars and be the best king the Picts have seen!'
 --- !u!114 &114153483866545386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4826,9 +4819,9 @@ RectTransform:
   m_Father: {fileID: 224599012819981346}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -109.5, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -167, y: 146.6}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224585422704095770
