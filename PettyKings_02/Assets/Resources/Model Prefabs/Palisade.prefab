@@ -142,6 +142,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4850764220795690}
+  - component: {fileID: 136729133838648514}
   m_Layer: 0
   m_Name: Palisade
   m_TagString: Untagged
@@ -298,7 +299,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1793913366503886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 226.25012, y: 4.026883, z: 100.39048}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4019593585659116}
@@ -391,3 +392,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &136729133838648514
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793913366503886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.14653587
+  m_Height: 1.7847304
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8555162, z: 0.015203476}
