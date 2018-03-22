@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AnimalPathFinding : MonoBehaviour {
+public class AnimalPathFinding : MonoBehaviour
+{
 
     // Use this for initialization
     // Use this for initialization
@@ -47,4 +48,3 @@ public class AnimalPathFinding : MonoBehaviour {
         return navHit.position;
     }
 }
-
