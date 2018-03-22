@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4460826483683100}
   - component: {fileID: 95157844819983384}
+  - component: {fileID: 208117221315714266}
   m_Layer: 0
   m_Name: Model_GateHouse_01
   m_TagString: Untagged
@@ -877,6 +878,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4689780143557378}
+  - component: {fileID: 65291955624291992}
+  - component: {fileID: 65664662736426790}
+  - component: {fileID: 54144847299063230}
+  - component: {fileID: 208041712639240814}
   m_Layer: 0
   m_Name: GateHouse
   m_TagString: Untagged
@@ -2115,6 +2120,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639182475427092}
   m_Mesh: {fileID: 4300000, guid: 76b48df75ccc2ff4fa59f46dfbafe0bb, type: 3}
+--- !u!54 &54144847299063230
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738953148463052}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65291955624291992
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738953148463052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8524208, y: 0.44339645, z: 1.7688408}
+  m_Center: {x: -1.0737896, y: 0.21507114, z: 0.8844204}
+--- !u!65 &65664662736426790
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738953148463052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8862152, y: 1.6, z: 1.0428333}
+  m_Center: {x: 1.0568924, y: 0.8, z: 0.52141666}
 --- !u!95 &95157844819983384
 Animator:
   serializedVersion: 3
@@ -2132,3 +2176,33 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &208041712639240814
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738953148463052}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.4, y: 0.75, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1.1, y: 0.6, z: 1}
+  m_TimeToStationary: 0.5
+--- !u!208 &208117221315714266
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130424294175978}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.9, y: 0.75, z: 0.4}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.1, y: 0.6, z: -1.1}
+  m_TimeToStationary: 0.5

@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: While your spearmen a top the wall manage to beat back the attackers,
       they soon break through the gatehouse having been left undefended...
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 6b62996e46fcbca44a9f1fab9123520d, type: 3}
     btnText_:
     - Fall back to the hall!
     - Fall back to the hall!

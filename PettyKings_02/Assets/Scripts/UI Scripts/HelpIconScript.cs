@@ -8,30 +8,73 @@ public class HelpIconScript : MonoBehaviour {
     // Public variables
     public GameObject icon;
     public Text bodyObject;
+    public Text headObject;
+
     // Set larger text input in editor
     [TextArea(1, 7)]
-    public List<string> helperText;
-    // Private variables
-    private int listPosition = 0;
-    private int listSize;
+    public List<string> tutorialText;
+
+    // Queue to handle text efficiently
+    private Queue<HelperText> helperText;
+    private bool initialised_;
+
+    // Struct for helper data
+    struct HelperText
+    {
+        private string title;
+        private string body;
+
+        public HelperText(string t, string b)
+        {
+            title = t;
+            body = b;
+        }
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        public string Body
+        {
+            get { return body; }
+            set { body = value; }
+        }
+    }
     
 
 	// Use this for initialization
 	void Start () {
         // Ensure icon is visible on startup
-        icon.SetActive(true);
+        Open();
 
-		// Update text
-		UpdateText();
-
-        // Get list size, used in CycleText for iteration
-		listSize = (helperText.Count - 1);
-	}
+        // Initialise tutorial text
+        Initialise();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
+
+    void Initialise()
+    {
+        // Create queue object
+        helperText = new Queue<HelperText>();
+
+        // Cycle through the tutorial text list, adding each item to the queue
+        foreach(string text in tutorialText)
+        {
+            // create struct
+            HelperText newItem = new HelperText("",text);
+
+            helperText.Enqueue(newItem);
+        }
+
+        // Update text, starting showing preloaded tutorial text
+        UpdateText();
+    }
 
     // Close down icon
     public void Close()
@@ -40,31 +83,64 @@ public class HelpIconScript : MonoBehaviour {
     }
 
     // Display tutorial again
+    // If update is true, also update text
+    // If text isn't updated, the previous text will be displayed instead
     public void Open()
     {
         icon.SetActive(true);
     }
 
-    // Update the UI box with the string stored in the list
-    // Uses list position variable to point to index in list
+    // Added a new item to the queue
+    public void AddItem(string bodyText, string title = "", bool priority = false)
+    {
+
+        // Clear queue if priority
+        if (priority)
+        {
+            helperText.Clear();
+        }
+
+        // New struct
+        HelperText newItem = new HelperText(title, bodyText);
+
+        // Add text to the queue to be displayed
+        helperText.Enqueue(newItem);
+
+        // If helper text was empty, reopen it
+        if (helperText.Count == 1)
+        {
+            Open();
+            UpdateText();
+        }
+    }
+
+    // Update the UI box with the string stored in the queue
+    // Pops top item off the top and makes the next item in the queue the top
     void UpdateText()
     {
-        bodyObject.text = helperText[listPosition];
+        HelperText currentItem = helperText.Dequeue();
+
+        // Update values
+        bodyObject.text = currentItem.Body;
+
+        // Update title if new title
+        if (currentItem.Title != "")
+        {
+            headObject.text = currentItem.Title;
+        }
     }
 
     // Goes to next text panel for tutorial helper, closes if the last one
     public void CycleText()
     {
         // check if last item in list
-        if (listPosition == listSize)
+        if (helperText.Count == 0)
         {
             // close helper
             Close();
         }
         else
         {
-            // next text
-            listPosition++;
             // update text
             UpdateText();
         }

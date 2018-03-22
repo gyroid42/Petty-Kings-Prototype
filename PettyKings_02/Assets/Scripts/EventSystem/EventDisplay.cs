@@ -33,8 +33,11 @@ public class EventDisplay : MonoBehaviour {
     // References to parts of event screen for displaying data
     public Text nameText_;
 
-    public GameObject front_;
+    private GameObject victoryScreen_;
+    public Texture victoryTexture_;
+    public Texture defeatTexture_;
     public GameObject eventWindow_;
+    public GameObject front_;
     public Text descriptionText_;
     public RawImage artworkImage_;
     public RawImage decisionTypeLogo_;
@@ -87,6 +90,9 @@ public class EventDisplay : MonoBehaviour {
     // Method called when object created
     void Start ()
     {
+
+        victoryScreen_ = GameObject.Find("VictoryScreen");
+        victoryScreen_.SetActive(false);
 
         buttons_.Add(GameObject.Find("DecisionBoxLeft").GetComponent<Button>());
         buttons_.Add(GameObject.Find("DecisionBoxRight").GetComponent<Button>());
@@ -265,6 +271,20 @@ public class EventDisplay : MonoBehaviour {
     public void UpdateTimerBar(float percentage)
     {
         timerBar_.fillAmount = percentage;
+    }
+
+
+    public void DisplayVictory(bool victory)
+    {
+        if (victory)
+        {
+            victoryScreen_.GetComponentInChildren<RawImage>().texture = defeatTexture_;
+        }
+        else
+        {
+            victoryScreen_.GetComponentInChildren<RawImage>().texture = victoryTexture_;
+        }
+        victoryScreen_.SetActive(true);
     }
 
 }

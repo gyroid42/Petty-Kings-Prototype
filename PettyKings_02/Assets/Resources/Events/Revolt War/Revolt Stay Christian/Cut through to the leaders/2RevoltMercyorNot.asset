@@ -17,7 +17,7 @@ MonoBehaviour:
     timerLength_: 0
     type_: 3
     description_: "With the druid leader at your feet they beg for mercy...\t"
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Show the leader mercy and banish them to the north!
     - No they will be killed!
