@@ -68,7 +68,7 @@ public class DestroyParticles : MonoBehaviour {
     {
         if(!isChanged)
         {
-            //smokeEffectClone = Instantiate(smokeEffect);
+            smokeEffectClone = Instantiate(smokeEffect);
             smokeEffectClone.transform.position = this.transform.position;
             smokeEffectClone.transform.localScale = new Vector3(8, 8, 8);
             Destroy(wallFlamesClone);
