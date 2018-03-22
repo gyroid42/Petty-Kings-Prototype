@@ -6,13 +6,15 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
+    GameObject destroyParticles;
     List<GameObject> positions = new List<GameObject>(); //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
+    List<GameObject> activeParticles = new List<GameObject>();
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
     List<GameObject> wallsLeft = new List<GameObject>();
     List<GameObject> wallsRight = new List<GameObject>();
-   
+
 
     //Variables for wall creation
     public Transform startPos;
@@ -31,6 +33,8 @@ public class WorldManager : MonoBehaviour {
 
     public float buildingFallSpeed_;
 
+
+
     void Awake() {
 
        
@@ -43,7 +47,11 @@ public class WorldManager : MonoBehaviour {
         resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject; //3
         resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject; //4
 
-        if(wallsLeft == null)
+
+        //load particle effects
+        destroyParticles = Resources.Load("Particle Effects/DestroyParticles") as GameObject;
+
+        if (wallsLeft == null)
         {
             Debug.Log("NULL LEFT");
         }
@@ -175,6 +183,7 @@ public class WorldManager : MonoBehaviour {
 
     private void Update()
     {
+
             if (!rightCompleted) //check to see whether either side is complete then stop building them
             {
                 BuildWallRight();
@@ -185,6 +194,11 @@ public class WorldManager : MonoBehaviour {
                 BuildWallLeft();
          
             }   
+
+            if(Input.GetKeyDown("e"))
+        {
+            DestroyBuilding(3);
+        }
 
 
     }
@@ -239,9 +253,10 @@ public class WorldManager : MonoBehaviour {
 
     public void DestroyBuilding(int index_) //destroy a building defined by the index
     {
-        Destroy(buildings[index_]);
-       // buildings.Remove(buildings[index]);
+        activeParticles.Add(Instantiate(destroyParticles, buildings[index_].transform));
+        activeParticles[activeParticles.Count - 1].transform.position = buildings[index_].transform.position;
     }
+
 
     public void DestroyWall(bool side_, int startPos_, int numberToRemove_) //bool to decide side, startpos of destruction, number of pillars to remove
     {
