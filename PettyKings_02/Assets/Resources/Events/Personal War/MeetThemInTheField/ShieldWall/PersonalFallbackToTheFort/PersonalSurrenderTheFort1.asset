@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: You open the gates to the conquering army only to have them stream
       into the fort looting and burning as they go, soon after they burn your hall
       and slaughter yourself and your ffamily!

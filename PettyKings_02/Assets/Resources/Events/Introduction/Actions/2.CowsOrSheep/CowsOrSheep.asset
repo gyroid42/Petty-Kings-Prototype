@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 1
     description_: We need to farm either cows or sheep for food...
     artwork_: {fileID: 2800000, guid: 5667fba7575726d458cdb361334d8295, type: 3}
     btnText_:

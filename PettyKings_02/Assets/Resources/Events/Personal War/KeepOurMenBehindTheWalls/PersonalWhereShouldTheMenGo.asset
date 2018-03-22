@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: Where should we position the men?
     artwork_: {fileID: 0}
     btnText_:

@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: As the rebels attack them break themselves like waves against rocks!
       Its not long before they break and flee back to their hovels.
     artwork_: {fileID: 0}

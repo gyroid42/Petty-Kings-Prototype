@@ -133,7 +133,7 @@ public class DecisionAction : BaseAction
         eventDisplay.gameObject.SetActive(true);
 
         // Display main
-        eventDisplay.Display(mainDisplay_);
+        eventDisplay.Display(mainDisplay_, decisionTimer_);
 
     }
 
@@ -256,6 +256,7 @@ public class DecisionAction : BaseAction
         // Set actionRunning_ to false to end the action
         decisionTimer_.SetActive(false);
         actionRunning_ = false;
+        eventDisplay.DisplayEnd();
     }
 
 

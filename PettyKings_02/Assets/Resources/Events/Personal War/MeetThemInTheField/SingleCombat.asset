@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 3
     description_: King Uuen challenges you to a duel of single combat... Do you accept?
     artwork_: {fileID: 0}
     btnText_:

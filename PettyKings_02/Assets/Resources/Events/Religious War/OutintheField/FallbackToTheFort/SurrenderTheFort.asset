@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: You promise to surrender the fort with no figth and to convert to
       the true religion of Christ!
     artwork_: {fileID: 0}

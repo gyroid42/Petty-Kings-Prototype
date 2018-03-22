@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: As you cut your way through the shield wall the rebels quickly break
       and scatter leaving only the leaders left...
     artwork_: {fileID: 0}

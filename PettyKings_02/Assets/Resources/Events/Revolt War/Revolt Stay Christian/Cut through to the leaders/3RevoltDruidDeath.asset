@@ -15,6 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: 'You decide that these rabble rousers cannot be allowed to live
       and they are quickly beheaded and their heads are displayed on stakes outside
       the fort. However you wake a few days later to find your village almost completly

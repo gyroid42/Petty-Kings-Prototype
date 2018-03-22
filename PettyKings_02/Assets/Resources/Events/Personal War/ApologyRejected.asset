@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: 5783d9bf056804541807af0754659e27, type: 3}
     description_: King Uuen spits at your pathetic offer of an apology and roars at
       his men to prepare for battle
     artwork_: {fileID: 0}
