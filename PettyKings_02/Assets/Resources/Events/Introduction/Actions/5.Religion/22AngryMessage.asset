@@ -15,12 +15,13 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 1
     description_: The Christian King Uuen has sent a messenger demanding that we convert
       to the true religion!
-    artwork_: {fileID: 2800000, guid: 5c3c54feef0b86d4f9f7c64c814f98d8, type: 3}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Concerning...
-    - Oh well!
+    - Concerning...
   decisionEffect_:
   - name_: Concerning...
     starChange_: -5

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -34,6 +35,9 @@ public class StateManager : MonoBehaviour {
 
     private Camera mainCam;
     private Camera previewCam;
+
+    private Vector3 mainCamMenuPos;
+    private Quaternion mainCamMenuRot;
 
     // CameraMoveEvents
     private Event camMenuToGame_;
@@ -83,6 +87,11 @@ public class StateManager : MonoBehaviour {
                 previewCam = c;
             }
         }
+
+        // Get transform for main camera, used in resetting camera later
+        // NOTE: storing the transform itself does not work, as this is a pointer to a variable, rather than storing an instance
+        mainCamMenuPos = mainCam.transform.position;
+        mainCamMenuRot = mainCam.transform.rotation;
         
         GameUI_ = GetComponent<HUDToggle>();
 
@@ -101,9 +110,13 @@ public class StateManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.C))
+        // Allow manual reset from game state to menu state
+        if (CurrentState_ == GAMESTATE.STAGEONE)
         {
-            ChangeState(GAMESTATE.MENU);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ReturnToMenu();
+            }
         }
 	}
 
@@ -146,22 +159,32 @@ public class StateManager : MonoBehaviour {
 
     public void ReturnToMenu()
     {
-        ChangeState(GAMESTATE.MENU);
+        // Reset camera to main menu rotation and position
+        //mainCam.transform.position = mainCamMenuPos;
+        //mainCam.transform.rotation = mainCamMenuRot;
+
+        // Reset Scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Update state machine
+        // ChangeState(GAMESTATE.MENU);
     }
 
     // Set game to be playing
     public void ActivateStageOne()
     {
         ChangeState(GAMESTATE.STAGEONE);
-        CameraStageOne();
+        eventController_.GameStart();
     }
     
+
+    // REDUNDANT FUNCTION, Camera movement handled in another location
+    // Handled through events
     // CAMERA MOVEMENTS
-    void CameraStageOne()
+    /*void CameraStageOne()
     {
         //SplineController_.FollowSpline();
 
-        eventController_.GameStart();
 
         /*
         eventController_.StartEvent(camMenuToGame_);*/
@@ -189,5 +212,6 @@ public class StateManager : MonoBehaviour {
         rot = new Vector3(55.59f, 36.736f, 0.0f);
         CameraController_.AddGotoPosition(pos, rot, true);
         */
-    }
+    /*}
+    */
  }

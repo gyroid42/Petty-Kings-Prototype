@@ -351,6 +351,7 @@ MonoBehaviour:
   startPos: {fileID: 0}
   endPos: {fileID: 0}
   starRating: 0
+  buildingFallSpeed_: 12
 --- !u!154 &154028670911795484
 TerrainCollider:
   m_ObjectHideFlags: 1

@@ -15,8 +15,9 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: Where should we position the men?
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: af5cc000805897d46a22f909f9f64cd5, type: 3}
     btnText_:
     - Protect the walls!
     - Protect the walls and the gatehouse!

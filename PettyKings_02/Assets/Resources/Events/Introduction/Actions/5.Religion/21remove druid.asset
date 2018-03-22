@@ -15,8 +15,9 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 1
     description_: Remove Druid?
-    artwork_: {fileID: 2800000, guid: 5159a7659fbcdcd48a72fa849f3d81f1, type: 3}
+    artwork_: {fileID: 2800000, guid: 103a0ff2480eae14b9c55b5f95009d7e, type: 3}
     btnText_:
     - Remove Druid
     - Keep Druid

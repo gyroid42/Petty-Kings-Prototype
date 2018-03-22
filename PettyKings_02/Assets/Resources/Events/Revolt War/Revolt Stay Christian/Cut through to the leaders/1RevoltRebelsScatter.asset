@@ -15,9 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: As you cut your way through the shield wall the rebels quickly break
       and scatter leaving only the leaders left...
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 6b62996e46fcbca44a9f1fab9123520d, type: 3}
     btnText_:
     - Bring the leaders to me...
     - Bring the leaders to me...

@@ -15,10 +15,11 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 1
     description_: King Uuen has declared a Christian war against us!
-    artwork_: {fileID: 2800000, guid: 5159a7659fbcdcd48a72fa849f3d81f1, type: 3}
+    artwork_: {fileID: 2800000, guid: 103a0ff2480eae14b9c55b5f95009d7e, type: 3}
     btnText_:
-    - Oh no!
+    - Ah well!
     - Ah well!
   decisionEffect_:
   - name_: Oh no!
@@ -27,14 +28,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
   - name_: Ah well!
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
   timerRanOutEffect_:
     name_: Oh no!
     starChange_: -5
@@ -42,4 +45,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}

@@ -6,13 +6,15 @@ public class WorldManager : MonoBehaviour {
 
     // Use this for initialization
     GameObject[] resources; //To hold the loaded prefabs
+    GameObject destroyParticles;
     List<GameObject> positions = new List<GameObject>(); //to hold data on the tiles that define building positions
     List<GameObject> buildings = new List<GameObject>();//To hold data for the spawned building
+    List<GameObject> activeParticles = new List<GameObject>();
     public Transform lookAt; //make building face center
     List<int> lastNum = new List<int>(); //used to ensure objects dont spawn ontop of eachother
     List<GameObject> wallsLeft = new List<GameObject>();
     List<GameObject> wallsRight = new List<GameObject>();
-   
+
 
     //Variables for wall creation
     public Transform startPos;
@@ -29,6 +31,10 @@ public class WorldManager : MonoBehaviour {
     private StarRating starManager; //used to update image of stars on screen
     //public GameObject starImageObject;
 
+    public float buildingFallSpeed_;
+
+
+
     void Awake() {
 
        
@@ -41,7 +47,11 @@ public class WorldManager : MonoBehaviour {
         resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject; //3
         resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject; //4
 
-        if(wallsLeft == null)
+
+        //load particle effects
+        destroyParticles = Resources.Load("Particle Effects/DestroyParticles") as GameObject;
+
+        if (wallsLeft == null)
         {
             Debug.Log("NULL LEFT");
         }
@@ -66,7 +76,7 @@ public class WorldManager : MonoBehaviour {
         //spawn buildings
         WorldSpawn();
 
-        lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
+        //lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
 
         foreach(GameObject i in positions)
         {
@@ -128,35 +138,52 @@ public class WorldManager : MonoBehaviour {
 
     public void SpawnHuntersHut()
     {
-        buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[3], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+            buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
+        }
+        
     }
 
     public void SpawnWoodHut()
     {
-        buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[4], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+            buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
+        }
     }
 
 
     private void SpawnGateHouse()
     {
-        buildings.Add(Instantiate(resources[1], startPos));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[1], startPos.transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(startPos.transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), startPos.transform.position.z);
+        }
     }
 
     public void SpawnChiefHut()
     {
-        buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
-        buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position), buildings[buildings.Count - 1].transform.position.z);
-        buildings[buildings.Count - 1].transform.LookAt(lookAt);
+        if ((buildings.Count) < (positions.Count))
+        {
+            buildings.Add(Instantiate(resources[2], positions[GenerateNum()].transform));
+            buildings[buildings.Count - 1].transform.position = new Vector3(buildings[buildings.Count - 1].transform.position.x, Terrain.activeTerrain.SampleHeight(buildings[buildings.Count - 1].transform.position) + 20, buildings[buildings.Count - 1].transform.position.z);
+            buildings[buildings.Count - 1].transform.LookAt(lookAt);
+            buildings[buildings.Count - 1].GetComponent<Rigidbody>().velocity = new Vector3(0, -buildingFallSpeed_, 0);
+        }
     }
 
 
     private void Update()
     {
+
             if (!rightCompleted) //check to see whether either side is complete then stop building them
             {
                 BuildWallRight();
@@ -167,6 +194,13 @@ public class WorldManager : MonoBehaviour {
                 BuildWallLeft();
          
             }   
+
+          /*  if(Input.GetKeyDown("e"))
+        {
+            DestroyBuilding(0);
+        }
+        */
+
     }
 
 
@@ -219,9 +253,10 @@ public class WorldManager : MonoBehaviour {
 
     public void DestroyBuilding(int index_) //destroy a building defined by the index
     {
-        Destroy(buildings[index_]);
-       // buildings.Remove(buildings[index]);
+        activeParticles.Add(Instantiate(destroyParticles, buildings[index_].transform));
+        activeParticles[activeParticles.Count - 1].transform.position = buildings[index_].transform.position;
     }
+
 
     public void DestroyWall(bool side_, int startPos_, int numberToRemove_) //bool to decide side, startpos of destruction, number of pillars to remove
     {

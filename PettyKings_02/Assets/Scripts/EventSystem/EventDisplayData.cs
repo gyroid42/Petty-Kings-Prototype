@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+public enum DECISIONTYPE
+{
+    DIPLOMACY,
+    DOMESTIC,
+    RELIGION,
+    WAR
+}
+
 // Data for displaying an event
 [System.Serializable]
 public struct EventDisplayData {
@@ -14,7 +22,7 @@ public struct EventDisplayData {
     // Timer for event
     public float timerLength_;
 
-    public Texture decisionLogo_;
+    public DECISIONTYPE type_;
 
     // Text in Description box
     [TextArea(3, 5)]

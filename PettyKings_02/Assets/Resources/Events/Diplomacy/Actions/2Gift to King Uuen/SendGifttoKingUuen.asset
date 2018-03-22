@@ -15,8 +15,9 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 0
     description_: Should we send a gift to King Uuen?
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 187bee22192693b4b966af00e288e998, type: 3}
     btnText_:
     - Yes, we shall give him plenty of silver!
     - No we cannot afford it!

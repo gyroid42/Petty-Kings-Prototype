@@ -15,12 +15,20 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 0
     description_: You caught some deer!
-    artwork_: {fileID: 2800000, guid: 9e5fdbf98b5f30a49a773bf6907b9f94, type: 3}
+    artwork_: {fileID: 2800000, guid: 31e1b7fb9baec9046b8be289922980cc, type: 3}
     btnText_:
     - Continue!
     - Continue!
   decisionEffect_:
+  - name_: Continue to diplo
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_: []
   - name_: Continue to diplo
     starChange_: -5
     addEvent_: 0

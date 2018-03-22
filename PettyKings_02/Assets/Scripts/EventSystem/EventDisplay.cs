@@ -21,10 +21,23 @@ public class EventDisplay : MonoBehaviour {
     public GameObject prefabButton;
 
 
+    public GameObject bounceDisplay;
+
+
+    public Texture diplomacyLogo_;
+    public Texture domesticLogo_;
+    public Texture religionLogo_;
+    public Texture warLogo_;
+
 
     // References to parts of event screen for displaying data
     public Text nameText_;
 
+    private GameObject victoryScreen_;
+    public Texture victoryTexture_;
+    public Texture defeatTexture_;
+    public GameObject eventWindow_;
+    public GameObject front_;
     public Text descriptionText_;
     public RawImage artworkImage_;
     public RawImage decisionTypeLogo_;
@@ -38,6 +51,9 @@ public class EventDisplay : MonoBehaviour {
 
     // Default timer setting
     public float defaultTimerLength_;
+
+
+    private Timer displayTimer_;
 
     // When object is created
     void Awake()
@@ -75,24 +91,99 @@ public class EventDisplay : MonoBehaviour {
     void Start ()
     {
 
+        victoryScreen_ = GameObject.Find("VictoryScreen");
+        victoryScreen_.SetActive(false);
+
         buttons_.Add(GameObject.Find("DecisionBoxLeft").GetComponent<Button>());
         buttons_.Add(GameObject.Find("DecisionBoxRight").GetComponent<Button>());
 
         // Event display is not active when created
         gameObject.SetActive(false);
 	}
+    
 
-
-    public void Display(EventDisplayData displayData)
+    public void Display(EventDisplayData displayData, Timer newTimer)
     {
         // Set all display elements with data from event
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
         artworkImage_.texture = displayData.artwork_;
-        decisionTypeLogo_.texture = displayData.decisionLogo_;
+
+        switch (displayData.type_)
+        {
+            case DECISIONTYPE.DIPLOMACY:
+                decisionTypeLogo_.texture = diplomacyLogo_;
+                break;
+            case DECISIONTYPE.DOMESTIC:
+                decisionTypeLogo_.texture = domesticLogo_;
+                break;
+            case DECISIONTYPE.RELIGION:
+                decisionTypeLogo_.texture = religionLogo_;
+                break;
+            case DECISIONTYPE.WAR:
+                decisionTypeLogo_.texture = warLogo_;
+                break;
+            default:
+                decisionTypeLogo_.texture = null;
+                break;
+        }
+        //decisionTypeLogo_.texture = displayData.decisionLogo_;
 
         // Create the buttons
         CreateButtons(displayData);
+
+        displayTimer_ = newTimer;
+        displayTimer_.Pause();
+
+        StartCoroutine(DisplayStart());
+    }
+
+    IEnumerator DisplayStart()
+    {
+        front_.SetActive(false);
+        ShowButtons(false);
+        eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
+        float speed = 200;
+
+
+        yield return new WaitForSeconds(0.5f);
+        bool animFinished = false;
+        while (!animFinished)
+        {
+
+            yield return null;
+            eventWindow_.transform.eulerAngles += new Vector3(0, speed * Time.deltaTime, 0);
+
+            Debug.Log(eventWindow_.transform.eulerAngles);
+            if (eventWindow_.transform.eulerAngles.y >= 270)
+            {
+                front_.SetActive(true);
+            }
+
+            if (eventWindow_.transform.eulerAngles.y <= speed * Time.deltaTime && eventWindow_.transform.eulerAngles.y >= -speed * Time.deltaTime)
+            {
+                eventWindow_.transform.eulerAngles = new Vector3(0, 0, 0);
+                animFinished = true;
+            }
+        }
+        ShowButtons(true);
+        displayTimer_.Start();
+    }
+
+    public void DisplayEnd()
+    {
+        GameObject oldDisplay = Instantiate(bounceDisplay);
+
+        GameObject oldWindow = Instantiate(eventWindow_);
+
+        oldWindow.transform.position = eventWindow_.transform.position;
+
+        oldWindow.transform.SetParent(oldDisplay.transform);
+
+        oldDisplay.transform.SetParent(transform.parent);
+        
+
+        ShowButtons(false);
 
     }
 
@@ -169,9 +260,31 @@ public class EventDisplay : MonoBehaviour {
         buttons_.Clear();
     }
 
+    void ShowButtons(bool value)
+    {
+        foreach(Button btn in buttons_)
+        {
+            btn.gameObject.SetActive(value);
+        }
+    }
+
     public void UpdateTimerBar(float percentage)
     {
         timerBar_.fillAmount = percentage;
+    }
+
+
+    public void DisplayVictory(bool victory)
+    {
+        if (victory)
+        {
+            victoryScreen_.GetComponentInChildren<RawImage>().texture = defeatTexture_;
+        }
+        else
+        {
+            victoryScreen_.GetComponentInChildren<RawImage>().texture = victoryTexture_;
+        }
+        victoryScreen_.SetActive(true);
     }
 
 }

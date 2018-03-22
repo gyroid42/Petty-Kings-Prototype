@@ -15,11 +15,12 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
+    type_: 3
     description_: With your public refusal and disregard of the old ways, the band
       of farmers and field hands lead by the druids form a pathetic looking shield
       wall. while at the same time the few Christien men still loyal to yourself rally
       round and form their own shield wall...
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
     - Cut through to the leaders!
     - Let the rebels break themselves on our shield wall!
