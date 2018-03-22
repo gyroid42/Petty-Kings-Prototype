@@ -14,7 +14,7 @@ public class InspectBuilding : MonoBehaviour {
     private HelpIconScript HelpIcon_;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         // Locate help icon script in UI
         HelpIcon_ = GameObject.Find("ControlHelper").GetComponent<HelpIconScript>();
 	}
