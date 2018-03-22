@@ -133,7 +133,7 @@ public class DecisionAction : BaseAction
         eventDisplay.gameObject.SetActive(true);
 
         // Display main
-        eventDisplay.Display(mainDisplay_);
+        eventDisplay.Display(mainDisplay_, decisionTimer_);
 
     }
 
