@@ -36,7 +36,8 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: de4a262e54637d94487970d580cba384, type: 2}
   timerRanOutEffect_:
     name_: Let him regain his footing
     starChange_: 15
@@ -44,4 +45,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: de4a262e54637d94487970d580cba384, type: 2}

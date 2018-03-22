@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: After refusing his demands of surrender, King Uuen assaults the
       fort with dozens of men
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
     - Hold strong!
     - Hold strong!

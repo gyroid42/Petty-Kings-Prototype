@@ -19,8 +19,8 @@ MonoBehaviour:
     description_: You caught some deer!
     artwork_: {fileID: 2800000, guid: 31e1b7fb9baec9046b8be289922980cc, type: 3}
     btnText_:
-    - Continue!
-    - Continue!
+    - We shall eat well tonight!
+    - We shall eat well tonight!
   decisionEffect_:
   - name_: Continue to diplo
     starChange_: -5
