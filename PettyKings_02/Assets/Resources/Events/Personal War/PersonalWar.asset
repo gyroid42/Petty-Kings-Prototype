@@ -30,7 +30,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 908f9f6e3305f124da20896918c8e86b, type: 2}
   - name_: Offer an apology
     starChange_: 0
     addEvent_: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 17a5aac82bf36b34cadbe97b93eecc09, type: 2}
   timerRanOutEffect_:
     name_: Prepare for battle!
     starChange_: 10
@@ -47,4 +47,4 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 908f9f6e3305f124da20896918c8e86b, type: 2}
