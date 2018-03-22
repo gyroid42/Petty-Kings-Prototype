@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 0
     description_: King Uuen spits at your pathetic offer of an apology and roars at
       his men to prepare for battle
-    artwork_: {fileID: 2800000, guid: d085b7d3a2b5ddc4cbc00c979f643800, type: 3}
+    artwork_: {fileID: 2800000, guid: bfe12017220c2cc4a84f4f8219c0f8d0, type: 3}
     btnText_:
     - Meet them in the field!
     - Keep our men behind the walls!
@@ -30,7 +30,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 7a1a2b46faa45a44bbcc656dc88761f4, type: 2}
   - name_: Keep our men behind the walls!
     starChange_: -10
     addEvent_: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 908f9f6e3305f124da20896918c8e86b, type: 2}
   timerRanOutEffect_:
     name_: Keep our men behind the walls!
     starChange_: -10
@@ -47,4 +47,4 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 908f9f6e3305f124da20896918c8e86b, type: 2}

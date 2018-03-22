@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: You promise to surrender the fort with no figth and to convert to
       the true religion of Christ!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Theres nothing else to be done...
     - Theres nothing else to be done...

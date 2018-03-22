@@ -15,9 +15,9 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 0
     description_: You attack low and bring the king to one knee
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: edfd2a12b565e1344b6a800098913517, type: 3}
     btnText_:
     - Kill the King!
     - Let him regain his footing
