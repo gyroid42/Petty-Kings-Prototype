@@ -64,4 +64,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffc1de130893c241b00b5537a97699f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity_: {x: 4, y: 4}
+  gravity_: {x: 0, y: -3000}
+  gravity2_: {x: 0, y: -500}

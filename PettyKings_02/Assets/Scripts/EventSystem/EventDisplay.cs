@@ -33,6 +33,7 @@ public class EventDisplay : MonoBehaviour {
     // References to parts of event screen for displaying data
     public Text nameText_;
 
+    public GameObject front_;
     public GameObject eventWindow_;
     public Text descriptionText_;
     public RawImage artworkImage_;
@@ -47,6 +48,9 @@ public class EventDisplay : MonoBehaviour {
 
     // Default timer setting
     public float defaultTimerLength_;
+
+
+    private Timer displayTimer_;
 
     // When object is created
     void Awake()
@@ -90,21 +94,10 @@ public class EventDisplay : MonoBehaviour {
         // Event display is not active when created
         gameObject.SetActive(false);
 	}
+    
 
-
-    public void Display(EventDisplayData displayData)
+    public void Display(EventDisplayData displayData, Timer newTimer)
     {
-
-        GameObject oldDisplay = Instantiate(bounceDisplay);
-
-        GameObject oldWindow = Instantiate(eventWindow_);
-
-        oldWindow.transform.position = eventWindow_.transform.position;
-
-        oldWindow.transform.SetParent(oldDisplay.transform);
-
-        oldDisplay.transform.SetParent(transform);
-
         // Set all display elements with data from event
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
@@ -132,6 +125,59 @@ public class EventDisplay : MonoBehaviour {
 
         // Create the buttons
         CreateButtons(displayData);
+
+        displayTimer_ = newTimer;
+        displayTimer_.Pause();
+
+        StartCoroutine(DisplayStart());
+    }
+
+    IEnumerator DisplayStart()
+    {
+        front_.SetActive(false);
+        ShowButtons(false);
+        eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
+        float speed = 200;
+
+
+        yield return new WaitForSeconds(0.5f);
+        bool animFinished = false;
+        while (!animFinished)
+        {
+
+            yield return null;
+            eventWindow_.transform.eulerAngles += new Vector3(0, speed * Time.deltaTime, 0);
+
+            Debug.Log(eventWindow_.transform.eulerAngles);
+            if (eventWindow_.transform.eulerAngles.y >= 270)
+            {
+                front_.SetActive(true);
+            }
+
+            if (eventWindow_.transform.eulerAngles.y <= speed * Time.deltaTime && eventWindow_.transform.eulerAngles.y >= -speed * Time.deltaTime)
+            {
+                eventWindow_.transform.eulerAngles = new Vector3(0, 0, 0);
+                animFinished = true;
+            }
+        }
+        ShowButtons(true);
+        displayTimer_.Start();
+    }
+
+    public void DisplayEnd()
+    {
+        GameObject oldDisplay = Instantiate(bounceDisplay);
+
+        GameObject oldWindow = Instantiate(eventWindow_);
+
+        oldWindow.transform.position = eventWindow_.transform.position;
+
+        oldWindow.transform.SetParent(oldDisplay.transform);
+
+        oldDisplay.transform.SetParent(transform.parent);
+        
+
+        ShowButtons(false);
 
     }
 
@@ -206,6 +252,14 @@ public class EventDisplay : MonoBehaviour {
 
         // After all the buttons are destroyed clear the list of buttons
         buttons_.Clear();
+    }
+
+    void ShowButtons(bool value)
+    {
+        foreach(Button btn in buttons_)
+        {
+            btn.gameObject.SetActive(value);
+        }
     }
 
     public void UpdateTimerBar(float percentage)
