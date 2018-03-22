@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873101184966124}
   - component: {fileID: 195309721808891106}
-  - component: {fileID: 114256363823133572}
+  - component: {fileID: 114628756622316202}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4001620630006506}
   - component: {fileID: 195020394490949782}
-  - component: {fileID: 114901489983030204}
+  - component: {fileID: 114882338965315112}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Untagged
@@ -514,7 +514,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830350289666454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 205.9074, y: 5.0364943, z: 181.75}
+  m_LocalPosition: {x: 188.08182, y: 5.0441895, z: 169.72688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4632090215001272}
@@ -1486,7 +1486,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114256363823133572
+--- !u!114 &114628756622316202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1494,12 +1494,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1431855858267870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daefcba47399de46ae536251470c779, type: 3}
+  m_Script: {fileID: 11500000, guid: 01c75266d66409442ace0d3d7dadc45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkRadius: 10
   walkTimer: 5
---- !u!114 &114901489983030204
+--- !u!114 &114882338965315112
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1656670924972658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4daefcba47399de46ae536251470c779, type: 3}
+  m_Script: {fileID: 11500000, guid: 01c75266d66409442ace0d3d7dadc45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkRadius: 10
