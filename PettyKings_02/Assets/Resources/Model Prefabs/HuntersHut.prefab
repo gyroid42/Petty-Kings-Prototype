@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 64467024623551540}
   - component: {fileID: 54650677062640996}
   - component: {fileID: 208999234418714452}
+  - component: {fileID: 114126645265033324}
   m_Layer: 0
   m_Name: HuntersHut
   m_TagString: Building
@@ -1672,6 +1673,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114126645265033324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115339122467900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6600809ba365a164bbbf9af67f99f7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "This is a Pictish hut\n\nConstructed out of stone and wood with a
+    thatched roof, it likely housed multiple families. \nThe picts would even build
+    'Crannogs' - big huts sitting in the middle of a lake!"
+  header: Hut
 --- !u!208 &208999234418714452
 NavMeshObstacle:
   m_ObjectHideFlags: 1
