@@ -25,7 +25,7 @@ public class FriendlyPathFinding : MonoBehaviour {
     void Update() {
         objectsInScene = GameObject.FindGameObjectsWithTag("Building");
 
-        if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 5.5f)
+        if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 9.5f)
         {
             moving = false;
            
