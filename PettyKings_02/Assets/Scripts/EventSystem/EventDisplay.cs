@@ -94,17 +94,6 @@ public class EventDisplay : MonoBehaviour {
 
     public void Display(EventDisplayData displayData)
     {
-
-        GameObject oldDisplay = Instantiate(bounceDisplay);
-
-        GameObject oldWindow = Instantiate(eventWindow_);
-
-        oldWindow.transform.position = eventWindow_.transform.position;
-
-        oldWindow.transform.SetParent(oldDisplay.transform);
-
-        oldDisplay.transform.SetParent(transform);
-
         // Set all display elements with data from event
         nameText_.text = displayData.name_;
         descriptionText_.text = displayData.description_;
@@ -132,6 +121,20 @@ public class EventDisplay : MonoBehaviour {
 
         // Create the buttons
         CreateButtons(displayData);
+
+    }
+
+    public void DisplayEnd()
+    {
+        GameObject oldDisplay = Instantiate(bounceDisplay);
+
+        GameObject oldWindow = Instantiate(eventWindow_);
+
+        oldWindow.transform.position = eventWindow_.transform.position;
+
+        oldWindow.transform.SetParent(oldDisplay.transform);
+
+        oldDisplay.transform.SetParent(transform);
 
     }
 

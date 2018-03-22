@@ -256,6 +256,7 @@ public class DecisionAction : BaseAction
         // Set actionRunning_ to false to end the action
         decisionTimer_.SetActive(false);
         actionRunning_ = false;
+        eventDisplay.DisplayEnd();
     }
 
 
