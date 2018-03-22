@@ -15,8 +15,33 @@ public class HelpIconScript : MonoBehaviour {
     public List<string> tutorialText;
 
     // Queue to handle text efficiently
-    private Queue<string> helperText;
+    private Queue<HelperText> helperText;
     private bool initialised_;
+
+    // Struct for helper data
+    struct HelperText
+    {
+        private string title;
+        private string body;
+
+        public HelperText(string t, string b)
+        {
+            title = t;
+            body = b;
+        }
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
+
+        public string Body
+        {
+            get { return body; }
+            set { body = value; }
+        }
+    }
     
 
 	// Use this for initialization
@@ -30,18 +55,24 @@ public class HelpIconScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            AddItem("This is a test\n\nDoes the help icon script work?","Testing testing 123");
+        }
 	}
 
     void Initialise()
     {
         // Create queue object
-        helperText = new Queue<string>();
+        helperText = new Queue<HelperText>();
 
         // Cycle through the tutorial text list, adding each item to the queue
         foreach(string text in tutorialText)
         {
-            helperText.Enqueue(text);
+            // create struct
+            HelperText newItem = new HelperText("",text);
+
+            helperText.Enqueue(newItem);
         }
 
         // Update text, starting showing preloaded tutorial text
@@ -63,26 +94,27 @@ public class HelpIconScript : MonoBehaviour {
     // Added a new item to the queue
     public void AddItem(string bodyText, string title = "")
     {
+        // New struct
+        HelperText newItem = new HelperText(title, bodyText);
+
         // Add text to the queue to be displayed
-        helperText.Enqueue(bodyText);
-
-        // Update title if new title provided
-        if (title != "")
-        {
-            UpdateTitle(title);
-        }
-    }
-
-    void UpdateTitle(string newTitle)
-    {
-        headObject.text = newTitle;
+        helperText.Enqueue(newItem);
     }
 
     // Update the UI box with the string stored in the queue
     // Pops top item off the top and makes the next item in the queue the top
     void UpdateText()
     {
-        bodyObject.text = helperText.Dequeue();
+        HelperText currentItem = helperText.Dequeue();
+
+        // Update values
+        bodyObject.text = currentItem.Body;
+
+        // Update title if new title
+        if (currentItem.Title != "")
+        {
+            headObject.text = currentItem.Title;
+        }
     }
 
     // Goes to next text panel for tutorial helper, closes if the last one
