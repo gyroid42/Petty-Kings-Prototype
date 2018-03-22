@@ -22,6 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 423fbc0934bb99043ade0a5f15de5d1e, type: 2}
   - {fileID: 11400000, guid: bacd1c290f8d0294ba593e0e1ff3f176, type: 2}
   - {fileID: 11400000, guid: f64563568f46295429e6b81aa91aafb8, type: 2}
-  - {fileID: 11400000, guid: dd0e0df0f3c5ff64caa87d28588e4da1, type: 2}
   - {fileID: 11400000, guid: 53fbd6202dae9f940a9fd2dc79725844, type: 2}
   isPooled_: 1

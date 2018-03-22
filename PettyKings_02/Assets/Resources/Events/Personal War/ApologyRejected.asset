@@ -15,10 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 2800000, guid: 5783d9bf056804541807af0754659e27, type: 3}
+    type_: 0
     description_: King Uuen spits at your pathetic offer of an apology and roars at
       his men to prepare for battle
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: d085b7d3a2b5ddc4cbc00c979f643800, type: 3}
     btnText_:
     - Meet them in the field!
     - Keep our men behind the walls!
