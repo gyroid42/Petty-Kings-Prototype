@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: Our men have gathered outside the fort, ready to meet this King
       Uuen in the field!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 0fbbfb415fc35084581da32df6c996d1, type: 3}
     btnText_:
     - SHIELD WALL!
     - SHIELD WALL!
