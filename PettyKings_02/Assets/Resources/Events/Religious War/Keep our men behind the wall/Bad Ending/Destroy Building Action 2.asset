@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isBlocking_: 1
   starRating: 0
-  building: 0
+  building: 2
