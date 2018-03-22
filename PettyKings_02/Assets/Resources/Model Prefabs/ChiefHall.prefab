@@ -176,7 +176,8 @@ MonoBehaviour:
   description: 'This, Chief, is your grand fort! Isn''t it marvelous?
 
 
-    These tall structures were built as strongholds for the Picts.'
+    These tall structures were built as strongholds - some long before the Picts began
+    to appear though they were still used by the picts.'
   header: Broch
 --- !u!136 &136334912075811362
 CapsuleCollider:

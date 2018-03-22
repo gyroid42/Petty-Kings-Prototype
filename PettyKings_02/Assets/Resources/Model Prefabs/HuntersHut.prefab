@@ -1684,11 +1684,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6600809ba365a164bbbf9af67f99f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'This is a Pictish hut
-
-
-    Constructed out of stone and wood with a thatched roof, it likely housed multiple
-    families.'
+  description: "This is a Pictish hut\n\nConstructed out of stone and wood with a
+    thatched roof, it likely housed multiple families. \nThe picts would even build
+    'Crannogs' - big huts sitting in the middle of a lake!"
   header: Hut
 --- !u!208 &208999234418714452
 NavMeshObstacle:

@@ -2186,8 +2186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6600809ba365a164bbbf9af67f99f7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 'These walls are built only of the strongest pines, Chief!
-
-
-    There''ll be no man strong enough to break through, consider your people safe!'
+  description: "These walls are built only of the strongest pines, Chief!\nThere'll
+    be no man strong enough to break through, consider your people safe! \n\nThese
+    walls would surround Pictish hilltop forts - both the high hill location and the
+    thick walls kept the Picts safe."
   header: The Walls
