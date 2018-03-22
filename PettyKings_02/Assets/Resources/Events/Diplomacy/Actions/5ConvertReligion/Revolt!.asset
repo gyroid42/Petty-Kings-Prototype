@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
     description_: Yo this is Korg and we're having a revolution
     artwork_: {fileID: 0}
     btnText_:

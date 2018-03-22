@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
     description_: The Christian King Uuen has sent a messenger demanding that we convert
       to the true religion!
     artwork_: {fileID: 2800000, guid: 5c3c54feef0b86d4f9f7c64c814f98d8, type: 3}

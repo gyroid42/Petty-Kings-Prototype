@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: d3b7362c78b68754688678c61cc97bd7, type: 3}
     description_: King Uuen sends a messanger back with a warning about what may happen
       if we refuse again...
     artwork_: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    decisionLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
     description_: 
     artwork_: {fileID: 0}
     btnText_: []
