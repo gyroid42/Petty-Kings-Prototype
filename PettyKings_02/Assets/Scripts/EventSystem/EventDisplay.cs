@@ -287,4 +287,10 @@ public class EventDisplay : MonoBehaviour {
         victoryScreen_.SetActive(true);
     }
 
+    // Return pointer to the event's timer
+    public Timer GetTimer()
+    {
+        return displayTimer_;
+    }
+
 }
