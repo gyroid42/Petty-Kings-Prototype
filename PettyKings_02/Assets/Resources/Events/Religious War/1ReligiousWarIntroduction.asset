@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 0}
+    type_: 2
     description_: With your decision to not convert to the true Christian religion
       King Uuen has gathered over two hundred men in order to maintain the Christian
       kingdom!

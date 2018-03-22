@@ -15,7 +15,7 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    decisionLogo_: {fileID: 2800000, guid: 5f1571e8447ba66459387956c35acd67, type: 3}
+    type_: 1
     description_: King Uuen has declared a Christian war against us!
     artwork_: {fileID: 2800000, guid: 5159a7659fbcdcd48a72fa849f3d81f1, type: 3}
     btnText_:
