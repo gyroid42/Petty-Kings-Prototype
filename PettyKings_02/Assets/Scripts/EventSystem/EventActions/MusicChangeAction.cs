@@ -9,6 +9,8 @@ public class MusicChangeAction : BaseAction {
     [FMODUnity.EventRef]
     public string music_;
 
+    MusicManager musicManager;
+
     // Begin method called when action starts
     public override void Begin(Event newEvent)
     {
@@ -16,7 +18,9 @@ public class MusicChangeAction : BaseAction {
 
         type_ = ACTIONTYPE.MUSIC;
 
-        // MusicManager.StartMusic(music_)
+        musicManager = MusicManager.musicManager;
+
+        musicManager.ChangeMusic(music_);
 
         actionRunning_ = false;
     }

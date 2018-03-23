@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 114123387571828474}
   - component: {fileID: 114844206207464748}
   - component: {fileID: 114369443840493980}
-  - component: {fileID: 114934255932586138}
   m_Layer: 0
   m_Name: SplashScreenCam
   m_TagString: Preview Camera
@@ -130,18 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad33a01f06b0b6d44a52461853ac855f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114934255932586138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470705856681024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!124 &124184562722079162
 Behaviour:
   m_ObjectHideFlags: 1

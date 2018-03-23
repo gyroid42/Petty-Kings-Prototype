@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4244772780119282}
-  - component: {fileID: 114665945264030868}
   - component: {fileID: 114345003928338566}
   m_Layer: 0
   m_Name: Background Music
@@ -170,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9309c7dbacb9d044897b2e433e48da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music_: 
+  music_: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2
 --- !u!114 &114397978894577366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,28 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeOutTime: 120
---- !u!114 &114665945264030868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079966898061810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2
-  PlayEvent: 1
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &114806512157657006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,7 +230,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395984999672338}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
