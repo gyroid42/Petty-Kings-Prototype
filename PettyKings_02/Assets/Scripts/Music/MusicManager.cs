@@ -68,6 +68,8 @@ public class MusicManager : MonoBehaviour {
 	
 	public void ChangeMusic(string newMusic)
     {
+
+        musicPlayer_.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicPlayer_.release();
         musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(newMusic);
 
