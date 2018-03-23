@@ -201,12 +201,12 @@ public class DecisionAction : BaseAction
         if (choice < 0)
         {
             // Play sound from timer ran out effect
-            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_, Camera.main.transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_);
             return;
         }
 
         // Play sound from decision chosen
-        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_);
     }
 
 
