@@ -26,7 +26,7 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
+    playSound_: 1
     sound_: 
     effects_: []
   - name_: River
