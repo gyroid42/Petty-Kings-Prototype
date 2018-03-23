@@ -26,8 +26,7 @@ public class SplineCameraMove : BaseAction {
         //instantiatedRoot_ = Instantiate(splineRoot_);
 
         // set spline root and start movement
-        splineController.SplineRoot = splineRoot_;
-        splineController.FollowSpline();
+        splineController.FollowSpline(splineRoot_);
     }
 
 

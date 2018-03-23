@@ -129,14 +129,24 @@ public class SplineController : MonoBehaviour
 	/// </summary>
 	public void FollowSpline()
 	{
-        mTransforms = GetTransforms();
-
         if (mTransforms.Length > 0)
 		{
 			SetupSplineInterpolator(mSplineInterp, mTransforms);
 			mSplineInterp.StartInterpolation(null, true, WrapMode);
 		}
 	}
+    
+    public void FollowSpline(GameObject root)
+    {
+        SplineRoot = root;
+        mTransforms = GetTransforms();
+
+        if (mTransforms.Length > 0)
+        {
+            SetupSplineInterpolator(mSplineInterp, mTransforms);
+            mSplineInterp.StartInterpolation(null, true, WrapMode);
+        }
+    }
 
     /// <summary>
     /// Determines if the spline is moving
