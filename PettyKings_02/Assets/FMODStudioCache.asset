@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   EditorBanks:
 <<<<<<< HEAD
   - {fileID: 114280618017317054}
@@ -176,6 +177,13 @@ MonoBehaviour:
   MasterBankRef: {fileID: 114455661491003264}
   StringsBankRef: {fileID: 114186251110291648}
   stringsBankWriteTime: 636571623260000000
+>>>>>>> master
+=======
+  EditorBanks: []
+  EditorEvents: []
+  MasterBankRef: {fileID: 0}
+  StringsBankRef: {fileID: 0}
+  stringsBankWriteTime: 0
 >>>>>>> master
   cacheVersion: 2
 --- !u!114 &114000801790752676

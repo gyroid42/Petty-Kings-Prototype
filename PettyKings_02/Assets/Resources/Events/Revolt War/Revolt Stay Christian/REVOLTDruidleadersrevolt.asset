@@ -39,6 +39,8 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
+    - {fileID: 11400000, guid: 130d251d1d475184e8006f30746966c8, type: 2}
+    - {fileID: 11400000, guid: 09b568044ac93c045ac5fa86cc2fe509, type: 2}
     - {fileID: 11400000, guid: 2897aeb7bf9545f4d98bb4936c219b8d, type: 2}
   timerRanOutEffect_:
     name_: Don't Convert

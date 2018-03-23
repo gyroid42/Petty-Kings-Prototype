@@ -30,6 +30,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
+    - {fileID: 11400000, guid: 13aed939224846a4f99e6dd0221bec62, type: 2}
     - {fileID: 11400000, guid: 9386c1ca8e5c6164cbb4883f569baf72, type: 2}
   - name_: Fall back to the hall!
     starChange_: -5
@@ -38,6 +39,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
+    - {fileID: 11400000, guid: 13aed939224846a4f99e6dd0221bec62, type: 2}
     - {fileID: 11400000, guid: 9386c1ca8e5c6164cbb4883f569baf72, type: 2}
   timerRanOutEffect_:
     name_: Fall back to the hall!
