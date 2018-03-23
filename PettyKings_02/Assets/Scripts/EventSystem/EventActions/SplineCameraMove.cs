@@ -9,6 +9,7 @@ public class SplineCameraMove : BaseAction {
 
     // Spline root the camera will move through
     public GameObject splineRoot_;
+    private GameObject instantiatedRoot_;
 
     // reference to spline controller
     private SplineController splineController;
@@ -22,6 +23,8 @@ public class SplineCameraMove : BaseAction {
         // Setup reference to spline controller
         splineController = Camera.main.GetComponent<SplineController>();
 
+        //instantiatedRoot_ = Instantiate(splineRoot_);
+
         // set spline root and start movement
         splineController.SplineRoot = splineRoot_;
         splineController.FollowSpline();
@@ -31,6 +34,8 @@ public class SplineCameraMove : BaseAction {
     // End called at end of action
     public override void End()
     {
+
+        //Destroy(instantiatedRoot_);
 
         Debug.Log("spline move ended");
     }

@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 1431759431243224, guid: e7e4b9a5a4bcdec41bb94fbcdde13159, type: 2}
+  SplineRoot: {fileID: 0}
   Duration: 5
   OrientationMode: 0
   WrapMode: 0

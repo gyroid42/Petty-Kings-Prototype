@@ -129,7 +129,9 @@ public class SplineController : MonoBehaviour
 	/// </summary>
 	public void FollowSpline()
 	{
-		if (mTransforms.Length > 0)
+        mTransforms = GetTransforms();
+
+        if (mTransforms.Length > 0)
 		{
 			SetupSplineInterpolator(mSplineInterp, mTransforms);
 			mSplineInterp.StartInterpolation(null, true, WrapMode);
