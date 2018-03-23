@@ -67,15 +67,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9940a50905e48e04ca4e14a322b50795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noStarRequirement: 0
+  halfStarRequirement: 0
   oneStarRequirement: 0
+  oneHalfStarRequirement: 0
   twoStarRequirement: 10
+  twoHalfStarRequirement: 0
   threeStarRequirement: 20
+  threeHalfStarRequirement: 0
   fourStarRequirement: 30
+  fourHalfStarRequirement: 0
   fiveStarRequirement: 40
+  noStarImage: {fileID: 0}
+  halfStarImage: {fileID: 0}
   oneStarImage: {fileID: 21300000, guid: e489cf64d2a71d949b7a669fb2be0cb8, type: 3}
+  oneHalfStarImage: {fileID: 0}
   twoStarImage: {fileID: 21300000, guid: d3b9396017bf176439e1bfe4b33431ef, type: 3}
+  twoHalfStarImage: {fileID: 0}
   threeStarImage: {fileID: 21300000, guid: 3438aeea777e2f446b9f642d026e664c, type: 3}
+  threeHalfStarImage: {fileID: 0}
   fourStarImage: {fileID: 21300000, guid: 3ea48d85ab3f2d94e998ee6166d8ca0b, type: 3}
+  fourHalfStarImage: {fileID: 0}
   fiveStarImage: {fileID: 21300000, guid: ac1a9a21736bbe84e98e2d9c384dea9d, type: 3}
 --- !u!222 &222466467244730012
 CanvasRenderer:
