@@ -1,62 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class MusicManager : MonoBehaviour
-{
+public class MusicManager : MonoBehaviour {
 
-    public AudioClip musicVillage;
-    public AudioClip musicCombat;
-    public AudioSource musicSource;
+    public static MusicManager musicManager;
 
-    private bool muted_;
+
+    [FMODUnity.EventRef]
+    public string music_;
+
+    private FMOD.Studio.ParameterInstance transition_;
+    private FMOD.Studio.EventInstance musicPlayer_;
+
+
+    // When object is created
+    void Awake()
+    {
+        // Check if a musicManager already exists
+        if (musicManager == null)
+        {
+            // If not set the static reference to this object
+            musicManager = this;
+        }
+        else if (musicManager != this)
+        {
+            // Else if a different musicManager already exists destroy this object
+            Destroy(gameObject);
+        }
+    }
+
+    // Called when script is destroyed
+    void OnDestroy()
+    {
+        // When destroyed remove static reference to itself
+        musicManager = null;
+    }
+
 
     // Use this for initialization
-    void Start()
-    {
-        setClip(musicVillage);
-        musicSource.loop = true;
-        playMusic();
-        muted_ = false;
-    }
+    void Start () {
 
-    // set music
-    public void setCombat()
-    {
-        setClip(musicCombat);
-    }
-    public void setVillage()
-    {
-        setClip(musicVillage);
-    }
-    // play music
-    public void playMusic()
-    {
-        musicSource.Play();
-    }
 
-    // pause music
-    public void pauseMusic()
-    {
-        musicSource.Stop();
-    }
+        musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(music_);
 
-    // mute/unmute
-    public void muteUnmuteMusic()
+        musicPlayer_.start();
+        
+	}
+	
+	public void ChangeMusic(string newMusic)
     {
-        if (!muted_)
-            musicSource.Pause();
-        else
-            musicSource.UnPause();
+        musicPlayer_.release();
+        musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(newMusic);
 
-        // set muted to the opposite value
-        muted_ = !muted_;
-    }
-
-    // sets the music clip that is desired
-    void setClip(AudioClip musicFile)
-    {
-        musicSource.clip = musicFile;
+        musicPlayer_.start();
     }
 }

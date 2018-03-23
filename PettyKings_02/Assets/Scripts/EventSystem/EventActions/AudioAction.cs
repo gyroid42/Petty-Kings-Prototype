@@ -22,7 +22,7 @@ public class AudioAction : BaseAction
         type_ = ACTIONTYPE.AUDIO;
 
         audioEv_ = FMODUnity.RuntimeManager.CreateInstance(audioClip_);
-
+        
 
         
         audioEv_.start();
