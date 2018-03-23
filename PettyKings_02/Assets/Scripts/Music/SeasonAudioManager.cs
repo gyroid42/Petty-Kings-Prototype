@@ -39,9 +39,11 @@ public class SeasonAudioManager : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // When destroyed remove static reference to itself
-        seasonAudioManager = null;
+        if (seasonAudioManager == this)
+        {
+            // When destroyed remove static reference to itself
+            seasonAudioManager = null;
+        }
     }
 
 

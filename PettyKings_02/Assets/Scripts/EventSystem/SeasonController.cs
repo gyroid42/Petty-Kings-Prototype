@@ -63,9 +63,11 @@ public class SeasonController : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        seasonController = null;
+        if (seasonController == this)
+        {
+            // when destroyed remove static reference to itself
+            seasonController = null;
+        }
     }
 
     // Use this for initialization

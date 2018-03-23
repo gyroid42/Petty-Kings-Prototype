@@ -62,8 +62,11 @@ public class StateManager : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-        // When destroyed remove static reference to itself
-        stateManager = null;
+        if (stateManager == this)
+        {
+            // When destroyed remove static reference to itself
+            stateManager = null;
+        }
     }
 
 

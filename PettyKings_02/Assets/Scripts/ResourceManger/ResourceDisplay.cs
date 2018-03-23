@@ -34,9 +34,11 @@ public class ResourceDisplay : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        resourceDisplay = null;
+        if (resourceDisplay == this)
+        {
+            // when destroyed remove static reference to itself
+            resourceDisplay = null;
+        }
     }
 
     // Use this for initialization

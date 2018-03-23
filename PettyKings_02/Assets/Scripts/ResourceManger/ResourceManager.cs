@@ -40,9 +40,11 @@ public class ResourceManager : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        resourceManager = null;
+        if (resourceManager == this)
+        {
+            // when destroyed remove static reference to itself
+            resourceManager = null;
+        }
     }
 
 
