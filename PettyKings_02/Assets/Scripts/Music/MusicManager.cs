@@ -12,29 +12,46 @@ public class MusicManager : MonoBehaviour {
 
     private FMOD.Studio.ParameterInstance transition_;
     private FMOD.Studio.EventInstance musicPlayer_;
-
+    private bool isPlaying_ = false;
 
     // When object is created
     void Awake()
     {
+
+        
+
         // Check if a musicManager already exists
         if (musicManager == null)
         {
             // If not set the static reference to this object
             musicManager = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (musicManager != this)
         {
             // Else if a different musicManager already exists destroy this object
             Destroy(gameObject);
+            return;
         }
+
+
+        
+        musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(music_);
+
+        musicPlayer_.start();
+
+        isPlaying_ = true;
     }
 
     // Called when script is destroyed
     void OnDestroy()
     {
+
         // When destroyed remove static reference to itself
-        musicManager = null;
+        if (musicManager == this)
+        {
+            musicManager = null;
+        }
     }
 
 
@@ -42,9 +59,10 @@ public class MusicManager : MonoBehaviour {
     void Start () {
 
 
-        musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(music_);
+        if (musicManager != null)
+        {
 
-        musicPlayer_.start();
+        }
         
 	}
 	

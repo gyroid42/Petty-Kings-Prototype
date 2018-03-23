@@ -79,9 +79,11 @@ public class EventDisplay : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        eventDisplay = null;
+        if (eventDisplay == this)
+        {
+            // when destroyed remove static reference to itself
+            eventDisplay = null;
+        }
     }
 
 

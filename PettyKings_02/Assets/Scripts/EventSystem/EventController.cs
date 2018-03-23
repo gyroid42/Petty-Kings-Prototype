@@ -50,9 +50,12 @@ public class EventController : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
+        if (eventController == this)
+        {
 
-        // when destroyed remove static reference to itself
-        eventController = null;
+            // when destroyed remove static reference to itself
+            eventController = null;
+        }
     }
 
     // Called when eventController created
@@ -161,7 +164,7 @@ public class EventController : MonoBehaviour {
             // Pause season timer
             if (newEvent.stopSeasonTimer_)
             {
-                seasonController.PauseTimer();
+                //seasonController.PauseTimer();
             }
 
             // If event is blocking
