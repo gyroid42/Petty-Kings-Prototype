@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{2b2a0f11-e667-4a49-b18a-5339e42f6c8b}">
+        <property name="assetPath">
+            <value>Thunder_in a concrete courtyard _Lyon FR_03.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>10.5</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a49d3210-ca08-48cc-81f6-ac9d3e37be6d}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -27,7 +27,7 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: 
     effects_:
     - {fileID: 11400000, guid: 4df7747938702f14e83994353dc2521f, type: 2}
@@ -35,7 +35,7 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: 
     effects_:
     - {fileID: 11400000, guid: 4df7747938702f14e83994353dc2521f, type: 2}
@@ -44,7 +44,7 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: 
     effects_:
     - {fileID: 11400000, guid: 4df7747938702f14e83994353dc2521f, type: 2}
