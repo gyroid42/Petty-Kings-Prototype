@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 199000011017760676}
   - component: {fileID: 81701964870628476}
   - component: {fileID: 114023391481198244}
-  - component: {fileID: 114182956870568384}
   m_Layer: 0
   m_Name: SmokeEffect
   m_TagString: Untagged
@@ -256,28 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
---- !u!114 &114182956870568384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012560919920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/UI/BUILDINGS/DESTROY/UI_BUILDING_DESTROYED_SMOKE
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 180
 --- !u!114 &114370583444783458
 MonoBehaviour:
   m_ObjectHideFlags: 1

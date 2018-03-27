@@ -27,16 +27,16 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_VICTORY
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: bbc4c102b3dab534b9ad1c509a7fc7bd, type: 2}
   - name_: Excellent!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_VICTORY
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: bbc4c102b3dab534b9ad1c509a7fc7bd, type: 2}
   timerRanOutEffect_:
@@ -44,7 +44,7 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_VICTORY
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: bbc4c102b3dab534b9ad1c509a7fc7bd, type: 2}

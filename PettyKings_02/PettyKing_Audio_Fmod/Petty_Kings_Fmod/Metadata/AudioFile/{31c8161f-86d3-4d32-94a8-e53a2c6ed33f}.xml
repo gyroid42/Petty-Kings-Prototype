@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{31c8161f-86d3-4d32-94a8-e53a2c6ed33f}">
         <property name="assetPath">
-            <value>MUSIC/PETTY KINGS_ENTERTAINMENT MUSIC 2.wav</value>
+            <value>PETTY KINGS_ENTERTAINMENT MUSIC 2.wav</value>
         </property>
         <property name="isStreaming">
             <value>true</value>
