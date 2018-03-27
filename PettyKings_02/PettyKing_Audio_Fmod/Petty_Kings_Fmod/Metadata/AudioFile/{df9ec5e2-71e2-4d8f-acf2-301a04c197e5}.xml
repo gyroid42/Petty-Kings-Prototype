@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{df9ec5e2-71e2-4d8f-acf2-301a04c197e5}">
+        <property name="assetPath">
+            <value>RESSOURCES/BUILD UP/BUILDINGS/UI_BUILDINGUP_01.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.0989795918367347</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a49d3210-ca08-48cc-81f6-ac9d3e37be6d}</destination>
+        </relationship>
+    </object>
+</objects>

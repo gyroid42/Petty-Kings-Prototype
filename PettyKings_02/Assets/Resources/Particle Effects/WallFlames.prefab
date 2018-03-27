@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 199545420056014096}
   - component: {fileID: 114613974911827264}
   - component: {fileID: 81858127028899524}
+  - component: {fileID: 114237745517854686}
   m_Layer: 0
   m_Name: WallFlames
   m_TagString: Untagged
@@ -278,6 +279,28 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!114 &114237745517854686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073824929423304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UI/BUILDINGS/DESTROY/UI_BUILDING_DESTROYED_FIRE
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 180
 --- !u!114 &114613974911827264
 MonoBehaviour:
   m_ObjectHideFlags: 1
