@@ -69,9 +69,9 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848397034316312}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9309c7dbacb9d044897b2e433e48da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music_: 
+  music_: event:/MUSIC/SPLACHSCREEN MUSIC
