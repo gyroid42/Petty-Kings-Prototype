@@ -17,7 +17,6 @@ public class HelpIconScript : MonoBehaviour {
     // Queue to handle text efficiently
     private Queue<HelperText> helperText;
     private bool initialised_;
-    private bool begin_;
 
     // Struct for helper data
     struct HelperText
@@ -60,26 +59,6 @@ public class HelpIconScript : MonoBehaviour {
 
 	}
 
-    void LateUpdate()
-    {
-        // only update while the timer hasn't been set to false
-        if (begin_ == false)
-        {
-            // if the control helper is open, pause it
-            if (icon.activeSelf)
-            {
-                Timer t = FindTimer();
-
-                // if a timer is present, pause it
-                if (t != null)
-                {
-                    t.Pause();
-                    begin_ = true;
-                }
-            }
-        }
-    }
-
     void Initialise()
     {
         // Create queue object
@@ -93,9 +72,6 @@ public class HelpIconScript : MonoBehaviour {
 
             helperText.Enqueue(newItem);
         }
-
-        // used for setting timer to pause later
-        begin_ = false;
 
         // Update text, starting showing preloaded tutorial text
         UpdateText();
