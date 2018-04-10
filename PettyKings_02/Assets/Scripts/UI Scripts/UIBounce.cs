@@ -27,8 +27,8 @@ public class UIBounce : MonoBehaviour {
 
         transform.position += (new Vector3(velocity_.x, velocity_.y)) * Time.deltaTime;
         transform.localScale += (new Vector3(disappearSpeed_, disappearSpeed_, 0)) * Time.deltaTime;
-        Debug.Log("gravity = " + gravity_);
-        Debug.Log("velocity = " + velocity_);
+        //Debug.Log("gravity = " + gravity_);
+        //Debug.Log("velocity = " + velocity_);
         //transform.eulerAngles += new Vector3(0, 0, velocity_.magnitude);
 	}
 }

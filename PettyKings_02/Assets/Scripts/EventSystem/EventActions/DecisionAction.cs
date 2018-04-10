@@ -137,8 +137,10 @@ public class DecisionAction : BaseAction
         // Display main
         eventDisplay.Display(mainDisplay_, decisionTimer_);
 
-        keyboardControls.SetButtons(mainDisplay_.btnFunctions_);
-
+        if (keyboardControls)
+        {
+            keyboardControls.SetButtons(mainDisplay_.btnFunctions_);
+        }
     }
 
 

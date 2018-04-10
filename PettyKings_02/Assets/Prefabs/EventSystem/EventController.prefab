@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4019500653188260}
   - component: {fileID: 114154022674901854}
+  - component: {fileID: 114427185705651298}
   m_Layer: 0
   m_Name: EventController
   m_TagString: Untagged
@@ -49,5 +50,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe8d36bd54bb7f643bd5e208311b8c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114427185705651298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752037593938770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9989154c43d8d6a45ab63bbf812c713e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
