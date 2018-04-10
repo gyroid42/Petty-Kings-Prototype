@@ -156,7 +156,7 @@ public class EventDisplay : MonoBehaviour {
             yield return null;
             eventWindow_.transform.eulerAngles += new Vector3(0, speed * Time.deltaTime, 0);
 
-            Debug.Log(eventWindow_.transform.eulerAngles);
+            //Debug.Log(eventWindow_.transform.eulerAngles);
             if (eventWindow_.transform.eulerAngles.y >= 270)
             {
                 front_.SetActive(true);
