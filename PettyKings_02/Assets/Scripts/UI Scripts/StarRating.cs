@@ -7,6 +7,7 @@ public class StarRating : MonoBehaviour {
 
     private WorldManager worldController;
 
+
     public int noStarRequirement;
     public int halfStarRequirement;
     public int oneStarRequirement;

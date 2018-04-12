@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{41a5caea-5b2a-4f27-bc69-ac747509dd6a}">
+        <property name="name">
+            <value>STAR RATING</value>
+        </property>
+        <relationship name="folder">
+            <destination>{6470787d-9791-4ac6-98de-70d695ed6cd8}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{d26e9f7c-2dea-44c0-9ca6-0f863276b158}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{d26e9f7c-2dea-44c0-9ca6-0f863276b158}">
+        <property name="maximum">
+            <value>5</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

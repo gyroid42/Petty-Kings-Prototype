@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 114358501353091138}
   - component: {fileID: 114949373414113598}
   - component: {fileID: 114493608676651160}
+  - component: {fileID: 114543407359570440}
   m_Layer: 0
   m_Name: Play Build
   m_TagString: Untagged
@@ -223,7 +224,8 @@ GameObject:
   - component: {fileID: 114098087415985216}
   - component: {fileID: 114433157730739618}
   - component: {fileID: 114436400412656920}
-  - component: {fileID: 114896742421967528}
+  - component: {fileID: 114404646607643576}
+  - component: {fileID: 114407018191636844}
   m_Layer: 0
   m_Name: Play Game
   m_TagString: Untagged
@@ -431,6 +433,7 @@ GameObject:
   - component: {fileID: 114547490877860012}
   - component: {fileID: 114395512255086376}
   - component: {fileID: 114684480253728298}
+  - component: {fileID: 114523787134458682}
   m_Layer: 0
   m_Name: Play Game
   m_TagString: Untagged
@@ -1042,20 +1045,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114407018191636844}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114397978894577366, guid: 50a5a412423636849a5a617333cca15f,
-          type: 2}
-        m_MethodName: FollowSpline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1464,6 +1455,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIScaleModifier: 1.2
   BaseScale: 0.00054
+--- !u!114 &114404646607643576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299258015634598}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
+  PlayEvent: 1
+  StopEvent: 12
+  CollisionTag: GameController
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &114407018191636844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299258015634598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/MAIN MENU/UI_MAIN MENU_OPTION_SELECT_01
 --- !u!114 &114412307052496342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1958,6 +1983,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114523787134458682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1611116266766236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
 --- !u!114 &114539144770343634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1985,6 +2022,28 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114543407359570440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1139633226856298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
+  PlayEvent: 1
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &114547490877860012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2031,6 +2090,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114523787134458682}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2891,28 +2961,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114896742421967528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1299258015634598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/UI/MAIN MENU/UI_MAIN_MENU_ BUTTON_FLYOVER_01
-  PlayEvent: 11
-  StopEvent: 0
-  CollisionTag: GameController
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &114907871333185084
 MonoBehaviour:
   m_ObjectHideFlags: 1

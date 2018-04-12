@@ -9,6 +9,8 @@ public class EndGame : BaseAction {
     // Properties
     private EventDisplay eventDisplay;
 
+    private MusicManager musicManager;
+
     public bool victory_;
 
     private Timer endTimer_;
@@ -20,6 +22,7 @@ public class EndGame : BaseAction {
         base.Begin(newEvent);
 
         eventDisplay = EventDisplay.eventDisplay;
+        musicManager = MusicManager.musicManager;
 
         eventDisplay.DisplayVictory(victory_);
 
@@ -33,6 +36,7 @@ public class EndGame : BaseAction {
     public override void End()
     {
         Debug.Log("da end has triggered");
+        musicManager.FadeSplashScreen(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
