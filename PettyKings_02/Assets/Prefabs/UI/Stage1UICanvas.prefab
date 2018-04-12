@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 224396210718019014}
   - component: {fileID: 222342080234616952}
   - component: {fileID: 114373883928667334}
+  - component: {fileID: 114935077298505454}
   m_Layer: 5
   m_Name: TimerBar
   m_TagString: Untagged
@@ -258,7 +259,6 @@ GameObject:
   - component: {fileID: 224776133393414156}
   - component: {fileID: 222183727503081486}
   - component: {fileID: 114166883962495380}
-  - component: {fileID: 114069089475918690}
   m_Layer: 5
   m_Name: EventTypeLogo
   m_TagString: Untagged
@@ -539,28 +539,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114069089475918690
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486651307124560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/UI/TIMER/UI_TIMER_RUNNING
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &114081048764230586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1430,6 +1408,28 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114935077298505454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134769223508018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UI/TIMER/UI_TIMER_RUNNING
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &114946385286684928
 MonoBehaviour:
   m_ObjectHideFlags: 1

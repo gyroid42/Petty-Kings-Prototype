@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class SplashScreenManager : MonoBehaviour {
 
+
+    private MusicManager musicManager;
+
 	// Use this for initialization
 	void Start ()
     {
-		
+
+        musicManager = MusicManager.musicManager;
 	}
 	
 	// Update is called once per frame
@@ -16,6 +20,7 @@ public class SplashScreenManager : MonoBehaviour {
 		if(Input.anyKeyDown)
         {
             StateManager.stateManager.ChangeState(GAMESTATE.MENU);
+            musicManager.FadeSplashScreen(false);
         }
 	}
 }
