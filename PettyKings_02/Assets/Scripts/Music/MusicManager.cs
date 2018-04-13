@@ -91,6 +91,7 @@ public class MusicManager : MonoBehaviour {
     public void FadeSplashScreen(bool newState)
     {
 
+        StopAllCoroutines();
         StartCoroutine(FadeMeh(newState));
     }
 
