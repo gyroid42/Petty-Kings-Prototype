@@ -9,7 +9,7 @@ public struct DecisionEffect {
     public int starChange_;
 
     public bool addEvent_;
-    public Event newEvent_;
+    public NarrativeEvent newEvent_;
 
     public bool playSound_;
     [FMODUnity.EventRef]

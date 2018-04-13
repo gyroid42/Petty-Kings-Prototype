@@ -33,7 +33,7 @@ public class DecisionAction : BaseAction
 
 
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         // Call Base Begin Method
         base.Begin(newEvent);
