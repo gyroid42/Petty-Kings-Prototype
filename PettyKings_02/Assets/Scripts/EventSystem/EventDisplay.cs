@@ -144,11 +144,13 @@ public class EventDisplay : MonoBehaviour {
     {
         front_.SetActive(false);
         ShowButtons(false);
-        eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
+        //eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
         float speed = 200;
+        front_.SetActive(true);
 
 
         yield return new WaitForSeconds(0.5f);
+        /*
         bool animFinished = false;
         while (!animFinished)
         {
@@ -168,6 +170,7 @@ public class EventDisplay : MonoBehaviour {
                 animFinished = true;
             }
         }
+        */
         ShowButtons(true);
         displayTimer_.Start();
     }
