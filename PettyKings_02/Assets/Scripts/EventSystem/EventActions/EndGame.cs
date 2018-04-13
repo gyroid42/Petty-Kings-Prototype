@@ -17,7 +17,7 @@ public class EndGame : BaseAction {
     public float endTime_;
 
     // Begin called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

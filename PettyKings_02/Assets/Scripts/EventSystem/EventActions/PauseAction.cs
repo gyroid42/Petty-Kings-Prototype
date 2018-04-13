@@ -11,7 +11,7 @@ public class PauseAction : BaseAction
     private Timer timer_;
 
     // Begin method called when action starts
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

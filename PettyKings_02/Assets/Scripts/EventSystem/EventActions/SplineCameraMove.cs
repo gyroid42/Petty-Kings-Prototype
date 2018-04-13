@@ -16,7 +16,7 @@ public class SplineCameraMove : BaseAction {
 
 
     // Begin called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 
