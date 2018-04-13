@@ -10,6 +10,13 @@ public class MusicManager : MonoBehaviour {
     [FMODUnity.EventRef]
     public string music_;
 
+    [FMODUnity.EventRef]
+    public string splashMusic_;
+
+    public float splashFadeTime_;
+
+    private FMOD.Studio.EventInstance splashMusicPlayer_;
+
     private FMOD.Studio.ParameterInstance transition_;
     private FMOD.Studio.EventInstance musicPlayer_;
     private bool isPlaying_ = false;
@@ -35,6 +42,10 @@ public class MusicManager : MonoBehaviour {
         }
 
 
+        splashMusicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(splashMusic_);
+
+        splashMusicPlayer_.setParameterValue("fade", 1.0f);
+        splashMusicPlayer_.start();
         
         musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(music_);
 
@@ -75,4 +86,53 @@ public class MusicManager : MonoBehaviour {
 
         musicPlayer_.start();
     }
+
+
+    public void FadeSplashScreen(bool newState)
+    {
+
+        StopAllCoroutines();
+        StartCoroutine(FadeMeh(newState));
+    }
+
+
+    private IEnumerator FadeMeh(bool newState)
+    {
+
+        FMOD.Studio.ParameterInstance fadeParameter;
+
+        splashMusicPlayer_.getParameter("fade", out fadeParameter);
+
+        float fade;
+
+        fadeParameter.getValue(out fade);
+
+        while ((newState && fade < 1) || (!newState && fade > 0))
+        {
+
+            if (newState)
+            {
+                fade += Time.deltaTime/splashFadeTime_;
+            }
+            else
+            {
+                fade -= Time.deltaTime / splashFadeTime_;
+            }
+
+            fadeParameter.setValue(fade);
+            yield return null;
+        }
+
+    }
+
+
+    public FMOD.Studio.ParameterInstance GetStarRatingParameter()
+    {
+
+        FMOD.Studio.ParameterInstance starPar;
+        musicPlayer_.getParameter("starrating", out starPar);
+
+        return starPar;
+    }
+
 }
