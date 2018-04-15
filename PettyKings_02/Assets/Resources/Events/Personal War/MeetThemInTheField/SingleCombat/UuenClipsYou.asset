@@ -43,7 +43,7 @@ MonoBehaviour:
     starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/UI/TIMER/UI_TIMER_END
     effects_:
     - {fileID: 11400000, guid: e8e5c468c7f017545920b0dd57125a25, type: 2}

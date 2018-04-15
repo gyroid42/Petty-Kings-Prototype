@@ -27,8 +27,8 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: 2d561c436c22ef44bb50bbdcf26b41e6, type: 2}
     - {fileID: 11400000, guid: 114b63390e8135d45bd71d8e5281e2d1, type: 2}
@@ -38,8 +38,8 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: 2d561c436c22ef44bb50bbdcf26b41e6, type: 2}
     - {fileID: 11400000, guid: 114b63390e8135d45bd71d8e5281e2d1, type: 2}

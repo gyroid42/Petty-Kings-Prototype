@@ -32,6 +32,8 @@ public class StateManager : MonoBehaviour {
     private CameraController CameraController_;
     private SplineController SplineController_;
     private EventController eventController_;
+    private MusicManager musicManager;
+
 
     private Camera mainCam;
     private Camera previewCam;
@@ -78,6 +80,7 @@ public class StateManager : MonoBehaviour {
         CameraController_ = Camera.main.GetComponent<CameraController>();
         SplineController_ = Camera.main.GetComponent<SplineController>();
         eventController_ = EventController.eventController;
+        musicManager = MusicManager.musicManager;
 
         foreach (Camera c in Camera.allCameras)
         {
@@ -153,6 +156,7 @@ public class StateManager : MonoBehaviour {
         else
         {
             previewCam.enabled = false;
+            musicManager.StartGame(true);
             mainCam.enabled = true;
         }
 
@@ -177,6 +181,7 @@ public class StateManager : MonoBehaviour {
     public void ActivateStageOne()
     {
         ChangeState(GAMESTATE.STAGEONE);
+        Debug.Log("active stage one");
         eventController_.GameStart();
     }
     

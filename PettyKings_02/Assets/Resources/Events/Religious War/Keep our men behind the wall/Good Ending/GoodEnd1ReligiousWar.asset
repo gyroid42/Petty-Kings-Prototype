@@ -28,7 +28,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_VICTORY
+    sound_: event:/EVENTS/END OF GAME/UI_VICTORY
     effects_:
     - {fileID: 11400000, guid: 63c708756f748df44b5e3f4771de1af7, type: 2}
   - name_: Excellent!
@@ -36,7 +36,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_VICTORY
+    sound_: event:/EVENTS/END OF GAME/UI_VICTORY
     effects_:
     - {fileID: 11400000, guid: 63c708756f748df44b5e3f4771de1af7, type: 2}
   timerRanOutEffect_:

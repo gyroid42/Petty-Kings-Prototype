@@ -70,7 +70,6 @@ GameObject:
   - component: {fileID: 224396210718019014}
   - component: {fileID: 222342080234616952}
   - component: {fileID: 114373883928667334}
-  - component: {fileID: 114935077298505454}
   m_Layer: 5
   m_Name: TimerBar
   m_TagString: Untagged
@@ -106,6 +105,7 @@ GameObject:
   - component: {fileID: 222335801137981268}
   - component: {fileID: 114240673264004500}
   - component: {fileID: 114805015445068430}
+  - component: {fileID: 114283460348635266}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 222970369585692536}
   - component: {fileID: 114662786604592408}
   - component: {fileID: 114114736191520574}
+  - component: {fileID: 114624748496349418}
   m_Layer: 5
   m_Name: DecisionBoxRight
   m_TagString: Untagged
@@ -259,7 +260,7 @@ GameObject:
   - component: {fileID: 224776133393414156}
   - component: {fileID: 222183727503081486}
   - component: {fileID: 114166883962495380}
-  - component: {fileID: 114318870309724576}
+  - component: {fileID: 114080628259494894}
   m_Layer: 5
   m_Name: EventTypeLogo
   m_TagString: Untagged
@@ -379,6 +380,7 @@ GameObject:
   - component: {fileID: 222187709522918194}
   - component: {fileID: 114507241500234896}
   - component: {fileID: 114578833467508952}
+  - component: {fileID: 114187507768686638}
   m_Layer: 5
   m_Name: DecisionBoxLeft
   m_TagString: Untagged
@@ -461,6 +463,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224813412825926344}
+  - component: {fileID: 114961993023318150}
   m_Layer: 5
   m_Name: EventWindow
   m_TagString: Untagged
@@ -540,6 +543,28 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114080628259494894
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486651307124560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/UI/TIMER/UI_TIMER_RUNNING
+  PlayEvent: 11
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!114 &114081048764230586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,6 +729,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114187507768686638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720063298665166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/DECISION BOXES/DECISION BOX LEFT
 --- !u!114 &114195061686903632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -799,28 +836,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114318870309724576
+--- !u!114 &114283460348635266
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1486651307124560}
+  m_GameObject: {fileID: 1193286642549686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/UI/TIMER/UI_TIMER_RUNNING
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  sound_: event:/UI/CLOSE WINDOW BUTTON/CLOSE CONTROLHELPER WINDOW
 --- !u!114 &114334233760816926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1060,6 +1087,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114187507768686638}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114555549987650558
@@ -1208,6 +1246,18 @@ MonoBehaviour:
   fourStarImage: {fileID: 21300000, guid: 4253aec6626f0ca4faee865ccece8a69, type: 3}
   fourHalfStarImage: {fileID: 21300000, guid: 93d4febea9ff6e04fa65c25ea3136196, type: 3}
   fiveStarImage: {fileID: 21300000, guid: c5b52a906d7e24c41a27930337c66d6e, type: 3}
+--- !u!114 &114624748496349418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268226628811934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/DECISION BOXES/DECISION BOX RIGHT
 --- !u!114 &114662786604592408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1253,6 +1303,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114624748496349418}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1334,6 +1395,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114144332708731374}
         m_MethodName: CycleText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114283460348635266}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1431,28 +1503,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!114 &114935077298505454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134769223508018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/UI/TIMER/UI_TIMER_RUNNING
-  PlayEvent: 11
-  StopEvent: 12
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &114946385286684928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1479,6 +1529,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114961993023318150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913368606136530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/DECISION CARD/UI_CARD_SWIPE
 --- !u!222 &222062637694409118
 CanvasRenderer:
   m_ObjectHideFlags: 1

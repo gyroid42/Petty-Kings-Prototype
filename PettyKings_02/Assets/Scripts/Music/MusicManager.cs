@@ -88,7 +88,7 @@ public class MusicManager : MonoBehaviour {
     }
 
 
-    public void FadeSplashScreen(bool newState)
+    public void StartGame(bool newState)
     {
 
         StopAllCoroutines();
@@ -99,27 +99,33 @@ public class MusicManager : MonoBehaviour {
     private IEnumerator FadeMeh(bool newState)
     {
 
-        FMOD.Studio.ParameterInstance fadeParameter;
+        FMOD.Studio.ParameterInstance BackParameter;
 
-        splashMusicPlayer_.getParameter("fade", out fadeParameter);
+        musicPlayer_.getParameter("game start", out BackParameter);
 
-        float fade;
+        FMOD.Studio.ParameterInstance splashParameter;
 
-        fadeParameter.getValue(out fade);
+        splashMusicPlayer_.getParameter("game start", out splashParameter);
 
-        while ((newState && fade < 1) || (!newState && fade > 0))
+
+        float gamestart;
+
+        splashParameter.getValue(out gamestart);
+
+        while ((newState && gamestart < 1) || (!newState && gamestart > 0))
         {
 
             if (newState)
             {
-                fade += Time.deltaTime/splashFadeTime_;
+                gamestart += Time.deltaTime/splashFadeTime_;
             }
             else
             {
-                fade -= Time.deltaTime / splashFadeTime_;
+                gamestart -= Time.deltaTime / splashFadeTime_;
             }
 
-            fadeParameter.setValue(fade);
+            BackParameter.setValue(gamestart);
+            splashParameter.setValue(gamestart);
             yield return null;
         }
 

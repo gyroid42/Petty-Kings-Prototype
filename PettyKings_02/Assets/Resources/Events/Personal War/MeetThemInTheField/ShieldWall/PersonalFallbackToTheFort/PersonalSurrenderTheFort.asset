@@ -28,7 +28,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_DEFEAT
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: 4df7747938702f14e83994353dc2521f, type: 2}
   - name_: Theres nothing else to be done...
@@ -36,7 +36,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_DEFEAT
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: 4df7747938702f14e83994353dc2521f, type: 2}
   timerRanOutEffect_:
