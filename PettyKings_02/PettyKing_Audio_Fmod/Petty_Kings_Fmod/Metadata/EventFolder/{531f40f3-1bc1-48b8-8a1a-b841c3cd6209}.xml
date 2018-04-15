@@ -5,7 +5,7 @@
             <value>END OF GAME</value>
         </property>
         <relationship name="folder">
-            <destination>{0cf0df74-89e3-4a68-9f7a-d8d5322f4b97}</destination>
+            <destination>{53288e91-9644-447d-a4b0-1867343a03e3}</destination>
         </relationship>
     </object>
 </objects>
