@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music_: event:/MUSIC/BACKGROUND MUSIC
   splashMusic_: event:/MUSIC/SPLACHSCREEN MUSIC
-  splashFadeTime_: 2
+  splashFadeTime_: 4

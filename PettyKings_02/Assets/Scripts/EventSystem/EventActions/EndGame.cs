@@ -36,7 +36,7 @@ public class EndGame : BaseAction {
     public override void End()
     {
         Debug.Log("da end has triggered");
-        musicManager.FadeSplashScreen(true);
+        musicManager.StartGame(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
