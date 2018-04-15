@@ -375,13 +375,13 @@
     <object class="MixerBusPanner" id="{64a79f46-dc02-457b-9f4c-0e8a4f4c52f9}"/>
     <object class="SpatialiserEffect" id="{dde8acd4-6ca8-4ab4-b9a1-d55f2047f3ef}">
         <property name="maximumDistance">
-            <value>180</value>
+            <value>150</value>
         </property>
         <property name="extentMode">
             <value>1</value>
         </property>
         <property name="soundSize">
-            <value>180</value>
+            <value>150</value>
         </property>
         <property name="minimumExtent">
             <value>2</value>
