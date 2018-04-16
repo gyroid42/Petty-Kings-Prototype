@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 222062637694409118}
   - component: {fileID: 114004330320049890}
   - component: {fileID: 114622628594269406}
+  - component: {fileID: 114959704829898254}
   m_Layer: 5
   m_Name: StarRating
   m_TagString: StarRatingUI
@@ -1529,6 +1530,24 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114959704829898254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882279001847920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab22e40a9d7e754495df5ca54c1f461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: {fileID: 0}
+  soundUp_: event:/UI/STAR RATING/UI_STAR_ADDING
+  soundDown_: event:/UI/STAR RATING/UI_STAR_LOSING
+  startPos: {fileID: 0}
+  endPos: {fileID: 0}
+  starRating: 0
+  buildingFallSpeed_: 0
 --- !u!114 &114961993023318150
 MonoBehaviour:
   m_ObjectHideFlags: 1
