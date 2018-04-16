@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: Attack
+  m_Name: AttackOrDefend
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
@@ -18,13 +18,32 @@ MonoBehaviour:
     type_: 0
     description_: 
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - Attack!
+    - Defend!
+  decisionEffect_:
+  - name_: Attack
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 569d837cf70f7b144adf8cce6b049dd7, type: 2}
+  - name_: Defend
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: d6fa5ec9cc470964b8d63b7b7223cd23, type: 2}
+  timerRanOutEffect_:
+    name_: Defend
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: d6fa5ec9cc470964b8d63b7b7223cd23, type: 2}

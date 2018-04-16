@@ -16,15 +16,35 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: 
+    description_: When you step aside you are banished from the fort and you set off
+      in search of a new home...
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
+    btnText_:
+    - Oh no!
+    - Oh no!
+  decisionEffect_:
+  - name_: Oh no!
     starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+  - name_: Oh no!
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+  timerRanOutEffect_:
+    name_: Oh no!
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}

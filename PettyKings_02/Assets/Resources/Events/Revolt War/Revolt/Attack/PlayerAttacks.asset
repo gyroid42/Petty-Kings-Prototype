@@ -15,16 +15,35 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    type_: 0
-    description_: 
+    type_: 3
+    description_: You attack the warrior and drive him backwards!
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
+    btnText_:
+    - Attack!
+    - Defend!
+  decisionEffect_:
+  - name_: Attack!
     starChange_: 0
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 6f4a5324944913049a4efed2f9be2c49, type: 2}
+  - name_: Defend!
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 8848d358ab4e38b4b845817c4f6b32d1, type: 2}
+  timerRanOutEffect_:
+    name_: Defend!
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 8848d358ab4e38b4b845817c4f6b32d1, type: 2}

@@ -16,15 +16,35 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: 
-    artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    description_: 'Should you hunt for deer, or the rumored bear that is roaming the
+      fields? '
+    artwork_: {fileID: 2800000, guid: 48db29a4b6884954a8be2535c24060c7, type: 3}
+    btnText_:
+    - Bear
+    - Deer
+  decisionEffect_:
+  - name_: Bear
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 36bf8ee7644abbe40b3a00787a41bf4a, type: 2}
+  - name_: Deer
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 6bb20f98f28c08449b342454a1afc513, type: 2}
+  timerRanOutEffect_:
+    name_: Deer
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 6bb20f98f28c08449b342454a1afc513, type: 2}

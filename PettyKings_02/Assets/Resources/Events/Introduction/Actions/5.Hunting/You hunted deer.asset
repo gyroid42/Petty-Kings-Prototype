@@ -28,14 +28,16 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 0}
   - name_: Continue to diplo
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 0}
   timerRanOutEffect_:
     name_: Continue to diplo
     starChange_: -5
@@ -43,4 +45,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 1
     sound_: event:/UI/TIMER/UI_TIMER_END
-    effects_: []
+    effects_:
+    - {fileID: 0}

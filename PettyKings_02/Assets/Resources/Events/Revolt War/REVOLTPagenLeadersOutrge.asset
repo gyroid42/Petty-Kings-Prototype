@@ -16,22 +16,22 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: The druid leaders of your settlement have gathered outside your
-      hall demanding that you convert once agin to the old religion!
+    description_: 'Your most trusted warrior has demanded once again that you fight
+      for control of the fort! '
     artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
-    - Yes, we should be pagan once again!
-    - No the lord of Christ will guide us from now on!
+    - Surely there must be another way!
+    - Never!
   decisionEffect_:
-  - name_: Yes
+  - name_: Surely there must be another way!
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
-  - name_: No
+    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
+  - name_: Never!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
@@ -44,7 +44,8 @@ MonoBehaviour:
     name_: Yes
     starChange_: -5
     addEvent_: 0
-    newEvent_: {fileID: 11400000, guid: 150240cb71fd62a4d89a530748397071, type: 2}
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}

@@ -15,16 +15,36 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    type_: 0
-    description_: 
+    type_: 3
+    description_: The warrior defends your attack but you manage to deflect his counter
+      and you strike your sword down into his stomach!
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - VICTORY!
+    - VICTORY!
+  decisionEffect_:
+  - name_: VICTORY!
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  - name_: VICTORY!
+    starChange_: 10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  timerRanOutEffect_:
+    name_: VICTORY!
+    starChange_: 10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}

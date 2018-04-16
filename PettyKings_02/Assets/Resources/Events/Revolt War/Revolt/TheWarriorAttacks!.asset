@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: REVOLTDruidleadersrevolt
+  m_Name: TheWarriorAttacks!
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
@@ -27,7 +27,7 @@ MonoBehaviour:
   - name_: Convert
     starChange_: -5
     addEvent_: 0
-    newEvent_: {fileID: 11400000, guid: 150240cb71fd62a4d89a530748397071, type: 2}
+    newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:

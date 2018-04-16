@@ -16,7 +16,7 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 1
-    description_: Should we build more housing for the people?
+    description_: Should we build more housing for the workers?
     artwork_: {fileID: 2800000, guid: 6734019cb361acc4f932e2b75ac7cbf5, type: 3}
     btnText_:
     - They can stay in the same hovel!

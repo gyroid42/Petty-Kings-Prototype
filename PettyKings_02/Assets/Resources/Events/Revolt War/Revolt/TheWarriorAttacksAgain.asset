@@ -9,43 +9,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: REVOLTDruidleadersrevolt2
+  m_Name: TheWarriorAttacksAgain
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     type_: 3
-    description_: With your public refusal and disregard of the old ways, the rebels,
-      lead by the druids form a pathetic looking shield wall. while a few Christien
-      men still loyal to yourself rally round and form their own shield wall...
+    description_: You regain your footing as the warrior prepares to attack again!
     artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
-    - Cut through to the leaders!
-    - Let the rebels break themselves on our shield wall!
+    - Defend!
+    - Attack!
   decisionEffect_:
-  - name_: Cut through to the leaders
+  - name_: Defend
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: ba7c05c1aa534634b90d3bd69c271b31, type: 2}
-  - name_: Let them attack
+    - {fileID: 11400000, guid: 7d9df70d9026eb9409c4102383d83009, type: 2}
+  - name_: Attack!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb9aaf8be2ed13b4da66d6888987c187, type: 2}
+    - {fileID: 11400000, guid: 96f778e05d70800468f621812649a4f1, type: 2}
   timerRanOutEffect_:
-    name_: Let them attack
-    starChange_: 5
+    name_: Defend
+    starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb9aaf8be2ed13b4da66d6888987c187, type: 2}
+    - {fileID: 11400000, guid: 7d9df70d9026eb9409c4102383d83009, type: 2}

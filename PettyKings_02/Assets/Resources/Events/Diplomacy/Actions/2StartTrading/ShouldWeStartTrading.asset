@@ -44,4 +44,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 58231e1f44e74f04fa8cff1549a9ee8c, type: 2}

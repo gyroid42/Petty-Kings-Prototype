@@ -16,15 +16,35 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: 
+    description_: One of your men has demanded you step aside and allow someone else
+      to lead the group!
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - Nope
+    - I Suppose...
+  decisionEffect_:
+  - name_: Nope
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
+  - name_: I Suppose
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 0}
+  timerRanOutEffect_:
+    name_: Nope
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}

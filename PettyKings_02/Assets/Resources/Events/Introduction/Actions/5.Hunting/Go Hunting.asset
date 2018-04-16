@@ -9,41 +9,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: Hunting, Bear or Deer
+  m_Name: Go Hunting
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     type_: 1
-    description_: 'Should you hunt for deer, or the rumored bear that is roaming the
-      fields? '
+    description_: Do you want to go hunting?
     artwork_: {fileID: 2800000, guid: 48db29a4b6884954a8be2535c24060c7, type: 3}
     btnText_:
-    - Bear
-    - Deer
+    - Yes
+    - No
   decisionEffect_:
-  - name_: Bear
+  - name_: Yes
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 36bf8ee7644abbe40b3a00787a41bf4a, type: 2}
-  - name_: Deer
+    - {fileID: 11400000, guid: 14316d6a08206ff438e176409a764bee, type: 2}
+  - name_: No
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 6bb20f98f28c08449b342454a1afc513, type: 2}
+    - {fileID: 0}
   timerRanOutEffect_:
-    name_: Deer
-    starChange_: -5
+    name_: Yes
+    starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
     sound_: event:/UI/TIMER/UI_TIMER_END
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 14316d6a08206ff438e176409a764bee, type: 2}

@@ -16,15 +16,35 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: 
+    description_: As you attack again, you take the warrior by surprise and strike
+      him down! killing him instantly!
     artwork_: {fileID: 0}
-    btnText_: []
-  decisionEffect_: []
-  timerRanOutEffect_:
-    name_: 
-    starChange_: 0
+    btnText_:
+    - DEFEAT!
+    - DEFEAT!
+  decisionEffect_:
+  - name_: DEFEAT!
+    starChange_: -10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+  - name_: DEFEAT!
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+  timerRanOutEffect_:
+    name_: DEFEAT!
+    starChange_: -10
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
