@@ -29,7 +29,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_DEFEAT
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
   - name_: Ahhhhhh!
@@ -37,7 +37,7 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_DEFEAT
+    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
     - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
   timerRanOutEffect_:

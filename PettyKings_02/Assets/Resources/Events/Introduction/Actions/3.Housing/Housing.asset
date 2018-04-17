@@ -31,10 +31,10 @@ MonoBehaviour:
     effects_: []
   - name_: Give each family a hovel!
     starChange_: 5
-    addEvent_: 0
+    addEvent_: 1
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/BUILDINGS/BUILD UP/UI_RESSOURCES_WOOD_BUILDUP_01
+    sound_: event:/UI/BUILDINGS/BUILD UP/UI_RESSOURCES_BUILDINGS_BUILDUP
     effects_: []
   timerRanOutEffect_:
     name_: They can stay in the same hovel!

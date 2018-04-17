@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4527167967189148}
-  - component: {fileID: 114498887423890948}
+  - component: {fileID: 114186340051039562}
   m_Layer: 0
   m_Name: Background Music
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114498887423890948
+--- !u!114 &114186340051039562
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music_: event:/MUSIC/BACKGROUND MUSIC
   splashMusic_: event:/MUSIC/SPLACHSCREEN MUSIC
-  splashFadeTime_: 3
+  splashFadeTime_: 4
