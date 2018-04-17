@@ -1,89 +1,16 @@
 fileFormatVersion: 2
-guid: 4b634fae6fc1ece45acc8cd3b5c8df0a
-timeCreated: 1518448422
+guid: f169987c4e6ddb444b54d011763919e1
+timeCreated: 1523613577
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCylinder2
-    100004: pPlane21
-    100006: pPlane22
-    100008: pPlane23
-    100010: pPlane24
-    100012: pPlane25
-    100014: pPlane26
-    100016: pPlane27
-    100018: pPlane28
-    100020: pPlane29
-    100022: pPlane30
-    100024: pPlane31
-    100026: pPlane32
-    100028: pPlane33
-    100030: pPlane34
-    100032: pPlane35
-    100034: pPlane36
-    100036: pPlane37
-    100038: pPlane38
-    100040: transform1
-    100042: transform10
-    100044: transform11
-    100046: transform12
-    100048: transform13
-    100050: transform14
-    100052: transform15
-    100054: transform16
-    100056: transform17
-    100058: transform18
-    100060: transform2
-    100062: transform3
-    100064: transform4
-    100066: transform5
-    100068: transform6
-    100070: transform7
-    100072: transform8
-    100074: transform9
     400000: //RootNode
-    400002: pCylinder2
-    400004: pPlane21
-    400006: pPlane22
-    400008: pPlane23
-    400010: pPlane24
-    400012: pPlane25
-    400014: pPlane26
-    400016: pPlane27
-    400018: pPlane28
-    400020: pPlane29
-    400022: pPlane30
-    400024: pPlane31
-    400026: pPlane32
-    400028: pPlane33
-    400030: pPlane34
-    400032: pPlane35
-    400034: pPlane36
-    400036: pPlane37
-    400038: pPlane38
-    400040: transform1
-    400042: transform10
-    400044: transform11
-    400046: transform12
-    400048: transform13
-    400050: transform14
-    400052: transform15
-    400054: transform16
-    400056: transform17
-    400058: transform18
-    400060: transform2
-    400062: transform3
-    400064: transform4
-    400066: transform5
-    400068: transform6
-    400070: transform7
-    400072: transform8
-    400074: transform9
-    2300000: pPlane38
-    3300000: pPlane38
-    4300000: pPlane38
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane21
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
