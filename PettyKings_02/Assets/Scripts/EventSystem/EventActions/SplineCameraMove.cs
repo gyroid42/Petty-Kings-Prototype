@@ -48,11 +48,8 @@ public class SplineCameraMove : BaseAction {
 
 
         // Set look at variables if required
-        if (forceLookAt != null)
-        {
-            forceLookAt.active = lookAtActive_;
-            forceLookAt.target = forcedLookAtPosition_;
-        }
+        forceLookAt.active = lookAtActive_;
+        forceLookAt.target = forcedLookAtPosition_;
     }
 
 
