@@ -26,8 +26,8 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
   - name_: Ah well!
