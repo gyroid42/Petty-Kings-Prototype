@@ -9,43 +9,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: REVOLTPagenLeadersOutrge
+  m_Name: AreYouSure
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
     type_: 0
-    description_: 'Your most trusted warrior has demanded once again that you fight
-      for control of the fort! '
-    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
+    description_: Are you sure you want to step aside?
+    artwork_: {fileID: 0}
     btnText_:
-    - Surely there must be another way!
+    - Yes better that then death...
     - Never!
   decisionEffect_:
-  - name_: Surely there must be another way!
+  - name_: Yes
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
-  - name_: Never!
+    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+  - name_: No!
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
+  timerRanOutEffect_:
+    name_: No!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 8c7ba2583c882ce4cad2c57841990d1f, type: 2}
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
-  timerRanOutEffect_:
-    name_: Yes
-    starChange_: -5
-    addEvent_: 0
-    newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
-    effects_:
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}

@@ -9,43 +9,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
-  m_Name: REVOLTPagenLeadersOutrge
+  m_Name: TheWarriorAttacksAgain
   m_EditorClassIdentifier: 
   isBlocking_: 1
   mainDisplay_:
     name_: 
     timerLength_: 0
-    type_: 0
-    description_: 'Your most trusted warrior has demanded once again that you fight
-      for control of the fort! '
-    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
+    type_: 3
+    description_: You regain your footing as the warrior prepares to attack again!
+    artwork_: {fileID: 2800000, guid: 32aef84d7936f4c4786c4ec32fc441c4, type: 3}
     btnText_:
-    - Surely there must be another way!
-    - Never!
+    - Defend!
+    - Attack!
   decisionEffect_:
-  - name_: Surely there must be another way!
+  - name_: Defend
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
-  - name_: Never!
+    - {fileID: 11400000, guid: 7d9df70d9026eb9409c4102383d83009, type: 2}
+  - name_: Attack!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: 8c7ba2583c882ce4cad2c57841990d1f, type: 2}
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
+    - {fileID: 11400000, guid: 96f778e05d70800468f621812649a4f1, type: 2}
   timerRanOutEffect_:
-    name_: Yes
+    name_: Defend
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: d3d974faa98262e4b85a7cb0b322a0e5, type: 2}
+    - {fileID: 11400000, guid: 7d9df70d9026eb9409c4102383d83009, type: 2}
