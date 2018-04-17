@@ -337,8 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
-  soundUp_: 
-  soundDown_: 
+  soundUp_: event:/UI/STAR RATING/UI_STAR_ADDING
+  soundDown_: event:/UI/STAR RATING/UI_STAR_LOSING
   startPos: {fileID: 0}
   endPos: {fileID: 0}
   starRating: 0

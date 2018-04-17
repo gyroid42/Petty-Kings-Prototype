@@ -310,12 +310,12 @@ public class WorldManager : MonoBehaviour {
             FMODUnity.RuntimeManager.PlayOneShot(soundDown_);
         }
 
-        StopAllCoroutines();
-
-        UpdateStarAudioPar(starUpdate);
 
         starRating += starUpdate;
         starManager.UpdateStars(starRating);
+
+        starRatingAudioPar_.setValue(starRating);
+
 
     }
 

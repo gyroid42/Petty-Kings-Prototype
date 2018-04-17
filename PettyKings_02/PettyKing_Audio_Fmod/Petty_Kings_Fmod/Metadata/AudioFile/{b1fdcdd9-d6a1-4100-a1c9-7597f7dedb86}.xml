@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b1fdcdd9-d6a1-4100-a1c9-7597f7dedb86}">
+        <property name="assetPath">
+            <value>MUSIC/LOOPS/PICTISH - War - CHOIR Classical Ensemble_01_35 - Trimmed (11) - Trimmed.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>8.7272789115646265</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{a49d3210-ca08-48cc-81f6-ac9d3e37be6d}</destination>
+        </relationship>
+    </object>
+</objects>
