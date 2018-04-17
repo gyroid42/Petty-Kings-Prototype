@@ -79,9 +79,11 @@ public class EventDisplay : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        eventDisplay = null;
+        if (eventDisplay == this)
+        {
+            // when destroyed remove static reference to itself
+            eventDisplay = null;
+        }
     }
 
 
@@ -142,11 +144,13 @@ public class EventDisplay : MonoBehaviour {
     {
         front_.SetActive(false);
         ShowButtons(false);
-        eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
+        //eventWindow_.transform.eulerAngles = new Vector3(0, 180, 0);
         float speed = 200;
+        front_.SetActive(true);
 
 
         yield return new WaitForSeconds(0.5f);
+        /*
         bool animFinished = false;
         while (!animFinished)
         {
@@ -154,7 +158,7 @@ public class EventDisplay : MonoBehaviour {
             yield return null;
             eventWindow_.transform.eulerAngles += new Vector3(0, speed * Time.deltaTime, 0);
 
-            Debug.Log(eventWindow_.transform.eulerAngles);
+            //Debug.Log(eventWindow_.transform.eulerAngles);
             if (eventWindow_.transform.eulerAngles.y >= 270)
             {
                 front_.SetActive(true);
@@ -166,6 +170,7 @@ public class EventDisplay : MonoBehaviour {
                 animFinished = true;
             }
         }
+        */
         ShowButtons(true);
         displayTimer_.Start();
     }

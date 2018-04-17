@@ -7,12 +7,12 @@ using UnityEngine;
 public class OverrideEventAction : BaseAction {
 
     // Properties
-    public Event overrideEvent_;
+    public NarrativeEvent overrideEvent_;
 
     private EventController eventController;
 
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

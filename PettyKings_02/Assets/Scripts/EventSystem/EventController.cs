@@ -12,15 +12,15 @@ public class EventController : MonoBehaviour {
 
 
     // List of introduction Events
-    private List<Event> introEvents_;
-    private List<Event> eventPool_;
+    private List<NarrativeEvent> introEvents_;
+    private List<NarrativeEvent> eventPool_;
     
 
     // Current event
-    private List<Event> activeEvents_;
+    private List<NarrativeEvent> activeEvents_;
 
     // Next event queue
-    private Queue<Event> eventQueue_;
+    private Queue<NarrativeEvent> eventQueue_;
 
 
     // Flag for if last event started was blocking
@@ -50,21 +50,24 @@ public class EventController : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
+        if (eventController == this)
+        {
 
-        // when destroyed remove static reference to itself
-        eventController = null;
+            // when destroyed remove static reference to itself
+            eventController = null;
+        }
     }
 
     // Called when eventController created
     void Start()
     {
         // Create empty event queue
-        eventQueue_ = new Queue<Event>();
+        eventQueue_ = new Queue<NarrativeEvent>();
 
         isBlocked_ = false;
 
         // Initialse active Events list
-        activeEvents_ = new List<Event>();
+        activeEvents_ = new List<NarrativeEvent>();
 
         // Create reference to seasonController
         seasonController = SeasonController.seasonController;
@@ -76,11 +79,12 @@ public class EventController : MonoBehaviour {
     public void GameStart()
     {
 
-        introEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
+
+        introEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Introduction", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
 
         introEvents_[introEvents_.Count - 1].isPooled_ = true;
 
-        foreach (Event ev in introEvents_)
+        foreach (NarrativeEvent ev in introEvents_)
         {
             StartEvent(ev);
         }
@@ -148,7 +152,7 @@ public class EventController : MonoBehaviour {
 
 
     // Method to start a new event
-    public void StartEvent(Event newEvent)
+    public void StartEvent(NarrativeEvent newEvent)
     {
         // If no event is currently happening or last event wasn't blocking
         if (activeEvents_.Count <= 0 || !isBlocked_ || newEvent.instantPriority_)
@@ -161,7 +165,7 @@ public class EventController : MonoBehaviour {
             // Pause season timer
             if (newEvent.stopSeasonTimer_)
             {
-                seasonController.PauseTimer();
+                //seasonController.PauseTimer();
             }
 
             // If event is blocking
@@ -194,7 +198,7 @@ public class EventController : MonoBehaviour {
         {
 
             // Start next event
-            Event nextEvent = eventQueue_.Dequeue();
+            NarrativeEvent nextEvent = eventQueue_.Dequeue();
 
             nextEvent.Begin();
             activeEvents_.Add(nextEvent);
@@ -257,7 +261,7 @@ public class EventController : MonoBehaviour {
     }
 
     // Adds an event to the event pool
-    public void AddEventToPool(Event newEvent)
+    public void AddEventToPool(NarrativeEvent newEvent)
     {
         if (newEvent != null)
         {

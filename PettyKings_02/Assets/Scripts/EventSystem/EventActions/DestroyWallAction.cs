@@ -15,7 +15,7 @@ public class DestroyWallAction : BaseAction
 
     private WorldManager worldController;
 
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

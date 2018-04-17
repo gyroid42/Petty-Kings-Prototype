@@ -18,7 +18,7 @@ public class StarCheckAction : BaseAction {
     public List<BaseAction> belowActions_;
     
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

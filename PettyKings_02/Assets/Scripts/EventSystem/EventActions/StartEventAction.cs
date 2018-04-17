@@ -5,12 +5,12 @@ using UnityEngine;
 public class StartEventAction : BaseAction {
 
     // properties
-    public Event event_;
+    public NarrativeEvent event_;
 
     private EventController eventController;
 
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

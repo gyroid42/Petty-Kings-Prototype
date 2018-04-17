@@ -9,6 +9,7 @@ public class DecisionAction : BaseAction
     // All data required for an event
 
     private WorldManager worldController;
+    private UserKeyboardControls keyboardControls;
 
     // Data for displaying initial event i.e. name, description...
     // Main display data
@@ -32,7 +33,7 @@ public class DecisionAction : BaseAction
 
 
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         // Call Base Begin Method
         base.Begin(newEvent);
@@ -42,6 +43,7 @@ public class DecisionAction : BaseAction
 
         //get the world manager
         worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
+        keyboardControls = UserKeyboardControls.userKeyboardControls;
 
         // Create references to eventDisplay and resourceManager
         eventDisplay = EventDisplay.eventDisplay;
@@ -60,7 +62,7 @@ public class DecisionAction : BaseAction
             // For each button
             for (int i = 0; i < mainDisplay_.btnFunctions_.Length; i++)
             {
-
+                
                 // Create all effects when button is pressed
 
                 // Add update star method
@@ -135,6 +137,10 @@ public class DecisionAction : BaseAction
         // Display main
         eventDisplay.Display(mainDisplay_, decisionTimer_);
 
+        if (keyboardControls)
+        {
+            keyboardControls.SetButtons(mainDisplay_.btnFunctions_);
+        }
     }
 
 
@@ -201,12 +207,12 @@ public class DecisionAction : BaseAction
         if (choice < 0)
         {
             // Play sound from timer ran out effect
-            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_, Camera.main.transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot(timerRanOutEffect_.sound_);
             return;
         }
 
         // Play sound from decision chosen
-        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_, Camera.main.transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot(decisionEffect_[choice].sound_);
     }
 
 

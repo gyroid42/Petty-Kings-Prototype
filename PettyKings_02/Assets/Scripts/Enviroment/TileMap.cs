@@ -47,9 +47,11 @@ public class TileMap : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // When destroyed remove static reference to itself
-        tileMapManager = null;
+        if (tileMapManager == this)
+        {
+            // When destroyed remove static reference to itself
+            tileMapManager = null;
+        }
     }
 
     // Use this for initialization

@@ -14,22 +14,22 @@ public class SeasonController : MonoBehaviour {
     private SeasonAudioManager seasonAudioManager;
 
     // List of events
-    private List<Event> introductionEvents_;
-    private List<Event> springEventList_;
-    private List<Event> summerEventList_;
-    private List<Event> autumnEventList_;
-    private List<Event> harvestEventList_;
-    private List<Event> winterEventList_;
-    private List<Event> spring2EventList_;
+    private List<NarrativeEvent> introductionEvents_;
+    private List<NarrativeEvent> springEventList_;
+    private List<NarrativeEvent> summerEventList_;
+    private List<NarrativeEvent> autumnEventList_;
+    private List<NarrativeEvent> harvestEventList_;
+    private List<NarrativeEvent> winterEventList_;
+    private List<NarrativeEvent> spring2EventList_;
 
 
 
-    private List<Event> springIntroEvents_;
-    private List<Event> summerIntroEvents_;
-    private List<Event> autumnIntroEvents_;
-    private List<Event> harvestIntroEvents_;
-    private List<Event> winterIntroEvents_;
-    private List<Event> spring2IntroEvents_;
+    private List<NarrativeEvent> springIntroEvents_;
+    private List<NarrativeEvent> summerIntroEvents_;
+    private List<NarrativeEvent> autumnIntroEvents_;
+    private List<NarrativeEvent> harvestIntroEvents_;
+    private List<NarrativeEvent> winterIntroEvents_;
+    private List<NarrativeEvent> spring2IntroEvents_;
 
 
     // Current Season
@@ -63,9 +63,11 @@ public class SeasonController : MonoBehaviour {
     // Called when script is destroyed
     void OnDestroy()
     {
-
-        // when destroyed remove static reference to itself
-        seasonController = null;
+        if (seasonController == this)
+        {
+            // when destroyed remove static reference to itself
+            seasonController = null;
+        }
     }
 
     // Use this for initialization
@@ -77,21 +79,21 @@ public class SeasonController : MonoBehaviour {
         seasonAudioManager = SeasonAudioManager.seasonAudioManager;
 
         // Load all the events into the event lists
-        introductionEvents_ = new List<Event>(Resources.LoadAll("Events/Introduction", typeof(Event)).Cast<Event>().ToArray());
-        springEventList_ = new List<Event>(Resources.LoadAll("Events/Spring/Random", typeof(Event)).Cast<Event>().ToArray());
-        summerEventList_ = new List<Event>(Resources.LoadAll("Events/Summer/Random", typeof(Event)).Cast<Event>().ToArray());
-        autumnEventList_ = new List<Event>(Resources.LoadAll("Events/Autumn/Random", typeof(Event)).Cast<Event>().ToArray());
-        harvestEventList_ = new List<Event>(Resources.LoadAll("Events/Harvest/Random", typeof(Event)).Cast<Event>().ToArray());
-        winterEventList_ = new List<Event>(Resources.LoadAll("Events/Winter/Random", typeof(Event)).Cast<Event>().ToArray());
-        spring2EventList_ = new List<Event>(Resources.LoadAll("Events/Spring2/Random", typeof(Event)).Cast<Event>().ToArray());
+        introductionEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Introduction", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        springEventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Spring/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        summerEventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Summer/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        autumnEventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Autumn/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        harvestEventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Harvest/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        winterEventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Winter/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        spring2EventList_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Spring2/Random", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
 
 
-        springIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring/Intro", typeof(Event)).Cast<Event>().ToArray());
-        summerIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Summer/Intro", typeof(Event)).Cast<Event>().ToArray());
-        autumnIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Autumn/Intro", typeof(Event)).Cast<Event>().ToArray());
-        harvestIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Harvest/Intro", typeof(Event)).Cast<Event>().ToArray());
-        winterIntroEvents_ = new List<Event>(Resources.LoadAll("Events/Winter/Intro", typeof(Event)).Cast<Event>().ToArray());
-        spring2IntroEvents_ = new List<Event>(Resources.LoadAll("Events/Spring2/Intro", typeof(Event)).Cast<Event>().ToArray());
+        springIntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Spring/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        summerIntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Summer/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        autumnIntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Autumn/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        harvestIntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Harvest/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        winterIntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Winter/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
+        spring2IntroEvents_ = new List<NarrativeEvent>(Resources.LoadAll("Events/Spring2/Intro", typeof(NarrativeEvent)).Cast<NarrativeEvent>().ToArray());
 
         // Setup Event Timer
         seasonTimer_.SetTimer(timeTillNextSeason_, false);
@@ -151,8 +153,8 @@ public class SeasonController : MonoBehaviour {
     {
        
         // Createa lists for intro and random events
-        List<Event> introEvents = null;
-        List<Event> randomEventList = null;
+        List<NarrativeEvent> introEvents = null;
+        List<NarrativeEvent> randomEventList = null;
 
 
         // Get event lists for current season
@@ -207,7 +209,7 @@ public class SeasonController : MonoBehaviour {
         if (randomEventList != null)
         {
             // Get a random event
-            Event randomEvent = GetRandomEvent(randomEventList, true);
+            NarrativeEvent randomEvent = GetRandomEvent(randomEventList, true);
 
             // If random event exists
             if (randomEvent != null)
@@ -220,9 +222,9 @@ public class SeasonController : MonoBehaviour {
 
 
     // Gets a random event from a list of events
-    private Event GetRandomEvent(List<Event> eventList, bool remove = false)
+    private NarrativeEvent GetRandomEvent(List<NarrativeEvent> eventList, bool remove = false)
     {
-        Event newEvent = null;
+        NarrativeEvent newEvent = null;
 
         // If list is empty exit method
         if (eventList.Count <= 0)

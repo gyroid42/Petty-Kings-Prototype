@@ -22,25 +22,28 @@ public class SplineController : MonoBehaviour
 
 	void OnDrawGizmos()
 	{
-		Transform[] trans = GetTransforms();
-		if (trans.Length < 2)
-			return;
+        if (SplineRoot)
+        {
+            Transform[] trans = GetTransforms();
+            if (trans.Length < 2)
+                return;
 
-		SplineInterpolator interp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
-		SetupSplineInterpolator(interp, trans);
-		interp.StartInterpolation(null, false, WrapMode);
+            SplineInterpolator interp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
+            SetupSplineInterpolator(interp, trans);
+            interp.StartInterpolation(null, false, WrapMode);
 
 
-		Vector3 prevPos = trans[0].position;
-		for (int c = 1; c <= 100; c++)
-		{
-			float currTime = c * Duration / 100;
-			Vector3 currPos = interp.GetHermiteAtTime(currTime);
-			float mag = (currPos-prevPos).magnitude * 2;
-			Gizmos.color = new Color(mag, 0, 0, 1);
-			Gizmos.DrawLine(prevPos, currPos);
-			prevPos = currPos;
-		}
+            Vector3 prevPos = trans[0].position;
+            for (int c = 1; c <= 100; c++)
+            {
+                float currTime = c * Duration / 100;
+                Vector3 currPos = interp.GetHermiteAtTime(currTime);
+                float mag = (currPos - prevPos).magnitude * 2;
+                Gizmos.color = new Color(mag, 0, 0, 1);
+                Gizmos.DrawLine(prevPos, currPos);
+                prevPos = currPos;
+            }
+        }
 	}
 
 
@@ -129,12 +132,24 @@ public class SplineController : MonoBehaviour
 	/// </summary>
 	public void FollowSpline()
 	{
-		if (mTransforms.Length > 0)
+        if (mTransforms.Length > 0)
 		{
 			SetupSplineInterpolator(mSplineInterp, mTransforms);
 			mSplineInterp.StartInterpolation(null, true, WrapMode);
 		}
 	}
+    
+    public void FollowSpline(GameObject root)
+    {
+        SplineRoot = root;
+        mTransforms = GetTransforms();
+
+        if (mTransforms.Length > 0)
+        {
+            SetupSplineInterpolator(mSplineInterp, mTransforms);
+            mSplineInterp.StartInterpolation(null, true, WrapMode);
+        }
+    }
 
     /// <summary>
     /// Determines if the spline is moving

@@ -2,10 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{083e8671-43d6-403b-99a0-c0462325f0b6}">
         <property name="assetPath">
-            <value>PETTY KINGS_WAR MUSIC.wav</value>
-        </property>
-        <property name="isStreaming">
-            <value>true</value>
+            <value>MUSIC/PETTY KINGS_WAR MUSIC.wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>44.0999985</value>

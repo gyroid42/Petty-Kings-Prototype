@@ -11,7 +11,7 @@ public class ResetGameAction : BaseAction {
 
 
     // Called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 

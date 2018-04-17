@@ -15,6 +15,13 @@ public class WorldManager : MonoBehaviour {
     List<GameObject> wallsLeft = new List<GameObject>();
     List<GameObject> wallsRight = new List<GameObject>();
 
+    [FMODUnity.EventRef]
+    public string soundUp_;
+
+    [FMODUnity.EventRef]
+    public string soundDown_;
+
+    FMOD.Studio.ParameterInstance starRatingAudioPar_;
 
     //Variables for wall creation
     public Transform startPos;
@@ -82,7 +89,11 @@ public class WorldManager : MonoBehaviour {
         {
             i.transform.position = new Vector3(i.transform.position.x, Terrain.activeTerrain.SampleHeight(i.transform.position), i.transform.position.z);
         }
-        
+
+
+        starRatingAudioPar_ = MusicManager.musicManager.GetStarRatingParameter();
+
+        starRatingAudioPar_.setValue(starRating);
         
     }
 
@@ -289,7 +300,42 @@ public class WorldManager : MonoBehaviour {
 
     public void UpdateStars(int starUpdate)
     {
+
+        if (starUpdate > 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(soundUp_);
+        }
+        else if (starUpdate < 0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(soundDown_);
+        }
+
+        StopAllCoroutines();
+
+        UpdateStarAudioPar(starUpdate);
+
         starRating += starUpdate;
         starManager.UpdateStars(starRating);
+
+    }
+
+
+    private IEnumerator UpdateStarAudioPar(int starUpdate)
+    {
+        float starTemp = starRating;
+
+        
+        while (starTemp <= starRating)
+        {
+
+            starTemp += Time.deltaTime;
+
+            starRatingAudioPar_.setValue(starTemp);
+
+            yield return null;
+        }
+
+        starRatingAudioPar_.setValue(starRating);
+
     }
 }

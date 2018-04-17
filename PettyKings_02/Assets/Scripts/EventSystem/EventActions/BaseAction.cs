@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 // Enum for for describing type of action
 public enum ACTIONTYPE
@@ -32,7 +31,7 @@ public class BaseAction : ScriptableObject
     protected ACTIONTYPE type_;
 
     // Reference to event this action is in
-    protected Event currentEvent_;
+    protected NarrativeEvent currentEvent_;
 
     // Bool for ending action
     protected bool actionRunning_ = true;
@@ -41,7 +40,7 @@ public class BaseAction : ScriptableObject
     public bool isBlocking_ = true;
 
     // Begin method called when action starts
-    public virtual void Begin(Event newEvent)
+    public virtual void Begin(NarrativeEvent newEvent)
     {
         
         // Set Default values

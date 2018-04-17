@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EventFolder" id="{531f40f3-1bc1-48b8-8a1a-b841c3cd6209}">
+        <property name="name">
+            <value>END OF GAME</value>
+        </property>
+        <relationship name="folder">
+            <destination>{53288e91-9644-447d-a4b0-1867343a03e3}</destination>
+        </relationship>
+    </object>
+</objects>

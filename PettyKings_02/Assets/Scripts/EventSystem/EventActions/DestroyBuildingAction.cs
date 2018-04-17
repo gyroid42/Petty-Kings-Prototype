@@ -19,7 +19,7 @@ public class DestroyBuildingAction : BaseAction
    public BuildingChoice building;
     
     // Use this for initialization
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
         

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: MenuToGameCam
   m_EditorClassIdentifier: 
   isBlocking_: 1
-  splineRoot_: {fileID: 1395259599851452, guid: a29b2f554dd6f6c4293aa2213d9a4b4f,
+  splineRoot_: {fileID: 1431759431243224, guid: e7e4b9a5a4bcdec41bb94fbcdde13159,
     type: 2}

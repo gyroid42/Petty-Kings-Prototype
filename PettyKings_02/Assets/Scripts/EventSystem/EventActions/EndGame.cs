@@ -9,17 +9,20 @@ public class EndGame : BaseAction {
     // Properties
     private EventDisplay eventDisplay;
 
+    private MusicManager musicManager;
+
     public bool victory_;
 
     private Timer endTimer_;
     public float endTime_;
 
     // Begin called at start of action
-    public override void Begin(Event newEvent)
+    public override void Begin(NarrativeEvent newEvent)
     {
         base.Begin(newEvent);
 
         eventDisplay = EventDisplay.eventDisplay;
+        musicManager = MusicManager.musicManager;
 
         eventDisplay.DisplayVictory(victory_);
 
@@ -33,6 +36,7 @@ public class EndGame : BaseAction {
     public override void End()
     {
         Debug.Log("da end has triggered");
+        musicManager.StartGame(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
