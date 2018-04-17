@@ -15,10 +15,10 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    type_: 0
+    type_: 3
     description_: As you attack again, you take the warrior by surprise and strike
       him down! killing him instantly!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
     - DEFEAT!
     - DEFEAT!

@@ -16,23 +16,21 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 3
-    description_: The popular druid leaders have rallied the people against you and
-      have brought them outside your hall demanding that you either convert or be
-      killed!
+    description_: The warrior attacks!
     artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
-    - Convert back to paganism!
-    - We shall never go back to the old ways!
+    - Dodge!
+    - Defend Yourself!
   decisionEffect_:
-  - name_: Convert
+  - name_: Dodge!
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
-  - name_: Don't Convert
+    - {fileID: 11400000, guid: d0585c54937f28748a51561f642dc35f, type: 2}
+  - name_: Defend Yourself!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
@@ -41,13 +39,13 @@ MonoBehaviour:
     effects_:
     - {fileID: 11400000, guid: 130d251d1d475184e8006f30746966c8, type: 2}
     - {fileID: 11400000, guid: 09b568044ac93c045ac5fa86cc2fe509, type: 2}
-    - {fileID: 11400000, guid: 2897aeb7bf9545f4d98bb4936c219b8d, type: 2}
+    - {fileID: 11400000, guid: d0585c54937f28748a51561f642dc35f, type: 2}
   timerRanOutEffect_:
-    name_: Don't Convert
+    name_: Defend Yourself!
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
     sound_: event:/UI/TIMER/UI_TIMER_END
     effects_:
-    - {fileID: 11400000, guid: 2897aeb7bf9545f4d98bb4936c219b8d, type: 2}
+    - {fileID: 11400000, guid: d0585c54937f28748a51561f642dc35f, type: 2}

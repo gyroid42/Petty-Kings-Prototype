@@ -15,12 +15,12 @@ MonoBehaviour:
   mainDisplay_:
     name_: 
     timerLength_: 0
-    type_: 0
-    description_: 
-    artwork_: {fileID: 0}
+    type_: 3
+    description_: You block the warriors attack and get ready for another attack!
+    artwork_: {fileID: 2800000, guid: edfd2a12b565e1344b6a800098913517, type: 3}
     btnText_:
     - Attack!
-    - Defend!
+    - Dodge!
   decisionEffect_:
   - name_: Attack
     starChange_: 10
@@ -30,7 +30,7 @@ MonoBehaviour:
     sound_: 
     effects_:
     - {fileID: 11400000, guid: 569d837cf70f7b144adf8cce6b049dd7, type: 2}
-  - name_: Defend
+  - name_: Dodge
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
@@ -39,8 +39,8 @@ MonoBehaviour:
     effects_:
     - {fileID: 11400000, guid: d6fa5ec9cc470964b8d63b7b7223cd23, type: 2}
   timerRanOutEffect_:
-    name_: Defend
-    starChange_: 5
+    name_: Attacks
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0

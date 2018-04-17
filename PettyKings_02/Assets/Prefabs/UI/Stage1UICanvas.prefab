@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 224776133393414156}
   - component: {fileID: 222183727503081486}
   - component: {fileID: 114166883962495380}
-  - component: {fileID: 114318870309724576}
+  - component: {fileID: 114080628259494894}
   m_Layer: 5
   m_Name: EventTypeLogo
   m_TagString: Untagged
@@ -1925,11 +1925,11 @@ RectTransform:
   m_Father: {fileID: 224599012819981346}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.9, y: 58.6}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -190, y: 131}
   m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!224 &224599012819981346
 RectTransform:
   m_ObjectHideFlags: 1
