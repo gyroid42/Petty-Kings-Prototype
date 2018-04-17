@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1830350289666454}
   m_IsPrefabParent: 1
+--- !u!1 &1009512968305158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4321506647862426}
+  m_Layer: 0
+  m_Name: FarmSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1101760404374638
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +483,19 @@ Transform:
   m_Father: {fileID: 4408419069499064}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -99.146, z: 0}
+--- !u!4 &4321506647862426
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009512968305158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.9589386, y: -0.0041894913, z: 5.800003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4408419069499064}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4336419181021508
 Transform:
   m_ObjectHideFlags: 1
@@ -514,7 +542,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830350289666454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 188.08182, y: 5.0441895, z: 169.72688}
+  m_LocalPosition: {x: 202.02106, y: 5.0441895, z: 170}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4632090215001272}
@@ -536,6 +564,7 @@ Transform:
   - {fileID: 4916929144622026}
   - {fileID: 4873101184966124}
   - {fileID: 4001620630006506}
+  - {fileID: 4321506647862426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
