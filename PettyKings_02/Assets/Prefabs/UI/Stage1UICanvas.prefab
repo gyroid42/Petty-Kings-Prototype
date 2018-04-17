@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 224776133393414156}
   - component: {fileID: 222183727503081486}
   - component: {fileID: 114166883962495380}
-  - component: {fileID: 114318870309724576}
+  - component: {fileID: 114080628259494894}
   m_Layer: 5
   m_Name: EventTypeLogo
   m_TagString: Untagged

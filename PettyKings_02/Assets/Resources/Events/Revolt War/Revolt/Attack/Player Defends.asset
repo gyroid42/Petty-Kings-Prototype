@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 3
     description_: The warrior defends your attack but you manage to deflect his counter
       and you strike your sword down into his stomach!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: 87b6eaaa8add92349884ffe385c3f8c7, type: 3}
     btnText_:
     - VICTORY!
     - VICTORY!
