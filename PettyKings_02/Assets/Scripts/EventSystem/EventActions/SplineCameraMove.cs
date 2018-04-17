@@ -9,10 +9,11 @@ public class SplineCameraMove : BaseAction {
 
     // Spline root the camera will move through
     public GameObject splineRoot_;
+    public bool loopingMovement_ = false;
     private GameObject instantiatedRoot_;
 
     // Camera might require a specific point to look at, if true set variables below
-    public bool lookAtActive_;
+    public bool lookAtActive_ = false;
     public Vector3 forcedLookAtPosition_;
 
     // reference to spline controller
@@ -37,6 +38,14 @@ public class SplineCameraMove : BaseAction {
 
         // set spline root and start movement
         splineController.FollowSpline(splineRoot_);
+
+        // set wrapping of the spline 
+        // LOOP repeats, ONCE moves through the spline once
+        if (loopingMovement_)
+            splineController.WrapMode = eWrapMode.LOOP;
+        else
+            splineController.WrapMode = eWrapMode.ONCE;
+
 
         // Set look at variables if required
         if (forceLookAt != null)
