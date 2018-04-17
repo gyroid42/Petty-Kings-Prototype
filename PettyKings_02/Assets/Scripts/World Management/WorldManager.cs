@@ -35,6 +35,7 @@ public class WorldManager : MonoBehaviour {
 
     //Star rating variables
     public int starRating;
+    private float audioRating;
     private StarRating starManager; //used to update image of stars on screen
     //public GameObject starImageObject;
 
@@ -44,7 +45,9 @@ public class WorldManager : MonoBehaviour {
 
     void Awake() {
 
-       
+
+        audioRating = starRating;
+
         resources = new GameObject[5];
         
         //load buildings that can be spawned
@@ -310,30 +313,51 @@ public class WorldManager : MonoBehaviour {
             FMODUnity.RuntimeManager.PlayOneShot(soundDown_);
         }
 
-        StopAllCoroutines();
+        
 
-        UpdateStarAudioPar(starUpdate);
 
         starRating += starUpdate;
         starManager.UpdateStars(starRating);
 
+        StopAllCoroutines();
+        StartCoroutine(UpdateStarAudioPar());
+
+        //starRatingAudioPar_.setValue(starRating);
+
     }
 
 
-    private IEnumerator UpdateStarAudioPar(int starUpdate)
+    private IEnumerator UpdateStarAudioPar()
     {
-        float starTemp = starRating;
 
-        
-        while (starTemp <= starRating)
+        if (audioRating < starRating)
         {
 
-            starTemp += Time.deltaTime;
+            while (audioRating < starRating)
+            {
 
-            starRatingAudioPar_.setValue(starTemp);
+                audioRating += Time.deltaTime * 5;
 
-            yield return null;
+                starRatingAudioPar_.setValue(audioRating);
+
+                yield return null;
+            }
         }
+
+        else
+        {
+            while (audioRating > starRating)
+            {
+
+                audioRating -= Time.deltaTime * 5;
+
+                starRatingAudioPar_.setValue(audioRating);
+
+                yield return null;
+            }
+        }
+
+        audioRating = starRating;
 
         starRatingAudioPar_.setValue(starRating);
 
