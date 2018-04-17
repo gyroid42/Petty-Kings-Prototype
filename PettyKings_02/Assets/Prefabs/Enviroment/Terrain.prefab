@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
+  farmSpawn: {fileID: 0}
   soundUp_: event:/UI/STAR RATING/UI_STAR_ADDING
   soundDown_: event:/UI/STAR RATING/UI_STAR_LOSING
   startPos: {fileID: 0}

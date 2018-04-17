@@ -14,6 +14,7 @@ public class SpawnAnimal : BaseAction {
     private WorldManager worldController;
 
     public AnimalChoice animal;
+    public int numberSpawned_;
 
     // Use this for initialization
     public override void Begin(NarrativeEvent newEvent)
@@ -24,13 +25,16 @@ public class SpawnAnimal : BaseAction {
 
         worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
-        if (animal == AnimalChoice.Sheep) //spawn sheep
+        for (int i = 0; i < numberSpawned_; i++)
         {
-            worldController.SpawnSheep();
-        }
-        else if (animal == AnimalChoice.Cow) //spawn coo
-        {
-            worldController.SpawnCow();
+            if (animal == AnimalChoice.Sheep) //spawn sheep
+            {
+                worldController.SpawnSheep();
+            }
+            else if (animal == AnimalChoice.Cow) //spawn coo
+            {
+                worldController.SpawnCow();
+            }
         }
        
         actionRunning_ = false;

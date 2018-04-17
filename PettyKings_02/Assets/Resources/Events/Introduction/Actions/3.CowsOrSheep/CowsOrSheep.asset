@@ -31,6 +31,7 @@ MonoBehaviour:
     effects_:
     - {fileID: 11400000, guid: 5a29cf15869e27549b4a709998c4c810, type: 2}
     - {fileID: 11400000, guid: 5a29cf15869e27549b4a709998c4c810, type: 2}
+    - {fileID: 11400000, guid: 11eed2223ced0a145a89fcaa98ac01e7, type: 2}
   - name_: Sheep
     starChange_: 10
     addEvent_: 0
@@ -39,6 +40,7 @@ MonoBehaviour:
     sound_: 
     effects_:
     - {fileID: 11400000, guid: 5a29cf15869e27549b4a709998c4c810, type: 2}
+    - {fileID: 11400000, guid: 4af3c3a92e35a76478ed5d686fdddb2e, type: 2}
   timerRanOutEffect_:
     name_: Cows
     starChange_: 5
@@ -46,4 +48,5 @@ MonoBehaviour:
     newEvent_: {fileID: 0}
     playSound_: 1
     sound_: event:/UI/TIMER/UI_TIMER_END
-    effects_: []
+    effects_:
+    - {fileID: 11400000, guid: 11eed2223ced0a145a89fcaa98ac01e7, type: 2}
