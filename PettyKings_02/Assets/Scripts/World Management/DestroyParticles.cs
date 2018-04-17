@@ -61,7 +61,7 @@ public class DestroyParticles : MonoBehaviour {
         }
         //transform.parent.position += new Vector3(0, -0.5f, 0);
 
-        Debug.Log(timer);
+        //Debug.Log(timer);
 	}
 
     private void ChangeParticle()
