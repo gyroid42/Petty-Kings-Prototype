@@ -17,7 +17,8 @@ public enum ACTIONTYPE
     DESTROYWALL,
     RESETGAME,
     OVERRIDEEVENT,
-    STARCHECK
+    STARCHECK,
+    SPAWNANIMAL
 }
 
 // Base Action
