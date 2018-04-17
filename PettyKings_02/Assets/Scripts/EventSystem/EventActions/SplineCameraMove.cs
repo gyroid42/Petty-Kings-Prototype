@@ -11,8 +11,15 @@ public class SplineCameraMove : BaseAction {
     public GameObject splineRoot_;
     private GameObject instantiatedRoot_;
 
+    // Camera might require a specific point to look at, if true set variables below
+    public bool lookAtActive_;
+    public Vector3 forcedLookAtPosition_;
+
     // reference to spline controller
     private SplineController splineController;
+
+    // reference to force camera look at script
+    private ForceLookAt forceLookAt;
 
 
     // Begin called at start of action
@@ -23,10 +30,20 @@ public class SplineCameraMove : BaseAction {
         // Setup reference to spline controller
         splineController = Camera.main.GetComponent<SplineController>();
 
+        // Setup reference to force look at
+        forceLookAt = Camera.main.GetComponent<ForceLookAt>();
+
         //instantiatedRoot_ = Instantiate(splineRoot_);
 
         // set spline root and start movement
         splineController.FollowSpline(splineRoot_);
+
+        // Set look at variables if required
+        if (forceLookAt != null)
+        {
+            forceLookAt.active = lookAtActive_;
+            forceLookAt.target = forcedLookAtPosition_;
+        }
     }
 
 
