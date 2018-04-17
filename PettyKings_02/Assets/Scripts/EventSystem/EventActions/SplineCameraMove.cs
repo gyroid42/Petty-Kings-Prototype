@@ -10,6 +10,7 @@ public class SplineCameraMove : BaseAction {
     // Spline root the camera will move through
     public GameObject splineRoot_;
     public bool loopingMovement_ = false;
+    public float movementTime_ = 5.0f;
     private GameObject instantiatedRoot_;
 
     // Camera might require a specific point to look at, if true set variables below
@@ -36,21 +37,32 @@ public class SplineCameraMove : BaseAction {
 
         //instantiatedRoot_ = Instantiate(splineRoot_);
 
-        // set spline root and start movement
-        splineController.FollowSpline(splineRoot_);
+        // set time it will take the spline movement to complete one whole movement
+        // Default is 5 seconds
+        splineController.Duration = movementTime_;
 
         // set wrapping of the spline 
         // LOOP repeats, ONCE moves through the spline once
+        // Make sure that looping splines autoclose or there will be a noticeable gap
         if (loopingMovement_)
+        {
             splineController.WrapMode = eWrapMode.LOOP;
+            splineController.AutoClose = true;
+        }
         else
+        {
             splineController.WrapMode = eWrapMode.ONCE;
+            splineController.AutoClose = false;
+        }
 
 
         // Set look at variables if required
         forceLookAt.active = lookAtActive_;
         forceLookAt.target = forcedLookAtPosition_;
-    }
+
+        // set spline root and start movement
+        splineController.FollowSpline(splineRoot_);
+        }
 
 
     // End called at end of action
@@ -69,6 +81,12 @@ public class SplineCameraMove : BaseAction {
 
         // If camera isn't moving then end the action
         if (!splineController.isMoving())
+        {
+            actionRunning_ = false;
+        }
+
+        // Also end action if the camera movement is set to loop in the background
+        if (loopingMovement_)
         {
             actionRunning_ = false;
         }

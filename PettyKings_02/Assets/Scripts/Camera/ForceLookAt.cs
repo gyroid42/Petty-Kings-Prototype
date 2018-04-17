@@ -5,7 +5,7 @@ using UnityEngine;
 
 // This class is used to force the camera to look at a certain point on update
 // It is used to eliminate the horrible rotation applied to the camera in the
-// render texture camera spline movement.
+// preview camera spline movement as well as in the camera events used later in the events system
 public class ForceLookAt : MonoBehaviour {
 
     // Look at point
