@@ -35,8 +35,8 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
     effects_:
     - {fileID: 11400000, guid: 5ca3b47c62e37db4d91b5d90549e9b15, type: 2}
   timerRanOutEffect_:
@@ -44,7 +44,7 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/UI/TIMER/UI_TIMER_END
     effects_:
     - {fileID: 11400000, guid: 5ca3b47c62e37db4d91b5d90549e9b15, type: 2}

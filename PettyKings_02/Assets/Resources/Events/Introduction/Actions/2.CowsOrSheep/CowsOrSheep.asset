@@ -26,8 +26,8 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/UI/BUILDINGS/BUILD UP/UI_RESSOURCES_WOOD_BUILDUP_01
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: 5a29cf15869e27549b4a709998c4c810, type: 2}
     - {fileID: 11400000, guid: 5a29cf15869e27549b4a709998c4c810, type: 2}
