@@ -15,6 +15,8 @@ public class WorldManager : MonoBehaviour {
     List<GameObject> wallsLeft = new List<GameObject>();
     List<GameObject> wallsRight = new List<GameObject>();
 
+    public GameObject farmSpawn;
+
     [FMODUnity.EventRef]
     public string soundUp_;
 
@@ -45,7 +47,7 @@ public class WorldManager : MonoBehaviour {
     void Awake() {
 
        
-        resources = new GameObject[5];
+        resources = new GameObject[7];
         
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
@@ -53,6 +55,8 @@ public class WorldManager : MonoBehaviour {
         resources[2] = Resources.Load("Model Prefabs/ChiefHall") as GameObject; //2
         resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject; //3
         resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject; //4
+        resources[5] = Resources.Load("Farm/Cow") as GameObject; //5
+        resources[6] = Resources.Load("Farm/Sheep") as GameObject; //6
 
 
         //load particle effects
@@ -191,6 +195,15 @@ public class WorldManager : MonoBehaviour {
         }
     }
 
+    public void SpawnSheep()
+    {
+        Instantiate(resources[6], farmSpawn.transform);
+    }
+
+    public void SpawnCow()
+    {
+        Instantiate(resources[5], farmSpawn.transform);
+    }
 
     private void Update()
     {
