@@ -137,9 +137,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996237067214834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 01c75266d66409442ace0d3d7dadc45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkRadius: 10
+  walkTimer: 2
 --- !u!195 &195676772078027076
 NavMeshAgent:
   m_ObjectHideFlags: 1
