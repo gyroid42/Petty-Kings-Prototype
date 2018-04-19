@@ -5,7 +5,7 @@
             <value>DECISION BOX LEFT</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>0</value>
         </property>
         <relationship name="folder">
             <destination>{d596a193-4734-4919-b134-b72ddca406c2}</destination>
@@ -114,14 +114,11 @@
         <relationship name="effects">
             <destination>{b077ce15-03e3-436f-a595-5c0c03ec341c}</destination>
             <destination>{fe8bb6f7-a3ec-46b7-a987-99e9481d0328}</destination>
+            <destination>{07c20896-8239-41a8-aec9-2a147093e189}</destination>
             <destination>{1b1f36ec-dc5f-42aa-afed-c8dad7498d9b}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{d8f7c6dc-4553-455f-93c6-2fd4c64dea9c}">
-        <property name="stereoPan">
-            <value>-20</value>
-        </property>
-    </object>
+    <object class="MixerBusPanner" id="{d8f7c6dc-4553-455f-93c6-2fd4c64dea9c}"/>
     <object class="MixerBusFader" id="{ba0a5825-cfdb-454d-b55a-dc6cee7d790d}"/>
     <object class="MixerBusEffectChain" id="{32a06d84-3a59-45f5-95e9-008b86180d1c}">
         <relationship name="effects">
@@ -140,6 +137,11 @@
         </property>
         <property name="depth">
             <value>10</value>
+        </property>
+    </object>
+    <object class="ChannelMixEffect" id="{07c20896-8239-41a8-aec9-2a147093e189}">
+        <property name="outputGrouping">
+            <value>1</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{1b1f36ec-dc5f-42aa-afed-c8dad7498d9b}"/>

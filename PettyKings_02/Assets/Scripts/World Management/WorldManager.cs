@@ -15,6 +15,8 @@ public class WorldManager : MonoBehaviour {
     List<GameObject> wallsLeft = new List<GameObject>();
     List<GameObject> wallsRight = new List<GameObject>();
 
+    public GameObject farmSpawn;
+
     [FMODUnity.EventRef]
     public string soundUp_;
 
@@ -35,7 +37,6 @@ public class WorldManager : MonoBehaviour {
 
     //Star rating variables
     public int starRating;
-    private float audioRating;
     private StarRating starManager; //used to update image of stars on screen
     //public GameObject starImageObject;
 
@@ -45,10 +46,8 @@ public class WorldManager : MonoBehaviour {
 
     void Awake() {
 
-
-        audioRating = starRating;
-
-        resources = new GameObject[5];
+       
+        resources = new GameObject[7];
         
         //load buildings that can be spawned
         resources[0] = Resources.Load("Model Prefabs/Palisade") as GameObject; //0
@@ -56,6 +55,8 @@ public class WorldManager : MonoBehaviour {
         resources[2] = Resources.Load("Model Prefabs/ChiefHall") as GameObject; //2
         resources[3] = Resources.Load("Model Prefabs/HuntersHut") as GameObject; //3
         resources[4] = Resources.Load("Model Prefabs/WoodcuttersHut") as GameObject; //4
+        resources[5] = Resources.Load("Farm/Cow") as GameObject; //5
+        resources[6] = Resources.Load("Farm/Sheep") as GameObject; //6
 
 
         //load particle effects
@@ -194,6 +195,15 @@ public class WorldManager : MonoBehaviour {
         }
     }
 
+    public void SpawnSheep()
+    {
+        Instantiate(resources[6], farmSpawn.transform);
+    }
+
+    public void SpawnCow()
+    {
+        Instantiate(resources[5], farmSpawn.transform);
+    }
 
     private void Update()
     {
@@ -313,51 +323,30 @@ public class WorldManager : MonoBehaviour {
             FMODUnity.RuntimeManager.PlayOneShot(soundDown_);
         }
 
-        
-
 
         starRating += starUpdate;
         starManager.UpdateStars(starRating);
 
-        StopAllCoroutines();
-        StartCoroutine(UpdateStarAudioPar());
+        starRatingAudioPar_.setValue(starRating);
 
-        //starRatingAudioPar_.setValue(starRating);
 
     }
 
 
-    private IEnumerator UpdateStarAudioPar()
+    private IEnumerator UpdateStarAudioPar(int starUpdate)
     {
+        float starTemp = starRating;
 
-        if (audioRating < starRating)
+        
+        while (starTemp <= starRating)
         {
 
-            while (audioRating < starRating)
-            {
+            starTemp += Time.deltaTime;
 
-                audioRating += Time.deltaTime * 5;
+            starRatingAudioPar_.setValue(starTemp);
 
-                starRatingAudioPar_.setValue(audioRating);
-
-                yield return null;
-            }
+            yield return null;
         }
-
-        else
-        {
-            while (audioRating > starRating)
-            {
-
-                audioRating -= Time.deltaTime * 5;
-
-                starRatingAudioPar_.setValue(audioRating);
-
-                yield return null;
-            }
-        }
-
-        audioRating = starRating;
 
         starRatingAudioPar_.setValue(starRating);
 

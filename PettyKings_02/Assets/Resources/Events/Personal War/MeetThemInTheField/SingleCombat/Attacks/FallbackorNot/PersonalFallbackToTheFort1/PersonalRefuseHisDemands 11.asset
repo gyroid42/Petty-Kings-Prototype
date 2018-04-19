@@ -27,7 +27,7 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 1
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: event:/EVENTS/END OF GAME/UI_VICTORY
     effects_:
     - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
@@ -35,7 +35,7 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 1
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: event:/EVENTS/END OF GAME/UI_VICTORY
     effects_:
     - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}

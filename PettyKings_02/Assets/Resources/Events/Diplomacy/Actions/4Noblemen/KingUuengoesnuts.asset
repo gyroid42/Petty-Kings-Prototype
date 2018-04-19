@@ -27,8 +27,8 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: c20b6b37cddd5584cb8e339d2d7760d0, type: 2}
   - name_: Apologies
@@ -43,7 +43,7 @@ MonoBehaviour:
     starChange_: 5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/UI/TIMER/UI_TIMER_END
+    playSound_: 0
+    sound_: 
     effects_:
     - {fileID: 11400000, guid: c20b6b37cddd5584cb8e339d2d7760d0, type: 2}

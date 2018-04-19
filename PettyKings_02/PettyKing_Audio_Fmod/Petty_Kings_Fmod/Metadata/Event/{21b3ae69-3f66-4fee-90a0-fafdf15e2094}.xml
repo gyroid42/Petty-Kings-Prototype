@@ -92,9 +92,6 @@
         <property name="triggerProbabilityEnabled">
             <value>true</value>
         </property>
-        <property name="start">
-            <value>0.1875</value>
-        </property>
         <property name="length">
             <value>0.3885260770975057</value>
         </property>
@@ -106,9 +103,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{cf186cbb-0738-4ae2-8597-2f0c4bd8b81e}">
-        <property name="volume">
-            <value>-20</value>
-        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -127,18 +121,14 @@
             <destination>{fadd423d-a5ab-43aa-8095-4aca75f48c22}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{6cf3c976-1ae4-4104-bb71-a97a8d6eaca5}">
-        <property name="stereoPan">
-            <value>40</value>
-        </property>
-    </object>
+    <object class="MixerBusPanner" id="{6cf3c976-1ae4-4104-bb71-a97a8d6eaca5}"/>
     <object class="MixerBusFader" id="{f9862386-ceef-42c2-830e-73a0c9035901}"/>
     <object class="ParameterCondition" id="{f7db1b41-d0f8-436a-af0c-b12be6b6ffba}">
         <property name="minimum">
             <value>0</value>
         </property>
         <property name="maximum">
-            <value>50</value>
+            <value>5</value>
         </property>
         <relationship name="parameter">
             <destination>{d26e9f7c-2dea-44c0-9ca6-0f863276b158}</destination>

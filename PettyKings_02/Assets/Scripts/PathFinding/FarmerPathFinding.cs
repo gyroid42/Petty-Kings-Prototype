@@ -7,7 +7,7 @@ public class FarmerPathFinding : MonoBehaviour {
 
     // Use this for initialization
     NavMeshAgent agent;
-    public GameObject[] objectsInScene;
+    GameObject[] objectsInScene;
     // public static int Range;
     private int rnd;
     bool moving = false;
