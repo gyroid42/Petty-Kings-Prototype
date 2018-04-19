@@ -42,7 +42,7 @@ public class InspectBuilding : MonoBehaviour {
         // No UI element is blocking, so activate inspect building
         if (Input.GetMouseButtonDown(0))
         {
-            HelpIcon_.AddItem(description, header);
+            HelpIcon_.AddInspect(description, header);
         }
     }
 }
