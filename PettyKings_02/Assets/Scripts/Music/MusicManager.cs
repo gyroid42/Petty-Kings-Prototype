@@ -103,7 +103,7 @@ public class MusicManager : MonoBehaviour {
 
         float warValue;
 
-        warParameter.getValue(warValue);
+        warParameter.getValue(out warValue);
 
         while ((newState && warValue < 1) || (!newState && warValue > 0))
         {
