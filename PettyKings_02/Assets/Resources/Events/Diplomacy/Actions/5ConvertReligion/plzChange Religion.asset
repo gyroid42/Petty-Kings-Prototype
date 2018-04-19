@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
+  m_Name: plzChange Religion
+  m_EditorClassIdentifier: 
+  isBlocking_: 1
+  mainDisplay_:
+    name_: 
+    timerLength_: 0
+    type_: 0
+    description_: 'King Uuen has once again demanded we convert to Christianity '
+    artwork_: {fileID: 2800000, guid: 4a36dd3eee54c83498e091ac2291dd7e, type: 3}
+    btnText_:
+    - Convert
+    - Stay Pagan
+  decisionEffect_:
+  - name_: Change to Christianity
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}
+  - name_: Stay Pagan
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 5fa9aca02e7e0014d9ee891aff928c62, type: 2}
+  timerRanOutEffect_:
+    name_: Change to Christianity
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/UI/TIMER/UI_TIMER_END
+    effects_:
+    - {fileID: 11400000, guid: 95c79c9ae2bd24e41821caee5e667a99, type: 2}

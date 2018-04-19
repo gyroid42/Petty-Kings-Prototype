@@ -14,6 +14,3 @@ MonoBehaviour:
   isBlocking_: 1
   splineRoot_: {fileID: 1431759431243224, guid: e7e4b9a5a4bcdec41bb94fbcdde13159,
     type: 2}
-  loopingMovement_: 0
-  lookAtActive_: 0
-  forcedLookAtPosition_: {x: 0, y: 0, z: 0}

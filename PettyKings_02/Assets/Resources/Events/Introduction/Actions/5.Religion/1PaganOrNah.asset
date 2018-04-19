@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
+  m_Name: 1PaganOrNah
+  m_EditorClassIdentifier: 
+  isBlocking_: 1
+  mainDisplay_:
+    name_: 
+    timerLength_: 0
+    type_: 1
+    description_: Should we convert to Christianity?
+    artwork_: {fileID: 2800000, guid: 103a0ff2480eae14b9c55b5f95009d7e, type: 3}
+    btnText_:
+    - Stay Pagan
+    - Convert to Christianity
+  decisionEffect_:
+  - name_: Pagan
+    starChange_: 5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: 6ba5a27e500ed0c45834880e1cc53536, type: 2}
+    - {fileID: 11400000, guid: 5a3df4cc36ebb3d4bac9d2f1eb0a1821, type: 2}
+  - name_: Christianity
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 0
+    sound_: 
+    effects_:
+    - {fileID: 11400000, guid: d6754dd5f092a6f46b1161c859c42d4c, type: 2}
+  timerRanOutEffect_:
+    name_: 
+    starChange_: 0
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/UI/TIMER/UI_TIMER_END
+    effects_: []

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c73b84e076dc419922780132c6762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplineRoot: {fileID: 1968283886194386, guid: e7e4b9a5a4bcdec41bb94fbcdde13159, type: 2}
+  SplineRoot: {fileID: 1018364283632266, guid: e7e4b9a5a4bcdec41bb94fbcdde13159, type: 2}
   Duration: 14
   OrientationMode: 0
   WrapMode: 1
@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 172.1, y: 4, z: 162.9}
-  active: 1
 --- !u!114 &114844206207464748
 MonoBehaviour:
   m_ObjectHideFlags: 1

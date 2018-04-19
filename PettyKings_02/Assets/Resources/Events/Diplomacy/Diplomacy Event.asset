@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: Diplomacy Event
   m_EditorClassIdentifier: 
   isBlocking_: 1
-  instantPriority_: 1
+  instantPriority_: 0
   stopSeasonTimer_: 1
   actionList_:
   - {fileID: 11400000, guid: b7bcf247151ab6f46a165b3a34a4e2f5, type: 2}
-  - {fileID: 11400000, guid: af8d4a59d99a1ea4e8ab9af99a5428cb, type: 2}
+  - {fileID: 11400000, guid: 85f2ce8a6db2f1f48b994106621e5b95, type: 2}
   - {fileID: 11400000, guid: 364b58ed4889e084faf23ffef70facf5, type: 2}
-  - {fileID: 11400000, guid: 6e1750f79b6209a418b7589c8af8bb81, type: 2}
+  - {fileID: 11400000, guid: 08590ac6d49cf0049ba1a082641c60da, type: 2}
   isPooled_: 1

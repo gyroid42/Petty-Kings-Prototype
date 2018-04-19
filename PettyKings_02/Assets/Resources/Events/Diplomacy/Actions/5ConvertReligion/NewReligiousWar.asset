@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a910ef7be249e7d41bae76d01428fa2b, type: 3}
+  m_Name: NewReligiousWar
+  m_EditorClassIdentifier: 
+  isBlocking_: 1
+  mainDisplay_:
+    name_: 
+    timerLength_: 0
+    type_: 0
+    description_: King Uuen has declared a Christian war against us!
+    artwork_: {fileID: 2800000, guid: 0fbbfb415fc35084581da32df6c996d1, type: 3}
+    btnText_:
+    - Ah well!
+    - Ah well!
+  decisionEffect_:
+  - name_: Oh no!
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
+  - name_: Ah well!
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
+  timerRanOutEffect_:
+    name_: Ah well!
+    starChange_: -5
+    addEvent_: 0
+    newEvent_: {fileID: 0}
+    playSound_: 1
+    sound_: event:/UI/TIMER/UI_TIMER_END
+    effects_:
+    - {fileID: 11400000, guid: f2a048b07ec1e664bae3ab6e91d89a26, type: 2}
