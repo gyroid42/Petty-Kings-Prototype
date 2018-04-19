@@ -340,7 +340,6 @@ GameObject:
   - component: {fileID: 65103353225413022}
   - component: {fileID: 65809003169151054}
   - component: {fileID: 208759809839864704}
-  - component: {fileID: 114604841906310258}
   m_Layer: 0
   m_Name: WoodcuttersHut
   m_TagString: Building
@@ -2178,20 +2177,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114604841906310258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267622737577660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6600809ba365a164bbbf9af67f99f7b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: Pictish building projects would have needed strong knowledge of wood
-    and building techniques - the picts were likely skilled builders.
-  header: Woodcutters Hut
 --- !u!208 &208759809839864704
 NavMeshObstacle:
   m_ObjectHideFlags: 1

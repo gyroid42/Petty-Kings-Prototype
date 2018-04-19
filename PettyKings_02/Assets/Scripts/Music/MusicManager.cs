@@ -6,7 +6,6 @@ public class MusicManager : MonoBehaviour {
 
     public static MusicManager musicManager;
 
-    public bool isWar_;
 
     [FMODUnity.EventRef]
     public string music_;
@@ -88,42 +87,6 @@ public class MusicManager : MonoBehaviour {
         musicPlayer_.start();
     }
 
-    public void SetWar(bool newState)
-    {
-
-        StopAllCoroutines();
-        StartCoroutine(WarTransition(newState));
-    }
-
-    private IEnumerator WarTransition(bool newState)
-    {
-        FMOD.Studio.ParameterInstance warParameter;
-
-        musicPlayer_.getParameter("war", out warParameter);
-
-        float warValue;
-
-        warParameter.getValue(warValue);
-
-        while ((newState && warValue < 1) || (!newState && warValue > 0))
-        {
-
-            if (newState)
-            {
-                warValue += Time.deltaTime / splashFadeTime_;
-            }
-            else
-            {
-                warValue -= Time.deltaTime / splashFadeTime_;
-            }
-
-            warParameter.setValue(warValue);
-
-            yield return null;
-        }
-
-    }
-
 
     public void StartGame(bool newState)
     {
@@ -173,7 +136,7 @@ public class MusicManager : MonoBehaviour {
     {
 
         FMOD.Studio.ParameterInstance starPar;
-        musicPlayer_.getParameter("star rating", out starPar);
+        musicPlayer_.getParameter("starrating", out starPar);
 
         return starPar;
     }

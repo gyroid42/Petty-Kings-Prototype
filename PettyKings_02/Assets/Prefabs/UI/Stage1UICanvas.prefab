@@ -666,31 +666,18 @@ MonoBehaviour:
   bodyObject: {fileID: 114091581848252120}
   headObject: {fileID: 114380595575323814}
   tutorialText:
-  - 'You are a Pictish King in ancient Scotland!
+  - 'Make decisions by left-clicking
 
 
-    Your decisions are important!
+    Two options are presented for each event'
+  - 'Your decisions are important!
 
 
-    Choose options by Left-clicking the mouse.
+    Consider the effects of each one carefully, your people are counting on you'
+  - 'Your performance as king is given as a star rating
 
 
-    Press OK to continue'
-  - 'Two options are presented for each decision.
-
-
-    Consider the effects of each decision carefully, your people are counting on you.
-
-
-    You dont have much time to decide though so watch the timer at the top!
-
-'
-  - 'Your performance as king is given as a star rating at the bottom of the screen.
-
-
-    Aim for five stars and be the best king the Picts have ever seen!
-
-'
+    Aim for five stars and be the best king the Picts have seen!'
 --- !u!114 &114157935106708640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -787,7 +774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'OK
+  m_Text: 'X
 
 '
 --- !u!114 &114240673264004500
@@ -980,7 +967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How To Play
+  m_Text: Controls
 --- !u!114 &114478565162468448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1953,7 +1940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -303, y: 185}
+  m_AnchoredPosition: {x: -302, y: 209}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224599012819981346
