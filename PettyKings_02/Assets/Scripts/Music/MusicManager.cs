@@ -87,45 +87,6 @@ public class MusicManager : MonoBehaviour {
         musicPlayer_.start();
     }
 
-<<<<<<< HEAD
-=======
-    public void SetWar(bool newState)
-    {
-
-        StopAllCoroutines();
-        StartCoroutine(WarTransition(newState));
-    }
-
-    private IEnumerator WarTransition(bool newState)
-    {
-        FMOD.Studio.ParameterInstance warParameter;
-
-        musicPlayer_.getParameter("war", out warParameter);
-
-        float warValue;
-
-        warParameter.getValue(out warValue);
-
-        while ((newState && warValue < 1) || (!newState && warValue > 0))
-        {
-
-            if (newState)
-            {
-                warValue += Time.deltaTime / splashFadeTime_;
-            }
-            else
-            {
-                warValue -= Time.deltaTime / splashFadeTime_;
-            }
-
-            warParameter.setValue(warValue);
-
-            yield return null;
-        }
-
-    }
-
->>>>>>> Ciaran-Branch
 
     public void StartGame(bool newState)
     {
