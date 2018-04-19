@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 0
     description_: When you step aside you are banished from the fort and you set off
       in search of a new home...
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: f014609492d772f43935c7ef4585a10f, type: 3}
     btnText_:
     - Oh no!
     - Oh no!
