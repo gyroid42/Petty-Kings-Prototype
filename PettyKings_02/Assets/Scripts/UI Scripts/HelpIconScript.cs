@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HelpIconScript : MonoBehaviour {
+public class HelpIconScript : MonoBehaviour
+{
 
     // Public variables
     public GameObject icon;
@@ -17,6 +18,7 @@ public class HelpIconScript : MonoBehaviour {
     // Queue to handle text efficiently
     private Queue<HelperText> helperText;
     private bool initialised_;
+    private bool begin_;
 
     // Struct for helper data
     struct HelperText
@@ -42,10 +44,10 @@ public class HelpIconScript : MonoBehaviour {
             set { body = value; }
         }
     }
-    
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start()
     {
         // Ensure icon is visible on startup
         Open();
@@ -53,11 +55,35 @@ public class HelpIconScript : MonoBehaviour {
         // Initialise tutorial text
         Initialise();
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void LateUpdate()
+    {
+        // only update while the timer hasn't been set to false
+        if (begin_ == false)
+        {
+            // if the control helper is open, pause it
+            if (icon.activeSelf)
+            {
+                Timer t = FindTimer();
+
+                // if a timer is present, pause it
+                if (t != null)
+                {
+                    // need to wait for a short period for events to initialise
+                    //yield return new WaitForSeconds(0.6f);
+
+                    t.Pause();
+                    begin_ = true;
+                }
+            }
+        }
+    }
 
     void Initialise()
     {
@@ -65,13 +91,16 @@ public class HelpIconScript : MonoBehaviour {
         helperText = new Queue<HelperText>();
 
         // Cycle through the tutorial text list, adding each item to the queue
-        foreach(string text in tutorialText)
+        foreach (string text in tutorialText)
         {
             // create struct
-            HelperText newItem = new HelperText("",text);
+            HelperText newItem = new HelperText("", text);
 
             helperText.Enqueue(newItem);
         }
+
+        // used for setting timer to pause later
+        begin_ = false;
 
         // Update text, starting showing preloaded tutorial text
         UpdateText();
@@ -87,7 +116,7 @@ public class HelpIconScript : MonoBehaviour {
         Timer eventTimer = FindTimer();
 
         // if timer has been found, start timer again
-        if(eventTimer != null)
+        if (eventTimer != null)
         {
             eventTimer.Start();
         }
