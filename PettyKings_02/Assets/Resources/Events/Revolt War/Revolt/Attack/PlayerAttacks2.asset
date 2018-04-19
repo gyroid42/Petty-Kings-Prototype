@@ -23,22 +23,22 @@ MonoBehaviour:
     - DEFEAT!
     - DEFEAT!
   decisionEffect_:
-  - name_: DEFEAT!
-    starChange_: -10
+  - name_: VICTORY!
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
-  - name_: DEFEAT!
-    starChange_: -10
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  - name_: VICTORY"
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   timerRanOutEffect_:
     name_: DEFEAT!
     starChange_: -10
