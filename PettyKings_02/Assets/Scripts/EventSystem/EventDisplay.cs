@@ -54,6 +54,8 @@ public class EventDisplay : MonoBehaviour {
 
 
     private Timer displayTimer_;
+    private SoundPlay btnSoundLeft_;
+    private SoundPlay btnSoundRight_;
 
     // When object is created
     void Awake()
@@ -98,6 +100,9 @@ public class EventDisplay : MonoBehaviour {
 
         buttons_.Add(GameObject.Find("DecisionBoxLeft").GetComponent<Button>());
         buttons_.Add(GameObject.Find("DecisionBoxRight").GetComponent<Button>());
+
+        btnSoundLeft_ = GameObject.Find("DecisionBoxLeft").GetComponent<SoundPlay>();
+        btnSoundRight_ = GameObject.Find("DecisionBoxRight").GetComponent<SoundPlay>();
 
         // Event display is not active when created
         gameObject.SetActive(false);
@@ -239,6 +244,16 @@ public class EventDisplay : MonoBehaviour {
                     buttons_[i].GetComponent<Button>().onClick.RemoveAllListeners();
                     int tempInt = i;
                     ButtonDel tempButtonDel = displayData.btnFunctions_[i];
+
+                    if(i == 0)
+                    {
+                        tempButtonDel += btnSoundLeft_.Play;
+                    }
+                    else
+                    {
+                        tempButtonDel += btnSoundRight_.Play; 
+                    }
+
                     buttons_[i].GetComponent<Button>().onClick.AddListener(() => tempButtonDel(tempInt));
 
                     // Add new button to button list

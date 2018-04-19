@@ -136,7 +136,7 @@ public class MusicManager : MonoBehaviour {
     {
 
         FMOD.Studio.ParameterInstance starPar;
-        musicPlayer_.getParameter("starrating", out starPar);
+        musicPlayer_.getParameter("star rating", out starPar);
 
         return starPar;
     }
