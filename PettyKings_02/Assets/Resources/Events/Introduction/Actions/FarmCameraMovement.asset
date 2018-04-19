@@ -15,5 +15,6 @@ MonoBehaviour:
   splineRoot_: {fileID: 1018364283632266, guid: e7e4b9a5a4bcdec41bb94fbcdde13159,
     type: 2}
   loopingMovement_: 1
+  movementTime_: 12
   lookAtActive_: 1
-  forcedLookAtPosition_: {x: 212, y: 10, z: 163}
+  forcedLookAtPosition_: {x: 222, y: 5, z: 171}
