@@ -28,7 +28,7 @@ public class InspectBuilding : MonoBehaviour {
     {
         if(Input.GetMouseButtonDown(0))
         {
-            HelpIcon_.AddItem(description, header);
+            HelpIcon_.AddInspect(description, header);
         }
     }
 }

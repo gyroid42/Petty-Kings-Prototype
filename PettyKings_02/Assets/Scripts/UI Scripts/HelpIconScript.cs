@@ -16,6 +16,7 @@ public class HelpIconScript : MonoBehaviour {
 
     // Queue to handle text efficiently
     private Queue<HelperText> helperText;
+	private HelperText inspectText;
     private bool initialised_;
 
     // Struct for helper data
@@ -61,6 +62,9 @@ public class HelpIconScript : MonoBehaviour {
 
     void Initialise()
     {
+
+        inspectText = new HelperText("", "");
+
         // Create queue object
         helperText = new Queue<HelperText>();
 
@@ -135,27 +139,52 @@ public class HelpIconScript : MonoBehaviour {
         }
     }
 
+	public void AddInspect(string bodyText, string title = "")
+	{
+        if (!icon.activeSelf)
+        {
+            inspectText = new HelperText (title, bodyText);
+        
+            Debug.Log("this is happening");
+            Open();
+            UpdateText();
+        }
+        
+
+	}
+
     // Update the UI box with the string stored in the queue
     // Pops top item off the top and makes the next item in the queue the top
     void UpdateText()
     {
-        HelperText currentItem = helperText.Dequeue();
+		if (helperText.Count > 0) {
+			HelperText currentItem = helperText.Dequeue ();
 
-        // Update values
-        bodyObject.text = currentItem.Body;
+			// Update values
+			bodyObject.text = currentItem.Body;
 
-        // Update title if new title
-        if (currentItem.Title != "")
-        {
-            headObject.text = currentItem.Title;
-        }
+			// Update title if new title
+			if (currentItem.Title != "")
+			{
+				headObject.text = currentItem.Title;
+			}
+		} 
+		else if (inspectText.Body != "") {
+			bodyObject.text = inspectText.Body;
+			headObject.text = inspectText.Title;
+			inspectText.Body = "";
+            inspectText.Title = "";
+		}
+
+
+        
     }
 
     // Goes to next text panel for tutorial helper, closes if the last one
     public void CycleText()
     {
         // check if last item in list
-        if (helperText.Count == 0)
+        if (helperText.Count == 0 && inspectText.Body == "")
         {
             // close helper
             Close();
