@@ -148,6 +148,7 @@ public class EventDisplay : MonoBehaviour {
         float speed = 200;
         front_.SetActive(true);
 
+        displayTimer_.Start();
 
         yield return new WaitForSeconds(0.5f);
         /*
@@ -172,7 +173,6 @@ public class EventDisplay : MonoBehaviour {
         }
         */
         ShowButtons(true);
-        displayTimer_.Start();
     }
 
     public void DisplayEnd()
