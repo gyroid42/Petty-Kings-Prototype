@@ -1249,17 +1249,17 @@ MonoBehaviour:
   fourStarRequirement: 40
   fourHalfStarRequirement: 45
   fiveStarRequirement: 50
-  noStarImage: {fileID: 21300000, guid: f7cf569c73adef041aba31eae533476f, type: 3}
-  halfStarImage: {fileID: 21300000, guid: 974da43ecb8227940853fea68a76be60, type: 3}
-  oneStarImage: {fileID: 21300000, guid: 22a59136ac12c1f44a2755399ac400b5, type: 3}
-  oneHalfStarImage: {fileID: 21300000, guid: bc4b9757585065248b76ef161f496139, type: 3}
-  twoStarImage: {fileID: 21300000, guid: db3f7e0d8f49ae448a0a5af614b9f357, type: 3}
-  twoHalfStarImage: {fileID: 21300000, guid: 90b860bcbab33de4b910ce7e04113a60, type: 3}
-  threeStarImage: {fileID: 21300000, guid: 505c59311713e194d99e0d98fb8d5d7d, type: 3}
-  threeHalfStarImage: {fileID: 21300000, guid: f17fc9f2fca4342448ec9d41e7734793, type: 3}
-  fourStarImage: {fileID: 21300000, guid: 4253aec6626f0ca4faee865ccece8a69, type: 3}
-  fourHalfStarImage: {fileID: 21300000, guid: 93d4febea9ff6e04fa65c25ea3136196, type: 3}
-  fiveStarImage: {fileID: 21300000, guid: c5b52a906d7e24c41a27930337c66d6e, type: 3}
+  noStarImage: {fileID: 21300000, guid: 3dce8bd7937514544b6a64e7cd451f1b, type: 3}
+  halfStarImage: {fileID: 21300000, guid: 57d04290036d4e545bd35c9cf02e993e, type: 3}
+  oneStarImage: {fileID: 21300000, guid: a68ac32961ec81644aa3a648aa56fe7c, type: 3}
+  oneHalfStarImage: {fileID: 21300000, guid: de576c674d462524ca536f3cf0b34abc, type: 3}
+  twoStarImage: {fileID: 21300000, guid: 194c5f88fef857e45ad8b2fb56082c84, type: 3}
+  twoHalfStarImage: {fileID: 21300000, guid: c5093584232049941bb87990309c6c56, type: 3}
+  threeStarImage: {fileID: 21300000, guid: 0eed2289838ffe2448f92698f842a082, type: 3}
+  threeHalfStarImage: {fileID: 21300000, guid: e6e2e0e873106624cbf1a62b43362a30, type: 3}
+  fourStarImage: {fileID: 21300000, guid: 0b7289ef67a9fb84793a482591944bba, type: 3}
+  fourHalfStarImage: {fileID: 21300000, guid: 7ac5562255842154c95e7081b74dd72e, type: 3}
+  fiveStarImage: {fileID: 21300000, guid: a7c0cb5b94fa0c549840bac135e65205, type: 3}
 --- !u!114 &114624748496349418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2170,7 +2170,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -193}
-  m_SizeDelta: {x: 234, y: 60}
+  m_SizeDelta: {x: 234, y: 60.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224907086700782220
 RectTransform:
