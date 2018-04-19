@@ -20,9 +20,10 @@ public class SoundPlay : MonoBehaviour {
 	}
 
 
-    public void Play()
+    public void Play(int meh)
     {
         FMODUnity.RuntimeManager.PlayOneShot(sound_);
+        
     }
 
 }

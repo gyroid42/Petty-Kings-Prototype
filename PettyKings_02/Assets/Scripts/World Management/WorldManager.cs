@@ -37,6 +37,7 @@ public class WorldManager : MonoBehaviour {
 
     //Star rating variables
     public int starRating;
+    private float audioRating;
     private StarRating starManager; //used to update image of stars on screen
     //public GameObject starImageObject;
 
@@ -46,7 +47,8 @@ public class WorldManager : MonoBehaviour {
 
     void Awake() {
 
-       
+        audioRating = starRating;
+
         resources = new GameObject[7];
         
         //load buildings that can be spawned
@@ -329,24 +331,47 @@ public class WorldManager : MonoBehaviour {
 
         starRatingAudioPar_.setValue(starRating);
 
+        StopAllCoroutines();
+        StartCoroutine(UpdateStarAudioPar());
 
     }
 
 
-    private IEnumerator UpdateStarAudioPar(int starUpdate)
+    private IEnumerator UpdateStarAudioPar()
     {
-        float starTemp = starRating;
+        //float starTemp = starRating;
 
         
-        while (starTemp <= starRating)
+      //  while (starTemp <= starRating)
+       // {
+
+           // starTemp += Time.deltaTime;
+
+           // starRatingAudioPar_.setValue(starTemp);
+
+            if(audioRating <= starRating)
+            {
+                while(audioRating < starRating)
+                {
+                    audioRating += Time.deltaTime * 5;
+                starRatingAudioPar_.setValue(audioRating);
+
+                yield return null;
+                }
+            }
+            else
         {
-
-            starTemp += Time.deltaTime;
-
-            starRatingAudioPar_.setValue(starTemp);
-
-            yield return null;
+            while(audioRating > starRating)
+            {
+                audioRating -= Time.deltaTime * 5;
+                starRatingAudioPar_.setValue(audioRating);
+                yield return null;
+            }
         }
+
+        audioRating = starRating;
+           // yield return null;
+       //}
 
         starRatingAudioPar_.setValue(starRating);
 
