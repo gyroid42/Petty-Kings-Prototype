@@ -18,7 +18,7 @@ MonoBehaviour:
     type_: 0
     description_: One of your men has demanded you step aside and allow someone else
       to lead the group!
-    artwork_: {fileID: 0}
+    artwork_: {fileID: 2800000, guid: ac30eb54fae409f40a0286b8e50dd020, type: 3}
     btnText_:
     - Nope
     - I Suppose...
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: d70fa0553603f384e95bd4916a821c02, type: 2}
   timerRanOutEffect_:
     name_: Nope
     starChange_: 5
