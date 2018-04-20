@@ -682,7 +682,7 @@ MonoBehaviour:
     Consider the effects of each decision carefully, your people are counting on you.
 
 
-    You dont have much time to decide though so watch the timer at the top!
+    You don''t have much time to decide though so watch the timer at the top!
 
 '
   - 'Your performance as king is given as a star rating at the bottom of the screen.
@@ -1825,8 +1825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.3, y: 49.2}
-  m_SizeDelta: {x: 26, y: 26}
+  m_AnchoredPosition: {x: -57.8, y: -176}
+  m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224336773017191052
 RectTransform:
