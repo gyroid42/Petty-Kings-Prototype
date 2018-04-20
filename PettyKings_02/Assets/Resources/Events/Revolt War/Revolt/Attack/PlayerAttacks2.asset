@@ -20,8 +20,8 @@ MonoBehaviour:
       him down! killing him instantly!
     artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
-    - DEFEAT!
-    - DEFEAT!
+    - VICTORY!
+    - VICTORY!
   decisionEffect_:
   - name_: VICTORY!
     starChange_: 10
