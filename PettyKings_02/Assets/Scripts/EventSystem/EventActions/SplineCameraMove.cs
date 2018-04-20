@@ -62,7 +62,13 @@ public class SplineCameraMove : BaseAction {
 
         // set spline root and start movement
         splineController.FollowSpline(splineRoot_);
+
+        // Also end action if the camera movement is set to loop in the background
+        if (loopingMovement_)
+        {
+            actionRunning_ = false;
         }
+    }
 
 
     // End called at end of action
@@ -85,11 +91,7 @@ public class SplineCameraMove : BaseAction {
             actionRunning_ = false;
         }
 
-        // Also end action if the camera movement is set to loop in the background
-        if (loopingMovement_)
-        {
-            actionRunning_ = false;
-        }
+        
 
         return actionRunning_;
     }
