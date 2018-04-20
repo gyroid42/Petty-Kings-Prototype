@@ -6,6 +6,7 @@ public class MusicManager : MonoBehaviour {
 
     public static MusicManager musicManager;
 
+    public bool isWar_;
 
     [FMODUnity.EventRef]
     public string music_;
@@ -85,6 +86,42 @@ public class MusicManager : MonoBehaviour {
         musicPlayer_ = FMODUnity.RuntimeManager.CreateInstance(newMusic);
 
         musicPlayer_.start();
+    }
+
+    public void SetWar(bool newState)
+    {
+
+        StopAllCoroutines();
+        StartCoroutine(WarTransition(newState));
+    }
+
+    private IEnumerator WarTransition(bool newState)
+    {
+        FMOD.Studio.ParameterInstance warParameter;
+
+        musicPlayer_.getParameter("war", out warParameter);
+
+        float warValue;
+
+        warParameter.getValue(out warValue);
+
+        while ((newState && warValue < 1) || (!newState && warValue > 0))
+        {
+
+            if (newState)
+            {
+                warValue += Time.deltaTime / splashFadeTime_;
+            }
+            else
+            {
+                warValue -= Time.deltaTime / splashFadeTime_;
+            }
+
+            warParameter.setValue(warValue);
+
+            yield return null;
+        }
+
     }
 
 
