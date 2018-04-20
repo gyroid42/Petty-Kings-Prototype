@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 2}
   loopingMovement_: 1
   lookAtActive_: 1
-  forcedLookAtPosition_: {x: 212, y: 10, z: 163}
+  forcedLookAtPosition_: {x: 222, y: 5, z: 171}
