@@ -314,17 +314,11 @@
     <object class="MixerBusPanner" id="{8afc8b0e-4496-4d10-a9a9-4f1b8e1e4eb5}"/>
     <object class="MixerBusFader" id="{1a050485-3e6e-45ca-8e18-36dee7f4758c}"/>
     <object class="SingleSound" id="{ae39e146-3565-482e-9332-ad16963b6460}">
-        <property name="looping">
-            <value>true</value>
-        </property>
         <relationship name="audioFile">
             <destination>{3b287f77-5eea-4228-bfe9-33dbe8e0e011}</destination>
         </relationship>
     </object>
     <object class="SingleSound" id="{d5b9e1cd-0684-4d30-a36f-713a11b7d3c8}">
-        <property name="looping">
-            <value>true</value>
-        </property>
         <relationship name="audioFile">
             <destination>{052d976d-2366-43b8-bb09-b91a4c9c48ce}</destination>
         </relationship>
@@ -356,17 +350,11 @@
     </object>
     <object class="MixerBusPanner" id="{08d8d608-00a2-4cb8-983f-ee5eb11ad37e}"/>
     <object class="SingleSound" id="{d5e35e85-424f-48dd-93cc-068de8a1baee}">
-        <property name="looping">
-            <value>true</value>
-        </property>
         <relationship name="audioFile">
             <destination>{d8443917-6ab3-4116-9e6f-ccc3370d8b99}</destination>
         </relationship>
     </object>
     <object class="SingleSound" id="{a8223974-8f4a-49f2-9279-e9ad95575f27}">
-        <property name="looping">
-            <value>true</value>
-        </property>
         <relationship name="audioFile">
             <destination>{083e8671-43d6-403b-99a0-c0462325f0b6}</destination>
         </relationship>
