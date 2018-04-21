@@ -20,25 +20,27 @@ MonoBehaviour:
       him down! killing him instantly!
     artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
-    - DEFEAT!
-    - DEFEAT!
+    - VICTORY!
+    - VICTORY!
   decisionEffect_:
-  - name_: DEFEAT!
-    starChange_: -10
+  - name_: VICTORY!
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
-  - name_: DEFEAT!
-    starChange_: -10
+    - {fileID: 11400000, guid: 11d719df56e110545a1b39fc02b02b62, type: 2}
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
+  - name_: VICTORY"
+    starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 0
     sound_: 
     effects_:
-    - {fileID: 11400000, guid: cb4d6ffec771f9f4e9dfad046dc59376, type: 2}
+    - {fileID: 11400000, guid: 11d719df56e110545a1b39fc02b02b62, type: 2}
+    - {fileID: 11400000, guid: b60ff5d7c940b14478ab2452e0b76441, type: 2}
   timerRanOutEffect_:
     name_: DEFEAT!
     starChange_: -10

@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 222062637694409118}
   - component: {fileID: 114004330320049890}
   - component: {fileID: 114622628594269406}
+  - component: {fileID: 114877979143757366}
   m_Layer: 5
   m_Name: StarRating
   m_TagString: StarRatingUI
@@ -665,18 +666,31 @@ MonoBehaviour:
   bodyObject: {fileID: 114091581848252120}
   headObject: {fileID: 114380595575323814}
   tutorialText:
-  - 'Make decisions by left-clicking
+  - 'You are a Pictish King in ancient Scotland!
 
 
-    Two options are presented for each event'
-  - 'Your decisions are important!
+    Your decisions are important!
 
 
-    Consider the effects of each one carefully, your people are counting on you'
-  - 'Your performance as king is given as a star rating
+    Choose options by Left-clicking the mouse.
 
 
-    Aim for five stars and be the best king the Picts have seen!'
+    Press OK to continue'
+  - 'Two options are presented for each decision.
+
+
+    Consider the effects of each decision carefully, your people are counting on you.
+
+
+    You don''t have much time to decide though so watch the timer at the top!
+
+'
+  - 'Your performance as king is given as a star rating at the bottom of the screen.
+
+
+    Aim for five stars and be the best king the Picts have ever seen!
+
+'
 --- !u!114 &114157935106708640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,7 +787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'X
+  m_Text: 'OK
 
 '
 --- !u!114 &114240673264004500
@@ -926,7 +940,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 0d5eb02412278364eb284b7c98cb3dc4, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -966,7 +980,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls
+  m_Text: How To Play
 --- !u!114 &114478565162468448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1235,17 +1249,17 @@ MonoBehaviour:
   fourStarRequirement: 40
   fourHalfStarRequirement: 45
   fiveStarRequirement: 50
-  noStarImage: {fileID: 21300000, guid: f7cf569c73adef041aba31eae533476f, type: 3}
-  halfStarImage: {fileID: 21300000, guid: 974da43ecb8227940853fea68a76be60, type: 3}
-  oneStarImage: {fileID: 21300000, guid: 22a59136ac12c1f44a2755399ac400b5, type: 3}
-  oneHalfStarImage: {fileID: 21300000, guid: bc4b9757585065248b76ef161f496139, type: 3}
-  twoStarImage: {fileID: 21300000, guid: db3f7e0d8f49ae448a0a5af614b9f357, type: 3}
-  twoHalfStarImage: {fileID: 21300000, guid: 90b860bcbab33de4b910ce7e04113a60, type: 3}
-  threeStarImage: {fileID: 21300000, guid: 505c59311713e194d99e0d98fb8d5d7d, type: 3}
-  threeHalfStarImage: {fileID: 21300000, guid: f17fc9f2fca4342448ec9d41e7734793, type: 3}
-  fourStarImage: {fileID: 21300000, guid: 4253aec6626f0ca4faee865ccece8a69, type: 3}
-  fourHalfStarImage: {fileID: 21300000, guid: 93d4febea9ff6e04fa65c25ea3136196, type: 3}
-  fiveStarImage: {fileID: 21300000, guid: c5b52a906d7e24c41a27930337c66d6e, type: 3}
+  noStarImage: {fileID: 21300000, guid: 3dce8bd7937514544b6a64e7cd451f1b, type: 3}
+  halfStarImage: {fileID: 21300000, guid: 57d04290036d4e545bd35c9cf02e993e, type: 3}
+  oneStarImage: {fileID: 21300000, guid: a68ac32961ec81644aa3a648aa56fe7c, type: 3}
+  oneHalfStarImage: {fileID: 21300000, guid: de576c674d462524ca536f3cf0b34abc, type: 3}
+  twoStarImage: {fileID: 21300000, guid: 194c5f88fef857e45ad8b2fb56082c84, type: 3}
+  twoHalfStarImage: {fileID: 21300000, guid: c5093584232049941bb87990309c6c56, type: 3}
+  threeStarImage: {fileID: 21300000, guid: 0eed2289838ffe2448f92698f842a082, type: 3}
+  threeHalfStarImage: {fileID: 21300000, guid: e6e2e0e873106624cbf1a62b43362a30, type: 3}
+  fourStarImage: {fileID: 21300000, guid: 0b7289ef67a9fb84793a482591944bba, type: 3}
+  fourHalfStarImage: {fileID: 21300000, guid: 7ac5562255842154c95e7081b74dd72e, type: 3}
+  fiveStarImage: {fileID: 21300000, guid: a7c0cb5b94fa0c549840bac135e65205, type: 3}
 --- !u!114 &114624748496349418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1406,7 +1420,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114283460348635266}
         m_MethodName: Play
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1450,6 +1464,18 @@ MonoBehaviour:
   btnPosY: -300
   btnPosX: 0
   defaultTimerLength_: 30
+--- !u!114 &114877979143757366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882279001847920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49543e6c86cae74ab39ab24a76e29aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound_: event:/UI/STAR RATING/UI_STAR_ADDING
 --- !u!114 &114887871525232234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1790,17 +1816,17 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193286642549686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224549766300189462}
   m_Father: {fileID: 224693371117545306}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.3, y: 49.2}
-  m_SizeDelta: {x: 26, y: 26}
+  m_AnchoredPosition: {x: -57.8, y: -197.2}
+  m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224336773017191052
 RectTransform:
@@ -1836,8 +1862,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.2, y: 178.6}
-  m_SizeDelta: {x: 85, y: 85}
+  m_AnchoredPosition: {x: 2.2, y: 178}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224478987758036282
 RectTransform:
@@ -1927,9 +1953,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -190, y: 131}
-  m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -303, y: 185}
+  m_SizeDelta: {x: 300, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224599012819981346
 RectTransform:
   m_ObjectHideFlags: 1
@@ -2005,8 +2031,8 @@ RectTransform:
   - {fileID: 224336773017191052}
   - {fileID: 224668914562745058}
   - {fileID: 224029891930228402}
-  - {fileID: 224280532525964230}
   - {fileID: 224928414842896276}
+  - {fileID: 224280532525964230}
   m_Father: {fileID: 224566855820765586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2049,7 +2075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.1, y: 0}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224813412825926344
@@ -2141,10 +2167,10 @@ RectTransform:
   m_Father: {fileID: 224599012819981346}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -141.9, y: -49.5}
-  m_SizeDelta: {x: 234, y: 60}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -193}
+  m_SizeDelta: {x: 234, y: 60.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224907086700782220
 RectTransform:
@@ -2175,7 +2201,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224693371117545306}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -10,6 +10,8 @@ TagManager:
   - BuildLocation
   - StarRatingUI
   - Preview Camera
+  - Farm
+  - Audio
   layers:
   - Default
   - TransparentFX

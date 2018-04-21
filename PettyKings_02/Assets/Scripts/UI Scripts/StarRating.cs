@@ -49,7 +49,10 @@ public class StarRating : MonoBehaviour {
 
     public void UpdateStars(int starRating)
     {
-
+        // Clamp star rating value, ensure it can't go above the maximum or below the minimum
+        starRating = clampStarRating(starRating);
+        
+        // Compare star rating against requirements and update the stars displayed accordingly
         if (starRating <= noStarRequirement)
         {
             image.sprite = noStarImage;  
@@ -98,5 +101,25 @@ public class StarRating : MonoBehaviour {
 
         //add end condition?
 
+    }
+
+    // star rating clamping function
+    private int clampStarRating(int starIn)
+    {
+        if (starIn > fiveStarRequirement)
+        {
+            // star rating exceeds maximum
+            return fiveStarRequirement;
+        }
+        else if (starIn < noStarRequirement)
+        {
+            // star rating exceeds minimum
+            return noStarRequirement;
+        }
+        else
+        {
+            // value is in range, no clamping required
+            return starIn;
+        }
     }
 }
