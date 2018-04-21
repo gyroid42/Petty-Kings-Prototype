@@ -54,4 +54,5 @@ MonoBehaviour:
   isWar_: 1
   music_: event:/MUSIC/BACKGROUND MUSIC
   splashMusic_: event:/MUSIC/SPLACHSCREEN MUSIC
+  warFadeTime_: 1
   splashFadeTime_: 4
