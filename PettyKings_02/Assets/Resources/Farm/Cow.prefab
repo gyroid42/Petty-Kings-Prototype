@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4081836865957306}
   - component: {fileID: 195676772078027076}
   - component: {fileID: 114484108316591244}
+  - component: {fileID: 114567443818805518}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -142,6 +143,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkRadius: 10
   walkTimer: 2
+--- !u!114 &114567443818805518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1996237067214834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/AMBIENCES/VILLAGE/COWS
+  PlayEvent: 11
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 700
 --- !u!195 &195676772078027076
 NavMeshAgent:
   m_ObjectHideFlags: 1
