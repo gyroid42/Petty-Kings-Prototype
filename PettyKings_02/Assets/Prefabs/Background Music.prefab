@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9309c7dbacb9d044897b2e433e48da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWar_: 1
   music_: event:/MUSIC/BACKGROUND MUSIC
   splashMusic_: event:/MUSIC/SPLACHSCREEN MUSIC
   splashFadeTime_: 4

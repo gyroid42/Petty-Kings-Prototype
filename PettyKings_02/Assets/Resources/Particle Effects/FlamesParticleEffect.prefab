@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 198000013227194214}
   - component: {fileID: 199000010346745340}
   - component: {fileID: 114656253124276646}
-  - component: {fileID: 81746725020821330}
   - component: {fileID: 114906795491608584}
   m_Layer: 0
   m_Name: FlamesParticleEffect
@@ -106,13 +105,6 @@ Transform:
   m_Father: {fileID: 4000010409153280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &81746725020821330
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010823978654}
-  m_Enabled: 1
 --- !u!114 &114656253124276646
 MonoBehaviour:
   m_ObjectHideFlags: 1

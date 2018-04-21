@@ -15,5 +15,6 @@ MonoBehaviour:
   instantPriority_: 0
   stopSeasonTimer_: 1
   actionList_:
+  - {fileID: 11400000, guid: 6f431edb93293964e924a80a31aa34a5, type: 2}
   - {fileID: 11400000, guid: b5e5b722ac137e4488cd31c5ce27e03b, type: 2}
   isPooled_: 0

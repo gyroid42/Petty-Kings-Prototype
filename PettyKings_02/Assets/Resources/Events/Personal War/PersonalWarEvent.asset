@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: PersonalWarEvent
   m_EditorClassIdentifier: 
   isBlocking_: 1
-  instantPriority_: 0
+  instantPriority_: 1
   stopSeasonTimer_: 1
   actionList_:
+  - {fileID: 11400000, guid: 6f431edb93293964e924a80a31aa34a5, type: 2}
   - {fileID: 11400000, guid: cb971ff1f78bf59408d3c94f4427bf0f, type: 2}
   isPooled_: 0
