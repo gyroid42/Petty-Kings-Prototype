@@ -5,7 +5,7 @@
             <value>DECISION BOX LEFT</value>
         </property>
         <property name="outputFormat">
-            <value>0</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{d596a193-4734-4919-b134-b72ddca406c2}</destination>
@@ -112,13 +112,17 @@
     </object>
     <object class="MixerBusEffectChain" id="{78964e3d-cc54-4a9e-982b-0da82c8cc965}">
         <relationship name="effects">
-            <destination>{b077ce15-03e3-436f-a595-5c0c03ec341c}</destination>
-            <destination>{fe8bb6f7-a3ec-46b7-a987-99e9481d0328}</destination>
-            <destination>{07c20896-8239-41a8-aec9-2a147093e189}</destination>
+            <destination>{ad97dc2c-897e-45f3-8ca3-22fa516927d3}</destination>
             <destination>{1b1f36ec-dc5f-42aa-afed-c8dad7498d9b}</destination>
+            <destination>{b7029486-38b0-49ef-a6d2-ad2ef58d0959}</destination>
+            <destination>{7a54a37a-e2e5-4a8f-adee-5fce49244491}</destination>
         </relationship>
     </object>
-    <object class="MixerBusPanner" id="{d8f7c6dc-4553-455f-93c6-2fd4c64dea9c}"/>
+    <object class="MixerBusPanner" id="{d8f7c6dc-4553-455f-93c6-2fd4c64dea9c}">
+        <property name="stereoPan">
+            <value>-22</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{ba0a5825-cfdb-454d-b55a-dc6cee7d790d}"/>
     <object class="MixerBusEffectChain" id="{32a06d84-3a59-45f5-95e9-008b86180d1c}">
         <relationship name="effects">
@@ -126,24 +130,45 @@
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{afcddaf7-de7a-45f2-80fe-beec0e7690a0}"/>
-    <object class="GainEffect" id="{b077ce15-03e3-436f-a595-5c0c03ec341c}">
-        <property name="gain">
-            <value>-9</value>
-        </property>
-    </object>
-    <object class="ChorusEffect" id="{fe8bb6f7-a3ec-46b7-a987-99e9481d0328}">
-        <property name="rate">
-            <value>0.0540000014</value>
+    <object class="TremoloEffect" id="{ad97dc2c-897e-45f3-8ca3-22fa516927d3}">
+        <property name="frequency">
+            <value>3.79999995</value>
         </property>
         <property name="depth">
-            <value>10</value>
+            <value>0.800000072</value>
         </property>
-    </object>
-    <object class="ChannelMixEffect" id="{07c20896-8239-41a8-aec9-2a147093e189}">
-        <property name="outputGrouping">
-            <value>1</value>
+        <property name="shape">
+            <value>0.0400000028</value>
+        </property>
+        <property name="skew">
+            <value>0.0599999987</value>
+        </property>
+        <property name="spread">
+            <value>-0.099999994</value>
         </property>
     </object>
     <object class="MixerBusFader" id="{1b1f36ec-dc5f-42aa-afed-c8dad7498d9b}"/>
+    <object class="DelayEffect" id="{b7029486-38b0-49ef-a6d2-ad2ef58d0959}">
+        <property name="delay">
+            <value>28</value>
+        </property>
+        <property name="feedback">
+            <value>0</value>
+        </property>
+        <property name="level">
+            <value>-14.5</value>
+        </property>
+    </object>
+    <object class="MixerSend" id="{7a54a37a-e2e5-4a8f-adee-5fce49244491}">
+        <property name="level">
+            <value>-43</value>
+        </property>
+        <property name="inputFormat">
+            <value>1</value>
+        </property>
+        <relationship name="mixerReturn">
+            <destination>{dc353724-31e2-4504-a9d7-d4639781bbb0}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusFader" id="{ca3ba6c4-5eb7-4c1d-885d-dad6a96d2e4d}"/>
 </objects>
