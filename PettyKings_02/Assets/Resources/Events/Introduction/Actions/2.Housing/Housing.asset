@@ -27,12 +27,12 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
+    playSound_: 0
     sound_: 
     effects_: []
   - name_: Give each family a hovel!
     starChange_: 5
-    addEvent_: 1
+    addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
     sound_: event:/UI/BUILDINGS/BUILD UP/UI_RESSOURCES_BUILDINGS_BUILDUP

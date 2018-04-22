@@ -27,8 +27,8 @@ MonoBehaviour:
     starChange_: 10
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 0
-    sound_: 
+    playSound_: 1
+    sound_: event:/EVENTS/DECLARE WAR/UI_DECLARE WAR 01
     effects_:
     - {fileID: 11400000, guid: 7a1a2b46faa45a44bbcc656dc88761f4, type: 2}
   - name_: Keep our men behind the walls!

@@ -448,6 +448,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{84a537e9-653e-42d0-a001-4df11870cd07}">
+        <property name="volume">
+            <value>-5.5</value>
+        </property>
         <property name="name">
             <value>AMBIENCE BIRDS</value>
         </property>
@@ -474,7 +477,7 @@
     </object>
     <object class="EventMixerGroup" id="{ece35ed2-7572-4c3f-8f65-c077a3d37dd5}">
         <property name="volume">
-            <value>-17</value>
+            <value>-12.5</value>
         </property>
         <property name="name">
             <value>AMBIENCE COUNTRY</value>

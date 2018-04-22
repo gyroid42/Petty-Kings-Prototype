@@ -14,6 +14,7 @@ public class MusicManager : MonoBehaviour {
     [FMODUnity.EventRef]
     public string splashMusic_;
 
+    public float warFadeTime_;
     public float splashFadeTime_;
 
     private FMOD.Studio.EventInstance splashMusicPlayer_;
@@ -110,11 +111,11 @@ public class MusicManager : MonoBehaviour {
 
             if (newState)
             {
-                warValue += Time.deltaTime / splashFadeTime_;
+                warValue += Time.deltaTime / warFadeTime_;
             }
             else
             {
-                warValue -= Time.deltaTime / splashFadeTime_;
+                warValue -= Time.deltaTime / warFadeTime_;
             }
 
             warParameter.setValue(warValue);
