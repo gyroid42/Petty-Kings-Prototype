@@ -47,6 +47,6 @@ MonoBehaviour:
     addEvent_: 0
     newEvent_: {fileID: 0}
     playSound_: 1
-    sound_: event:/UI/END OF GAME/UI_DEFEAT
+    sound_: event:/UI/TIMER/UI_TIMER_END
     effects_:
     - {fileID: 11400000, guid: 9386c1ca8e5c6164cbb4883f569baf72, type: 2}
