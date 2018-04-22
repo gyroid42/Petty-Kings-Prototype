@@ -25,17 +25,16 @@ public class SpawnAnimal : BaseAction {
 
         worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
-        for (int i = 0; i < numberSpawned_; i++)
-        {
+        
             if (animal == AnimalChoice.Sheep) //spawn sheep
             {
-                worldController.SpawnSheep();
+            worldController.SpawnSheep(numberSpawned_);
             }
             else if (animal == AnimalChoice.Cow) //spawn coo
             {
-                worldController.SpawnCow();
+            worldController.SpawnCow(numberSpawned_);
             }
-        }
+        
        
         actionRunning_ = false;
     }
