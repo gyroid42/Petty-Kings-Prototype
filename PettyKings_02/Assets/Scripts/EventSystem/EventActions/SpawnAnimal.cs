@@ -15,6 +15,7 @@ public class SpawnAnimal : BaseAction {
 
     public AnimalChoice animal;
     public int numberSpawned_;
+    public int starRating;
 
     // Use this for initialization
     public override void Begin(NarrativeEvent newEvent)
@@ -25,6 +26,7 @@ public class SpawnAnimal : BaseAction {
 
         worldController = Terrain.activeTerrain.GetComponent<WorldManager>(); //get script
 
+        
         
             if (animal == AnimalChoice.Sheep) //spawn sheep
             {
@@ -37,5 +39,13 @@ public class SpawnAnimal : BaseAction {
         
        
         actionRunning_ = false;
+    }
+
+    // End method called when action finishes
+    public override void End()
+    {
+        //Modify Star rating value
+        worldController.UpdateStars(starRating);
+        Debug.Log("STAR RATING = " + worldController.starRating);
     }
 }
