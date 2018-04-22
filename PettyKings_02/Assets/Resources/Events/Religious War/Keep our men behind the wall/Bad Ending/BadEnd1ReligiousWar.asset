@@ -27,23 +27,23 @@ MonoBehaviour:
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
+    playSound_: 0
+    sound_: 
     effects_:
-    - {fileID: 11400000, guid: 2d561c436c22ef44bb50bbdcf26b41e6, type: 2}
-    - {fileID: 11400000, guid: 114b63390e8135d45bd71d8e5281e2d1, type: 2}
-    - {fileID: 11400000, guid: 7e54a5910880b8d44b7f4bc9feb739ca, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 11400000, guid: 8b6b6d35ae455f743af3e96ee800d693, type: 2}
   - name_: Fall back to the hall!
     starChange_: -5
     addEvent_: 0
     newEvent_: {fileID: 0}
-    playSound_: 1
-    sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
+    playSound_: 0
+    sound_: 
     effects_:
-    - {fileID: 11400000, guid: 2d561c436c22ef44bb50bbdcf26b41e6, type: 2}
-    - {fileID: 11400000, guid: 114b63390e8135d45bd71d8e5281e2d1, type: 2}
-    - {fileID: 11400000, guid: 7e54a5910880b8d44b7f4bc9feb739ca, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 11400000, guid: 8b6b6d35ae455f743af3e96ee800d693, type: 2}
   timerRanOutEffect_:
     name_: Fall back to the hall!

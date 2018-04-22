@@ -30,7 +30,7 @@ MonoBehaviour:
     playSound_: 1
     sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
-    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
+    - {fileID: 0}
   - name_: Theres nothing else to be done...
     starChange_: -5
     addEvent_: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     playSound_: 1
     sound_: event:/EVENTS/END OF GAME/UI_DEFEAT
     effects_:
-    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
+    - {fileID: 0}
   timerRanOutEffect_:
     name_: Theres nothing else to be done...
     starChange_: -5
@@ -47,4 +47,4 @@ MonoBehaviour:
     playSound_: 1
     sound_: event:/UI/TIMER/UI_TIMER_END
     effects_:
-    - {fileID: 11400000, guid: 215ca6ca80ad79049a6327fd1f2459d4, type: 2}
+    - {fileID: 0}
