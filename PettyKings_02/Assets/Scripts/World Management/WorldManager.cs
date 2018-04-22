@@ -197,14 +197,20 @@ public class WorldManager : MonoBehaviour {
         }
     }
 
-    public void SpawnSheep()
+    public void SpawnSheep(int numToSpawn)
     {
-        Instantiate(resources[6], farmSpawn.transform);
+        for (int i = 0; i < numToSpawn; i++)
+        {
+            Instantiate(resources[6], farmSpawn.transform);
+        }
     }
 
-    public void SpawnCow()
+    public void SpawnCow(int numToSpawn)
     {
-        Instantiate(resources[5], farmSpawn.transform);
+        for (int i = 0; i < numToSpawn; i++)
+        {
+            Instantiate(resources[5], farmSpawn.transform);
+        }
     }
 
     private void Update()
