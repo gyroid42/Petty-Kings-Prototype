@@ -9,13 +9,15 @@ public enum AnimalChoice
 }
 
 [CreateAssetMenu(fileName = "Spawn Animal Action", menuName = "EventActions/SpawnAnimal")]
-public class SpawnAnimal : BaseAction {
-
+public class SpawnAnimal : BaseAction
+{ 
     private WorldManager worldController;
 
     public AnimalChoice animal;
     public int numberSpawned_;
     public int starRating;
+
+   
 
     // Use this for initialization
     public override void Begin(NarrativeEvent newEvent)
@@ -36,7 +38,7 @@ public class SpawnAnimal : BaseAction {
             {
             worldController.SpawnCow(numberSpawned_);
             }
-        
+    
        
         actionRunning_ = false;
     }

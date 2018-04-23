@@ -174,6 +174,7 @@ public class DecisionAction : BaseAction
             // Call timer finished method
             Debug.Log("timer finished");
             timerFinished(-1);
+            ExitDecision(0); //Ive added this in to fix the infinite bug with event actions, if you can find a better way then pls feel free to remove
         }
 
         eventDisplay.UpdateTimerBar(decisionTimer_.TimerPercentage());
@@ -258,7 +259,7 @@ public class DecisionAction : BaseAction
     // Method for continuing to next action
     public void ExitDecision(int choice)
     {
-
+       // Debug.Log("Exiting decision");
         // Set actionRunning_ to false to end the action
         decisionTimer_.SetActive(false);
         actionRunning_ = false;
