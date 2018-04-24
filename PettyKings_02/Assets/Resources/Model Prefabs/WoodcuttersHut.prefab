@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 114604841906310258}
   m_Layer: 0
   m_Name: WoodcuttersHut
-  m_TagString: Farm
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
