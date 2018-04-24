@@ -67,6 +67,7 @@ public class UserKeyboardControls : MonoBehaviour {
                 //  1.1 Find event system
                 //  1.2 Trigger function   
                 btnFunctions[0](0);
+                btnFunctions = null;
             }
             // Must be else if to avoid both options being triggered
             else if(Input.GetKeyDown(KeyCode.RightArrow))
@@ -75,6 +76,7 @@ public class UserKeyboardControls : MonoBehaviour {
                 //  1.1 Find event system
                 //  1.2 Trigger function  
                 btnFunctions[1](1);
+                btnFunctions = null;
             }
         }
 	}

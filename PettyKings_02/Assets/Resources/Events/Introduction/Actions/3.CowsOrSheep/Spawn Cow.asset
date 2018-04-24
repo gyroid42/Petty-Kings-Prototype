@@ -14,3 +14,4 @@ MonoBehaviour:
   isBlocking_: 1
   animal: 1
   numberSpawned_: 3
+  starRating: 0

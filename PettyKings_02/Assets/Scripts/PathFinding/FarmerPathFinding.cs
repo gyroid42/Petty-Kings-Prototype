@@ -17,6 +17,7 @@ public class FarmerPathFinding : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
         // objectsInScene = GameObject.FindGameObjectsWithTag("Building");
+        objectsInScene = GameObject.FindGameObjectsWithTag("Farm");
         Random.InitState(System.DateTime.Now.Millisecond);
         rnd = Random.Range(0, objectsInScene.Length);
         timeLeft = Random.Range(1, 4);
@@ -25,7 +26,7 @@ public class FarmerPathFinding : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        objectsInScene = GameObject.FindGameObjectsWithTag("Farm");
+        
 
         if (Vector3.Distance(objectsInScene[rnd].gameObject.transform.position, agent.transform.position) < 10.5f)
         {

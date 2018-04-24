@@ -124,10 +124,8 @@ public class DecisionAction : BaseAction
         {
             timerFinished += StartActionList;
         }
-        else
-        {
-            timerFinished += ExitDecision;
-        }
+
+        timerFinished += ExitDecision;
 
 
 
@@ -258,7 +256,7 @@ public class DecisionAction : BaseAction
     // Method for continuing to next action
     public void ExitDecision(int choice)
     {
-
+       // Debug.Log("Exiting decision");
         // Set actionRunning_ to false to end the action
         decisionTimer_.SetActive(false);
         actionRunning_ = false;
