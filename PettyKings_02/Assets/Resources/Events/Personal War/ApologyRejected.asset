@@ -17,7 +17,7 @@ MonoBehaviour:
     timerLength_: 0
     type_: 0
     description_: King Uuen spits at your pathetic offer of an apology and roars at
-      his men to prepare for battle
+      his men to prepare for battle.
     artwork_: {fileID: 2800000, guid: bfe12017220c2cc4a84f4f8219c0f8d0, type: 3}
     btnText_:
     - Meet them in the field!
