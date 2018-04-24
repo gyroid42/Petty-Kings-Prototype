@@ -668,7 +668,7 @@ MonoBehaviour:
   tutorialText:
   - "You are a Pictish king in ancient Britain!\r\n\nYour choices will affect your
     people and your kingship.\r"
-  - "Choose between options by Left clicking the mouse or pressing left and right\r\n\nYou
+  - "Choose between options by Left clicking the mouse or pressing left and right\r.\n\nYou
     don\u2019t have much time to decide though so watch out for the timer!\r"
   - 'Get as many stars as possible!
 
