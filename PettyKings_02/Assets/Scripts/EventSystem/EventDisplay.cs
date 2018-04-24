@@ -191,12 +191,24 @@ public class EventDisplay : MonoBehaviour {
         oldWindow.transform.SetParent(oldDisplay.transform);
 
         oldDisplay.transform.SetParent(transform.parent);
-        
 
+
+
+        ClearButtons();
         ShowButtons(false);
 
     }
 
+
+    private void ClearButtons()
+    {
+
+        for (int i = 0; i < buttons_.Count; i++)
+        {
+
+            buttons_[i].GetComponent<Button>().onClick.RemoveAllListeners();
+        }
+    }
 
     // Creates buttons for event display
     private void CreateButtons(EventDisplayData displayData)
