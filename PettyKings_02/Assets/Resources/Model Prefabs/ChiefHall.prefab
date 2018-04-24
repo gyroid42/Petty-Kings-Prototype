@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4875613455079992}
   - component: {fileID: 54805436720783572}
-  - component: {fileID: 136334912075811362}
-  - component: {fileID: 64091767184966532}
   - component: {fileID: 208025213508980486}
   - component: {fileID: 114665167290344120}
+  - component: {fileID: 65588380205075962}
   m_Layer: 0
   m_Name: ChiefHall
   m_TagString: Building
@@ -132,8 +131,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 1
---- !u!64 &64091767184966532
-MeshCollider:
+--- !u!65 &65588380205075962
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -142,10 +141,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Size: {x: 3.683495, y: 2.8770971, z: 4.311672}
+  m_Center: {x: 0.25401235, y: 1.275394, z: 0.096910484}
 --- !u!95 &95687485018748668
 Animator:
   serializedVersion: 3
@@ -165,7 +162,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114665167290344120
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949491589478100}
@@ -180,19 +177,6 @@ MonoBehaviour:
     These tall structures were built as strongholds - some long before the Picts began
     to appear though they were still used by the picts.'
   header: Broch
---- !u!136 &136334912075811362
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949491589478100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.1186488
-  m_Height: 6.1678314
-  m_Direction: 1
-  m_Center: {x: 0.08132577, y: 1.44771, z: -0.034754276}
 --- !u!208 &208025213508980486
 NavMeshObstacle:
   m_ObjectHideFlags: 1
