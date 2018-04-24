@@ -43,6 +43,7 @@ public class WorldManager : MonoBehaviour {
 
     public float buildingFallSpeed_;
 
+    bool wallfix = false;
 
 
     void Awake() {
@@ -89,9 +90,10 @@ public class WorldManager : MonoBehaviour {
         //spawn buildings
         WorldSpawn();
 
+
         //lookAt.position = new Vector3(lookAt.position.x, Terrain.activeTerrain.SampleHeight(lookAt.position), lookAt.position.z);
 
-        foreach(GameObject i in positions)
+        foreach (GameObject i in positions)
         {
             i.transform.position = new Vector3(i.transform.position.x, Terrain.activeTerrain.SampleHeight(i.transform.position), i.transform.position.z);
         }
@@ -226,6 +228,12 @@ public class WorldManager : MonoBehaviour {
                 BuildWallLeft();
          
             }   
+
+            if(wallsRight.Count > 10 && !wallfix)
+        {
+            DestroyWall(true, 0, 10);
+            DestroyWall(false, 0, 10);
+        }
 
           /*  if(Input.GetKeyDown("e"))
         {
