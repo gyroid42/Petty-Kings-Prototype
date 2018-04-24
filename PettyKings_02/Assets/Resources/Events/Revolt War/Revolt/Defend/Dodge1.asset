@@ -16,7 +16,7 @@ MonoBehaviour:
     name_: 
     timerLength_: 0
     type_: 3
-    description_: You try to  dodge out of the way of the warrior's swing but it cataches
+    description_: You try to  dodge out of the way of the warrior's sword but it catches
       you in the neck and you slowly bleed out.
     artwork_: {fileID: 2800000, guid: 1805a9ea0136fcc469b9768f61b29e32, type: 3}
     btnText_:
