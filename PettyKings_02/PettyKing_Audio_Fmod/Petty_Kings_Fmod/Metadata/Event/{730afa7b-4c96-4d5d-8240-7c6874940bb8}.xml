@@ -247,16 +247,13 @@
     <object class="MixerBusFader" id="{5cb11b3c-fbcd-4afe-ad46-73b17b9ecc9c}"/>
     <object class="SpatialiserEffect" id="{d8bab9a1-f9bb-413d-84e7-b98379215870}">
         <property name="maximumDistance">
-            <value>160</value>
+            <value>140</value>
         </property>
         <property name="extentMode">
             <value>1</value>
         </property>
         <property name="soundSize">
-            <value>160</value>
-        </property>
-        <property name="minimumExtent">
-            <value>10</value>
+            <value>140</value>
         </property>
     </object>
     <object class="ThreeEQEffect" id="{75a4be1d-88a5-40ba-8261-82b736bcb709}">
