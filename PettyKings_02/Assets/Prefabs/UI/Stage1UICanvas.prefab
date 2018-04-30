@@ -1447,6 +1447,7 @@ MonoBehaviour:
   btnPosY: -300
   btnPosX: 0
   defaultTimerLength_: 30
+  startTimerFlash_: 0.2
 --- !u!114 &114877979143757366
 MonoBehaviour:
   m_ObjectHideFlags: 1

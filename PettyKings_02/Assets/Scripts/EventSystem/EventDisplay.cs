@@ -57,6 +57,9 @@ public class EventDisplay : MonoBehaviour {
     private SoundPlay btnSoundLeft_;
     private SoundPlay btnSoundRight_;
 
+    public float startTimerFlash_;
+    float timerBarColourChanger_ = 2.0f;
+
     // When object is created
     void Awake()
     {
@@ -303,7 +306,26 @@ public class EventDisplay : MonoBehaviour {
     public void UpdateTimerBar(float percentage)
     {
         timerBar_.fillAmount = percentage;
+        timerBar_.color = Color.white;
+        
+        if(percentage < startTimerFlash_ && timerBarColourChanger_ > 1.0f)
+        {
+            timerBar_.color = Color.red;
+            timerBarColourChanger_ -= Time.deltaTime;
+        }
+
+        if(timerBarColourChanger_ < 1.0f)
+        {
+            timerBar_.color = Color.white;
+            timerBarColourChanger_ -= Time.deltaTime;
+        }
+
+        if(timerBarColourChanger_ < 0.0f)
+        {
+            timerBarColourChanger_ = 2.0f;
+        }
     }
+        
 
 
     public void DisplayVictory(bool victory)
